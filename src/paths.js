@@ -10,6 +10,8 @@ import Login from "./pages/Signin.svelte";
 import Signup from "./pages/Signup.svelte";
 
 const routes = {
+  "/home": Dashboard,
+  "/sites": Sites,
   "/about": About,
   "/login": Login,
   "/signup": Signup,

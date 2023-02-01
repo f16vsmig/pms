@@ -1,7 +1,6 @@
 <script>
   import Navbar from "../components/Navbar.svelte";
-  import Sidebar from "../components/SideMenubar.svelte";
-  import Btype from "../layout/Btype.svelte";
+  import Atype from "../layout/Atype.svelte";
 
   import { link } from "svelte-spa-router";
   import { fade } from "svelte/transition";
@@ -236,9 +235,8 @@
   }
 </script>
 
-<Btype>
+<Atype>
   <Navbar slot="navbar" />
-  <Sidebar slot="sidebar" />
 
   <div slot="content">
     <div class="flex justify-between items-center my-4 mx-10">
@@ -394,5 +392,5 @@
         {/if}
       {/each}
     </div>
-  </div></Btype
+  </div></Atype
 >

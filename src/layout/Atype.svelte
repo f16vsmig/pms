@@ -1,6 +1,11 @@
 <div class="h-screen">
-  <slot name="navbar" />
-  <slot name="content" />
+  <div class="navbar">
+    <slot name="navbar" />
+  </div>
+
+  <div class="">
+    <slot name="content" />
+  </div>
 </div>
 
 <style>
