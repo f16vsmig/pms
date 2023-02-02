@@ -1,23 +1,16 @@
 <script>
   import { onMount } from "svelte";
   import { link, location } from "svelte-spa-router";
+  import { mobileView } from "../store";
 
-  let open = true;
-  const mobile = () => /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-
-  onMount(() => {
-    console.log(navigator.userAgent);
-    if (mobile()) {
-      open = false;
-    }
-  });
+  let open = $mobileView ? false : true;
 </script>
 
-<nav class="sm:p-2 md:p-4 dark:bg-gray-900">
-  <div class="container flex flex-wrap items-center justify-between">
+<nav class="dark:bg-gray-900 z-50">
+  <div class="container max-sm:relative flex flex-wrap items-center justify-between">
     <button
       type="button"
-      class="inline-flex items-center p-2 ml-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+      class="inline-flex items-center p-2 mt-2 ml-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
       on:click={() => (open = !open)}
     >
       <span class="sr-only">Open main menu</span>
@@ -27,8 +20,8 @@
     </button>
 
     {#if open}
-      <div class="w-full md:block md:w-auto">
-        <ul class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+      <div class="w-full max-sm:w-64 max-sm:absolute max-sm:top-16 max-sm:mx-2 z-50">
+        <ul class="flex flex-col p-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
           <li>
             <a
               use:link

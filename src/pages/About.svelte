@@ -6,7 +6,7 @@
 <Atype>
   <Navbar slot="navbar" />
 
-  <div class="p-3 pe-5" slot="content">
+  <div class="" slot="content">
     <h1>About11</h1>
   </div>
 </Atype>

@@ -8,6 +8,8 @@
   import Form from "../components/Form.svelte";
   import Alternative from "../assets/btn/Alternative.svelte";
 
+  import { mobileView } from "../store";
+
   let formData = {
     title: "새로운 발전소 추가하기",
     action: "/",
@@ -239,13 +241,13 @@
   <Navbar slot="navbar" />
 
   <div slot="content">
-    <div class="flex justify-between items-center my-4 mx-10">
-      <div class="flex-none w-96 ml-4">
-        <h3 class="text-lg">
+    <div class="flex max-sm:flex-col-reverse justify-between my-4 max-sm:px-3 md:px-10">
+      <div class="sm:flex-auto md:flex-none md:w-96">
+        <h3 class="text-lg max-sm:pt-5">
           <span class="text-red-700">{siteList.data.length}</span>개의 발전소가 있습니다.
-          <span class="ml-3">
+          <span class="ml-2 md:ml-3">
             <Alternative
-              name={"+ 새로 등록하기"}
+              name={$mobileView ? "+ 추가" : "+ 새로 등록하기"}
               on:click={() => {
                 modalForm = true;
               }}
@@ -254,9 +256,9 @@
         </h3>
       </div>
 
-      <form class="flex-initial ml-4" role="search">
+      <form class="sm:flex-auto md:flex-initial md:ml-4 max-sm:my-2" role="search">
         <label for="simple-search" class="sr-only">검색</label>
-        <div class="relative w-96">
+        <div class="relative md:w-96">
           <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
             <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"
               ><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" /></svg
@@ -295,15 +297,10 @@
       {/if}
     </div>
 
-    <div class="flex flex-wrap mx-10">
+    <div class="flex max-sm:flex-col flex-wrap px-3">
       {#each siteList.data as site, i}
         {#if search == "" || site.name.includes(search) || site.address.includes(search) || site.owner.includes(search)}
-          <a
-            use:link
-            href={"/pop/sites/" + site.id}
-            class="flex-col ml-4 mb-5 bg-white border rounded-lg shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
-            style="min-width: {(1 + site.totalRatingOutputKW / siteList.grandTotalRatingOutputKW) * 20}rem;"
-          >
+          <a use:link href={"/pop/sites/" + site.id} class="flex-col mb-5 bg-white border rounded-lg shadow-md md:flex-row md:w-96 md:mx-5 hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
             <div class="flex justify-between p-4 leading-normal">
               <h5 class="text-2xl tracking-tight text-gray-900 dark:text-white {search != '' && site.name.includes(search) ? 'text-red-500' : ''}">
                 {site.name}

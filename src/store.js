@@ -1,4 +1,4 @@
-import { writable } from "svelte/store";
+import { readable, writable } from "svelte/store";
 
 export const count = writable(0);
 
@@ -18,3 +18,5 @@ export const modalFormToggle = writable(false); // 모달폼 토글 상태
 export const sidebarVisable = writable(true);
 
 export const mgmBldrgstPk = writable(""); // 건축물대장pk
+
+export const mobileView = readable(/Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
