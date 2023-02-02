@@ -10,20 +10,20 @@ import Login from "./pages/Signin.svelte";
 import Signup from "./pages/Signup.svelte";
 
 const routes = {
+  "/": Dashboard,
   "/home": Dashboard,
   "/sites": Sites,
   "/about": About,
   "/login": Login,
   "/signup": Signup,
-  "/": Dashboard,
-  "/pop": Dashboard,
-  "/pop/dashboard": Dashboard,
-  "/pop/map": Map,
-  "/pop/sites": Sites,
-  "/pop/sites/:id": SitesDetailView,
-  "/pop/sites/log/:id": Log,
-  "/pop/insight": Insight,
-  "/pop/setting": Setting,
+  // "/pop": Dashboard,
+  // "/pop/dashboard": Dashboard,
+  // "/pop/map": Map,
+  // "/pop/sites": Sites,
+  // "/pop/sites/:id": SitesDetailView,
+  // "/pop/sites/log/:id": Log,
+  // "/pop/insight": Insight,
+  // "/pop/setting": Setting,
 };
 
 export default routes;

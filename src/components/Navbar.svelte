@@ -1,41 +1,39 @@
 <script>
   import { onMount } from "svelte";
   import { link, location } from "svelte-spa-router";
-  import { slide, fade } from "svelte/transition";
 
   let open = true;
-
   const mobile = () => /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
-  const animate = mobile() ? slide : fade;
-
   onMount(() => {
+    console.log(navigator.userAgent);
     if (mobile()) {
       open = false;
     }
   });
 </script>
 
-<nav class="p-2 dark:bg-gray-900">
+<nav class="sm:p-2 md:p-4 dark:bg-gray-900">
   <div class="container flex flex-wrap items-center justify-between">
     <button
       type="button"
       class="inline-flex items-center p-2 ml-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
       on:click={() => (open = !open)}
     >
+      <span class="sr-only">Open main menu</span>
       <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"
         ><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" /></svg
       >
     </button>
 
     {#if open}
-      <div class="w-full md:block md:w-auto" transition:animate={{ duration: mobile() ? 100 : 0 }}>
+      <div class="w-full md:block md:w-auto">
         <ul class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
           <li>
             <a
               use:link
-              href="/home"
-              class="{$location === '/home'
+              href="/"
+              class="{$location === '/'
                 ? 'active'
                 : ''} block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Home</a
             >
@@ -65,4 +63,8 @@
 </nav>
 
 <style>
+  a.active {
+    font-weight: 500;
+    color: blue;
+  }
 </style>
