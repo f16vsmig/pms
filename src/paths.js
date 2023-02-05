@@ -13,6 +13,7 @@ const routes = {
   "/": Dashboard,
   "/home": Dashboard,
   "/sites": Sites,
+  "/map": Map,
   "/about": About,
   "/login": Login,
   "/signup": Signup,

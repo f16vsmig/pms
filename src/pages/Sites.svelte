@@ -2,11 +2,13 @@
   import Navbar from "../components/Navbar.svelte";
   import Atype from "../layout/Atype.svelte";
 
-  import { link } from "svelte-spa-router";
-  import { fade } from "svelte/transition";
+  import { link, location } from "svelte-spa-router";
+  import { fade, fly, slide } from "svelte/transition";
 
   import Form from "../components/Form.svelte";
   import Alternative from "../assets/btn/Alternative.svelte";
+
+  import { clickOutside } from "../utils";
 
   import { mobileView } from "../store";
 
@@ -214,9 +216,44 @@
     ],
   };
 
+  // 엘리먼트가 로딩될 때까지 기다립니다.
+  function waitForElment(selector) {
+    return new Promise((resolve) => {
+      if (document.querySelector(selector)) {
+        return resolve(document.querySelector(selector));
+      }
+
+      const observer = new MutationObserver((mutations) => {
+        if (document.querySelector(selector)) {
+          resolve(document.querySelector(selector));
+          observer.disconnect();
+        }
+      });
+
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true,
+      });
+    });
+  }
+
+  let searchTerm = "";
+  let searchToggle = false;
+  let searchInput;
+
+  const startSearch = () => {
+    searchToggle = true;
+    waitForElment("#simple-search").then((elm) => {
+      searchInput.focus();
+    });
+  };
+
   let modalForm = false;
 
-  let search = "";
+  function removeModal() {
+    modalForm = false;
+    console.log("모달 제거 동작");
+  }
 
   let detailData;
 
@@ -244,42 +281,55 @@
     <div class="flex max-sm:flex-col-reverse justify-between my-4 max-sm:px-3 md:px-10">
       <div class="sm:flex-auto md:flex-none md:w-96">
         <h3 class="text-lg max-sm:pt-5">
-          <span class="text-red-700">{siteList.data.length}</span>개의 발전소가 있습니다.
+          <span class="text-red-700">{siteList.data.length}</span>개의 자산이 있습니다.
           <span class="ml-2 md:ml-3">
-            <Alternative
-              name={$mobileView ? "+ 추가" : "+ 새로 등록하기"}
-              on:click={() => {
-                modalForm = true;
-              }}
-            />
+            {#if $mobileView}
+              <button class="border-0 font-light text-base hover:text-indigo-500" on:click={() => (modalForm = true)}>추가하기</button>
+            {:else}
+              <Alternative name={"+ 새로 등록하기"} on:click={() => (modalForm = true)} />
+            {/if}
           </span>
         </h3>
       </div>
 
-      <form class="sm:flex-auto md:flex-initial md:ml-4 max-sm:my-2" role="search">
-        <label for="simple-search" class="sr-only">검색</label>
-        <div class="relative md:w-96">
-          <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-            <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"
-              ><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" /></svg
-            >
+      <form class="hidden md:flex md:flex-initial md:ml-4" role="search">
+        <div>
+          <label for="simple-search" class="sr-only">검색</label>
+          <div class="flex justify-end md:w-72">
+            {#if !searchToggle}
+              <div class="flex-initial inset-y-0 items-center pl-3">
+                <button class="pt-1 pr-2" on:click|preventDefault={startSearch}>
+                  <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"
+                    ><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" /></svg
+                  >
+                </button>
+              </div>
+            {:else}
+              <input
+                bind:this={searchInput}
+                on:keyup={(e) => (searchTerm = e.target.value)}
+                type="text"
+                id="simple-search"
+                class="flex-none border-b-2 text-gray-900 text-sm focus:outline-none focus:border-b-indigo-500 block p-1 pl-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500"
+                placeholder="Search"
+                required
+              />
+              <div class="flex-initial inset-y-0 items-center pl-3">
+                <button class="pt-1 pr-2" on:click|preventDefault={() => (searchToggle = false)}>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+            {/if}
           </div>
-          <input
-            on:keyup={(e) => {
-              search = e.target.value;
-            }}
-            type="text"
-            id="simple-search"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            placeholder="Search"
-            required
-          />
         </div>
       </form>
 
+      <!-- 모달폼 영역 -->
       {#if modalForm}
-        <div transition:fade={{ duration: 100 }} class="flex items-center justify-center" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: 900; background-color: rgba(0, 0, 0, 0.6);">
-          <div class="bg-white border rounded p-4 relative" style="min-width: 500px; max-width: 700px; max-height:90%; overflow-y: auto;">
+        <div transition:fade={{ duration: 100 }} class="flex fixed items-center justify-center w-full h-full top-0 left-0 z-50" style="overflow: hidden; background-color: rgba(0, 0, 0, 0.6);">
+          <div class="bg-white border rounded p-4 relative" style="max-width: 700px; max-height:90%; overflow-y: auto;" use:clickOutside on:click_outside={removeModal}>
             <button
               type="button"
               class="absolute text-gray-900 bg-white focus:outline-none hover:text-red-400 focus:ring-2 focus:ring-gray-200 font-medium rounded-full text-sm dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
@@ -297,97 +347,51 @@
       {/if}
     </div>
 
-    <div class="flex max-sm:flex-col flex-wrap px-3">
+    <div class="flex flex-col md:flex-row md:flex-wrap px-0 md:px-5">
       {#each siteList.data as site, i}
-        {#if search == "" || site.name.includes(search) || site.address.includes(search) || site.owner.includes(search)}
+        {#if searchTerm == "" || site.name.includes(searchTerm) || site.address.includes(searchTerm) || site.owner.includes(searchTerm)}
           <a use:link href={"/pop/sites/" + site.id} class="flex-col mb-5 bg-white border rounded-lg shadow-md md:flex-row md:w-96 md:mx-5 hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
             <div class="flex justify-between p-4 leading-normal">
-              <h5 class="text-2xl tracking-tight text-gray-900 dark:text-white {search != '' && site.name.includes(search) ? 'text-red-500' : ''}">
+              <h5 class="text-lg md:text-2xl tracking-tight text-gray-900 dark:text-white {searchTerm != '' && site.name.includes(searchTerm) ? 'text-red-500' : ''}">
                 {site.name}
               </h5>
-              <span class="font-normal dark:text-gray-400 {search != '' && site.address.includes(search) ? 'text-red-500' : 'text-gray-600'}">{site.owner}</span>
+              <span class="font-normal dark:text-gray-400 {searchTerm != '' && site.address.includes(searchTerm) ? 'text-red-500' : 'text-gray-600'}">{site.owner}</span>
             </div>
 
-            <div class="flex flex-col p-4 mb-3">
-              <h5 class="mb-10 text-3xl tracking-tight text-transparent bg-clip-text bg-gradient-to-r to-emerald-500 from-emerald-600">{site.totalCurrentKW} <span class="text-lg text-slate-500">kW</span></h5>
-              {#if site.sun}
-                <div class="flex items-center">
-                  <svg width="22" height="22" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M0.4 12.8C0.1792 12.8 0 12.6208 0 12.4V0.4C0 0.1792 0.1792 0 0.4 0H15.6C15.8208 0 16 0.1792 16 0.4V12.4C16 12.6208 15.8208 12.8 15.6 12.8H8.8V14.4H12.4C12.6208 14.4 12.8 14.5792 12.8 14.8V15.6C12.8 15.8208 12.6208 16 12.4 16H3.6C3.3792 16 3.2 15.8208 3.2 15.6V14.8C3.2 14.5792 3.3792 14.4 3.6 14.4H7.2V12.8H0.4ZM6.96018 7.19792H1.84018C1.72658 7.19792 1.63138 7.27712 1.60658 7.38272L1.60018 7.43792V10.9579C1.60018 11.0715 1.67938 11.1667 1.78498 11.1915L1.84018 11.1979H6.96018C7.07378 11.1979 7.16898 11.1187 7.19378 11.0131L7.20018 10.9579V7.43792C7.20018 7.30512 7.09298 7.19792 6.96018 7.19792ZM14.1599 7.19792H9.03994C8.92634 7.19792 8.83114 7.27712 8.80634 7.38272L8.79994 7.43792V10.9579C8.79994 11.0715 8.87914 11.1667 8.98474 11.1915L9.03994 11.1979H14.1599C14.2735 11.1979 14.3687 11.1187 14.3935 11.0131L14.3999 10.9579V7.43792C14.3999 7.30512 14.2927 7.19792 14.1599 7.19792ZM6.96018 1.6H1.84018C1.72658 1.6 1.63138 1.6792 1.60658 1.7848L1.60018 1.84V5.36C1.60018 5.4736 1.67938 5.5688 1.78498 5.5936L1.84018 5.6H6.96018C7.07378 5.6 7.16898 5.5208 7.19378 5.4152L7.20018 5.36V1.84C7.20018 1.7072 7.09298 1.6 6.96018 1.6ZM14.1599 1.6H9.03994C8.92634 1.6 8.83114 1.6792 8.80634 1.7848L8.79994 1.84V5.36C8.79994 5.4736 8.87914 5.5688 8.98474 5.5936L9.03994 5.6H14.1599C14.2735 5.6 14.3687 5.5208 14.3935 5.4152L14.3999 5.36V1.84C14.3999 1.7072 14.2927 1.6 14.1599 1.6Z"
-                      fill="gray"
-                    />
-                  </svg>
-                  <span class="ml-2">
-                    {site.sun.current.kw} kW
-                  </span>
-                </div>
-                <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 my-2">
-                  <div class="bg-blue-600 h-2.5 rounded-full" style="width: {(site.sun.current.kw / site.sun.ratingOutputKW) * 100}%" />
-                </div>
-              {/if}
-              {#if site.wind}
-                <div class="flex items-center">
-                  <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M11.5095 0.333328C11.7909 0.333328 12.0192 0.555592 12.0192 0.829452V7.29891C13.0641 6.34238 14.5381 5.7639 16.1498 5.79069C19.1437 5.84229 21.5912 7.96868 21.6646 10.6408L21.6666 10.8472L21.6575 11.3433C21.6534 11.5864 21.4689 11.7859 21.2303 11.8236L21.1386 11.8305L13.3577 11.6975C14.7032 12.6799 15.5871 14.3339 15.5871 16.2093C15.5871 19.1483 13.4168 21.5446 10.7001 21.6617L10.4901 21.6667H9.98045C9.72969 21.6667 9.52173 21.491 9.47892 21.2598L9.47076 21.1705V14.5899C8.49216 15.3103 7.23526 15.736 5.8489 15.7132C2.69086 15.6586 0.285116 13.297 0.334046 10.5148L0.341182 10.1606C0.346279 9.88669 0.578698 9.6684 0.860047 9.67435L7.52884 9.78747C6.52781 8.79026 5.90293 7.36837 5.90293 5.79069C5.90293 2.77624 8.1843 0.333328 10.9998 0.333328H11.5095ZM11.5095 13.1202V19.2969L11.7062 19.2146C12.6767 18.7631 13.3862 17.7877 13.5238 16.6218L13.5421 16.4015L13.5482 16.209C13.5482 14.8556 12.7806 13.6947 11.6879 13.1956L11.5095 13.1202ZM2.66844 11.4053L2.68373 11.4717C3.06294 12.9303 4.38202 13.9861 5.87847 14.0119L6.05788 14.0099C7.48196 13.9553 8.74905 12.969 9.1619 11.5819L9.18025 11.5164L2.66844 11.4053ZM16.1141 7.77393C14.6768 7.75012 13.4454 8.43576 12.8592 9.42503L12.7715 9.58379L12.7165 9.70088L19.4393 9.81499L19.3884 9.69592C18.9337 8.71161 17.8674 7.96146 16.5534 7.8037L16.319 7.78286L16.1141 7.77393ZM9.98048 8.87782V2.70107L9.96825 2.70603C8.78475 3.16048 7.94172 4.36904 7.94172 5.78994L7.94681 5.98244C8.01511 7.24458 8.75212 8.31521 9.78272 8.79546L9.98048 8.87782Z"
-                      fill="gray"
-                    />
-                  </svg>
-                  <span class="ml-2">
-                    {site.wind.current.kw} kW
-                  </span>
-                </div>
-                <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 my-2">
-                  <div class="bg-blue-600 h-2.5 rounded-full" style="width: {(site.wind.current.kw / site.wind.ratingOutputKW) * 100}%" />
-                </div>
-              {/if}
-              {#if site.ess}
-                <div class="flex items-center">
-                  {#if site.ess.current.mode == 1}
-                    <svg width="22" height="11" viewBox="0 0 20 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M18 8.67L18 7L20 7L20 3L18 3L18 1.33C18 0.6 17.4 -1.1365e-07 16.67 -1.45559e-07L1.34 -8.15655e-07C0.599998 -8.48001e-07 -1.93358e-06 0.599999 -1.96548e-06 1.33L-2.28589e-06 8.66C-0.000669873 9.01386 0.138925 9.35357 0.388206 9.60473C0.637487 9.85588 0.976139 9.99802 1.33 10L16.67 10C17.4 10 18 9.4 18 8.67ZM2 4L7.5 4L7.5 2L15 6L9.5 6L9.5 8L2 4Z"
-                        fill="green"
-                      />
-                    </svg>
-                    <span class="ml-2">
-                      {site.ess.current.kw} kW
-                    </span>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25L12 21m0 0l-3.75-3.75M12 21V3" />
-                    </svg>
-                  {:else if site.ess.current.mode == 2}
-                    <svg width="22" height="11" viewBox="0 0 20 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M16.67 2.23371e-06C17.4 2.26562e-06 18 0.600002 18 1.33L18 3L20 3L20 7L18 7L18 8.67C18 9.4 17.4 10 16.67 10L1.33 10C0.976143 9.99802 0.637492 9.85588 0.388211 9.60473C0.138929 9.35357 -0.000663569 9.01386 3.43616e-06 8.66L3.75656e-06 1.33C0.00198743 0.976142 0.14412 0.637489 0.395276 0.388208C0.646431 0.138926 0.98614 -0.000665441 1.34 1.56362e-06L16.67 2.23371e-06ZM15 2.5L2.5 2.5L2.5 7.5L15 7.5L15 2.5Z"
-                        fill="#ED8987"
-                      />
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M4.375 3.75L5.625 3.75L5.625 6.25L4.375 6.25L4.375 3.75Z" fill="#ED8987" stroke="#ED8987" />
-                    </svg>
-                    <span class="ml-2">
-                      {site.ess.current.kw} kW
-                    </span>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 6.75L12 3m0 0l3.75 3.75M12 3v18" />
-                    </svg>
-                  {/if}
-                </div>
-                <div class="flex flex-inline w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mt-2 mb-1">
-                  <div
-                    class="{site.ess.current.mode == 1 ? 'bg-green-400' : 'bg-red-400'} h-2.5 rounded-full"
-                    style="width: {site.ess.current.mode == 1 ? (site.ess.current.kw / site.ess.ratingInputKW) * 100 : (site.ess.current.kw / site.ess.ratingOutputKW) * 100}%"
-                  />
-                </div>
-              {/if}
+            <div class="flex flex-col p-4">
+              <h5 class="mb-1 md:text-3xl tracking-tight font-light">서울특별시 동작구 매봉로99</h5>
+              <h5 class="mb-1 md:text-3xl tracking-tight font-light">B5F / 12F</h5>
+              <h5 class="mb-1 md:text-3xl tracking-tight font-light">3,200 m2</h5>
             </div>
           </a>
         {/if}
       {/each}
     </div>
-  </div></Atype
->
+
+    <div class="w-full flex py-3 fixed bottom-0 border-t-2 bg-white">
+      <div class="w-1/2 text-center">
+        <a use:link href="/sites" class="w-3"
+          ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="block w-6 h-6 mx-auto pointer-events-none">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+            />
+          </svg>
+        </a>
+      </div>
+
+      <div class="w-1/2 text-center">
+        <a use:link href="/map" class="w-3"
+          ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="block w-6 h-6 mx-auto pointer-events-none">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z"
+            />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</Atype>
