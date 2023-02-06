@@ -45,7 +45,7 @@ func main() {
 	}
 
 	if debug {
-		log.Fatal(app.Listen("localhost:8080"))
+		log.Fatal(app.Listen(":8080"))
 
 	} else {
 		// Create tls certificate

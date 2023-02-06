@@ -36,6 +36,9 @@
       searchInput.focus();
     });
   };
+
+  console.log("mobile vewi : ", $mobileView);
+  console.log(navigator);
 </script>
 
 <nav class="dark:bg-gray-900 z-50">
