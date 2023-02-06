@@ -2,7 +2,12 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <title>My Page</title>
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1,minimal-ui=true,viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="theme-color" content="white" />
+
+    <title>PMS</title>
     <link rel="stylesheet" href="/public/build/bundle.css" />
     <script defer src="/public/build/bundle.js"></script>
 
@@ -17,5 +22,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet" />
   </head>
-  <body></body>
+  <body class="h-screen"></body>
+
+  <script>
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty("--vh", vh + "px");
+    // resize
+    window.addEventListener("resize", () => {
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", vh + "px");
+    });
+  </script>
+
+  <style>
+    body {
+      height: calc(var(--vh, 1vh) * 100);
+    }
+  </style>
 </html>

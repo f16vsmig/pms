@@ -36,13 +36,10 @@
       searchInput.focus();
     });
   };
-
-  console.log("mobile vewi : ", $mobileView);
-  console.log(navigator);
 </script>
 
 <nav class="dark:bg-gray-900 z-50">
-  <div class="flex flex-wrap items-center justify-between">
+  <div class="flex items-center justify-between">
     <button
       type="button"
       class="flex-none items-center p-2 mt-2 ml-2 text-sm rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
@@ -60,12 +57,12 @@
       {/if}
     </button>
 
-    <a href="/" class="flex-none p-1 text-lg md:ml-8 dark:text-white">자산관리시스템</a>
+    <h1 class="flex-none p-1 text-lg md:ml-8 dark:text-white">자산관리시스템</h1>
 
     {#if open}
       <!-- <div class="w-full max-sm:w-64 max-sm:absolute max-sm:top-16 max-sm:mx-2 z-50"> -->
       <ul
-        class="flex flex-col p-4 border border-gray-100 rounded-lg bg-gray-50 max-sm:absolute max-sm:top-14 max-sm:left-2 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
+        class="flex flex-col p-4 border border-gray-100 rounded-lg bg-gray-50 z-50 max-sm:absolute max-sm:top-14 max-sm:left-2 md:flex-row md:space-x-8 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
       >
         <li class="max-sm:my-2">
           <a
@@ -99,7 +96,7 @@
 
     <form class="relative flex-none flex justify-self-end mr-2" role="search">
       <label for="simple-search" class="sr-only">검색</label>
-      <div class="flex justify-end md:w-72">
+      <div class="flex justify-end">
         {#if !searchToggle}
           <div class="flex-initial inset-y-0 items-center pl-3">
             <button class="pt-1 pr-2" on:click|preventDefault={startSearch}>
@@ -121,7 +118,7 @@
             on:keyup={(e) => (searchTerm = e.target.value)}
             type="text"
             id="simple-search"
-            class="absolute w-64 top-0 right-10 border-b-2 text-gray-900 text-sm focus:outline-none focus:border-b-indigo-500 p-1 pl-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500"
+            class="absolute top-0 right-10 border-b-2 text-gray-900 text-sm focus:outline-none focus:border-b-indigo-500 p-1 pl-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500"
             placeholder="Search"
             required
           />

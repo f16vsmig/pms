@@ -1,15 +1,7 @@
-<div class="h-screen">
-  <div class="navbar">
-    <slot name="navbar" />
-  </div>
-
-  <div class="content">
-    <slot name="content" />
-  </div>
+<div class="navbar">
+  <slot name="navbar" />
 </div>
 
-<style>
-  div.content {
-    height: calc(100vh - 52px);
-  }
-</style>
+<div class="content h-[calc(100%-48px)] md:h-[calc(100%-52px)]">
+  <slot name="content" />
+</div>

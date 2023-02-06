@@ -368,9 +368,9 @@
       {/each}
     </div>
 
-    <div class="w-full flex py-3 fixed bottom-0 border-t-2 bg-white">
+    <div class="mapBtnGroup w-full flex pt-3 fixed bottom-0 border-t-2 bg-white">
       <div class="w-1/2 text-center">
-        <a use:link href="/sites" class="w-3"
+        <a use:link href="/sites" class="w-3 mb-3"
           ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="block w-6 h-6 mx-auto pointer-events-none">
             <path
               stroke-linecap="round"
@@ -382,7 +382,7 @@
       </div>
 
       <div class="w-1/2 text-center">
-        <a use:link href="/map" class="w-3"
+        <a use:link href="/sites/map" class="w-3 mb-3"
           ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="block w-6 h-6 mx-auto pointer-events-none">
             <path
               stroke-linecap="round"
@@ -395,3 +395,9 @@
     </div>
   </div>
 </Atype>
+
+<style>
+  div.mapBtnGroup {
+    padding-bottom: calc(env(safe-area-inset-bottom) + 0.75rem);
+  }
+</style>

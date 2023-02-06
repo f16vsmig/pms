@@ -914,7 +914,7 @@
 </script>
 
 <div class="h-full relative">
-  <div class="flex-col absolute top-5 left-5 w-80 rounded-md z-50" style="background-color: rgba(255,255,255,0.93)">
+  <div class="flex-col absolute max-sm:top-16 max-sm:left-3 md:top-5 md:left-5 w-80 rounded-md z-10" style="background-color: rgba(255,255,255,0.93)">
     <div class="px-5 pt-5">
       <h6 class="text-sm text-slate-500">현재시각 14:30 PM</h6>
       <h5 class="text-3xl tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-emerald-600">3,500 <span class="text-lg text-slate-500">kW</span></h5>
@@ -997,7 +997,8 @@
     {/if}
   </div>
 
-  <div class="inline-flex absolute top-5 z-50" style="left:390px;">
+  <!-- 필터 영역 -->
+  <div class="inline-flex absolute z-10 max-sm:top-4 max-sm:left-3 md:top-5 md:left-96">
     <!-- vpp 선택 드롭다운 -->
     <div class="relative inline-flex items-center">
       <div class="relative">
@@ -1129,10 +1130,11 @@
   </div>
 
   <div class="h-full relative" bind:this={mapContainer}>
+    <!-- 발전소리스트 오픈 -->
     {#if !modal}
       <button
         type="button"
-        class="openModal rounded-md absolute top-5 right-5 p-1.5 z-50"
+        class="openModal rounded-md absolute p-1.5 z-10 top-3 right-5"
         on:click={() => {
           modal = true;
           siteListModal = true;
@@ -1153,7 +1155,18 @@
       <RightSideModal>
         <div slot="content" class="flex flex-col relative">
           {#if siteListModal}
-            <h3 class="mb-3">발전소 리스트</h3>
+            <div class="flex justify-between px-2 mb-5">
+              <h3>발전소 리스트</h3>
+              <button
+                on:click={() => {
+                  modal = false;
+                }}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 pointer-events-none">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
             {#each vppDataQuery.site as site}
               <button
                 class="grow py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
@@ -1237,9 +1250,11 @@
           {/if}
         </div>
       </RightSideModal>
+
+      <!-- 모달 닫기 버튼 -->
       <button
         type="button"
-        class="modalCloseBtn rounded-l-md"
+        class="modalCloseBtn rounded-l-md max-sm:hidden md:fixed md:right-1/3"
         on:click={() => {
           modal = false;
         }}
@@ -1257,46 +1272,71 @@
       </button>
     {/if}
 
-    {#if $roadVeiwBtnUrl != ""}
+    <!-- 지도 전환 버튼 -->
+    <div class="mapBtnGroup w-full flex pt-3 fixed bottom-0 border-t-2 bg-white z-50">
+      <div class="w-1/2 text-center">
+        <a use:link href="/sites" class="w-3"
+          ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="block w-6 h-6 mx-auto pointer-events-none">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+            />
+          </svg>
+        </a>
+      </div>
+
+      <div class="w-1/2 text-center">
+        <a use:link href="/sites/map" class="w-3"
+          ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="block w-6 h-6 mx-auto pointer-events-none">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z"
+            />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- {#if $roadVeiwBtnUrl != ""}
       <div class="roadview-btn-wrapper">
         <RoadVeiwBtn url={$roadVeiwBtnUrl} />
       </div>
-    {/if}
-
-    <div class="map-type-btn-wrapper">
-      <MapTypeBtn on:mapType={setMapType} />
-    </div>
+    {/if} -->
   </div>
 </div>
 
 <style>
-  .roadview-btn-wrapper {
+  /* .roadview-btn-wrapper {
     position: absolute;
     left: calc(50% - 90px);
     bottom: 10px;
     width: 48px;
     height: 42px;
     z-index: 10;
-  }
+  } */
 
-  .map-type-btn-wrapper {
+  /* .map-type-btn-wrapper {
     position: absolute;
     bottom: 10px;
     left: calc(50% - 21px);
     z-index: 10;
-  }
+  } */
 
   button.openModal {
-    background-color: rgba(255, 255, 255, 0.93);
+    background-color: rgba(255, 255, 255);
   }
 
   button.modalCloseBtn {
-    position: fixed;
-    background-color: rgba(255, 255, 255, 0.93);
+    background-color: rgba(255, 255, 255);
     top: calc(50% - 25px);
-    right: 500px;
     width: 20px;
     height: 50px;
     z-index: 999;
+  }
+
+  div.mapBtnGroup {
+    padding-bottom: calc(env(safe-area-inset-bottom) + 0.75rem);
   }
 </style>
