@@ -3,10 +3,13 @@
     <slot name="navbar" />
   </div>
 
-  <div class="">
+  <div class="content">
     <slot name="content" />
   </div>
 </div>
 
 <style>
+  div.content {
+    height: calc(100vh - 52px);
+  }
 </style>
