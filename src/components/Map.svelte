@@ -913,7 +913,7 @@
   // });
 </script>
 
-<div class="h-full relative">
+<div class="max-sm:h-[calc(100%-50px)] md:h-full relative">
   <div class="flex-col absolute max-sm:top-16 max-sm:left-3 md:top-5 md:left-5 w-80 rounded-md z-10" style="background-color: rgba(255,255,255,0.93)">
     <div class="px-5 pt-5">
       <h6 class="text-sm text-slate-500">현재시각 14:30 PM</h6>

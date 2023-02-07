@@ -278,7 +278,7 @@
   <Navbar slot="navbar" />
 
   <div slot="content">
-    <div class="flex max-sm:flex-col-reverse justify-between my-4 max-sm:px-3 md:px-10">
+    <div class="flex justify-between max-sm:flex-col-reverse my-4 max-sm:px-3 md:px-10">
       <div class="sm:flex-auto md:flex-none md:w-96">
         <h3 class="text-lg max-sm:pt-5">
           <span class="text-red-700">{siteList.data.length}</span>개의 자산이 있습니다.
