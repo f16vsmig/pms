@@ -347,7 +347,7 @@
       {/if}
     </div>
 
-    <div class="flex flex-col md:flex-row md:flex-wrap px-0 md:px-5">
+    <div class="flex flex-col md:flex-row md:flex-wrap px-0 md:px-5 md:pb-24">
       {#each siteList.data as site, i}
         {#if searchTerm == "" || site.name.includes(searchTerm) || site.address.includes(searchTerm) || site.owner.includes(searchTerm)}
           <a use:link href={"/pop/sites/" + site.id} class="flex-col mb-5 bg-white border rounded-lg shadow-md md:flex-row md:w-96 md:mx-5 hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
@@ -359,9 +359,9 @@
             </div>
 
             <div class="flex flex-col p-4">
-              <h5 class="mb-1 md:text-3xl tracking-tight font-light">서울특별시 동작구 매봉로99</h5>
-              <h5 class="mb-1 md:text-3xl tracking-tight font-light">B5F / 12F</h5>
-              <h5 class="mb-1 md:text-3xl tracking-tight font-light">3,200 m2</h5>
+              <h5 class="mb-1 md:text-xl tracking-tight font-light">서울특별시 동작구 매봉로99</h5>
+              <h5 class="mb-1 md:text-xl tracking-tight font-light">B5F / 12F</h5>
+              <h5 class="mb-1 md:text-xl tracking-tight font-light">3,200 m2</h5>
             </div>
           </a>
         {/if}
