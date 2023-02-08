@@ -12,8 +12,8 @@ import Signup from "./pages/Signup.svelte";
 const routes = {
   "/": Dashboard,
   "/home": Dashboard,
-  "/sites": Sites,
-  "/sites/map": Map,
+  // "/sites": Sites,
+  "/map": Map,
   "/about": About,
   "/login": Login,
   "/signup": Signup,

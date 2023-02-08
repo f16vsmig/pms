@@ -42,7 +42,7 @@
   <div class="flex items-center justify-between">
     <button
       type="button"
-      class="flex-none items-center p-2 mt-2 ml-2 text-sm rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+      class="flex-none items-center p-2 my-1 ml-2 text-sm rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
       on:click={() => (open = !open)}
     >
       <span class="sr-only">Open main menu</span>
@@ -76,8 +76,8 @@
         <li class="max-sm:my-2">
           <a
             use:link
-            href="/sites"
-            class="{$location === '/sites'
+            href="/map"
+            class="{$location === '/map'
               ? 'active'
               : ''} flex-initial py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">자산목록</a
           >
@@ -118,7 +118,7 @@
             on:keyup={(e) => (searchTerm = e.target.value)}
             type="text"
             id="simple-search"
-            class="absolute top-0 right-10 border-b-2 text-gray-900 text-sm focus:outline-none focus:border-b-indigo-500 p-1 pl-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500"
+            class="absolute top-0 right-10 border-b-2 rounded-none max-sm:w-64 text-gray-900 text-sm focus:outline-none focus:border-b-indigo-500 p-1 pl-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500"
             placeholder="Search"
             required
           />
