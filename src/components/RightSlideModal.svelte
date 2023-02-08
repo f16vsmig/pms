@@ -8,7 +8,7 @@
 </script>
 
 <div
-  class="modal-container z-10 max-sm:w-full md:w-1/3"
+  class="modal-container z-50 max-sm:w-full md:w-1/3"
   bind:this={rightSideModal}
   on:scroll={() => {
     rightSideModalScrollTop = rightSideModal.scrollTop;

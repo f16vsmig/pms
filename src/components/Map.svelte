@@ -914,6 +914,7 @@
   // });
 
   let realtimeToggle = true;
+  let searchTerm = "";
 </script>
 
 <div class="max-sm:h-[calc(100%-50px)] md:h-full relative">
@@ -1201,12 +1202,29 @@
               </button>
             </div>
             {#each vppDataQuery.site as site}
-              <button
-                class="grow py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
-                on:click={() => onSiteModal(site)}
-              >
-                {site.name}
-              </button>
+              <div class="flex flex-col md:flex-row md:flex-wrap px-0 md:px-5">
+                {#if searchTerm == "" || site.name.includes(searchTerm) || site.address.includes(searchTerm) || site.owner.includes(searchTerm)}
+                  <button
+                    on:click={() => {
+                      siteModal = true;
+                    }}
+                    class="flex-col mb-5 bg-white border rounded-lg shadow-md md:w-full md:flex-row md:mx-5 hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+                  >
+                    <div class="flex justify-between p-4 leading-normal">
+                      <h5 class="text-lg md:text-2xl tracking-tight text-gray-900 dark:text-white {searchTerm != '' && site.name.includes(searchTerm) ? 'text-red-500' : ''}">
+                        {site.name}
+                      </h5>
+                      <span class="font-normal dark:text-gray-400 {searchTerm != '' && site.address.includes(searchTerm) ? 'text-red-500' : 'text-gray-600'}">{site.owner}</span>
+                    </div>
+
+                    <div class="flex flex-col p-4">
+                      <h5 class="mb-1 md:text-xl text-start tracking-tight font-light">서울특별시 동작구 매봉로99</h5>
+                      <h5 class="mb-1 md:text-xl text-start tracking-tight font-light">B5F / 12F</h5>
+                      <h5 class="mb-1 md:text-xl text-start tracking-tight font-light">3,200 m2</h5>
+                    </div>
+                  </button>
+                {/if}
+              </div>
             {/each}
           {/if}
 
