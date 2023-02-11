@@ -8,27 +8,36 @@
 
   let floorAreaArr = {};
 
-  function floorTotalArea() {
+  function floorTotalArea(pk) {
+    let floorArea = {};
+    console.log("brflroulninfo : ", brFlrOulnInfo);
     for (let i = 0; i < brFlrOulnInfo.length; i++) {
       let info = brFlrOulnInfo[i];
-      if (i == 0 || info.flrNoNm != brFlrOulnInfo[i - 1].flrNoNm) {
-        floorAreaArr[info.flrNoNm] = info.area;
-      } else {
-        floorAreaArr[info.flrNoNm] = floorAreaArr[info.flrNoNm] + info.area;
+      if ((i == 0 || info.flrNoNm != brFlrOulnInfo[i - 1].flrNoNm) && pk == info.mgmBldrgstPk) {
+        console.log("info1:", info);
+        console.log("info1:", info, info.area);
+        floorArea[info.flrNoNm] = info.area;
+      } else if (pk == info.mgmBldrgstPk) {
+        console.log("info2:", info, info.area);
+        floorArea[info.flrNoNm] = floorArea[info.flrNoNm] ? floorArea[info.flrNoNm] + info.area : info.area;
       }
     }
-    return;
+    console.log("fff:", floorArea);
+    return floorArea;
   }
 
-  onMount(() => {
-    floorTotalArea();
-  });
+  $: floorAreaArr = floorTotalArea($mgmBldrgstPk);
+
+  // onMount(() => {
+  // floorTotalArea($mgmBldrgstPk);
+  // console.log("floorAreaArr : ", floorAreaArr);
+  // });
 </script>
 
 <div class="flex-col flex-wrap px-2 mb-4">
   {#each brFlrOulnInfo as fl, id}
     {#if fl.mgmBldrgstPk == $mgmBldrgstPk}
-      {#if id == 0 || fl.flrNoNm != brFlrOulnInfo[id - 1].flrNoNm}
+      {#if id == 0 || fl.flrNoNm != brFlrOulnInfo[id - 1].flrNoNm || fl.mgmBldrgstPk != brFlrOulnInfo[id - 1].mgmBldrgstPk}
         <div class="grow mt-3 px-1 text-sm flex justify-between font-light">
           <span class="flex-none me-3">{fl.flrNoNm}</span>
           <span class="flex-none me-1 text-muted flex text-sm"
@@ -39,8 +48,8 @@
                 d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0l-5.571 3-5.571-3"
               />
             </svg>
-            {addComma(floorAreaArr[fl.flrNoNm])} m2</span
-          >
+            {addComma(floorAreaArr[fl.flrNoNm])} m2
+          </span>
         </div>
       {/if}
       <div class="flex-none fw-light px-1 my-1">

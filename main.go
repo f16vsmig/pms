@@ -37,7 +37,7 @@ func main() {
 	// CORS middleware handler
 	// app.Use(cors.New())
 	app.Use(cors.New(cors.Config{
-		AllowOrigins: "https://gomunamu.gq, http://apis.data.go.kr",
+		AllowOrigins: "http://apis.data.go.kr",
 		AllowHeaders: "Origin, Content-Type, Accept",
 	}))
 
