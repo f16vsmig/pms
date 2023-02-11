@@ -35,7 +35,11 @@ func main() {
 	})
 
 	// CORS middleware handler
-	app.Use(cors.New())
+	// app.Use(cors.New())
+	app.Use(cors.New(cors.Config{
+		AllowOrigins: "http://apis.data.go.kr",
+		AllowHeaders: "Origin, Content-Type, Accept",
+	}))
 
 	debug := false
 	for _, v := range os.Args {

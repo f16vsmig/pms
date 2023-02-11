@@ -38,7 +38,7 @@
   };
 </script>
 
-<nav class="dark:bg-gray-900 z-50">
+<nav class="dark:bg-gray-900 border-b-2 z-50">
   <div class="flex items-center justify-between">
     <button
       type="button"
@@ -57,7 +57,7 @@
       {/if}
     </button>
 
-    <h1 class="flex-none p-1 text-lg md:ml-8 dark:text-white">자산관리시스템</h1>
+    <h1 class="flex-none p-1 text-lg md:ml-8 dark:text-white">건축물대장</h1>
 
     {#if open}
       <!-- <div class="w-full max-sm:w-64 max-sm:absolute max-sm:top-16 max-sm:mx-2 z-50"> -->
@@ -70,16 +70,7 @@
             href="/"
             class="{$location === '/'
               ? 'active'
-              : ''} flex-initial py-2 pl-3 pr-4 max-sm:rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 dark:text-white md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Home</a
-          >
-        </li>
-        <li class="max-sm:my-2">
-          <a
-            use:link
-            href="/map"
-            class="{$location === '/map'
-              ? 'active'
-              : ''} flex-initial py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">자산목록</a
+              : ''} flex-initial py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">지도보기</a
           >
         </li>
         <li class="max-sm:my-2">

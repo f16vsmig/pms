@@ -27,6 +27,142 @@
   import Bubble from "../assets/chart/Bubble.svelte";
 
   let mapContainer;
+  let data = [
+    {
+      id: 1,
+      address: "서울특별시 중구 세종대로7길 25",
+      jibun: "서울특별시 중구 순화동 175",
+      name: "에스원 본사",
+      owner: "코람코",
+      todos: [
+        {
+          id: 12,
+          title: "3층 천장 누수 발생",
+          status: 1,
+        },
+        {
+          id: 13,
+          title: "기계실 바닥 보수",
+          status: 1,
+        },
+      ],
+    },
+    {
+      id: 2,
+      address: "서울특별시 종로구 종로 33",
+      jibun: "서울특별시 종로구 청진동 70",
+      name: "그랑서울",
+      owner: "코람코",
+      todos: [
+        {
+          id: 15,
+          title: "본죽 천장 누수 발생",
+          status: 1,
+        },
+        {
+          id: 21,
+          title: "로비 회전문 고장",
+          status: 1,
+        },
+      ],
+    },
+    {
+      id: 3,
+      address: "서울 서초구 서초대로74길 11",
+      jibun: "서울특별시 서초구 서초동 1320-10",
+      name: "삼성전자 서초사옥",
+      owner: "코람코",
+      todos: [],
+    },
+    {
+      id: 4,
+      address: "부산광역시 해운대구 달맞이길 30",
+      jibun: "부산광역시 해운대구 중동 1829",
+      name: "엘시티",
+      owner: "코람코",
+      todos: [],
+    },
+    {
+      id: 5,
+      address: "광주광역시 광산구 상무대로 420-25",
+      jibun: "광주광역시 광산구 신촌동 698-9",
+      name: "광주공항",
+      owner: "코람코",
+      todos: [],
+    },
+    {
+      id: 6,
+      address: "강원도 정선군 사북읍 하이원길 265",
+      jibun: "강원도 정선군 사북읍 사북리 424",
+      name: "강원랜드",
+      owner: "코람코",
+      todos: [],
+    },
+    {
+      id: 7,
+      address: "대전광역시 유성구 엑스포로 1",
+      jibun: "대전광역시 유성구 도룡동 3-1",
+      name: "대전신세계백화점",
+      owner: "코람코",
+      todos: [],
+    },
+    {
+      id: 8,
+      address: "서울특별시 강서구 하늘길 112",
+      jibun: "서울특별시 강서구 공항동 1373",
+      name: "김포공항 국내선",
+      owner: "코람코",
+      todos: [],
+    },
+    {
+      id: 9,
+      address: "대구광역시 북구 호암로 51",
+      jibun: "대구광역시 북구 침산동 1757",
+      name: "대구창조센터",
+      owner: "코람코",
+      todos: [],
+    },
+    {
+      id: 10,
+      address: "경상남도 거제시 계룡로 125",
+      jibun: "경상남도 거제시 고현동 717",
+      name: "거제시청",
+      owner: "코람코",
+      todos: [],
+    },
+    {
+      id: 11,
+      address: "제주특별자치도 제주시 첨단로 242",
+      jibun: "제주특별자치도 제주시 영평동 2181",
+      name: "제주스페이스닷원",
+      owner: "코람코",
+      todos: [],
+    },
+    {
+      id: 12,
+      address: "제주특별자치도 제주시 광양9길 10",
+      jibun: "제주특별자치도 제주시 이도이동 1176-1",
+      name: "제주시청",
+      owner: "코람코",
+      todos: [],
+    },
+    {
+      id: 13,
+      address: "경기도 용인시 수지구 죽전로 152",
+      jibun: "경기도 용인시 수지구 죽전동 1491",
+      name: "단국대학교",
+      owner: "코람코",
+      todos: [],
+    },
+    {
+      id: 14,
+      address: "서울특별시 동작구 흑석로 84",
+      jibun: "서울특별시 동작구 흑석동 221",
+      name: "중앙대학교",
+      owner: "코람코",
+      todos: [],
+    },
+  ];
 
   let kakaomap;
   let kakaomapCenter;
@@ -734,15 +870,15 @@
   //////////
   function setMarker(elem, coord) {
     let coords = new kakao.maps.LatLng(coord[0].y, coord[0].x);
-    let imageSrc = "/public/icon/pv.png",
-      imageSize = new kakao.maps.Size(24, 24),
-      imageOption = { offset: new kakao.maps.Point(16, 28) },
-      markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
+    // let imageSrc = "/public/icon/pv.png",
+    //   imageSize = new kakao.maps.Size(24, 24),
+    //   imageOption = { offset: new kakao.maps.Point(16, 28) },
+    // markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
 
     let marker = new kakao.maps.Marker({
       map: kakaomap,
-      title: elem.oid,
-      image: markerImage,
+      title: elem.id,
+      // image: markerImage,
       position: coords,
       clickable: true,
     });
@@ -887,9 +1023,10 @@
       level: 12,
     };
     kakaomap = new kakao.maps.Map(mapContainer, mapOption);
-    kakaomap.setMapTypeId(kakao.maps.MapTypeId.SKYVIEW);
+    // kakaomap.setMapTypeId(kakao.maps.MapTypeId.SKYVIEW);
 
-    vppDataQuery.site.forEach(Pin);
+    // vppDataQuery.site.forEach(Pin);
+    data.forEach(Pin);
 
     let clusterer = new kakao.maps.MarkerClusterer({
       map: kakaomap,
@@ -908,263 +1045,13 @@
     });
   });
 
-  // onDestroy(() => {
-  //   map.set();
-  //   console.log("gg", map);
-  // });
-
   let realtimeToggle = true;
   let searchTerm = "";
 </script>
 
 <div class="max-sm:h-[calc(100%-50px)] md:h-full relative">
-  {#if $mobileView}
-    <button on:click={() => (realtimeToggle = !realtimeToggle)} class="absolute top-10 right-8 z-20 text-slate-500">
-      {#if realtimeToggle}
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.242 4.242L9.88 9.88"
-          />
-        </svg>
-      {:else}
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"
-          />
-          <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-        </svg>
-      {/if}
-    </button>
-  {/if}
-
-  {#if realtimeToggle}
-    <div class="flex-col absolute max-sm:w-full max-sm:top-8 max-sm:px-5 md:w-80 md:top-5 md:left-5 z-10">
-      <div class="flex-initial rounded-md" style="background-color: rgba(255,255,255,0.93)">
-        <div class="px-5 pt-5">
-          <h6 class="text-sm text-slate-500">2:30:43 PM</h6>
-          <h5 class="text-3xl tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-emerald-600">3,500 <span class="text-lg text-slate-500">kW</span></h5>
-        </div>
-
-        <div class="flex-none text-center self-end">
-          <button type="button" class="openModa bg-transparent rounded-lg z-50" on:click={() => (infoModal = !infoModal)}>
-            {#if infoModal}
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
-              </svg>
-            {:else if !infoModal}
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-              </svg>
-            {/if}
-          </button>
-        </div>
-
-        {#if infoModal}
-          <div class="h-36">
-            <Line />
-          </div>
-          <div class="flex">
-            <div class="basis-1/2 p-5">
-              <div class="inline-flex items-center w-full mb-2.5">
-                <svg width="22" height="22" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M0.4 12.8C0.1792 12.8 0 12.6208 0 12.4V0.4C0 0.1792 0.1792 0 0.4 0H15.6C15.8208 0 16 0.1792 16 0.4V12.4C16 12.6208 15.8208 12.8 15.6 12.8H8.8V14.4H12.4C12.6208 14.4 12.8 14.5792 12.8 14.8V15.6C12.8 15.8208 12.6208 16 12.4 16H3.6C3.3792 16 3.2 15.8208 3.2 15.6V14.8C3.2 14.5792 3.3792 14.4 3.6 14.4H7.2V12.8H0.4ZM6.96018 7.19792H1.84018C1.72658 7.19792 1.63138 7.27712 1.60658 7.38272L1.60018 7.43792V10.9579C1.60018 11.0715 1.67938 11.1667 1.78498 11.1915L1.84018 11.1979H6.96018C7.07378 11.1979 7.16898 11.1187 7.19378 11.0131L7.20018 10.9579V7.43792C7.20018 7.30512 7.09298 7.19792 6.96018 7.19792ZM14.1599 7.19792H9.03994C8.92634 7.19792 8.83114 7.27712 8.80634 7.38272L8.79994 7.43792V10.9579C8.79994 11.0715 8.87914 11.1667 8.98474 11.1915L9.03994 11.1979H14.1599C14.2735 11.1979 14.3687 11.1187 14.3935 11.0131L14.3999 10.9579V7.43792C14.3999 7.30512 14.2927 7.19792 14.1599 7.19792ZM6.96018 1.6H1.84018C1.72658 1.6 1.63138 1.6792 1.60658 1.7848L1.60018 1.84V5.36C1.60018 5.4736 1.67938 5.5688 1.78498 5.5936L1.84018 5.6H6.96018C7.07378 5.6 7.16898 5.5208 7.19378 5.4152L7.20018 5.36V1.84C7.20018 1.7072 7.09298 1.6 6.96018 1.6ZM14.1599 1.6H9.03994C8.92634 1.6 8.83114 1.6792 8.80634 1.7848L8.79994 1.84V5.36C8.79994 5.4736 8.87914 5.5688 8.98474 5.5936L9.03994 5.6H14.1599C14.2735 5.6 14.3687 5.5208 14.3935 5.4152L14.3999 5.36V1.84C14.3999 1.7072 14.2927 1.6 14.1599 1.6Z"
-                    fill="#5882FA"
-                  />
-                </svg>
-                <span class="flex-none ml-4 whitespace-nowrap">1500 kW</span>
-              </div>
-
-              <div class="inline-flex items-center w-full mb-3">
-                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M11.5095 0.333328C11.7909 0.333328 12.0192 0.555592 12.0192 0.829452V7.29891C13.0641 6.34238 14.5381 5.7639 16.1498 5.79069C19.1437 5.84229 21.5912 7.96868 21.6646 10.6408L21.6666 10.8472L21.6575 11.3433C21.6534 11.5864 21.4689 11.7859 21.2303 11.8236L21.1386 11.8305L13.3577 11.6975C14.7032 12.6799 15.5871 14.3339 15.5871 16.2093C15.5871 19.1483 13.4168 21.5446 10.7001 21.6617L10.4901 21.6667H9.98045C9.72969 21.6667 9.52173 21.491 9.47892 21.2598L9.47076 21.1705V14.5899C8.49216 15.3103 7.23526 15.736 5.8489 15.7132C2.69086 15.6586 0.285116 13.297 0.334046 10.5148L0.341182 10.1606C0.346279 9.88669 0.578698 9.6684 0.860047 9.67435L7.52884 9.78747C6.52781 8.79026 5.90293 7.36837 5.90293 5.79069C5.90293 2.77624 8.1843 0.333328 10.9998 0.333328H11.5095ZM11.5095 13.1202V19.2969L11.7062 19.2146C12.6767 18.7631 13.3862 17.7877 13.5238 16.6218L13.5421 16.4015L13.5482 16.209C13.5482 14.8556 12.7806 13.6947 11.6879 13.1956L11.5095 13.1202ZM2.66844 11.4053L2.68373 11.4717C3.06294 12.9303 4.38202 13.9861 5.87847 14.0119L6.05788 14.0099C7.48196 13.9553 8.74905 12.969 9.1619 11.5819L9.18025 11.5164L2.66844 11.4053ZM16.1141 7.77393C14.6768 7.75012 13.4454 8.43576 12.8592 9.42503L12.7715 9.58379L12.7165 9.70088L19.4393 9.81499L19.3884 9.69592C18.9337 8.71161 17.8674 7.96146 16.5534 7.8037L16.319 7.78286L16.1141 7.77393ZM9.98048 8.87782V2.70107L9.96825 2.70603C8.78475 3.16048 7.94172 4.36904 7.94172 5.78994L7.94681 5.98244C8.01511 7.24458 8.75212 8.31521 9.78272 8.79546L9.98048 8.87782Z"
-                    fill="#5882FA"
-                  />
-                </svg>
-                <span class="ml-4 whitespace-nowrap">3500 kW</span>
-              </div>
-            </div>
-
-            <div class="basis-1/2 p-5 items-center">
-              <div class="inline-flex items-center w-full mb-2">
-                <svg width="22" height="11" viewBox="0 0 20 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M16.67 2.23371e-06C17.4 2.26562e-06 18 0.600002 18 1.33L18 3L20 3L20 7L18 7L18 8.67C18 9.4 17.4 10 16.67 10L1.33 10C0.976143 9.99802 0.637492 9.85588 0.388211 9.60473C0.138929 9.35357 -0.000663569 9.01386 3.43616e-06 8.66L3.75656e-06 1.33C0.00198743 0.976142 0.14412 0.637489 0.395276 0.388208C0.646431 0.138926 0.98614 -0.000665441 1.34 1.56362e-06L16.67 2.23371e-06ZM15 2.5L2.5 2.5L2.5 7.5L15 7.5L15 2.5Z"
-                    fill="#ED8987"
-                  />
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M4.375 3.75L5.625 3.75L5.625 6.25L4.375 6.25L4.375 3.75Z" fill="#ED8987" stroke="#ED8987" />
-                </svg>
-                <span class="ml-4 whitespace-nowrap">2300 kW</span>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FF4000" class="w-4 h-4">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 6.75L12 3m0 0l3.75 3.75M12 3v18" />
-                </svg>
-              </div>
-
-              <div class="inline-flex items-center w-full mb-4">
-                <svg width="22" height="11" viewBox="0 0 20 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M18 8.67L18 7L20 7L20 3L18 3L18 1.33C18 0.6 17.4 -1.1365e-07 16.67 -1.45559e-07L1.34 -8.15655e-07C0.599998 -8.48001e-07 -1.93358e-06 0.599999 -1.96548e-06 1.33L-2.28589e-06 8.66C-0.000669873 9.01386 0.138925 9.35357 0.388206 9.60473C0.637487 9.85588 0.976139 9.99802 1.33 10L16.67 10C17.4 10 18 9.4 18 8.67ZM2 4L7.5 4L7.5 2L15 6L9.5 6L9.5 8L2 4Z"
-                    fill="green"
-                  />
-                </svg>
-                <span class="ml-4 whitespace-nowrap">1300 kW</span>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#298A08" class="w-4 h-4">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25L12 21m0 0l-3.75-3.75M12 21V3" />
-                </svg>
-              </div>
-            </div>
-          </div>
-        {/if}
-      </div>
-    </div>
-  {/if}
-
-  {#if !$mobileView}
-    <!-- 필터 영역 -->
-    <div class="inline-flex absolute z-10 max-sm:top-4 max-sm:left-3 md:top-5 md:left-96">
-      <!-- vpp 선택 드롭다운 -->
-      <div class="relative inline-flex items-center">
-        <div class="relative">
-          <button
-            id="dropdownBgHoverButton1"
-            data-dropdown-toggle="dropdownBgHover1"
-            class="inline-flex py-1.5 px-3 mr-3 text-xs font-medium text-gray-900 focus:outline-none bg-white rounded-2xl border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
-            type="button"
-            on:click|stopPropagation={() => {
-              vppDropdown = !vppDropdown;
-              resourceDropdown = false;
-              infoDropdown = false;
-            }}
-            >VPP <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
-          </button>
-
-          {#if vppDropdown}
-            <div use:clickOutside={() => (vppDropdown = false)} id="dropdownBgHover1" class="absolute top-7 z-10 w-40 mt-2 bg-white rounded-md shadow dark:bg-gray-700">
-              <ul class="p-3 space-y-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownBgHoverButton1">
-                {#each vppList as vpp, id}
-                  <li>
-                    <div class="flex px-4 py-2 rounded-2lx items-center hover:bg-gray-100 dark:hover:bg-gray-600">
-                      <input
-                        id="vpp-radio-{id}"
-                        type="radio"
-                        value={vpp.vid}
-                        class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
-                        bind:group={selectedVids}
-                        on:change={hideMarkerByOid}
-                      />
-                      <label for="vpp-radio-{id}" class="ml-2 w-full text-sm text-start font-medium text-gray-900 dark:text-gray-300">{vpp.vname}</label>
-                    </div>
-                  </li>
-                {/each}
-              </ul>
-            </div>
-          {/if}
-        </div>
-
-        <div class="relative">
-          <!-- 자원 선택 드롭다운 -->
-          <button
-            id="dropdownBgHoverButton"
-            data-dropdown-toggle="dropdownBgHover"
-            class="inline-flex items-center py-1.5 px-3 mr-3 text-xs font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
-            type="button"
-            on:click|stopPropagation={() => {
-              resourceDropdown = !resourceDropdown;
-              vppDropdown = false;
-              infoDropdown = false;
-            }}
-            >자원 <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg
-            ></button
-          >
-
-          {#if resourceDropdown}
-            <div use:clickOutside={() => (resourceDropdown = false)} id="dropdownBgHover1" class="absolute top-7 z-10 w-40 mt-2 bg-white rounded-md shadow dark:bg-gray-700">
-              <ul class="p-3 space-y-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownBgHoverButton1">
-                {#each resourceList as resource, id}
-                  <li>
-                    <div class="flex px-4 py-2 rounded-2lx items-center hover:bg-gray-100 dark:hover:bg-gray-600">
-                      <input
-                        id="resource-checkbox-{id}"
-                        type="checkbox"
-                        value={resource.rid}
-                        class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
-                        bind:group={selectedRids}
-                        on:change={hideMarkerByOid}
-                      />
-                      <label for="resource-checkbox-{id}" class="ml-2 w-full text-sm text-start font-medium text-gray-900 dark:text-gray-300">{resource.name}</label>
-                    </div>
-                  </li>
-                {/each}
-              </ul>
-            </div>
-          {/if}
-        </div>
-
-        <div class="relative">
-          <!-- 표시정보 선택 드롭다운 -->
-          <button
-            id="dropdownHelperRadioButton"
-            data-dropdown-toggle="dropdownHelperRadio"
-            class="inline-flex items-center py-1.5 px-3 mr-3 text-xs font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
-            type="button"
-            on:click|stopPropagation={() => {
-              infoDropdown = !infoDropdown;
-              vppDropdown = false;
-              resourceDropdown = false;
-            }}
-            >표시정보 <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
-              ><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg
-            ></button
-          >
-
-          {#if infoDropdown}
-            <div
-              use:clickOutside={() => (infoDropdown = false)}
-              id="dropdownHelperRadio"
-              class="absolute top-7 z-10 w-48 mt-2 bg-white rounded-md shadow dark:bg-gray-700"
-              data-popper-reference-hidden=""
-              data-popper-escaped=""
-              data-popper-placement="top"
-            >
-              <ul class="p-3 space-y-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHelperRadioButton">
-                {#each vppDataQuery.queryPrams as req, id}
-                  <li>
-                    <div class="flex p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                      <div class="flex items-center h-5">
-                        <input
-                          bind:group={infoRadio}
-                          id="info-radio-{id}"
-                          name="helper-radio"
-                          type="radio"
-                          value={req}
-                          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
-                        />
-                      </div>
-                      <div class="ml-2 text-sm">
-                        <label for="info-radio-{id}" class="font-medium text-gray-900 dark:text-gray-300">{reqObj[req]}</label>
-                      </div>
-                    </div>
-                  </li>
-                {/each}
-              </ul>
-            </div>
-          {/if}
-        </div>
-      </div>
-    </div>
-  {/if}
-
   <div class="h-full relative" bind:this={mapContainer}>
-    <!-- 발전소리스트 오픈 -->
+    <!-- 모달 오픈 -->
     {#if !modal && !$mobileView}
       <button
         type="button"
@@ -1190,7 +1077,7 @@
         <div slot="content" class="flex flex-col relative">
           {#if siteListModal}
             <div class="flex justify-between px-2 mb-5">
-              <h3>발전소 리스트</h3>
+              <h3>건축물대장 목록</h3>
               <button
                 on:click={() => {
                   modal = false;
@@ -1201,7 +1088,7 @@
                 </svg>
               </button>
             </div>
-            {#each vppDataQuery.site as site}
+            {#each data as site}
               <div class="flex flex-col md:flex-row md:flex-wrap px-0 md:px-5">
                 {#if searchTerm == "" || site.name.includes(searchTerm) || site.address.includes(searchTerm) || site.owner.includes(searchTerm)}
                   <button
@@ -1229,27 +1116,21 @@
           {/if}
 
           {#if siteModal}
-            <div class="text-end">
+            <div class="text-end p-3 md:p-5">
               <button
                 on:click={() => {
+                  modal = false;
                   siteModal = false;
-                  siteListModal = true;
+                  siteListModal = false;
                 }}
               >
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
             </div>
-            <h3 class="grow mt-3">
-              {siteInfo.name}
-              <span class="ms-3"><a class="fs-6 fw-light text-decoration-none" use:link href={"/pop/sites/" + siteInfo.sid}>자세히 <i class="fa-solid fa-angle-right" /></a></span>
-            </h3>
-            <h6>
-              {siteInfo.address}
-            </h6>
 
-            <div class="grow my-2 p-2">
+            <!-- <div class="grow my-2 p-2">
               <h5>진행중인 이슈 <span class="text-danger">{siteInfo.todos.length}</span></h5>
               <table class="table table-hover">
                 {#if siteInfo.todos.length == 0 || !siteInfo.todos}
@@ -1265,45 +1146,21 @@
                   </tbody>
                 {/if}
               </table>
-            </div>
+            </div> -->
 
-            <div class="grow mb-2 p-2">
-              <Architecture />
+            <div class="grow">
+              <Architecture elem={siteInfo} />
             </div>
 
             <!-- <div class="row mb-2 p-2">
             <div class="col-12 border rounded p-3 mb-2"><WeatherDaily /></div>
           </div> -->
-
-            <div class="row mb-2 p-2">
-              <div class="col-12 border rounded p-3 mb-2 bg-white"><BarChart /></div>
-            </div>
-
-            <div class="row mb-2 p-2">
-              <div class="col-12 border rounded p-3 mb-2 bg-white"><Pie /></div>
-            </div>
-
-            <div class="row mb-2 p-2">
-              <div class="col-12 border rounded p-3 mb-2 bg-white"><Trend /></div>
-            </div>
-
-            <div class="row mb-2 p-2">
-              <div class="col-12 border rounded p-3 mb-2 bg-white"><CalendarChart /></div>
-            </div>
-
-            <div class="row mb-2 p-2">
-              <div class="col-12 border rounded p-3 mb-2 bg-white"><BubbleChart /></div>
-            </div>
-
-            <div class="row mb-2 p-2">
-              <div class="col-12 border rounded p-3 mb-2 bg-white"><ColumnChart /></div>
-            </div>
           {/if}
         </div>
       </RightSideModal>
 
       {#if !$mobileView}
-        <!-- 모달 닫기 버튼 -->
+        <!-- 모달 접기 버튼 -->
         <button
           type="button"
           class="modalCloseBtn rounded-l-md max-sm:hidden md:fixed md:right-1/3"
@@ -1331,28 +1188,33 @@
         <div class="w-1/2 text-center">
           <button
             on:click={() => {
-              modal = true;
-              siteListModal = true;
-              siteModal = false;
+              modal = false;
+              siteListModal = false;
             }}
-            class="w-6 {!modal ? '' : 'text-indigo-500'}"
+            class="w-6 {!siteListModal ? 'text-indigo-500' : ''}"
             ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="block w-6 h-6 mx-auto pointer-events-none">
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+                d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z"
               />
             </svg>
           </button>
         </div>
 
         <div class="w-1/2 text-center">
-          <button on:click={() => (modal = false)} class="w-6 {modal ? '' : 'text-indigo-500'}"
+          <button
+            on:click={() => {
+              modal = true;
+              siteListModal = true;
+              siteModal = false;
+            }}
+            class="w-6 {siteListModal ? 'text-indigo-500' : ''}"
             ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="block w-6 h-6 mx-auto pointer-events-none">
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z"
+                d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
               />
             </svg>
           </button>

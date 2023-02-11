@@ -1,6 +1,7 @@
 <script>
   import ArchitectureLayout from "./ArchitectureLayout.svelte";
   import StackPlan from "./ArchitectureStackplan.svelte";
+  import Loading from "../assets/etc/Loading.svelte";
   import { detailElem, mgmBldrgstPk } from "../store";
 
   let platGbCd = 0; // 0:대지 1:산 2:블록
@@ -24,6 +25,72 @@
       throw new Error("Error parsing XML");
     }
     return dom;
+  }
+
+  function parseXML(data) {
+    var xml, tmp;
+    if (!data || typeof data !== "string") {
+      return null;
+    }
+    try {
+      if (window.DOMParser) {
+        // Standard
+        tmp = new DOMParser();
+        xml = tmp.parseFromString(data, "text/xml");
+      } else {
+        // IE
+        xml = new ActiveXObject("Microsoft.XMLDOM");
+        xml.async = "false";
+        xml.loadXML(data);
+      }
+    } catch (e) {
+      xml = undefined;
+    }
+    if (!xml || !xml.documentElement || xml.getElementsByTagName("parsererror").length) {
+      throw new Error("Invalid XML: " + data);
+    }
+    // console.log("xml 변환 결과 : ", xml);
+    return xml;
+  }
+
+  function xmlToJson(xml) {
+    // Create the return object
+    var obj = {};
+
+    if (xml.nodeType == 1) {
+      // element
+      // do attributes
+      if (xml.attributes.length > 0) {
+        obj["@attributes"] = {};
+        for (var j = 0; j < xml.attributes.length; j++) {
+          var attribute = xml.attributes.item(j);
+          obj["@attributes"][attribute.nodeName] = attribute.nodeValue;
+        }
+      }
+    } else if (xml.nodeType == 3) {
+      // text
+      obj = xml.nodeValue;
+    }
+
+    // do children
+    if (xml.hasChildNodes()) {
+      for (var i = 0; i < xml.childNodes.length; i++) {
+        var item = xml.childNodes.item(i);
+        var nodeName = item.nodeName;
+        if (typeof obj[nodeName] == "undefined") {
+          obj[nodeName] = xmlToJson(item);
+        } else {
+          if (typeof obj[nodeName].push == "undefined") {
+            var old = obj[nodeName];
+            obj[nodeName] = [];
+            obj[nodeName].push(old);
+          }
+          obj[nodeName].push(xmlToJson(item));
+        }
+      }
+    }
+    // console.log("json 변환 결과 : ", obj);
+    return obj;
   }
 
   function isParseError(parsedDocument) {
@@ -125,12 +192,13 @@
         return resp.text();
       })
       .then((xmlStr) => {
-        return parseXml(xmlStr);
+        return parseXML(xmlStr);
       })
       .then((xml) => {
         return xml2json(xml);
       })
       .then((json) => {
+        console.log("json : ", json);
         return (brTitleInfo = json.response.body.items.item);
       })
       .catch((error) => {
@@ -140,7 +208,8 @@
 
   // 건축물대장 표제부 api
   async function getBrTitleInfo() {
-    let url = "/api/getBrTitleInfo";
+    // let url = "/api/getBrTitleInfo";
+    let url = "http://apis.data.go.kr/1613000/BldRgstService_v2/getBrTitleInfo";
     url += "?sigunguCd=" + sigunguCd;
     url += "&bjdongCd=" + bjdongCd;
     url += "&platGbCd=" + platGbCd;
@@ -148,20 +217,25 @@
     url += "&ji=" + ji;
     url += "&numOfRows=" + numOfRows;
     url += "&pageNo=" + pageNo;
+    url += "&serviceKey=" + apiKey;
 
     return fetch(url)
       .then((resp) => {
         return resp.text();
       })
       .then((xmlStr) => {
-        console.log(xmlStr);
-        return parseXml(xmlStr);
+        console.log("건축물대장xml : ", xmlStr);
+        // return parseXml(xmlStr);
+        return parseXML(xmlStr);
       })
       .then((xml) => {
+        console.log("건축물대장xml2 : ", xml);
+        // return xml2json(xml);
         return xml2json(xml);
       })
       .then((json) => {
         let data = json.response.body.items.item;
+        console.log("json : ", data);
         if (Array.isArray(data)) {
           return data.sort(sortACN("mgmBldrgstPk"));
         }
@@ -169,6 +243,7 @@
       })
       .then((data) => {
         brTitleInfo = data;
+        console.log("==", brTitleInfo);
         if (Array.isArray(data)) {
           return ($mgmBldrgstPk = data[0].mgmBldrgstPk);
         }
@@ -181,36 +256,46 @@
   }
 
   let promise;
+  export let elem;
   async function prepare(jibun) {
-    console.log("jibun", jibun, $detailElem);
+    console.log("jibun", jibun, elem);
     setBunJi(jibun);
     await getStanReginCd(jibun);
-    getBrTitleInfo();
+    await getBrTitleInfo();
     await getBrFlrOulnInfo();
 
     return;
   }
 
+  const apiKey = "GO8tFIo30%2BUG6NoXSzlVzxv2j8eQFigKu9a8RJ9qY47kAnl2u27pVjWIDlvlZ09Yo3NNJeyRt3UJovtQ5Z11ew%3D%3D";
+
   // 건물 층정보 api 조회
   async function getBrFlrOulnInfo() {
-    let url = "/api/getBrFlrOulnInfo";
+    // let url = "/api/getBrFlrOulnInfo"; // 내부 api
+    let url = "http://apis.data.go.kr/1613000/BldRgstService_v2/getBrFlrOulnInfo";
     url += "?sigunguCd=" + sigunguCd;
     url += "&bjdongCd=" + bjdongCd;
     url += "&bun=" + bun;
     url += "&ji=" + ji;
     url += "&numOfRows=" + "200";
+    url += "&serviceKey=" + apiKey;
+
+    console.log("건축물대장 api 요청 url : ", url);
 
     return fetch(url)
       .then((resp) => {
+        console.log("건축물대장 : ", resp);
         return resp.text();
       })
       .then((xmlStr) => {
-        return parseXml(xmlStr);
+        return parseXML(xmlStr);
       })
       .then((xml) => {
+        console.log("건축물대장xml : ", xml);
         return xml2json(xml);
       })
       .then((json) => {
+        console.log("건축물대장json : ", json);
         return json.response.body.items.item;
       })
       .then((data) => {
@@ -275,18 +360,24 @@
     let dong = jibun.replaceAll(jibunArr[jibunArr.length - 1], "");
 
     // 법정동 코드 호출을 위한 url 생성
-    let url = "/api/getStanReginCd";
+    // let url = "/api/getStanReginCd";
+    let url = "http://apis.data.go.kr/1741000/StanReginCd/getStanReginCdList";
     url += "?type=json";
     url += "&flag=Y";
     url += "&locatadd_nm=" + encodeURIComponent(dong);
+    url += "&serviceKey=" + apiKey;
+    console.log("법정동 api 요청 url : ", url);
 
     // url로 요청하고 json 반환
     return fetch(url)
       .then((resp) => {
+        console.log("법정동api : ", resp);
         return resp.json();
       })
       .then((code) => {
+        console.log("법정동api_code : ", code);
         let cd = code.StanReginCd[1].row[0];
+        console.log("법정동api_code : ", cd);
         sigunguCd = cd.sido_cd + cd.sgg_cd;
         bjdongCd = cd.umd_cd + cd.ri_cd;
         return;
@@ -311,15 +402,35 @@
     return;
   }
 
-  $: promise = prepare($detailElem.jibun);
+  let details;
+  let summary;
+
+  $: promise = prepare(elem.jibun);
 </script>
 
-<h5 class="mb-4">건물 정보</h5>
+<!-- <h5 class="mb-4">건물 정보</h5> -->
 {#await promise}
-  <p>Loading...</p>
+  <Loading />
 {:then}
   {#if Array.isArray(brTitleInfo)}
-    <nav aria-label="Page navigation example" style="position: absolute; top: 12px; right: 10px; max-width: 300px; overflow-x: auto;">
+    <details bind:this={details} class="relative px-3">
+      <summary bind:this={summary} class="mb-3 hover:text-indigo-600 cursor-pointer">건축물대장 번호 : {$mgmBldrgstPk}</summary>
+      <ul class="absolute top-full border-2 border-slate-600 rounded-sm p-3 bg-white max-h-96 w-5/6 overflow-auto z-20">
+        {#each brTitleInfo as d, id}
+          <li class="page-item {d.mgmBldrgstPk == $mgmBldrgstPk ? 'active' : ''} hover:text-indigo-600 cursor-pointer my-2">
+            <button
+              class="page-link"
+              on:click={() => {
+                $mgmBldrgstPk = d.mgmBldrgstPk;
+                details.open = false;
+              }}>{d.mgmBldrgstPk} {d.bldNm == "" ? "" : "(" + d.bldNm + ")"}</button
+            >
+          </li>
+        {/each}
+      </ul>
+    </details>
+
+    <!-- <nav aria-label="Page navigation example" style="position: absolute; top: 12px; right: 10px; max-width: 300px; overflow-x: auto;">
       <ul class="pagination pagination-sm">
         {#each brTitleInfo as d, id}
           <li class="page-item {d.mgmBldrgstPk == $mgmBldrgstPk ? 'active' : ''}">
@@ -332,19 +443,24 @@
           </li>
         {/each}
       </ul>
-    </nav>
+    </nav>  -->
   {/if}
 
-  <h6>기본 정보</h6>
   <ArchitectureLayout data={brTitleInfo} />
 
-  <h6 bind:this={floorInfoTitle}>층 정보</h6>
+  <h6 bind:this={floorInfoTitle} class="pl-2">층별 정보</h6>
   <StackPlan {brFlrOulnInfo} />
+  <blockquote cite="https://www.data.go.kr" class="text-secondary my-5 text-sm text-slate-700">
+    국토교통부 건축물대장정보서비스 | <cite class="text-muted">공공데이터포털</cite>
+  </blockquote>
 {:catch error}
   <p style="color: red">Error 발생</p>
   <p style="color: red">{error.message}</p>
 {/await}
 
-<blockquote cite="https://www.data.go.kr" class="text-secondary">
-  국토교통부 건축물대장정보서비스 | <cite class="text-muted">공공데이터포털</cite>
-</blockquote>
+<style>
+  details summary::-webkit-details-marker {
+    font-size: 8px;
+    margin-right: 5px;
+  }
+</style>

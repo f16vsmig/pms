@@ -10,13 +10,13 @@ import Login from "./pages/Signin.svelte";
 import Signup from "./pages/Signup.svelte";
 
 const routes = {
-  "/": Dashboard,
-  "/home": Dashboard,
-  // "/sites": Sites,
+  "/": Map,
   "/map": Map,
   "/about": About,
-  "/login": Login,
-  "/signup": Signup,
+  // "/login": Login,
+  // "/signup": Signup,
+  // "/home": Dashboard,
+  // "/sites": Sites,
   // "/pop": Dashboard,
   // "/pop/dashboard": Dashboard,
   // "/pop/map": Map,
