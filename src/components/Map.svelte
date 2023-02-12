@@ -1095,7 +1095,6 @@
                 {#if searchTerm == "" || site.name.includes(searchTerm) || site.address.includes(searchTerm) || site.owner.includes(searchTerm)}
                   <button
                     on:click={() => {
-                      console.log("Hhhhhh");
                       $detailElem = site;
                       $siteModal = true;
                       $siteListModal = false;
@@ -1117,6 +1116,7 @@
             <!-- 모달 닫기 버튼 -->
             <div class="flex justify-between px-2 mb-5">
               <h3>건물정보</h3>
+
               <button
                 on:click={() => {
                   $modal = false;

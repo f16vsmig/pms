@@ -11532,9 +11532,9 @@ var app = (function () {
     			? 'text-red-500'
     			: ''));
 
-    			add_location(h5, file, 1104, 20, 29161);
+    			add_location(h5, file, 1103, 20, 29116);
     			attr_dev(p, "class", "mb-5 px-5 md:text-lg text-start tracking-tight font-light");
-    			add_location(p, file, 1108, 20, 29415);
+    			add_location(p, file, 1107, 20, 29370);
     			attr_dev(button, "class", "mb-5 bg-white border rounded-lg shadow-md md:w-full md:flex-row hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700");
     			add_location(button, file, 1095, 18, 28707);
     		},
@@ -11634,7 +11634,7 @@ var app = (function () {
     	return block;
     }
 
-    // (1116:10) {#if $siteModal}
+    // (1115:10) {#if $siteModal}
     function create_if_block_4(ctx) {
     	let div0;
     	let h3;
@@ -11666,23 +11666,23 @@ var app = (function () {
     			t2 = space();
     			div1 = element("div");
     			create_component(architecture.$$.fragment);
-    			add_location(h3, file, 1118, 14, 29739);
+    			add_location(h3, file, 1117, 14, 29694);
     			attr_dev(path, "stroke-linecap", "round");
     			attr_dev(path, "stroke-linejoin", "round");
     			attr_dev(path, "d", "M6 18L18 6M6 6l12 12");
-    			add_location(path, file, 1127, 18, 30122);
+    			add_location(path, file, 1127, 18, 30078);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "fill", "none");
     			attr_dev(svg, "viewBox", "0 0 24 24");
     			attr_dev(svg, "stroke-width", "1.5");
     			attr_dev(svg, "stroke", "currentColor");
     			attr_dev(svg, "class", "w-6 h-6");
-    			add_location(svg, file, 1126, 16, 29974);
-    			add_location(button, file, 1119, 14, 29767);
+    			add_location(svg, file, 1126, 16, 29930);
+    			add_location(button, file, 1119, 14, 29723);
     			attr_dev(div0, "class", "flex justify-between px-2 mb-5");
-    			add_location(div0, file, 1117, 12, 29680);
+    			add_location(div0, file, 1116, 12, 29635);
     			attr_dev(div1, "class", "grow");
-    			add_location(div1, file, 1150, 12, 31059);
+    			add_location(div1, file, 1150, 12, 31015);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div0, anchor);
@@ -11729,7 +11729,7 @@ var app = (function () {
     		block,
     		id: create_if_block_4.name,
     		type: "if",
-    		source: "(1116:10) {#if $siteModal}",
+    		source: "(1115:10) {#if $siteModal}",
     		ctx
     	});
 
@@ -11841,17 +11841,17 @@ var app = (function () {
     			attr_dev(path, "stroke-linecap", "round");
     			attr_dev(path, "stroke-linejoin", "round");
     			attr_dev(path, "d", "M8.25 4.5l7.5 7.5-7.5 7.5");
-    			add_location(path, file, 1170, 12, 31742);
+    			add_location(path, file, 1170, 12, 31698);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "fill", "none");
     			attr_dev(svg, "viewBox", "0 0 24 24");
     			attr_dev(svg, "stroke-width", "1.5");
     			attr_dev(svg, "stroke", "currentColor");
     			attr_dev(svg, "class", "w-6 h-6");
-    			add_location(svg, file, 1169, 11, 31600);
+    			add_location(svg, file, 1169, 11, 31556);
     			attr_dev(button, "type", "button");
     			attr_dev(button, "class", "modalCloseBtn rounded-l-md max-sm:hidden md:fixed md:right-1/3 svelte-krjo7");
-    			add_location(button, file, 1163, 8, 31407);
+    			add_location(button, file, 1163, 8, 31363);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -11898,14 +11898,14 @@ var app = (function () {
     			attr_dev(path, "stroke-linecap", "round");
     			attr_dev(path, "stroke-linejoin", "round");
     			attr_dev(path, "d", "M15.75 19.5L8.25 12l7.5-7.5");
-    			add_location(path, file, 1179, 10, 32330);
+    			add_location(path, file, 1179, 10, 32286);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "fill", "none");
     			attr_dev(svg, "viewBox", "0 0 24 24");
     			attr_dev(svg, "stroke-width", "1.5");
     			attr_dev(svg, "stroke", "currentColor");
     			attr_dev(svg, "class", "w-6 h-6");
-    			add_location(svg, file, 1178, 9, 32190);
+    			add_location(svg, file, 1178, 9, 32146);
     			attr_dev(button, "type", "button");
     			attr_dev(button, "class", "openSiteModal rounded-l-md");
     			set_style(button, "position", "fixed");
@@ -11916,7 +11916,7 @@ var app = (function () {
     			set_style(button, "height", "50px");
     			set_style(button, "z-index", "999");
     			set_style(button, "background-color", "rgba(255,255,255,0.93)");
-    			add_location(button, file, 1177, 6, 31938);
+    			add_location(button, file, 1177, 6, 31894);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -11979,35 +11979,35 @@ var app = (function () {
     			attr_dev(path0, "stroke-linecap", "round");
     			attr_dev(path0, "stroke-linejoin", "round");
     			attr_dev(path0, "d", "M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z");
-    			add_location(path0, file, 1195, 14, 33014);
+    			add_location(path0, file, 1195, 14, 32970);
     			attr_dev(svg0, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg0, "fill", "none");
     			attr_dev(svg0, "viewBox", "0 0 24 24");
     			attr_dev(svg0, "stroke-width", "1.5");
     			attr_dev(svg0, "stroke", "currentColor");
     			attr_dev(svg0, "class", "block w-6 h-6 mx-auto pointer-events-none");
-    			add_location(svg0, file, 1194, 13, 32836);
+    			add_location(svg0, file, 1194, 13, 32792);
     			attr_dev(button0, "class", button0_class_value = "w-6 " + (!/*$siteListModal*/ ctx[3] ? 'text-indigo-500' : ''));
-    			add_location(button0, file, 1188, 10, 32635);
+    			add_location(button0, file, 1188, 10, 32591);
     			attr_dev(div0, "class", "w-1/2 text-center");
-    			add_location(div0, file, 1187, 8, 32593);
+    			add_location(div0, file, 1187, 8, 32549);
     			attr_dev(path1, "stroke-linecap", "round");
     			attr_dev(path1, "stroke-linejoin", "round");
     			attr_dev(path1, "d", "M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z");
-    			add_location(path1, file, 1213, 14, 33975);
+    			add_location(path1, file, 1213, 14, 33931);
     			attr_dev(svg1, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg1, "fill", "none");
     			attr_dev(svg1, "viewBox", "0 0 24 24");
     			attr_dev(svg1, "stroke-width", "1.5");
     			attr_dev(svg1, "stroke", "currentColor");
     			attr_dev(svg1, "class", "block w-6 h-6 mx-auto pointer-events-none");
-    			add_location(svg1, file, 1212, 13, 33797);
+    			add_location(svg1, file, 1212, 13, 33753);
     			attr_dev(button1, "class", button1_class_value = "w-6 " + (/*$siteListModal*/ ctx[3] ? 'text-indigo-500' : ''));
-    			add_location(button1, file, 1205, 10, 33565);
+    			add_location(button1, file, 1205, 10, 33521);
     			attr_dev(div1, "class", "w-1/2 text-center");
-    			add_location(div1, file, 1204, 8, 33523);
+    			add_location(div1, file, 1204, 8, 33479);
     			attr_dev(div2, "class", "w-full flex py-2.5 fixed bottom-0 border-t-2 bg-white z-50");
-    			add_location(div2, file, 1186, 6, 32512);
+    			add_location(div2, file, 1186, 6, 32468);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -13244,7 +13244,6 @@ var app = (function () {
     	};
 
     	const click_handler_2 = site => {
-    		console.log("Hhhhhh");
     		set_store_value(detailElem, $detailElem = site, $detailElem);
     		set_store_value(siteModal, $siteModal = true, $siteModal);
     		set_store_value(siteListModal, $siteListModal = false, $siteListModal);
