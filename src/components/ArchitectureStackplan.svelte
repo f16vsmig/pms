@@ -34,14 +34,15 @@
   // });
 </script>
 
-<div class="flex-col flex-wrap px-2 mb-4">
+<div class="flex-col flex-wrap mb-4">
+  <h6 class="pl-2">층별 정보</h6>
   {#each brFlrOulnInfo as fl, id}
     {#if fl.mgmBldrgstPk == $mgmBldrgstPk}
       {#if id == 0 || fl.flrNoNm != brFlrOulnInfo[id - 1].flrNoNm || fl.mgmBldrgstPk != brFlrOulnInfo[id - 1].mgmBldrgstPk}
         <div class="grow mt-3 px-1 text-sm flex justify-between font-light">
-          <span class="flex-none me-3">{fl.flrNoNm}</span>
-          <span class="flex-none me-1 text-muted flex text-sm"
-            ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-6 h-6 mr-1">
+          <span class="flex-none pl-1">{fl.flrNoNm}</span>
+          <span class="flex-none text-muted flex text-sm pr-1"
+            ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-6 h-6 pr-1">
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -53,9 +54,7 @@
         </div>
       {/if}
       <div class="flex-none fw-light px-1 my-1">
-        <button
-          type="button"
-          class="w-full py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+        <button class="w-full py-2.5 px-5 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:text-blue-700 cursor-default"
           >{fl.mainPurpsCdNm}
           <span class="{fl.flrNoNm} {fl.areaExctYn == 1 ? 'text-muted' : ''}">({addComma(fl.area)})</span></button
         >

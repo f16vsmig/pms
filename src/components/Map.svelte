@@ -1,5 +1,5 @@
 <script>
-  import { mobileView } from "../store";
+  import { mobileView, siteList } from "../store";
   import Search from "../assets/etc/Search.svelte";
   import ArchitectureModal from "./RightSlideModalArchitecture.svelte";
   import RightSideModal from "./RightSlideModal.svelte";
@@ -21,13 +21,13 @@
   import { onMount, onDestroy } from "svelte";
   import { detailVeiw } from "../assets/etc/Search.svelte";
 
-  import { detailElem, roadVeiwBtnUrl, map, mapCenter, mapLevel, rightSideModal, rightSideModalScrollTop } from "../store";
+  import { detailElem, roadVeiwBtnUrl, map, mapCenter, mapLevel, rightSideModal, rightSideModalScrollTop, modal, siteListModal, siteModal } from "../store";
   import Pie from "../assets/chart/Pie.svelte";
   import Trend from "../assets/chart/Trend.svelte";
   import Bubble from "../assets/chart/Bubble.svelte";
 
   let mapContainer;
-  let data = [
+  $siteList = [
     {
       id: 1,
       address: "서울특별시 중구 세종대로7길 25",
@@ -164,12 +164,12 @@
     },
   ];
 
-  let kakaomap;
+  // let kakaomap = $map;
   let kakaomapCenter;
 
-  let modal = false;
-  let siteListModal = false;
-  let siteModal = false;
+  $modal = false;
+  $siteListModal = false;
+  $siteModal = false;
 
   let vppDropdown = false;
   let vppList = [
@@ -876,7 +876,8 @@
     // markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
 
     let marker = new kakao.maps.Marker({
-      map: kakaomap,
+      // map: kakaomap,
+      map: $map,
       title: elem.id,
       // image: markerImage,
       position: coords,
@@ -901,15 +902,16 @@
     //   clusterer.addMarker(marker);
 
     kakao.maps.event.addListener(marker, "click", function () {
-      // $detailElem = elem;
-      siteInfo = elem;
-      kakaomap.setLevel(4);
-      kakaomap.setCenter(new kakao.maps.LatLng(coord[0].y, coord[0].x));
+      $detailElem = elem;
+      console.log("333333", $detailElem);
+      // siteInfo = elem;
+      $map.setLevel(4);
+      $map.setCenter(new kakao.maps.LatLng(coord[0].y, coord[0].x));
       // kakaomap.panTo(new kakao.maps.LatLng(coord[0].y, coord[0].x));
       // kakaomap.panBy(200, 0);
-      modal = true;
-      siteModal = true;
-      siteListModal = false;
+      $modal = true;
+      $siteModal = true;
+      $siteListModal = false;
       detailVeiw(elem);
       if ($rightSideModal != undefined) {
         $rightSideModal.scrollTop = 0;
@@ -920,8 +922,8 @@
   function hideMarkerByOid() {
     return markers.forEach((marker) => {
       if (selectedVids.includes(marker.marker.getTitle())) {
-        marker.marker.setMap(kakaomap);
-        marker.label.setMap(kakaomap);
+        marker.marker.setMap($map);
+        marker.label.setMap($map);
       } else {
         marker.marker.setMap(null);
         marker.label.setMap(null);
@@ -932,19 +934,19 @@
   function onSiteModal(site) {
     let geocoder = new kakao.maps.services.Geocoder();
     siteInfo = site;
-    siteListModal = false;
+    $siteListModal = false;
 
     return geocoder.addressSearch(site.address, function (result, status) {
       if (status == kakao.maps.services.Status.OK) {
-        kakaomap.setLevel(4);
-        kakaomap.setCenter(new kakao.maps.LatLng(result[0].y, result[0].x));
+        $map.setLevel(4);
+        $map.setCenter(new kakao.maps.LatLng(result[0].y, result[0].x));
         detailVeiw(site);
         if ($rightSideModal != undefined) {
           $rightSideModal.scrollTop = 0;
         }
-        modal = true;
-        siteModal = true;
-        siteListModal = false;
+        $modal = true;
+        $siteModal = true;
+        $siteListModal = false;
       }
     });
   }
@@ -956,7 +958,7 @@
 
     let markerLabel = new kakao.maps.CustomOverlay({
       content: content,
-      map: kakaomap,
+      map: $map,
       position: coords,
       yAnchor: 0,
     });
@@ -972,25 +974,25 @@
     let mapType = event.detail.value;
 
     if (mapType == "mapView") {
-      return kakaomap.setMapTypeId(kakao.maps.MapTypeId.ROADMAP);
+      return $map.setMapTypeId(kakao.maps.MapTypeId.ROADMAP);
     } else if (mapType == "skyView") {
-      return kakaomap.setMapTypeId(kakao.maps.MapTypeId.SKYVIEW);
+      return $map.setMapTypeId(kakao.maps.MapTypeId.SKYVIEW);
     }
   }
 
   function openSiteModal() {
     // $modalToggle = true;
-    modal = true;
-    siteListModal = false;
-    siteModal = true;
+    $modal = true;
+    $siteListModal = false;
+    $siteModal = true;
     // kakaomap.setCenter(kakaomapCenter);
     // kakaomap.panBy(200, 0);
   }
 
   function openSiteModalFromList(site) {
-    modal = true;
-    siteModal = true;
-    siteListModal = false;
+    $modal = true;
+    $siteModal = true;
+    $siteListModal = false;
     siteInfo = site;
     // kakaomap.setCenter(kakaomapCenter);
   }
@@ -1022,14 +1024,14 @@
       center: new kakao.maps.LatLng(36.450701, 127.570667),
       level: 12,
     };
-    kakaomap = new kakao.maps.Map(mapContainer, mapOption);
+    $map = new kakao.maps.Map(mapContainer, mapOption);
     // kakaomap.setMapTypeId(kakao.maps.MapTypeId.SKYVIEW);
 
     // vppDataQuery.site.forEach(Pin);
-    data.forEach(Pin);
+    $siteList.forEach(Pin);
 
     let clusterer = new kakao.maps.MarkerClusterer({
-      map: kakaomap,
+      map: $map,
       markers: ms,
       gridSize: 35,
       averageCenter: true,
@@ -1052,14 +1054,14 @@
 <div class="max-sm:h-[calc(100%-50px)] md:h-full relative">
   <div class="h-full relative" bind:this={mapContainer}>
     <!-- 모달 오픈 -->
-    {#if !modal && !$mobileView}
+    {#if !$modal && !$mobileView}
       <button
         type="button"
         class="openModal rounded-md absolute p-1.5 z-10 top-3 right-5"
         on:click={() => {
-          modal = true;
-          siteListModal = true;
-          siteModal = false;
+          $modal = true;
+          $siteListModal = true;
+          $siteModal = false;
         }}
         style="z-index: 99;"
         ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -1072,15 +1074,15 @@
       </button>
     {/if}
 
-    {#if modal}
+    {#if $modal}
       <RightSideModal>
         <div slot="content" class="flex flex-col relative">
-          {#if siteListModal}
+          {#if $siteListModal}
             <div class="flex justify-between px-2 mb-5">
-              <h3>건축물대장 목록</h3>
+              <h3>List</h3>
               <button
                 on:click={() => {
-                  modal = false;
+                  $modal = false;
                 }}
               >
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 pointer-events-none">
@@ -1088,40 +1090,38 @@
                 </svg>
               </button>
             </div>
-            {#each data as site}
-              <div class="flex flex-col md:flex-row md:flex-wrap px-0 md:px-5">
+            {#each $siteList as site}
+              <div class="flex flex-col md:flex-row md:flex-wrap px-0 md:px-2">
                 {#if searchTerm == "" || site.name.includes(searchTerm) || site.address.includes(searchTerm) || site.owner.includes(searchTerm)}
                   <button
                     on:click={() => {
-                      siteModal = true;
+                      console.log("Hhhhhh");
+                      $detailElem = site;
+                      $siteModal = true;
+                      $siteListModal = false;
                     }}
-                    class="flex-col mb-5 bg-white border rounded-lg shadow-md md:w-full md:flex-row md:mx-5 hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+                    class="mb-5 bg-white border rounded-lg shadow-md md:w-full md:flex-row hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
                   >
-                    <div class="flex justify-between p-4 leading-normal">
-                      <h5 class="text-lg md:text-2xl tracking-tight text-gray-900 dark:text-white {searchTerm != '' && site.name.includes(searchTerm) ? 'text-red-500' : ''}">
-                        {site.name}
-                      </h5>
-                      <span class="font-normal dark:text-gray-400 {searchTerm != '' && site.address.includes(searchTerm) ? 'text-red-500' : 'text-gray-600'}">{site.owner}</span>
-                    </div>
+                    <h5 class="mt-5 px-5 text-start text-lg md:text-xl tracking-tight text-gray-900 dark:text-white {searchTerm != '' && site.name.includes(searchTerm) ? 'text-red-500' : ''}">
+                      {site.name}
+                    </h5>
 
-                    <div class="flex flex-col p-4">
-                      <h5 class="mb-1 md:text-xl text-start tracking-tight font-light">서울특별시 동작구 매봉로99</h5>
-                      <h5 class="mb-1 md:text-xl text-start tracking-tight font-light">B5F / 12F</h5>
-                      <h5 class="mb-1 md:text-xl text-start tracking-tight font-light">3,200 m2</h5>
-                    </div>
+                    <p class="mb-5 px-5 md:text-lg text-start tracking-tight font-light">{site.address}</p>
                   </button>
                 {/if}
               </div>
             {/each}
           {/if}
 
-          {#if siteModal}
-            <div class="text-end p-3 md:p-5">
+          {#if $siteModal}
+            <!-- 모달 닫기 버튼 -->
+            <div class="flex justify-between px-2 mb-5">
+              <h3>건물정보</h3>
               <button
                 on:click={() => {
-                  modal = false;
-                  siteModal = false;
-                  siteListModal = false;
+                  $modal = false;
+                  $siteModal = false;
+                  $siteListModal = false;
                 }}
               >
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -1149,7 +1149,7 @@
             </div> -->
 
             <div class="grow">
-              <Architecture elem={siteInfo} />
+              <Architecture elem={$detailElem} />
             </div>
 
             <!-- <div class="row mb-2 p-2">
@@ -1165,7 +1165,7 @@
           type="button"
           class="modalCloseBtn rounded-l-md max-sm:hidden md:fixed md:right-1/3"
           on:click={() => {
-            modal = false;
+            $modal = false;
           }}
           ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
@@ -1174,7 +1174,7 @@
       {/if}
     {/if}
 
-    {#if !modal && siteInfo && !$mobileView}
+    {#if !$modal && siteInfo && !$mobileView}
       <button type="button" class="openSiteModal rounded-l-md" on:click={openSiteModal} style="position: fixed; top: calc(50% - 25px); right:0px; margin-left: auto; width: 20px; height: 50px; z-index: 999; background-color: rgba(255,255,255,0.93);"
         ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
           <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
@@ -1188,10 +1188,10 @@
         <div class="w-1/2 text-center">
           <button
             on:click={() => {
-              modal = false;
-              siteListModal = false;
+              $modal = false;
+              $siteListModal = false;
             }}
-            class="w-6 {!siteListModal ? 'text-indigo-500' : ''}"
+            class="w-6 {!$siteListModal ? 'text-indigo-500' : ''}"
             ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="block w-6 h-6 mx-auto pointer-events-none">
               <path
                 stroke-linecap="round"
@@ -1205,11 +1205,11 @@
         <div class="w-1/2 text-center">
           <button
             on:click={() => {
-              modal = true;
-              siteListModal = true;
-              siteModal = false;
+              $modal = true;
+              $siteListModal = true;
+              $siteModal = false;
             }}
-            class="w-6 {siteListModal ? 'text-indigo-500' : ''}"
+            class="w-6 {$siteListModal ? 'text-indigo-500' : ''}"
             ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="block w-6 h-6 mx-auto pointer-events-none">
               <path
                 stroke-linecap="round"

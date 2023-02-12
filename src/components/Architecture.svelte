@@ -260,6 +260,7 @@
   async function prepare(jibun) {
     console.log("jibun", jibun, elem);
     setBunJi(jibun);
+    console.log(setBunJi(jibun), sigunguCd, bjdongCd, bun, ji);
     await getStanReginCd(jibun);
     await getBrTitleInfo();
     await getBrFlrOulnInfo();
@@ -358,7 +359,7 @@
     // 지번 주소에서 번지수를 지우고 주소 생성
     let jibunArr = jibun.split(" ");
     let dong = jibun.replaceAll(jibunArr[jibunArr.length - 1], "");
-
+    console.log("법정동 api 과정", jibun, jibunArr, dong);
     // 법정동 코드 호출을 위한 url 생성
     // let url = "/api/getStanReginCd";
     let url = "http://apis.data.go.kr/1741000/StanReginCd/getStanReginCdList";
@@ -406,23 +407,37 @@
   let summary;
 
   $: promise = prepare(elem.jibun);
+  // $: promise = prepare(elem);
 </script>
 
-<!-- <h5 class="mb-4">건물 정보</h5> -->
 {#await promise}
   <Loading />
 {:then}
   {#if Array.isArray(brTitleInfo)}
-    <details bind:this={details} class="relative px-3">
-      <summary bind:this={summary} class="mb-3 hover:text-indigo-600 cursor-pointer">건축물대장 번호 : {$mgmBldrgstPk}</summary>
-      <ul class="absolute top-full border-2 border-slate-600 rounded-sm p-3 bg-white max-h-96 w-5/6 overflow-auto z-20">
+    <details bind:this={details} class="relative px-2 text-slate-700">
+      <summary
+        bind:this={summary}
+        on:click={() => {
+          if (!details.open) {
+            document.body.style.overflow = "hidden";
+            document.getElementsByClassName("modal-container")[0].style.overflow = "hidden";
+          } else {
+            document.body.style.overflow = "auto";
+            document.getElementsByClassName("modal-container")[0].style.overflow = "auto";
+          }
+        }}
+        class="mb-2 hover:text-indigo-600 cursor-pointer">건축물대장 번호 : {$mgmBldrgstPk}</summary
+      >
+      <ul class="absolute top-full border-2 border-slate-200 rounded-sm p-3 bg-white max-h-96 w-5/6 overflow-auto z-20">
         {#each brTitleInfo as d, id}
-          <li class="page-item {d.mgmBldrgstPk == $mgmBldrgstPk ? 'active' : ''} hover:text-indigo-600 cursor-pointer my-2">
+          <li class="page-item hover:text-indigo-600 cursor-pointer my-2">
             <button
-              class="page-link"
+              class="page-link {d.mgmBldrgstPk == $mgmBldrgstPk ? 'text-indigo-600' : ''}"
               on:click={() => {
                 $mgmBldrgstPk = d.mgmBldrgstPk;
                 details.open = false;
+                document.body.style.overflow = "auto";
+                document.getElementsByClassName("modal-container")[0].style.overflow = "auto";
               }}>{d.mgmBldrgstPk} {d.bldNm == "" ? "" : "(" + d.bldNm + ")"}</button
             >
           </li>
@@ -448,9 +463,9 @@
 
   <ArchitectureLayout data={brTitleInfo} />
 
-  <h6 bind:this={floorInfoTitle} class="pl-2">층별 정보</h6>
+  <!-- <h6 bind:this={floorInfoTitle} class="pl-2">층별 정보</h6> -->
   <StackPlan {brFlrOulnInfo} />
-  <blockquote cite="https://www.data.go.kr" class="text-secondary my-5 text-sm text-slate-700">
+  <blockquote cite="https://www.data.go.kr" class="text-secondary my-5 text-sm text-slate-700 ml-2">
     국토교통부 건축물대장정보서비스 | <cite class="text-muted">공공데이터포털</cite>
   </blockquote>
 {:catch error}
