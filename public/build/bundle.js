@@ -6605,29 +6605,30 @@ var app = (function () {
 
     // (471:0) {:catch error}
     function create_catch_block$1(ctx) {
-    	let p0;
+    	let h5;
     	let t1;
-    	let p1;
+    	let p;
     	let t2_value = /*error*/ ctx[31].message + "";
     	let t2;
 
     	const block = {
     		c: function create() {
-    			p0 = element("p");
-    			p0.textContent = "Error 발생";
+    			h5 = element("h5");
+    			h5.textContent = "Error 발생 : 건물정보를 찾지 못했습니다. 주소를 다시 입력해주세요.";
     			t1 = space();
-    			p1 = element("p");
+    			p = element("p");
     			t2 = text(t2_value);
-    			set_style(p0, "color", "red");
-    			add_location(p0, file$g, 471, 2, 13426);
-    			set_style(p1, "color", "red");
-    			add_location(p1, file$g, 472, 2, 13463);
+    			attr_dev(h5, "class", "text-lg");
+    			set_style(h5, "color", "red");
+    			add_location(h5, file$g, 471, 2, 13426);
+    			attr_dev(p, "class", "text-sm");
+    			add_location(p, file$g, 472, 2, 13514);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, p0, anchor);
+    			insert_dev(target, h5, anchor);
     			insert_dev(target, t1, anchor);
-    			insert_dev(target, p1, anchor);
-    			append_dev(p1, t2);
+    			insert_dev(target, p, anchor);
+    			append_dev(p, t2);
     		},
     		p: function update(ctx, dirty) {
     			if (dirty[0] & /*promise*/ 4 && t2_value !== (t2_value = /*error*/ ctx[31].message + "")) set_data_dev(t2, t2_value);
@@ -6635,9 +6636,9 @@ var app = (function () {
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(p0);
+    			if (detaching) detach_dev(h5);
     			if (detaching) detach_dev(t1);
-    			if (detaching) detach_dev(p1);
+    			if (detaching) detach_dev(p);
     		}
     	};
 

@@ -469,8 +469,8 @@
     국토교통부 건축물대장정보서비스 | <cite class="text-muted">공공데이터포털</cite>
   </blockquote>
 {:catch error}
-  <p style="color: red">Error 발생</p>
-  <p style="color: red">{error.message}</p>
+  <h5 class="text-lg" style="color: red">Error 발생 : 건물정보를 찾지 못했습니다. 주소를 다시 입력해주세요.</h5>
+  <p class="text-sm">{error.message}</p>
 {/await}
 
 <style>
