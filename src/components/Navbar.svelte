@@ -46,8 +46,6 @@
     findAddressPopup.style.display = "none";
   }
 
-  let coord2;
-
   function Pin(elem) {
     let geocoder = new kakao.maps.services.Geocoder();
     let address = elem.address;
@@ -56,9 +54,12 @@
     return geocoder.addressSearch(address, function (result, status) {
       if (status == kakao.maps.services.Status.OK) {
         // setMarkerLabel(result, label);
-        coord2 = result;
+
         console.log("지오코더 : ", result, status);
         setMarker(elem, result);
+        $map.setLevel(4);
+
+        $map.setCenter(new kakao.maps.LatLng(result[0].y, result[0].x));
         // elem.xAxis = result[0].x; // x축 추가
         // elem.yAxis = result[0].y; // y축 추가
       }
@@ -196,9 +197,6 @@
 
         searchToggle = false;
         findAddressPopup.style.display = "none";
-
-        // $map.setLevel(4);
-        // $map.setCenter(new kakao.maps.LatLng(coord2[0].y, coord2[0].x));
       },
 
       width: "100%",

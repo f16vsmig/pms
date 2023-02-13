@@ -3025,7 +3025,7 @@ var app = (function () {
 
     const file$k = "src\\components\\Navbar.svelte";
 
-    // (231:6) {:else}
+    // (229:6) {:else}
     function create_else_block_1(ctx) {
     	let svg;
     	let path;
@@ -3037,13 +3037,13 @@ var app = (function () {
     			attr_dev(path, "fill-rule", "evenodd");
     			attr_dev(path, "d", "M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z");
     			attr_dev(path, "clip-rule", "evenodd");
-    			add_location(path, file$k, 232, 11, 7718);
+    			add_location(path, file$k, 230, 11, 7671);
     			attr_dev(svg, "class", "w-6 h-6");
     			attr_dev(svg, "aria-hidden", "true");
     			attr_dev(svg, "fill", "currentColor");
     			attr_dev(svg, "viewBox", "0 0 20 20");
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
-    			add_location(svg, file$k, 231, 8, 7591);
+    			add_location(svg, file$k, 229, 8, 7544);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, svg, anchor);
@@ -3058,14 +3058,14 @@ var app = (function () {
     		block,
     		id: create_else_block_1.name,
     		type: "else",
-    		source: "(231:6) {:else}",
+    		source: "(229:6) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (227:6) {#if open}
+    // (225:6) {#if open}
     function create_if_block_2$2(ctx) {
     	let svg;
     	let path;
@@ -3077,14 +3077,14 @@ var app = (function () {
     			attr_dev(path, "stroke-linecap", "round");
     			attr_dev(path, "stroke-linejoin", "round");
     			attr_dev(path, "d", "M4.5 15.75l7.5-7.5 7.5 7.5");
-    			add_location(path, file$k, 228, 10, 7464);
+    			add_location(path, file$k, 226, 10, 7417);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "fill", "none");
     			attr_dev(svg, "viewBox", "0 0 24 24");
     			attr_dev(svg, "stroke-width", "1.5");
     			attr_dev(svg, "stroke", "currentColor");
     			attr_dev(svg, "class", "w-6 h-6");
-    			add_location(svg, file$k, 227, 8, 7323);
+    			add_location(svg, file$k, 225, 8, 7276);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, svg, anchor);
@@ -3099,14 +3099,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2$2.name,
     		type: "if",
-    		source: "(227:6) {#if open}",
+    		source: "(225:6) {#if open}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (240:4) {#if open}
+    // (238:4) {#if open}
     function create_if_block_1$5(ctx) {
     	let ul;
     	let li0;
@@ -3133,16 +3133,16 @@ var app = (function () {
     			t2 = text("About");
     			attr_dev(a0, "href", "/");
     			attr_dev(a0, "class", a0_class_value = "" + ((/*$location*/ ctx[3] === '/' ? 'active' : '') + " flex-initial py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 dark:text-white md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" + " svelte-13gtopq"));
-    			add_location(a0, file$k, 245, 10, 8476);
+    			add_location(a0, file$k, 243, 10, 8429);
     			attr_dev(li0, "class", "max-sm:my-2");
-    			add_location(li0, file$k, 244, 8, 8440);
+    			add_location(li0, file$k, 242, 8, 8393);
     			attr_dev(a1, "href", "/about");
     			attr_dev(a1, "class", a1_class_value = "" + ((/*$location*/ ctx[3] === '/about' ? 'active' : '') + " flex-initial py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 dark:text-white md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" + " svelte-13gtopq"));
-    			add_location(a1, file$k, 254, 10, 8904);
+    			add_location(a1, file$k, 252, 10, 8857);
     			attr_dev(li1, "class", "max-sm:my-2");
-    			add_location(li1, file$k, 253, 8, 8868);
+    			add_location(li1, file$k, 251, 8, 8821);
     			attr_dev(ul, "class", "flex flex-col p-4 border border-gray-100 rounded-lg bg-gray-50 z-50 max-sm:absolute max-sm:top-14 max-sm:left-2 md:flex-row md:space-x-8 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700");
-    			add_location(ul, file$k, 241, 6, 8156);
+    			add_location(ul, file$k, 239, 6, 8109);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, ul, anchor);
@@ -3183,14 +3183,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$5.name,
     		type: "if",
-    		source: "(240:4) {#if open}",
+    		source: "(238:4) {#if open}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (284:8) {:else}
+    // (282:8) {:else}
     function create_else_block$5(ctx) {
     	let div;
     	let button;
@@ -3208,18 +3208,18 @@ var app = (function () {
     			attr_dev(path, "stroke-linecap", "round");
     			attr_dev(path, "stroke-linejoin", "round");
     			attr_dev(path, "d", "M6 18L18 6M6 6l12 12");
-    			add_location(path, file$k, 293, 16, 10752);
+    			add_location(path, file$k, 291, 16, 10705);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "fill", "none");
     			attr_dev(svg, "viewBox", "0 0 24 24");
     			attr_dev(svg, "stroke-width", "1.5");
     			attr_dev(svg, "stroke", "currentColor");
     			attr_dev(svg, "class", "w-5 h-5");
-    			add_location(svg, file$k, 292, 14, 10605);
+    			add_location(svg, file$k, 290, 14, 10558);
     			attr_dev(button, "style", "pt-1 pr-2");
-    			add_location(button, file$k, 285, 12, 10406);
+    			add_location(button, file$k, 283, 12, 10359);
     			attr_dev(div, "class", "flex-initial inset-y-0 items-center pl-3 pr-2");
-    			add_location(div, file$k, 284, 10, 10333);
+    			add_location(div, file$k, 282, 10, 10286);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -3244,14 +3244,14 @@ var app = (function () {
     		block,
     		id: create_else_block$5.name,
     		type: "else",
-    		source: "(284:8) {:else}",
+    		source: "(282:8) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (269:8) {#if !searchToggle}
+    // (267:8) {#if !searchToggle}
     function create_if_block$a(ctx) {
     	let div;
     	let button;
@@ -3269,17 +3269,17 @@ var app = (function () {
     			attr_dev(path, "fill-rule", "evenodd");
     			attr_dev(path, "d", "M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z");
     			attr_dev(path, "clip-rule", "evenodd");
-    			add_location(path, file$k, 279, 17, 10076);
+    			add_location(path, file$k, 277, 17, 10029);
     			attr_dev(svg, "aria-hidden", "true");
     			attr_dev(svg, "class", "w-5 h-5 text-gray-500 dark:text-gray-400");
     			attr_dev(svg, "fill", "currentColor");
     			attr_dev(svg, "viewBox", "0 0 20 20");
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
-    			add_location(svg, file$k, 278, 14, 9910);
+    			add_location(svg, file$k, 276, 14, 9863);
     			attr_dev(button, "class", "pt-1 pr-2");
-    			add_location(button, file$k, 271, 12, 9698);
+    			add_location(button, file$k, 269, 12, 9651);
     			attr_dev(div, "class", "flex-initial inset-y-0 items-center pl-3");
-    			add_location(div, file$k, 269, 10, 9543);
+    			add_location(div, file$k, 267, 10, 9496);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -3304,7 +3304,7 @@ var app = (function () {
     		block,
     		id: create_if_block$a.name,
     		type: "if",
-    		source: "(269:8) {#if !searchToggle}",
+    		source: "(267:8) {#if !searchToggle}",
     		ctx
     	});
 
@@ -3371,31 +3371,31 @@ var app = (function () {
     			t8 = space();
     			div2 = element("div");
     			attr_dev(span, "class", "sr-only");
-    			add_location(span, file$k, 225, 6, 7252);
+    			add_location(span, file$k, 223, 6, 7205);
     			attr_dev(button, "type", "button");
     			attr_dev(button, "class", "flex-none items-center p-2 my-1 ml-2 text-sm rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600");
-    			add_location(button, file$k, 220, 4, 6952);
+    			add_location(button, file$k, 218, 4, 6905);
     			attr_dev(h1, "class", "flex-none p-1 text-lg md:ml-8 dark:text-white");
-    			add_location(h1, file$k, 237, 4, 7966);
+    			add_location(h1, file$k, 235, 4, 7919);
     			attr_dev(label, "for", "simple-search");
     			attr_dev(label, "class", "sr-only");
-    			add_location(label, file$k, 266, 6, 9411);
+    			add_location(label, file$k, 264, 6, 9364);
     			attr_dev(div0, "class", "flex justify-end");
-    			add_location(div0, file$k, 267, 6, 9472);
+    			add_location(div0, file$k, 265, 6, 9425);
     			attr_dev(form, "class", "relative flex-none flex justify-self-end mr-2");
     			attr_dev(form, "role", "search");
-    			add_location(form, file$k, 265, 4, 9329);
+    			add_location(form, file$k, 263, 4, 9282);
     			attr_dev(div1, "class", "flex items-center justify-between");
-    			add_location(div1, file$k, 219, 2, 6899);
+    			add_location(div1, file$k, 217, 2, 6852);
     			attr_dev(div2, "class", "bg-white py-2 border max-sm:w-full md:w-96 md:h-[500px] md:right-0 h-96 top-10");
     			set_style(div2, "display", "none");
     			set_style(div2, "position", "fixed");
     			set_style(div2, "overflow", "hidden");
     			set_style(div2, "z-index", "999");
     			set_style(div2, "-webkit-overflow-scrolling", "touch");
-    			add_location(div2, file$k, 321, 2, 12045);
+    			add_location(div2, file$k, 319, 2, 11998);
     			attr_dev(nav, "class", "bg-white border-b border-gray-100 z-50");
-    			add_location(nav, file$k, 218, 0, 6843);
+    			add_location(nav, file$k, 216, 0, 6796);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -3514,21 +3514,21 @@ var app = (function () {
     	let $mobileView;
     	let $location;
     	validate_store(siteListModal, 'siteListModal');
-    	component_subscribe($$self, siteListModal, $$value => $$invalidate(11, $siteListModal = $$value));
+    	component_subscribe($$self, siteListModal, $$value => $$invalidate(10, $siteListModal = $$value));
     	validate_store(siteModal, 'siteModal');
-    	component_subscribe($$self, siteModal, $$value => $$invalidate(12, $siteModal = $$value));
+    	component_subscribe($$self, siteModal, $$value => $$invalidate(11, $siteModal = $$value));
     	validate_store(modal, 'modal');
-    	component_subscribe($$self, modal, $$value => $$invalidate(13, $modal = $$value));
+    	component_subscribe($$self, modal, $$value => $$invalidate(12, $modal = $$value));
     	validate_store(siteList, 'siteList');
-    	component_subscribe($$self, siteList, $$value => $$invalidate(14, $siteList = $$value));
+    	component_subscribe($$self, siteList, $$value => $$invalidate(13, $siteList = $$value));
     	validate_store(rightSideModal, 'rightSideModal');
-    	component_subscribe($$self, rightSideModal, $$value => $$invalidate(15, $rightSideModal = $$value));
+    	component_subscribe($$self, rightSideModal, $$value => $$invalidate(14, $rightSideModal = $$value));
     	validate_store(map, 'map');
-    	component_subscribe($$self, map, $$value => $$invalidate(16, $map = $$value));
+    	component_subscribe($$self, map, $$value => $$invalidate(15, $map = $$value));
     	validate_store(detailElem, 'detailElem');
-    	component_subscribe($$self, detailElem, $$value => $$invalidate(17, $detailElem = $$value));
+    	component_subscribe($$self, detailElem, $$value => $$invalidate(16, $detailElem = $$value));
     	validate_store(mobileView, 'mobileView');
-    	component_subscribe($$self, mobileView, $$value => $$invalidate(18, $mobileView = $$value));
+    	component_subscribe($$self, mobileView, $$value => $$invalidate(17, $mobileView = $$value));
     	validate_store(location$1, 'location');
     	component_subscribe($$self, location$1, $$value => $$invalidate(3, $location = $$value));
     	let { $$slots: slots = {}, $$scope } = $$props;
@@ -3555,8 +3555,6 @@ var app = (function () {
     		$$invalidate(2, findAddressPopup.style.display = "none", findAddressPopup);
     	}
 
-    	let coord2;
-
     	function Pin(elem) {
     		let geocoder = new kakao.maps.services.Geocoder();
     		let address = elem.address;
@@ -3565,10 +3563,11 @@ var app = (function () {
     		return geocoder.addressSearch(address, function (result, status) {
     			if (status == kakao.maps.services.Status.OK) {
     				// setMarkerLabel(result, label);
-    				coord2 = result;
-
     				console.log("지오코더 : ", result, status);
+
     				setMarker(elem, result);
+    				$map.setLevel(4);
+    				$map.setCenter(new kakao.maps.LatLng(result[0].y, result[0].x));
     			} // elem.xAxis = result[0].x; // x축 추가
     			// elem.yAxis = result[0].y; // y축 추가
     		});
@@ -3673,8 +3672,7 @@ var app = (function () {
     					// 각 주소의 노출 규칙에 따라 주소를 조합한다.
     					// 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
     					// var addr = data.roadAddress; // 주소 변수
-    					console.log("5555", data); // $map.setLevel(4);
-    					// $map.setCenter(new kakao.maps.LatLng(coord2[0].y, coord2[0].x));
+    					console.log("5555", data);
 
     					let roadAddressArr = data.roadAddress.split(" ");
 
@@ -3716,7 +3714,7 @@ var app = (function () {
     					set_store_value(siteListModal, $siteListModal = false, $siteListModal);
     					$$invalidate(1, searchToggle = false);
     					$$invalidate(2, findAddressPopup.style.display = "none", findAddressPopup);
-    				}, // $map.setLevel(4);
+    				},
     				width: "100%",
     				height: "100%",
     				maxSuggestItems: 5
@@ -3772,7 +3770,6 @@ var app = (function () {
     		startSearch,
     		findAddressPopup,
     		closeDaumPostcode,
-    		coord2,
     		Pin,
     		setMarker,
     		cityName,
@@ -3794,7 +3791,6 @@ var app = (function () {
     		if ('searchTerm' in $$props) searchTerm = $$props.searchTerm;
     		if ('searchToggle' in $$props) $$invalidate(1, searchToggle = $$props.searchToggle);
     		if ('findAddressPopup' in $$props) $$invalidate(2, findAddressPopup = $$props.findAddressPopup);
-    		if ('coord2' in $$props) coord2 = $$props.coord2;
     	};
 
     	if ($$props && "$$inject" in $$props) {
