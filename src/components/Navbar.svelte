@@ -164,17 +164,23 @@
         console.log("5555", data);
         let roadAddressArr = data.roadAddress.split(" ");
         let jibunAddressArr = data.autoJibunAddress == "" ? data.jibunAddress.split(" ") : data.autoJibunAddress.split(" ");
-        console.log("6666", jibunAddressArr);
+        console.log("6666", roadAddressArr, " / ", jibunAddressArr, " / ", jibunAddressArr[jibunAddressArr.length - 1]);
         console.log("7777", data.autoJibunAddress, data.autoJibunAddress == "");
 
         let sido = cityName[data.sido];
         let sigungu = data.sigungu;
         let roadname = data.roadname;
+        let bname1 = data.bname1;
+        let bname2 = data.bname2;
         let bname = data.bname;
+
+        let roadAddress = sido + " " + sigungu + " " + roadname + " " + roadAddressArr[roadAddressArr.length - 1];
+        let jibunAddress = bname1 != "" ? sido + " " + sigungu + " " + bname1 + " " + bname2 + " " + jibunAddressArr[jibunAddressArr.length - 1] : sido + " " + sigungu + " " + bname + " " + jibunAddressArr[jibunAddressArr.length - 1];
+        console.log("88888", roadAddress, " / ", jibunAddress);
         var site = {
           id: $siteList.length + 1,
-          address: sido + " " + sigungu + " " + roadname + " " + roadAddressArr[roadAddressArr.length - 1],
-          jibun: sido + " " + sigungu + " " + bname + " " + jibunAddressArr[jibunAddressArr.length - 1],
+          address: roadAddress,
+          jibun: jibunAddress,
           name: data.buildingName ? data.buildingName : "N/A",
           owner: "-",
           todos: [],

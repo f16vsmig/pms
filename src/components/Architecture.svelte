@@ -468,7 +468,6 @@
 
   <ArchitectureLayout data={brTitleInfo} />
 
-  <!-- <h6 bind:this={floorInfoTitle} class="pl-2">층별 정보</h6> -->
   <StackPlan {brFlrOulnInfo} />
   <blockquote cite="https://www.data.go.kr" class="text-secondary my-5 text-sm text-slate-700 ml-2">
     국토교통부 건축물대장정보서비스 | <cite class="text-muted">공공데이터포털</cite>

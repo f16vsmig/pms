@@ -35,7 +35,6 @@
 </script>
 
 <div class="flex-col flex-wrap mb-4">
-  <h6 class="pl-2">층별 정보</h6>
   {#each brFlrOulnInfo as fl, id}
     {#if fl.mgmBldrgstPk == $mgmBldrgstPk}
       {#if id == 0 || fl.flrNoNm != brFlrOulnInfo[id - 1].flrNoNm || fl.mgmBldrgstPk != brFlrOulnInfo[id - 1].mgmBldrgstPk}

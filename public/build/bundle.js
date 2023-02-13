@@ -3025,7 +3025,7 @@ var app = (function () {
 
     const file$k = "src\\components\\Navbar.svelte";
 
-    // (225:6) {:else}
+    // (231:6) {:else}
     function create_else_block_1(ctx) {
     	let svg;
     	let path;
@@ -3037,13 +3037,13 @@ var app = (function () {
     			attr_dev(path, "fill-rule", "evenodd");
     			attr_dev(path, "d", "M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z");
     			attr_dev(path, "clip-rule", "evenodd");
-    			add_location(path, file$k, 226, 11, 7304);
+    			add_location(path, file$k, 232, 11, 7718);
     			attr_dev(svg, "class", "w-6 h-6");
     			attr_dev(svg, "aria-hidden", "true");
     			attr_dev(svg, "fill", "currentColor");
     			attr_dev(svg, "viewBox", "0 0 20 20");
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
-    			add_location(svg, file$k, 225, 8, 7177);
+    			add_location(svg, file$k, 231, 8, 7591);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, svg, anchor);
@@ -3058,14 +3058,14 @@ var app = (function () {
     		block,
     		id: create_else_block_1.name,
     		type: "else",
-    		source: "(225:6) {:else}",
+    		source: "(231:6) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (221:6) {#if open}
+    // (227:6) {#if open}
     function create_if_block_2$2(ctx) {
     	let svg;
     	let path;
@@ -3077,14 +3077,14 @@ var app = (function () {
     			attr_dev(path, "stroke-linecap", "round");
     			attr_dev(path, "stroke-linejoin", "round");
     			attr_dev(path, "d", "M4.5 15.75l7.5-7.5 7.5 7.5");
-    			add_location(path, file$k, 222, 10, 7050);
+    			add_location(path, file$k, 228, 10, 7464);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "fill", "none");
     			attr_dev(svg, "viewBox", "0 0 24 24");
     			attr_dev(svg, "stroke-width", "1.5");
     			attr_dev(svg, "stroke", "currentColor");
     			attr_dev(svg, "class", "w-6 h-6");
-    			add_location(svg, file$k, 221, 8, 6909);
+    			add_location(svg, file$k, 227, 8, 7323);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, svg, anchor);
@@ -3099,14 +3099,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2$2.name,
     		type: "if",
-    		source: "(221:6) {#if open}",
+    		source: "(227:6) {#if open}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (234:4) {#if open}
+    // (240:4) {#if open}
     function create_if_block_1$5(ctx) {
     	let ul;
     	let li0;
@@ -3133,16 +3133,16 @@ var app = (function () {
     			t2 = text("About");
     			attr_dev(a0, "href", "/");
     			attr_dev(a0, "class", a0_class_value = "" + ((/*$location*/ ctx[3] === '/' ? 'active' : '') + " flex-initial py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 dark:text-white md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" + " svelte-13gtopq"));
-    			add_location(a0, file$k, 239, 10, 8062);
+    			add_location(a0, file$k, 245, 10, 8476);
     			attr_dev(li0, "class", "max-sm:my-2");
-    			add_location(li0, file$k, 238, 8, 8026);
+    			add_location(li0, file$k, 244, 8, 8440);
     			attr_dev(a1, "href", "/about");
     			attr_dev(a1, "class", a1_class_value = "" + ((/*$location*/ ctx[3] === '/about' ? 'active' : '') + " flex-initial py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 dark:text-white md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" + " svelte-13gtopq"));
-    			add_location(a1, file$k, 248, 10, 8490);
+    			add_location(a1, file$k, 254, 10, 8904);
     			attr_dev(li1, "class", "max-sm:my-2");
-    			add_location(li1, file$k, 247, 8, 8454);
+    			add_location(li1, file$k, 253, 8, 8868);
     			attr_dev(ul, "class", "flex flex-col p-4 border border-gray-100 rounded-lg bg-gray-50 z-50 max-sm:absolute max-sm:top-14 max-sm:left-2 md:flex-row md:space-x-8 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700");
-    			add_location(ul, file$k, 235, 6, 7742);
+    			add_location(ul, file$k, 241, 6, 8156);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, ul, anchor);
@@ -3183,14 +3183,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$5.name,
     		type: "if",
-    		source: "(234:4) {#if open}",
+    		source: "(240:4) {#if open}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (278:8) {:else}
+    // (284:8) {:else}
     function create_else_block$5(ctx) {
     	let div;
     	let button;
@@ -3208,18 +3208,18 @@ var app = (function () {
     			attr_dev(path, "stroke-linecap", "round");
     			attr_dev(path, "stroke-linejoin", "round");
     			attr_dev(path, "d", "M6 18L18 6M6 6l12 12");
-    			add_location(path, file$k, 287, 16, 10338);
+    			add_location(path, file$k, 293, 16, 10752);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "fill", "none");
     			attr_dev(svg, "viewBox", "0 0 24 24");
     			attr_dev(svg, "stroke-width", "1.5");
     			attr_dev(svg, "stroke", "currentColor");
     			attr_dev(svg, "class", "w-5 h-5");
-    			add_location(svg, file$k, 286, 14, 10191);
+    			add_location(svg, file$k, 292, 14, 10605);
     			attr_dev(button, "style", "pt-1 pr-2");
-    			add_location(button, file$k, 279, 12, 9992);
+    			add_location(button, file$k, 285, 12, 10406);
     			attr_dev(div, "class", "flex-initial inset-y-0 items-center pl-3 pr-2");
-    			add_location(div, file$k, 278, 10, 9919);
+    			add_location(div, file$k, 284, 10, 10333);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -3244,14 +3244,14 @@ var app = (function () {
     		block,
     		id: create_else_block$5.name,
     		type: "else",
-    		source: "(278:8) {:else}",
+    		source: "(284:8) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (263:8) {#if !searchToggle}
+    // (269:8) {#if !searchToggle}
     function create_if_block$a(ctx) {
     	let div;
     	let button;
@@ -3269,17 +3269,17 @@ var app = (function () {
     			attr_dev(path, "fill-rule", "evenodd");
     			attr_dev(path, "d", "M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z");
     			attr_dev(path, "clip-rule", "evenodd");
-    			add_location(path, file$k, 273, 17, 9662);
+    			add_location(path, file$k, 279, 17, 10076);
     			attr_dev(svg, "aria-hidden", "true");
     			attr_dev(svg, "class", "w-5 h-5 text-gray-500 dark:text-gray-400");
     			attr_dev(svg, "fill", "currentColor");
     			attr_dev(svg, "viewBox", "0 0 20 20");
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
-    			add_location(svg, file$k, 272, 14, 9496);
+    			add_location(svg, file$k, 278, 14, 9910);
     			attr_dev(button, "class", "pt-1 pr-2");
-    			add_location(button, file$k, 265, 12, 9284);
+    			add_location(button, file$k, 271, 12, 9698);
     			attr_dev(div, "class", "flex-initial inset-y-0 items-center pl-3");
-    			add_location(div, file$k, 263, 10, 9129);
+    			add_location(div, file$k, 269, 10, 9543);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -3304,7 +3304,7 @@ var app = (function () {
     		block,
     		id: create_if_block$a.name,
     		type: "if",
-    		source: "(263:8) {#if !searchToggle}",
+    		source: "(269:8) {#if !searchToggle}",
     		ctx
     	});
 
@@ -3371,31 +3371,31 @@ var app = (function () {
     			t8 = space();
     			div2 = element("div");
     			attr_dev(span, "class", "sr-only");
-    			add_location(span, file$k, 219, 6, 6838);
+    			add_location(span, file$k, 225, 6, 7252);
     			attr_dev(button, "type", "button");
     			attr_dev(button, "class", "flex-none items-center p-2 my-1 ml-2 text-sm rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600");
-    			add_location(button, file$k, 214, 4, 6538);
+    			add_location(button, file$k, 220, 4, 6952);
     			attr_dev(h1, "class", "flex-none p-1 text-lg md:ml-8 dark:text-white");
-    			add_location(h1, file$k, 231, 4, 7552);
+    			add_location(h1, file$k, 237, 4, 7966);
     			attr_dev(label, "for", "simple-search");
     			attr_dev(label, "class", "sr-only");
-    			add_location(label, file$k, 260, 6, 8997);
+    			add_location(label, file$k, 266, 6, 9411);
     			attr_dev(div0, "class", "flex justify-end");
-    			add_location(div0, file$k, 261, 6, 9058);
+    			add_location(div0, file$k, 267, 6, 9472);
     			attr_dev(form, "class", "relative flex-none flex justify-self-end mr-2");
     			attr_dev(form, "role", "search");
-    			add_location(form, file$k, 259, 4, 8915);
+    			add_location(form, file$k, 265, 4, 9329);
     			attr_dev(div1, "class", "flex items-center justify-between");
-    			add_location(div1, file$k, 213, 2, 6485);
+    			add_location(div1, file$k, 219, 2, 6899);
     			attr_dev(div2, "class", "bg-white py-2 border max-sm:w-full md:w-96 md:h-[500px] md:right-0 h-96 top-10");
     			set_style(div2, "display", "none");
     			set_style(div2, "position", "fixed");
     			set_style(div2, "overflow", "hidden");
     			set_style(div2, "z-index", "999");
     			set_style(div2, "-webkit-overflow-scrolling", "touch");
-    			add_location(div2, file$k, 315, 2, 11631);
+    			add_location(div2, file$k, 321, 2, 12045);
     			attr_dev(nav, "class", "bg-white border-b border-gray-100 z-50");
-    			add_location(nav, file$k, 212, 0, 6429);
+    			add_location(nav, file$k, 218, 0, 6843);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -3682,17 +3682,26 @@ var app = (function () {
     					? data.jibunAddress.split(" ")
     					: data.autoJibunAddress.split(" ");
 
-    					console.log("6666", jibunAddressArr);
+    					console.log("6666", roadAddressArr, " / ", jibunAddressArr, " / ", jibunAddressArr[jibunAddressArr.length - 1]);
     					console.log("7777", data.autoJibunAddress, data.autoJibunAddress == "");
     					let sido = cityName[data.sido];
     					let sigungu = data.sigungu;
     					let roadname = data.roadname;
+    					let bname1 = data.bname1;
+    					let bname2 = data.bname2;
     					let bname = data.bname;
+    					let roadAddress = sido + " " + sigungu + " " + roadname + " " + roadAddressArr[roadAddressArr.length - 1];
+
+    					let jibunAddress = bname1 != ""
+    					? sido + " " + sigungu + " " + bname1 + " " + bname2 + " " + jibunAddressArr[jibunAddressArr.length - 1]
+    					: sido + " " + sigungu + " " + bname + " " + jibunAddressArr[jibunAddressArr.length - 1];
+
+    					console.log("88888", roadAddress, " / ", jibunAddress);
 
     					var site = {
     						id: $siteList.length + 1,
-    						address: sido + " " + sigungu + " " + roadname + " " + roadAddressArr[roadAddressArr.length - 1],
-    						jibun: sido + " " + sigungu + " " + bname + " " + jibunAddressArr[jibunAddressArr.length - 1],
+    						address: roadAddress,
+    						jibun: jibunAddress,
     						name: data.buildingName ? data.buildingName : "N/A",
     						owner: "-",
     						todos: []
@@ -6205,7 +6214,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (40:4) {#if fl.mgmBldrgstPk == $mgmBldrgstPk}
+    // (39:4) {#if fl.mgmBldrgstPk == $mgmBldrgstPk}
     function create_if_block$7(ctx) {
     	let t0;
     	let div;
@@ -6236,11 +6245,11 @@ var app = (function () {
     			t5 = text(")");
     			t6 = space();
     			attr_dev(span, "class", span_class_value = "" + (/*fl*/ ctx[4].flrNoNm + " " + (/*fl*/ ctx[4].areaExctYn == 1 ? 'text-muted' : '')));
-    			add_location(span, file$h, 58, 10, 2454);
+    			add_location(span, file$h, 57, 10, 2423);
     			attr_dev(button, "class", "w-full py-2.5 px-5 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:text-blue-700 cursor-default");
-    			add_location(button, file$h, 56, 8, 2241);
+    			add_location(button, file$h, 55, 8, 2210);
     			attr_dev(div, "class", "flex-none fw-light px-1 my-1");
-    			add_location(div, file$h, 55, 6, 2189);
+    			add_location(div, file$h, 54, 6, 2158);
     		},
     		m: function mount(target, anchor) {
     			if (if_block) if_block.m(target, anchor);
@@ -6287,14 +6296,14 @@ var app = (function () {
     		block,
     		id: create_if_block$7.name,
     		type: "if",
-    		source: "(40:4) {#if fl.mgmBldrgstPk == $mgmBldrgstPk}",
+    		source: "(39:4) {#if fl.mgmBldrgstPk == $mgmBldrgstPk}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (41:6) {#if id == 0 || fl.flrNoNm != brFlrOulnInfo[id - 1].flrNoNm || fl.mgmBldrgstPk != brFlrOulnInfo[id - 1].mgmBldrgstPk}
+    // (40:6) {#if id == 0 || fl.flrNoNm != brFlrOulnInfo[id - 1].flrNoNm || fl.mgmBldrgstPk != brFlrOulnInfo[id - 1].mgmBldrgstPk}
     function create_if_block_1$2(ctx) {
     	let div;
     	let span0;
@@ -6322,22 +6331,22 @@ var app = (function () {
     			t3 = text(t3_value);
     			t4 = text(" m2");
     			attr_dev(span0, "class", "flex-none pl-1");
-    			add_location(span0, file$h, 42, 10, 1463);
+    			add_location(span0, file$h, 41, 10, 1432);
     			attr_dev(path, "stroke-linecap", "round");
     			attr_dev(path, "stroke-linejoin", "round");
     			attr_dev(path, "d", "M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0l-5.571 3-5.571-3");
-    			add_location(path, file$h, 45, 14, 1738);
+    			add_location(path, file$h, 44, 14, 1707);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "fill", "none");
     			attr_dev(svg, "viewBox", "0 0 24 24");
     			attr_dev(svg, "stroke-width", "1");
     			attr_dev(svg, "stroke", "currentColor");
     			attr_dev(svg, "class", "w-6 h-6 pr-1");
-    			add_location(svg, file$h, 44, 13, 1590);
+    			add_location(svg, file$h, 43, 13, 1559);
     			attr_dev(span1, "class", "flex-none text-muted flex text-sm pr-1");
-    			add_location(span1, file$h, 43, 10, 1523);
+    			add_location(span1, file$h, 42, 10, 1492);
     			attr_dev(div, "class", "grow mt-3 px-1 text-sm flex justify-between font-light");
-    			add_location(div, file$h, 41, 8, 1383);
+    			add_location(div, file$h, 40, 8, 1352);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -6364,14 +6373,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$2.name,
     		type: "if",
-    		source: "(41:6) {#if id == 0 || fl.flrNoNm != brFlrOulnInfo[id - 1].flrNoNm || fl.mgmBldrgstPk != brFlrOulnInfo[id - 1].mgmBldrgstPk}",
+    		source: "(40:6) {#if id == 0 || fl.flrNoNm != brFlrOulnInfo[id - 1].flrNoNm || fl.mgmBldrgstPk != brFlrOulnInfo[id - 1].mgmBldrgstPk}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (39:2) {#each brFlrOulnInfo as fl, id}
+    // (38:2) {#each brFlrOulnInfo as fl, id}
     function create_each_block$4(ctx) {
     	let if_block_anchor;
     	let if_block = /*fl*/ ctx[4].mgmBldrgstPk == /*$mgmBldrgstPk*/ ctx[1] && create_if_block$7(ctx);
@@ -6409,7 +6418,7 @@ var app = (function () {
     		block,
     		id: create_each_block$4.name,
     		type: "each",
-    		source: "(39:2) {#each brFlrOulnInfo as fl, id}",
+    		source: "(38:2) {#each brFlrOulnInfo as fl, id}",
     		ctx
     	});
 
@@ -6418,8 +6427,6 @@ var app = (function () {
 
     function create_fragment$j(ctx) {
     	let div;
-    	let h6;
-    	let t1;
     	let each_value = /*brFlrOulnInfo*/ ctx[0];
     	validate_each_argument(each_value);
     	let each_blocks = [];
@@ -6431,16 +6438,11 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			div = element("div");
-    			h6 = element("h6");
-    			h6.textContent = "층별 정보";
-    			t1 = space();
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(h6, "class", "pl-2");
-    			add_location(h6, file$h, 37, 2, 1142);
     			attr_dev(div, "class", "flex-col flex-wrap mb-4");
     			add_location(div, file$h, 36, 0, 1101);
     		},
@@ -6449,8 +6451,6 @@ var app = (function () {
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
-    			append_dev(div, h6);
-    			append_dev(div, t1);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].m(div, null);
@@ -6611,7 +6611,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (476:0) {:catch error}
+    // (475:0) {:catch error}
     function create_catch_block$1(ctx) {
     	let h5;
 
@@ -6621,7 +6621,7 @@ var app = (function () {
     			h5.textContent = "에러 발생 : 건물정보를 찾지 못했습니다. 주소를 다시 확인해주세요.";
     			attr_dev(h5, "class", "text-lg pl-2");
     			set_style(h5, "color", "red");
-    			add_location(h5, file$g, 476, 2, 14219);
+    			add_location(h5, file$g, 475, 2, 14152);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h5, anchor);
@@ -6638,7 +6638,7 @@ var app = (function () {
     		block,
     		id: create_catch_block$1.name,
     		type: "catch",
-    		source: "(476:0) {:catch error}",
+    		source: "(475:0) {:catch error}",
     		ctx
     	});
 
@@ -6682,10 +6682,10 @@ var app = (function () {
     			cite = element("cite");
     			cite.textContent = "공공데이터포털";
     			attr_dev(cite, "class", "text-muted");
-    			add_location(cite, file$g, 473, 23, 14143);
+    			add_location(cite, file$g, 472, 23, 14076);
     			attr_dev(blockquote, "cite", "https://www.data.go.kr");
     			attr_dev(blockquote, "class", "text-secondary my-5 text-sm text-slate-700 ml-2");
-    			add_location(blockquote, file$g, 472, 2, 14020);
+    			add_location(blockquote, file$g, 471, 2, 13953);
     		},
     		m: function mount(target, anchor) {
     			if (if_block) if_block.m(target, anchor);
