@@ -43,7 +43,7 @@
 
   function closeDaumPostcode() {
     // iframe을 넣은 element를 안보이게 한다.
-    element_layer.style.display = "none";
+    findAddressPopup.style.display = "none";
   }
 
   let coord2;
@@ -161,9 +161,11 @@
         // 각 주소의 노출 규칙에 따라 주소를 조합한다.
         // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
         // var addr = data.roadAddress; // 주소 변수
-        console.log("5555", $siteList, data.jibunAddress);
+        console.log("5555", data);
         let roadAddressArr = data.roadAddress.split(" ");
-        let jibunAddressArr = data.jibunAddress.split(" ");
+        let jibunAddressArr = data.autoJibunAddress == "" ? data.jibunAddress.split(" ") : data.autoJibunAddress.split(" ");
+        console.log("6666", jibunAddressArr);
+        console.log("7777", data.autoJibunAddress, data.autoJibunAddress == "");
 
         let sido = cityName[data.sido];
         let sigungu = data.sigungu;
@@ -208,7 +210,7 @@
   }
 </script>
 
-<nav class="bg-white border-b-2 border-gray-100 z-50">
+<nav class="bg-white border-b border-gray-100 z-50">
   <div class="flex items-center justify-between">
     <button
       type="button"
@@ -274,12 +276,12 @@
             </button>
           </div>
         {:else}
-          <div class="flex-initial inset-y-0 items-center pl-3">
+          <div class="flex-initial inset-y-0 items-center pl-3 pr-2">
             <button
               style="pt-1 pr-2"
               on:click={() => {
                 searchToggle = false;
-                closeDaumPostcode;
+                closeDaumPostcode();
               }}
             >
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
@@ -311,7 +313,7 @@
       </div>
     </form>
   </div>
-  <div bind:this={findAddressPopup} class="bg-white py-2 max-sm:w-full md:w-96 md:h-[500px] md:right-0 h-96 top-10" style="display: none; position: fixed; overflow: hidden; z-index: 999; -webkit-overflow-scrolling: touch" />
+  <div bind:this={findAddressPopup} class="bg-white py-2 border max-sm:w-full md:w-96 md:h-[500px] md:right-0 h-96 top-10" style="display: none; position: fixed; overflow: hidden; z-index: 999; -webkit-overflow-scrolling: touch" />
 </nav>
 
 <style>

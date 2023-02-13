@@ -218,6 +218,7 @@
     url += "&numOfRows=" + numOfRows;
     url += "&pageNo=" + pageNo;
     url += "&serviceKey=" + apiKey;
+    console.log("건축물대장url : ", url);
 
     return fetch(url)
       .then((resp) => {
@@ -419,15 +420,19 @@
         bind:this={summary}
         on:click={() => {
           if (!details.open) {
-            document.body.style.overflow = "hidden";
+            // document.body.style.overflow = "hidden";
             document.getElementsByClassName("modal-container")[0].style.overflow = "hidden";
           } else {
-            document.body.style.overflow = "auto";
+            // document.body.style.overflow = "auto";
             document.getElementsByClassName("modal-container")[0].style.overflow = "auto";
           }
         }}
-        class="mb-2 hover:text-indigo-600 cursor-pointer">건축물대장 번호 : {$mgmBldrgstPk}</summary
-      >
+        class="flex mb-2 hover:text-indigo-600 cursor-pointer"
+        >건물번호 : {$mgmBldrgstPk}
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ml-1 pt-2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+        </svg>
+      </summary>
       <ul class="absolute top-full border-2 border-slate-200 rounded-sm p-3 bg-white max-h-96 w-5/6 overflow-auto z-20">
         {#each brTitleInfo as d, id}
           <li class="page-item hover:text-indigo-600 cursor-pointer my-2">
@@ -436,7 +441,7 @@
               on:click={() => {
                 $mgmBldrgstPk = d.mgmBldrgstPk;
                 details.open = false;
-                document.body.style.overflow = "auto";
+                // document.body.style.overflow = "auto";
                 document.getElementsByClassName("modal-container")[0].style.overflow = "auto";
               }}>{d.mgmBldrgstPk} {d.bldNm == "" ? "" : "(" + d.bldNm + ")"}</button
             >
@@ -469,13 +474,12 @@
     국토교통부 건축물대장정보서비스 | <cite class="text-muted">공공데이터포털</cite>
   </blockquote>
 {:catch error}
-  <h5 class="text-lg" style="color: red">Error 발생 : 건물정보를 찾지 못했습니다. 주소를 다시 입력해주세요.</h5>
-  <p class="text-sm">{error.message}</p>
+  <h5 class="text-lg pl-2" style="color: red">에러 발생 : 건물정보를 찾지 못했습니다. 주소를 다시 확인해주세요.</h5>
+  <!-- <p class="text-sm">{error.message}</p> -->
 {/await}
 
 <style>
-  details summary::-webkit-details-marker {
-    font-size: 8px;
-    margin-right: 5px;
+  details summary::marker {
+    font-size: 0;
   }
 </style>

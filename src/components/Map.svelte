@@ -1078,7 +1078,7 @@
       <RightSideModal>
         <div slot="content" class="flex flex-col relative">
           {#if $siteListModal}
-            <div class="flex justify-between px-2 mb-5">
+            <div class="flex justify-between px-2 mb-5 max-sm:mt-3">
               <h3>List</h3>
               <button
                 on:click={() => {
@@ -1114,7 +1114,7 @@
 
           {#if $siteModal}
             <!-- 모달 닫기 버튼 -->
-            <div class="flex justify-between px-2 mb-5">
+            <div class="flex justify-between px-2 mb-5 max-sm:mt-3">
               <h3>건물정보</h3>
 
               <button
@@ -1185,7 +1185,7 @@
     {#if $mobileView}
       <!-- 지도 전환 버튼 -->
       <div class="w-full flex py-2.5 fixed bottom-0 border-t-2 bg-white z-50">
-        <div class="w-1/2 text-center">
+        <div class="w-1/2 text-center" style="padding-bottom: env(safe-area-inset-bottom);">
           <button
             on:click={() => {
               $modal = false;
@@ -1202,7 +1202,7 @@
           </button>
         </div>
 
-        <div class="w-1/2 text-center">
+        <div class="w-1/2 text-center" style="padding-bottom: env(safe-area-inset-bottom);">
           <button
             on:click={() => {
               $modal = true;

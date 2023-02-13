@@ -12,7 +12,6 @@
   bind:this={rightSideModal}
   on:scroll={() => {
     rightSideModalScrollTop = rightSideModal.scrollTop;
-    console.log(rightSideModalScrollTop);
   }}
 >
   <div class="modal-content md:p-3">
