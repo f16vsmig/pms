@@ -6700,12 +6700,12 @@ var app = (function () {
 
     function get_each_context$3(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[28] = list[i];
-    	child_ctx[30] = i;
+    	child_ctx[31] = list[i];
+    	child_ctx[33] = i;
     	return child_ctx;
     }
 
-    // (475:0) {:catch error}
+    // (602:0) {:catch error}
     function create_catch_block$1(ctx) {
     	let h5;
 
@@ -6715,7 +6715,7 @@ var app = (function () {
     			h5.textContent = "에러 발생 : 건물정보를 찾지 못했습니다. 주소를 다시 확인해주세요.";
     			attr_dev(h5, "class", "text-lg pl-2");
     			set_style(h5, "color", "red");
-    			add_location(h5, file$g, 475, 2, 13677);
+    			add_location(h5, file$g, 602, 2, 17343);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h5, anchor);
@@ -6732,14 +6732,14 @@ var app = (function () {
     		block,
     		id: create_catch_block$1.name,
     		type: "catch",
-    		source: "(475:0) {:catch error}",
+    		source: "(602:0) {:catch error}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (416:0) {:then}
+    // (543:0) {:then}
     function create_then_block$1(ctx) {
     	let show_if = Array.isArray(/*brTitleInfo*/ ctx[0]);
     	let t0;
@@ -6776,10 +6776,10 @@ var app = (function () {
     			cite = element("cite");
     			cite.textContent = "공공데이터포털";
     			attr_dev(cite, "class", "text-muted");
-    			add_location(cite, file$g, 472, 23, 13604);
+    			add_location(cite, file$g, 599, 23, 17270);
     			attr_dev(blockquote, "cite", "https://www.data.go.kr");
     			attr_dev(blockquote, "class", "text-secondary my-5 text-sm text-slate-700 ml-2");
-    			add_location(blockquote, file$g, 471, 2, 13482);
+    			add_location(blockquote, file$g, 598, 2, 17148);
     		},
     		m: function mount(target, anchor) {
     			if (if_block) if_block.m(target, anchor);
@@ -6842,14 +6842,14 @@ var app = (function () {
     		block,
     		id: create_then_block$1.name,
     		type: "then",
-    		source: "(416:0) {:then}",
+    		source: "(543:0) {:then}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (417:2) {#if Array.isArray(brTitleInfo)}
+    // (544:2) {#if Array.isArray(brTitleInfo)}
     function create_if_block$6(ctx) {
     	let details_1;
     	let summary_1;
@@ -6889,20 +6889,20 @@ var app = (function () {
     			attr_dev(path, "stroke-linecap", "round");
     			attr_dev(path, "stroke-linejoin", "round");
     			attr_dev(path, "d", "M19.5 8.25l-7.5 7.5-7.5-7.5");
-    			add_location(path, file$g, 432, 10, 11956);
+    			add_location(path, file$g, 559, 10, 15622);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "fill", "none");
     			attr_dev(svg, "viewBox", "0 0 24 24");
     			attr_dev(svg, "stroke-width", "1.5");
     			attr_dev(svg, "stroke", "currentColor");
     			attr_dev(svg, "class", "w-5 h-5 ml-1 pt-2");
-    			add_location(svg, file$g, 431, 8, 11806);
+    			add_location(svg, file$g, 558, 8, 15472);
     			attr_dev(summary_1, "class", "flex mb-2 hover:text-indigo-600 cursor-pointer svelte-4tql4n");
-    			add_location(summary_1, file$g, 418, 6, 11273);
+    			add_location(summary_1, file$g, 545, 6, 14939);
     			attr_dev(ul, "class", "absolute top-full border-2 border-slate-200 rounded-sm p-3 bg-white max-h-96 w-5/6 overflow-auto z-20");
-    			add_location(ul, file$g, 435, 6, 12082);
+    			add_location(ul, file$g, 562, 6, 15748);
     			attr_dev(details_1, "class", "relative px-2 text-slate-700 svelte-4tql4n");
-    			add_location(details_1, file$g, 417, 4, 11200);
+    			add_location(details_1, file$g, 544, 4, 14866);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, details_1, anchor);
@@ -6968,24 +6968,24 @@ var app = (function () {
     		block,
     		id: create_if_block$6.name,
     		type: "if",
-    		source: "(417:2) {#if Array.isArray(brTitleInfo)}",
+    		source: "(544:2) {#if Array.isArray(brTitleInfo)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (437:8) {#each brTitleInfo as d, id}
+    // (564:8) {#each brTitleInfo as d, id}
     function create_each_block$3(ctx) {
     	let li;
     	let button;
-    	let t0_value = /*d*/ ctx[28].mgmBldrgstPk + "";
+    	let t0_value = /*d*/ ctx[31].mgmBldrgstPk + "";
     	let t0;
     	let t1;
 
-    	let t2_value = (/*d*/ ctx[28].bldNm == ""
+    	let t2_value = (/*d*/ ctx[31].bldNm == ""
     	? ""
-    	: "(" + /*d*/ ctx[28].bldNm + ")") + "";
+    	: "(" + /*d*/ ctx[31].bldNm + ")") + "";
 
     	let t2;
     	let button_class_value;
@@ -6994,7 +6994,7 @@ var app = (function () {
     	let dispose;
 
     	function click_handler_1() {
-    		return /*click_handler_1*/ ctx[9](/*d*/ ctx[28]);
+    		return /*click_handler_1*/ ctx[9](/*d*/ ctx[31]);
     	}
 
     	const block = {
@@ -7006,13 +7006,13 @@ var app = (function () {
     			t2 = text(t2_value);
     			t3 = space();
 
-    			attr_dev(button, "class", button_class_value = "page-link " + (/*d*/ ctx[28].mgmBldrgstPk == /*$mgmBldrgstPk*/ ctx[5]
+    			attr_dev(button, "class", button_class_value = "page-link " + (/*d*/ ctx[31].mgmBldrgstPk == /*$mgmBldrgstPk*/ ctx[5]
     			? 'text-indigo-600'
     			: ''));
 
-    			add_location(button, file$g, 438, 12, 12321);
+    			add_location(button, file$g, 565, 12, 15987);
     			attr_dev(li, "class", "page-item hover:text-indigo-600 cursor-pointer my-2");
-    			add_location(li, file$g, 437, 10, 12244);
+    			add_location(li, file$g, 564, 10, 15910);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -7029,13 +7029,13 @@ var app = (function () {
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty[0] & /*brTitleInfo*/ 1 && t0_value !== (t0_value = /*d*/ ctx[28].mgmBldrgstPk + "")) set_data_dev(t0, t0_value);
+    			if (dirty[0] & /*brTitleInfo*/ 1 && t0_value !== (t0_value = /*d*/ ctx[31].mgmBldrgstPk + "")) set_data_dev(t0, t0_value);
 
-    			if (dirty[0] & /*brTitleInfo*/ 1 && t2_value !== (t2_value = (/*d*/ ctx[28].bldNm == ""
+    			if (dirty[0] & /*brTitleInfo*/ 1 && t2_value !== (t2_value = (/*d*/ ctx[31].bldNm == ""
     			? ""
-    			: "(" + /*d*/ ctx[28].bldNm + ")") + "")) set_data_dev(t2, t2_value);
+    			: "(" + /*d*/ ctx[31].bldNm + ")") + "")) set_data_dev(t2, t2_value);
 
-    			if (dirty[0] & /*brTitleInfo, $mgmBldrgstPk*/ 33 && button_class_value !== (button_class_value = "page-link " + (/*d*/ ctx[28].mgmBldrgstPk == /*$mgmBldrgstPk*/ ctx[5]
+    			if (dirty[0] & /*brTitleInfo, $mgmBldrgstPk*/ 33 && button_class_value !== (button_class_value = "page-link " + (/*d*/ ctx[31].mgmBldrgstPk == /*$mgmBldrgstPk*/ ctx[5]
     			? 'text-indigo-600'
     			: ''))) {
     				attr_dev(button, "class", button_class_value);
@@ -7052,14 +7052,14 @@ var app = (function () {
     		block,
     		id: create_each_block$3.name,
     		type: "each",
-    		source: "(437:8) {#each brTitleInfo as d, id}",
+    		source: "(564:8) {#each brTitleInfo as d, id}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (414:16)    <Loading /> {:then}
+    // (541:16)    <Loading /> {:then}
     function create_pending_block$1(ctx) {
     	let loading;
     	let current;
@@ -7092,7 +7092,7 @@ var app = (function () {
     		block,
     		id: create_pending_block$1.name,
     		type: "pending",
-    		source: "(414:16)    <Loading /> {:then}",
+    		source: "(541:16)    <Loading /> {:then}",
     		ctx
     	});
 
@@ -7112,7 +7112,7 @@ var app = (function () {
     		pending: create_pending_block$1,
     		then: create_then_block$1,
     		catch: create_catch_block$1,
-    		error: 31,
+    		error: 34,
     		blocks: [,,,]
     	};
 
@@ -7493,6 +7493,129 @@ var app = (function () {
     		});
     	}
 
+    	// 건축 소유주 api
+    	async function ownerInfoService() {
+    		// let url = "/api/getBrTitleInfo";
+    		let url = "http://apis.data.go.kr/1611000/OwnerInfoService/getArchitecturePossessionInfo";
+
+    		url += "?sigungu_cd=" + sigunguCd;
+    		url += "&bjdong_cd=" + bjdongCd;
+    		url += "&platGbCd=" + platGbCd;
+    		url += "&bun=" + bun;
+    		url += "&ji=" + ji;
+    		url += "&numOfRows=" + numOfRows;
+    		url += "&pageNo=" + pageNo;
+    		url += "&serviceKey=" + apiKey;
+    		console.log("건축소유주url : ", url);
+
+    		return fetch(url).then(resp => {
+    			return resp.text();
+    		}).then(xmlStr => {
+    			console.log("건축소유주xml : ", xmlStr);
+
+    			// return parseXml(xmlStr);
+    			return parseXML(xmlStr);
+    		}).then(xml => {
+    			console.log("건축소유주xml2 : ", xml);
+
+    			// return xml2json(xml);
+    			return xml2json(xml);
+    		}).then(json => {
+    			let data = json.response.body.items.item;
+    			console.log("건축소유주json : ", data);
+
+    			if (Array.isArray(data)) {
+    				return data.sort(sortACN("mgmBldrgstPk"));
+    			}
+
+    			return data;
+    		}).catch(error => {
+    			throw new Error(error);
+    		});
+    	}
+
+    	// 주택가격 api
+    	async function getBrHsprcInfo() {
+    		// let url = "/api/getBrTitleInfo";
+    		let url = "http://apis.data.go.kr/1613000/BldRgstService_v2/getBrHsprcInfo";
+
+    		url += "?sigunguCd=" + sigunguCd;
+    		url += "&bjdongCd=" + bjdongCd;
+    		url += "&platGbCd=" + platGbCd;
+    		url += "&bun=" + bun;
+    		url += "&ji=" + ji;
+    		url += "&numOfRows=" + numOfRows;
+    		url += "&pageNo=" + pageNo;
+    		url += "&serviceKey=" + apiKey;
+    		console.log("주택가격url : ", url);
+
+    		return fetch(url).then(resp => {
+    			return resp.text();
+    		}).then(xmlStr => {
+    			console.log("주택가격xml : ", xmlStr);
+
+    			// return parseXml(xmlStr);
+    			return parseXML(xmlStr);
+    		}).then(xml => {
+    			console.log("주택가격xml2 : ", xml);
+
+    			// return xml2json(xml);
+    			return xml2json(xml);
+    		}).then(json => {
+    			let data = json.response.body.items.item;
+    			console.log("주택가격json : ", data);
+
+    			if (Array.isArray(data)) {
+    				return data.sort(sortACN("mgmBldrgstPk"));
+    			}
+
+    			return data;
+    		}).catch(error => {
+    			throw new Error(error);
+    		});
+    	}
+
+    	// 유지보수 api
+    	async function getMaintenanceHistory() {
+    		// let url = "/api/getBrTitleInfo";
+    		let url = "https://apis.data.go.kr/1613000/MtnChkService_V2/getMaintenanceHistory";
+
+    		url += "?sigunguCd=" + sigunguCd;
+    		url += "&bjdongCd=" + bjdongCd;
+    		url += "&platGbCd=" + platGbCd;
+    		url += "&bun=" + bun;
+    		url += "&ji=" + ji;
+    		url += "&numOfRows=" + numOfRows;
+    		url += "&pageNo=" + pageNo;
+    		url += "&serviceKey=" + apiKey;
+    		console.log("유지보수url : ", url);
+
+    		return fetch(url).then(resp => {
+    			return resp.text();
+    		}).then(xmlStr => {
+    			console.log("유지보수xml : ", xmlStr);
+
+    			// return parseXml(xmlStr);
+    			return parseXML(xmlStr);
+    		}).then(xml => {
+    			console.log("유지보수xml2 : ", xml);
+
+    			// return xml2json(xml);
+    			return xml2json(xml);
+    		}).then(json => {
+    			let data = json.response.body.items.item;
+    			console.log("유지보수json : ", data);
+
+    			if (Array.isArray(data)) {
+    				return data.sort(sortACN("mgmBldrgstPk"));
+    			}
+
+    			return data;
+    		}).catch(error => {
+    			throw new Error(error);
+    		});
+    	}
+
     	let promise;
     	let { elem } = $$props;
 
@@ -7500,9 +7623,13 @@ var app = (function () {
     		console.log("jibun", jibun, elem);
     		setBunJi(jibun);
     		console.log(setBunJi(jibun), sigunguCd, bjdongCd, bun, ji);
-    		await getStanReginCd(jibun);
-    		await getBrTitleInfo();
-    		await getBrFlrOulnInfo();
+    		await getStanReginCd(jibun); // 법정동
+    		await getBrTitleInfo(); // 표제부
+    		await getBrFlrOulnInfo(); // 층 정보
+
+    		// await ownerInfoService(); // 건축 소유주
+    		// await getBrHsprcInfo(); // 주택가격
+    		// await getMaintenanceHistory(); // 유지보수v2
     		return;
     	}
 
@@ -7539,6 +7666,7 @@ var app = (function () {
     		});
     	}
 
+    	//
     	async function getStanReginCd(jibun) {
     		// 지번 주소에서 번지수를 지우고 주소 생성
     		let jibunArr = jibun.split(" ");
@@ -7666,6 +7794,9 @@ var app = (function () {
     		cityName,
     		getBrBasisOulnInfo,
     		getBrTitleInfo,
+    		ownerInfoService,
+    		getBrHsprcInfo,
+    		getMaintenanceHistory,
     		promise,
     		elem,
     		prepare,

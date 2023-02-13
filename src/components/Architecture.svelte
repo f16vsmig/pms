@@ -256,15 +256,141 @@
       });
   }
 
+  // 건축 소유주 api
+  async function ownerInfoService() {
+    // let url = "/api/getBrTitleInfo";
+    let url = "http://apis.data.go.kr/1611000/OwnerInfoService/getArchitecturePossessionInfo";
+    url += "?sigungu_cd=" + sigunguCd;
+    url += "&bjdong_cd=" + bjdongCd;
+    url += "&platGbCd=" + platGbCd;
+    url += "&bun=" + bun;
+    url += "&ji=" + ji;
+    url += "&numOfRows=" + numOfRows;
+    url += "&pageNo=" + pageNo;
+    url += "&serviceKey=" + apiKey;
+    console.log("건축소유주url : ", url);
+
+    return fetch(url)
+      .then((resp) => {
+        return resp.text();
+      })
+      .then((xmlStr) => {
+        console.log("건축소유주xml : ", xmlStr);
+        // return parseXml(xmlStr);
+        return parseXML(xmlStr);
+      })
+      .then((xml) => {
+        console.log("건축소유주xml2 : ", xml);
+        // return xml2json(xml);
+        return xml2json(xml);
+      })
+      .then((json) => {
+        let data = json.response.body.items.item;
+        console.log("건축소유주json : ", data);
+        if (Array.isArray(data)) {
+          return data.sort(sortACN("mgmBldrgstPk"));
+        }
+        return data;
+      })
+      .catch((error) => {
+        throw new Error(error);
+      });
+  }
+
+  // 주택가격 api
+  async function getBrHsprcInfo() {
+    // let url = "/api/getBrTitleInfo";
+    let url = "http://apis.data.go.kr/1613000/BldRgstService_v2/getBrHsprcInfo";
+    url += "?sigunguCd=" + sigunguCd;
+    url += "&bjdongCd=" + bjdongCd;
+    url += "&platGbCd=" + platGbCd;
+    url += "&bun=" + bun;
+    url += "&ji=" + ji;
+    url += "&numOfRows=" + numOfRows;
+    url += "&pageNo=" + pageNo;
+    url += "&serviceKey=" + apiKey;
+    console.log("주택가격url : ", url);
+
+    return fetch(url)
+      .then((resp) => {
+        return resp.text();
+      })
+      .then((xmlStr) => {
+        console.log("주택가격xml : ", xmlStr);
+        // return parseXml(xmlStr);
+        return parseXML(xmlStr);
+      })
+      .then((xml) => {
+        console.log("주택가격xml2 : ", xml);
+        // return xml2json(xml);
+        return xml2json(xml);
+      })
+      .then((json) => {
+        let data = json.response.body.items.item;
+        console.log("주택가격json : ", data);
+        if (Array.isArray(data)) {
+          return data.sort(sortACN("mgmBldrgstPk"));
+        }
+        return data;
+      })
+      .catch((error) => {
+        throw new Error(error);
+      });
+  }
+
+  // 유지보수 api
+  async function getMaintenanceHistory() {
+    // let url = "/api/getBrTitleInfo";
+    let url = "https://apis.data.go.kr/1613000/MtnChkService_V2/getMaintenanceHistory";
+    url += "?sigunguCd=" + sigunguCd;
+    url += "&bjdongCd=" + bjdongCd;
+    url += "&platGbCd=" + platGbCd;
+    url += "&bun=" + bun;
+    url += "&ji=" + ji;
+    url += "&numOfRows=" + numOfRows;
+    url += "&pageNo=" + pageNo;
+    url += "&serviceKey=" + apiKey;
+    console.log("유지보수url : ", url);
+
+    return fetch(url)
+      .then((resp) => {
+        return resp.text();
+      })
+      .then((xmlStr) => {
+        console.log("유지보수xml : ", xmlStr);
+        // return parseXml(xmlStr);
+        return parseXML(xmlStr);
+      })
+      .then((xml) => {
+        console.log("유지보수xml2 : ", xml);
+        // return xml2json(xml);
+        return xml2json(xml);
+      })
+      .then((json) => {
+        let data = json.response.body.items.item;
+        console.log("유지보수json : ", data);
+        if (Array.isArray(data)) {
+          return data.sort(sortACN("mgmBldrgstPk"));
+        }
+        return data;
+      })
+      .catch((error) => {
+        throw new Error(error);
+      });
+  }
+
   let promise;
   export let elem;
   async function prepare(jibun) {
     console.log("jibun", jibun, elem);
     setBunJi(jibun);
     console.log(setBunJi(jibun), sigunguCd, bjdongCd, bun, ji);
-    await getStanReginCd(jibun);
-    await getBrTitleInfo();
-    await getBrFlrOulnInfo();
+    await getStanReginCd(jibun); // 법정동
+    await getBrTitleInfo(); // 표제부
+    await getBrFlrOulnInfo(); // 층 정보
+    // await ownerInfoService(); // 건축 소유주
+    // await getBrHsprcInfo(); // 주택가격
+    // await getMaintenanceHistory(); // 유지보수v2
 
     return;
   }
@@ -356,6 +482,7 @@
     };
   }
 
+  //
   async function getStanReginCd(jibun) {
     // 지번 주소에서 번지수를 지우고 주소 생성
     let jibunArr = jibun.split(" ");
