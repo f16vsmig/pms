@@ -1,7 +1,7 @@
 <script>
   import { link, location } from "svelte-spa-router";
   import { detailVeiw } from "../assets/etc/Search.svelte";
-  import { mobileView, siteList, rightSideModal, map, modal, siteModal, siteListModal, detailElem } from "../store";
+  import { mobileView, siteList, rightSideModal, map, modal, siteModal, siteListModal, detailElem, mapCenter, roadViewUrl } from "../store";
 
   let open = $mobileView ? false : true;
 
@@ -46,10 +46,12 @@
     findAddressPopup.style.display = "none";
   }
 
+  // let roadViewUrl;
+
   function Pin(elem) {
     let geocoder = new kakao.maps.services.Geocoder();
     let address = elem.address;
-    console.log("엘리먼트 : ", elem, elem.address);
+    var rc = new kakao.maps.RoadviewClient(); // 좌표를 통한 로드뷰의 panoid를 추출하기 위한 로드뷰 help객체 생성
 
     return geocoder.addressSearch(address, function (result, status) {
       if (status == kakao.maps.services.Status.OK) {
@@ -57,11 +59,19 @@
 
         console.log("지오코더 : ", result, status);
         setMarker(elem, result);
-        $map.setLevel(4);
 
-        $map.setCenter(new kakao.maps.LatLng(result[0].y, result[0].x));
+        $mapCenter = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+        $map.setLevel(4);
+        $map.setCenter($mapCenter);
         // elem.xAxis = result[0].x; // x축 추가
         // elem.yAxis = result[0].y; // y축 추가
+
+        // var rc = new kakao.maps.RoadviewClient(); // 좌표를 통한 로드뷰의 panoid를 추출하기 위한 로드뷰 help객체 생성
+        rc.getNearestPanoId($mapCenter, 50, function (panoId) {
+          $roadViewUrl = "https://map.kakao.com/?panoid=" + panoId; //Kakao 지도 로드뷰로 보내는 링크
+          console.log("panoid : ", $roadViewUrl, panoId);
+        });
       }
     });
   }
@@ -233,7 +243,7 @@
       {/if}
     </button>
 
-    <h1 class="flex-none p-1 text-lg md:ml-8 dark:text-white">건축물대장</h1>
+    <h1 class="flex-none p-1 text-lg md:ml-8 dark:text-white">건물대장</h1>
 
     {#if open}
       <!-- <div class="w-full max-sm:w-64 max-sm:absolute max-sm:top-16 max-sm:mx-2 z-50"> -->
@@ -317,7 +327,7 @@
       </div>
     </form>
   </div>
-  <div bind:this={findAddressPopup} class="bg-white py-2 border max-sm:w-full md:w-96 md:h-[500px] md:right-0 h-96 top-10" style="display: none; position: fixed; overflow: hidden; z-index: 999; -webkit-overflow-scrolling: touch" />
+  <div bind:this={findAddressPopup} class="fixed bg-white py-2 border max-sm:w-full md:w-96 md:h-[500px] md:right-0 h-96 top-10 md:top-14" style="display: none; overflow: hidden; z-index: 999; -webkit-overflow-scrolling: touch" />
 </nav>
 
 <style>
