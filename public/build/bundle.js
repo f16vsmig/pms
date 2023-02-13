@@ -6897,11 +6897,11 @@ var app = (function () {
     			attr_dev(svg, "stroke", "currentColor");
     			attr_dev(svg, "class", "w-5 h-5 ml-1 pt-2");
     			add_location(svg, file$g, 558, 8, 15472);
-    			attr_dev(summary_1, "class", "flex mb-2 hover:text-indigo-600 cursor-pointer svelte-4tql4n");
+    			attr_dev(summary_1, "class", "flex mb-2 hover:text-indigo-600 cursor-pointer svelte-oex3ks");
     			add_location(summary_1, file$g, 545, 6, 14939);
     			attr_dev(ul, "class", "absolute top-full border-2 border-slate-200 rounded-sm p-3 bg-white max-h-96 w-5/6 overflow-auto z-20");
     			add_location(ul, file$g, 562, 6, 15748);
-    			attr_dev(details_1, "class", "relative px-2 text-slate-700 svelte-4tql4n");
+    			attr_dev(details_1, "class", "relative px-2 text-slate-700 svelte-oex3ks");
     			add_location(details_1, file$g, 544, 4, 14866);
     		},
     		m: function mount(target, anchor) {

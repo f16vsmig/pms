@@ -607,5 +607,6 @@
 <style>
   details summary::marker {
     font-size: 0;
+    display: none;
   }
 </style>
