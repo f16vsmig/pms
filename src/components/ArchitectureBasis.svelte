@@ -1,6 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import { addComma, toDate } from "../utils";
+  import { roadViewUrl } from "../store";
 
   export let data = "";
 
@@ -45,7 +46,16 @@
       </tr>
       <tr class="border-b border-gray-200 dark:border-gray-700">
         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">도로명주소</th>
-        <td class="px-6 py-4">{data.newPlatPlc}</td>
+        <td class="px-6 py-4 flex"
+          >{data.newPlatPlc}
+          {#if $roadViewUrl}
+            <a href={$roadViewUrl} target="_blank" rel="noreferrer" class="text-indigo-600 hover:text-indigo-500 ml-2" title="로드맵 보기"
+              ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 pointer-events-none">
+                <path stroke-linecap="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
+              </svg>
+            </a>
+          {/if}
+        </td>
       </tr>
       <tr class="border-b border-gray-200 dark:border-gray-700">
         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">대지구분</th>

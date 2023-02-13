@@ -21,37 +21,37 @@
   import { onMount, onDestroy } from "svelte";
   import { detailVeiw } from "../assets/etc/Search.svelte";
 
-  import { detailElem, roadVeiwBtnUrl, map, mapCenter, mapLevel, rightSideModal, rightSideModalScrollTop, modal, siteListModal, siteModal } from "../store";
+  import { detailElem, roadVeiwBtnUrl, map, mapCenter, mapLevel, rightSideModal, rightSideModalScrollTop, modal, siteListModal, siteModal, roadViewUrl } from "../store";
   import Pie from "../assets/chart/Pie.svelte";
   import Trend from "../assets/chart/Trend.svelte";
   import Bubble from "../assets/chart/Bubble.svelte";
 
   let mapContainer;
   $siteList = [
-    {
-      id: 1,
-      address: "서울특별시 중구 세종대로7길 25",
-      jibun: "서울특별시 중구 순화동 175",
-      name: "에스원 본사",
-      owner: "코람코",
-      todos: [
-        {
-          id: 12,
-          title: "3층 천장 누수 발생",
-          status: 1,
-        },
-        {
-          id: 13,
-          title: "기계실 바닥 보수",
-          status: 1,
-        },
-      ],
-    },
+    // {
+    //   id: 1,
+    //   address: "서울특별시 중구 세종대로7길 25",
+    //   jibun: "서울특별시 중구 순화동 175",
+    //   name: "에스원 본사",
+    //   owner: "코람코",
+    //   todos: [
+    //     {
+    //       id: 12,
+    //       title: "3층 천장 누수 발생",
+    //       status: 1,
+    //     },
+    //     {
+    //       id: 13,
+    //       title: "기계실 바닥 보수",
+    //       status: 1,
+    //     },
+    //   ],
+    // },
     {
       id: 2,
       address: "서울특별시 종로구 종로 33",
       jibun: "서울특별시 종로구 청진동 70",
-      name: "그랑서울",
+      name: "그랑서울(샘플)",
       owner: "코람코",
       todos: [
         {
@@ -66,102 +66,102 @@
         },
       ],
     },
-    {
-      id: 3,
-      address: "서울 서초구 서초대로74길 11",
-      jibun: "서울특별시 서초구 서초동 1320-10",
-      name: "삼성전자 서초사옥",
-      owner: "코람코",
-      todos: [],
-    },
-    {
-      id: 4,
-      address: "부산광역시 해운대구 달맞이길 30",
-      jibun: "부산광역시 해운대구 중동 1829",
-      name: "엘시티",
-      owner: "코람코",
-      todos: [],
-    },
-    {
-      id: 5,
-      address: "광주광역시 광산구 상무대로 420-25",
-      jibun: "광주광역시 광산구 신촌동 698-9",
-      name: "광주공항",
-      owner: "코람코",
-      todos: [],
-    },
-    {
-      id: 6,
-      address: "강원도 정선군 사북읍 하이원길 265",
-      jibun: "강원도 정선군 사북읍 사북리 424",
-      name: "강원랜드",
-      owner: "코람코",
-      todos: [],
-    },
-    {
-      id: 7,
-      address: "대전광역시 유성구 엑스포로 1",
-      jibun: "대전광역시 유성구 도룡동 3-1",
-      name: "대전신세계백화점",
-      owner: "코람코",
-      todos: [],
-    },
-    {
-      id: 8,
-      address: "서울특별시 강서구 하늘길 112",
-      jibun: "서울특별시 강서구 공항동 1373",
-      name: "김포공항 국내선",
-      owner: "코람코",
-      todos: [],
-    },
-    {
-      id: 9,
-      address: "대구광역시 북구 호암로 51",
-      jibun: "대구광역시 북구 침산동 1757",
-      name: "대구창조센터",
-      owner: "코람코",
-      todos: [],
-    },
-    {
-      id: 10,
-      address: "경상남도 거제시 계룡로 125",
-      jibun: "경상남도 거제시 고현동 717",
-      name: "거제시청",
-      owner: "코람코",
-      todos: [],
-    },
-    {
-      id: 11,
-      address: "제주특별자치도 제주시 첨단로 242",
-      jibun: "제주특별자치도 제주시 영평동 2181",
-      name: "제주스페이스닷원",
-      owner: "코람코",
-      todos: [],
-    },
-    {
-      id: 12,
-      address: "제주특별자치도 제주시 광양9길 10",
-      jibun: "제주특별자치도 제주시 이도이동 1176-1",
-      name: "제주시청",
-      owner: "코람코",
-      todos: [],
-    },
-    {
-      id: 13,
-      address: "경기도 용인시 수지구 죽전로 152",
-      jibun: "경기도 용인시 수지구 죽전동 1491",
-      name: "단국대학교",
-      owner: "코람코",
-      todos: [],
-    },
-    {
-      id: 14,
-      address: "서울특별시 동작구 흑석로 84",
-      jibun: "서울특별시 동작구 흑석동 221",
-      name: "중앙대학교",
-      owner: "코람코",
-      todos: [],
-    },
+    // {
+    //   id: 3,
+    //   address: "서울 서초구 서초대로74길 11",
+    //   jibun: "서울특별시 서초구 서초동 1320-10",
+    //   name: "삼성전자 서초사옥",
+    //   owner: "코람코",
+    //   todos: [],
+    // },
+    // {
+    //   id: 4,
+    //   address: "부산광역시 해운대구 달맞이길 30",
+    //   jibun: "부산광역시 해운대구 중동 1829",
+    //   name: "엘시티",
+    //   owner: "코람코",
+    //   todos: [],
+    // },
+    // {
+    //   id: 5,
+    //   address: "광주광역시 광산구 상무대로 420-25",
+    //   jibun: "광주광역시 광산구 신촌동 698-9",
+    //   name: "광주공항",
+    //   owner: "코람코",
+    //   todos: [],
+    // },
+    // {
+    //   id: 6,
+    //   address: "강원도 정선군 사북읍 하이원길 265",
+    //   jibun: "강원도 정선군 사북읍 사북리 424",
+    //   name: "강원랜드",
+    //   owner: "코람코",
+    //   todos: [],
+    // },
+    // {
+    //   id: 7,
+    //   address: "대전광역시 유성구 엑스포로 1",
+    //   jibun: "대전광역시 유성구 도룡동 3-1",
+    //   name: "대전신세계백화점",
+    //   owner: "코람코",
+    //   todos: [],
+    // },
+    // {
+    //   id: 8,
+    //   address: "서울특별시 강서구 하늘길 112",
+    //   jibun: "서울특별시 강서구 공항동 1373",
+    //   name: "김포공항 국내선",
+    //   owner: "코람코",
+    //   todos: [],
+    // },
+    // {
+    //   id: 9,
+    //   address: "대구광역시 북구 호암로 51",
+    //   jibun: "대구광역시 북구 침산동 1757",
+    //   name: "대구창조센터",
+    //   owner: "코람코",
+    //   todos: [],
+    // },
+    // {
+    //   id: 10,
+    //   address: "경상남도 거제시 계룡로 125",
+    //   jibun: "경상남도 거제시 고현동 717",
+    //   name: "거제시청",
+    //   owner: "코람코",
+    //   todos: [],
+    // },
+    // {
+    //   id: 11,
+    //   address: "제주특별자치도 제주시 첨단로 242",
+    //   jibun: "제주특별자치도 제주시 영평동 2181",
+    //   name: "제주스페이스닷원",
+    //   owner: "코람코",
+    //   todos: [],
+    // },
+    // {
+    //   id: 12,
+    //   address: "제주특별자치도 제주시 광양9길 10",
+    //   jibun: "제주특별자치도 제주시 이도이동 1176-1",
+    //   name: "제주시청",
+    //   owner: "코람코",
+    //   todos: [],
+    // },
+    // {
+    //   id: 13,
+    //   address: "경기도 용인시 수지구 죽전로 152",
+    //   jibun: "경기도 용인시 수지구 죽전동 1491",
+    //   name: "단국대학교",
+    //   owner: "코람코",
+    //   todos: [],
+    // },
+    // {
+    //   id: 14,
+    //   address: "서울특별시 동작구 흑석로 84",
+    //   jibun: "서울특별시 동작구 흑석동 221",
+    //   name: "중앙대학교",
+    //   owner: "코람코",
+    //   todos: [],
+    // },
   ];
 
   // let kakaomap = $map;
@@ -1079,7 +1079,7 @@
         <div slot="content" class="flex flex-col relative">
           {#if $siteListModal}
             <div class="flex justify-between px-2 mb-5 max-sm:mt-3">
-              <h3>List</h3>
+              <h3>건물리스트</h3>
               <button
                 on:click={() => {
                   $modal = false;
@@ -1115,6 +1115,15 @@
           {#if $siteModal}
             <!-- 모달 닫기 버튼 -->
             <div class="flex justify-between px-2 mb-5 max-sm:mt-3">
+              <button
+                on:click={() => {
+                  $siteModal = false;
+                  $siteListModal = true;
+                }}
+                ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                </svg>
+              </button>
               <h3>건물정보</h3>
 
               <button
