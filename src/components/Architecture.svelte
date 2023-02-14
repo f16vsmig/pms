@@ -600,7 +600,7 @@
   <ArchitectureLayout data={brTitleInfo} />
 
   <StackPlan {brFlrOulnInfo} />
-  <blockquote cite="https://www.data.go.kr" class="text-secondary my-8 text-sm text-slate-700 ml-2" style="margin-bottom:env(safe-area-inset-bottom)">
+  <blockquote cite="https://www.data.go.kr" class="text-secondary mt-8 mb-12 text-sm text-slate-700 ml-2">
     국토교통부 건축물대장정보서비스 | <cite class="text-muted">공공데이터포털</cite>
   </blockquote>
 {:catch error}

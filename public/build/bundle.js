@@ -6932,7 +6932,7 @@ var app = (function () {
     			h5.textContent = "에러 발생 : 건물정보를 찾지 못했습니다. 주소를 다시 확인해주세요.";
     			attr_dev(h5, "class", "text-lg pl-2");
     			set_style(h5, "color", "red");
-    			add_location(h5, file$g, 606, 2, 17505);
+    			add_location(h5, file$g, 606, 2, 17461);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h5, anchor);
@@ -6993,10 +6993,9 @@ var app = (function () {
     			cite = element("cite");
     			cite.textContent = "공공데이터포털";
     			attr_dev(cite, "class", "text-muted");
-    			add_location(cite, file$g, 603, 23, 17432);
+    			add_location(cite, file$g, 603, 23, 17388);
     			attr_dev(blockquote, "cite", "https://www.data.go.kr");
-    			attr_dev(blockquote, "class", "text-secondary my-8 text-sm text-slate-700 ml-2");
-    			set_style(blockquote, "margin-bottom", "env(safe-area-inset-bottom)");
+    			attr_dev(blockquote, "class", "text-secondary mt-8 mb-12 text-sm text-slate-700 ml-2");
     			add_location(blockquote, file$g, 602, 2, 17260);
     		},
     		m: function mount(target, anchor) {
@@ -12142,32 +12141,32 @@ var app = (function () {
     			attr_dev(path0, "stroke-linecap", "round");
     			attr_dev(path0, "stroke-linejoin", "round");
     			attr_dev(path0, "d", "M15.75 19.5L8.25 12l7.5-7.5");
-    			add_location(path0, file, 1123, 18, 30386);
+    			add_location(path0, file, 1123, 18, 30393);
     			attr_dev(svg0, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg0, "fill", "none");
     			attr_dev(svg0, "viewBox", "0 0 24 24");
     			attr_dev(svg0, "stroke-width", "1.5");
     			attr_dev(svg0, "stroke", "currentColor");
-    			attr_dev(svg0, "class", "w-6 h-6");
+    			attr_dev(svg0, "class", "w-6 h-6 ml-1.5");
     			add_location(svg0, file, 1122, 17, 30238);
     			add_location(button0, file, 1117, 14, 30081);
-    			add_location(h3, file, 1126, 14, 30535);
+    			add_location(h3, file, 1126, 14, 30542);
     			attr_dev(path1, "stroke-linecap", "round");
     			attr_dev(path1, "stroke-linejoin", "round");
     			attr_dev(path1, "d", "M6 18L18 6M6 6l12 12");
-    			add_location(path1, file, 1136, 18, 30919);
+    			add_location(path1, file, 1136, 18, 30933);
     			attr_dev(svg1, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg1, "fill", "none");
     			attr_dev(svg1, "viewBox", "0 0 24 24");
     			attr_dev(svg1, "stroke-width", "1.5");
     			attr_dev(svg1, "stroke", "currentColor");
-    			attr_dev(svg1, "class", "w-6 h-6");
-    			add_location(svg1, file, 1135, 16, 30771);
-    			add_location(button1, file, 1128, 14, 30564);
+    			attr_dev(svg1, "class", "w-6 h-6 mr-1.5");
+    			add_location(svg1, file, 1135, 16, 30778);
+    			add_location(button1, file, 1128, 14, 30571);
     			attr_dev(div0, "class", "flex justify-between px-2 mb-5 max-sm:mt-5");
     			add_location(div0, file, 1116, 12, 30010);
     			attr_dev(div1, "class", "grow");
-    			add_location(div1, file, 1159, 12, 31856);
+    			add_location(div1, file, 1159, 12, 31870);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div0, anchor);
@@ -12334,17 +12333,17 @@ var app = (function () {
     			attr_dev(path, "stroke-linecap", "round");
     			attr_dev(path, "stroke-linejoin", "round");
     			attr_dev(path, "d", "M8.25 4.5l7.5 7.5-7.5 7.5");
-    			add_location(path, file, 1179, 12, 32539);
+    			add_location(path, file, 1179, 12, 32553);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "fill", "none");
     			attr_dev(svg, "viewBox", "0 0 24 24");
     			attr_dev(svg, "stroke-width", "1.5");
     			attr_dev(svg, "stroke", "currentColor");
     			attr_dev(svg, "class", "w-6 h-6");
-    			add_location(svg, file, 1178, 11, 32397);
+    			add_location(svg, file, 1178, 11, 32411);
     			attr_dev(button, "type", "button");
     			attr_dev(button, "class", "modalCloseBtn rounded-l-md max-sm:hidden md:fixed md:right-1/3 svelte-krjo7");
-    			add_location(button, file, 1172, 8, 32204);
+    			add_location(button, file, 1172, 8, 32218);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -12391,14 +12390,14 @@ var app = (function () {
     			attr_dev(path, "stroke-linecap", "round");
     			attr_dev(path, "stroke-linejoin", "round");
     			attr_dev(path, "d", "M15.75 19.5L8.25 12l7.5-7.5");
-    			add_location(path, file, 1188, 10, 33127);
+    			add_location(path, file, 1188, 10, 33141);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "fill", "none");
     			attr_dev(svg, "viewBox", "0 0 24 24");
     			attr_dev(svg, "stroke-width", "1.5");
     			attr_dev(svg, "stroke", "currentColor");
     			attr_dev(svg, "class", "w-6 h-6");
-    			add_location(svg, file, 1187, 9, 32987);
+    			add_location(svg, file, 1187, 9, 33001);
     			attr_dev(button, "type", "button");
     			attr_dev(button, "class", "openSiteModal rounded-l-md");
     			set_style(button, "position", "fixed");
@@ -12409,7 +12408,7 @@ var app = (function () {
     			set_style(button, "height", "50px");
     			set_style(button, "z-index", "999");
     			set_style(button, "background-color", "rgba(255,255,255,0.93)");
-    			add_location(button, file, 1186, 6, 32735);
+    			add_location(button, file, 1186, 6, 32749);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -12472,37 +12471,37 @@ var app = (function () {
     			attr_dev(path0, "stroke-linecap", "round");
     			attr_dev(path0, "stroke-linejoin", "round");
     			attr_dev(path0, "d", "M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z");
-    			add_location(path0, file, 1204, 14, 33864);
+    			add_location(path0, file, 1204, 14, 33878);
     			attr_dev(svg0, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg0, "fill", "none");
     			attr_dev(svg0, "viewBox", "0 0 24 24");
     			attr_dev(svg0, "stroke-width", "1.5");
     			attr_dev(svg0, "stroke", "currentColor");
     			attr_dev(svg0, "class", "block w-6 h-6 mx-auto pointer-events-none");
-    			add_location(svg0, file, 1203, 13, 33686);
+    			add_location(svg0, file, 1203, 13, 33700);
     			attr_dev(button0, "class", button0_class_value = "w-6 " + (!/*$siteListModal*/ ctx[3] ? 'text-indigo-500' : ''));
-    			add_location(button0, file, 1197, 10, 33485);
+    			add_location(button0, file, 1197, 10, 33499);
     			attr_dev(div0, "class", "w-1/2 text-center");
     			set_style(div0, "padding-bottom", "env(safe-area-inset-bottom)");
-    			add_location(div0, file, 1196, 8, 33390);
+    			add_location(div0, file, 1196, 8, 33404);
     			attr_dev(path1, "stroke-linecap", "round");
     			attr_dev(path1, "stroke-linejoin", "round");
     			attr_dev(path1, "d", "M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z");
-    			add_location(path1, file, 1222, 14, 34878);
+    			add_location(path1, file, 1222, 14, 34892);
     			attr_dev(svg1, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg1, "fill", "none");
     			attr_dev(svg1, "viewBox", "0 0 24 24");
     			attr_dev(svg1, "stroke-width", "1.5");
     			attr_dev(svg1, "stroke", "currentColor");
     			attr_dev(svg1, "class", "block w-6 h-6 mx-auto pointer-events-none");
-    			add_location(svg1, file, 1221, 13, 34700);
+    			add_location(svg1, file, 1221, 13, 34714);
     			attr_dev(button1, "class", button1_class_value = "w-6 " + (/*$siteListModal*/ ctx[3] ? 'text-indigo-500' : ''));
-    			add_location(button1, file, 1214, 10, 34468);
+    			add_location(button1, file, 1214, 10, 34482);
     			attr_dev(div1, "class", "w-1/2 text-center");
     			set_style(div1, "padding-bottom", "env(safe-area-inset-bottom)");
-    			add_location(div1, file, 1213, 8, 34373);
+    			add_location(div1, file, 1213, 8, 34387);
     			attr_dev(div2, "class", "w-full flex py-2.5 fixed bottom-0 border-t-2 bg-white z-50");
-    			add_location(div2, file, 1195, 6, 33309);
+    			add_location(div2, file, 1195, 6, 33323);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
