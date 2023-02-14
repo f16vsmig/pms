@@ -21,7 +21,7 @@
   </div>
   {#if rightSideModalScrollTop > 200}
     <button
-      class="text-blue-700 hover:text-blue-500 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2  dark:text-blue-500 max-sm:bottom-14 md:bottom-3 right-1 z-50"
+      class="text-blue-700 hover:text-blue-500 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2  dark:text-blue-500 max-sm:bottom-14 bottom-10 md:bottom-3 right-1 z-50"
       on:click={moveTop}
       style="position: fixed; z-index: 999;"
       ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">

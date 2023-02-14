@@ -224,14 +224,9 @@
   }
 </script>
 
-<nav class="bg-white border-b border-gray-100 z-50">
+<nav class="bg-white border-b z-50">
   <div class="flex items-center justify-between">
-    <button
-      type="button"
-      class="flex-none items-center p-2 my-1 ml-2 text-sm rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-      on:click={() => (open = !open)}
-    >
-      <span class="sr-only">Open main menu</span>
+    <button class="flex-none items-center p-2 my-1 ml-2 text-sm md:hidden" on:click={() => (open = !open)}>
       {#if open}
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
           <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
@@ -284,7 +279,7 @@
                 execDaumPostcode();
               }}
             >
-              <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"
+              <svg aria-hidden="true" class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"
                 ><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" /></svg
               >
             </button>
@@ -292,14 +287,13 @@
         {:else}
           <div class="flex-initial inset-y-0 items-center pl-3 pr-2">
             <button
-              style="pt-1 pr-2"
               on:click={() => {
                 searchToggle = false;
                 closeDaumPostcode();
               }}
             >
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
               </svg>
             </button>
           </div>
@@ -327,7 +321,7 @@
       </div>
     </form>
   </div>
-  <div bind:this={findAddressPopup} class="fixed bg-white py-2 border max-sm:w-full md:w-96 md:h-[500px] md:right-0 h-96 top-10 md:top-14" style="display: none; overflow: hidden; z-index: 999; -webkit-overflow-scrolling: touch" />
+  <div bind:this={findAddressPopup} class="fixed bg-white py-2 border max-sm:w-full max-sm:h-[400px] md:w-96 md:h-[500px] md:right-0 h-96 top-10 md:top-14" style="display: none; overflow: hidden; z-index: 999; -webkit-overflow-scrolling: touch" />
 </nav>
 
 <style>

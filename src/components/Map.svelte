@@ -1114,7 +1114,7 @@
 
           {#if $siteModal}
             <!-- 모달 닫기 버튼 -->
-            <div class="flex justify-between px-2 mb-5 max-sm:mt-3">
+            <div class="flex justify-between px-2 mb-5 max-sm:mt-5">
               <button
                 on:click={() => {
                   $siteModal = false;

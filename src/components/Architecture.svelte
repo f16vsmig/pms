@@ -11,7 +11,7 @@
   let ji = "0000"; // 지
   let startDate = ""; // YYYYMMDD
   let endDate = ""; // YYYYMMDD
-  let numOfRows = 100; // 페이지당 목록 수
+  let numOfRows = 500; // 페이지당 목록 수
   let pageNo = 1; // 페이지번호
   let brTitleInfo; // 건축물대장 표제부
   let brFlrOulnInfo; // 건축층별정보
@@ -297,6 +297,7 @@
       });
   }
 
+  let brHsprcInfo;
   // 주택가격 api
   async function getBrHsprcInfo() {
     // let url = "/api/getBrTitleInfo";
@@ -306,7 +307,10 @@
     url += "&platGbCd=" + platGbCd;
     url += "&bun=" + bun;
     url += "&ji=" + ji;
-    url += "&numOfRows=" + numOfRows;
+    // url += "&numOfRows=" + numOfRows;
+    url += "&numOfRows=" + 1;
+    url += "&startDate=" + "20221201";
+    url += "&endDate=" + "20230201";
     url += "&pageNo=" + pageNo;
     url += "&serviceKey=" + apiKey;
     console.log("주택가격url : ", url);
@@ -331,7 +335,7 @@
         if (Array.isArray(data)) {
           return data.sort(sortACN("mgmBldrgstPk"));
         }
-        return data;
+        return (brHsprcInfo = data);
       })
       .catch((error) => {
         throw new Error(error);
@@ -560,7 +564,7 @@
           <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
         </svg>
       </summary>
-      <ul class="absolute top-full border-2 border-slate-200 rounded-sm p-3 bg-white max-h-96 w-5/6 overflow-auto z-20">
+      <ul class="border-2 border-t-slate-200 p-3 bg-white max-h-96 overflow-auto z-20">
         {#each brTitleInfo as d, id}
           <li class="page-item hover:text-indigo-600 cursor-pointer my-2">
             <button
@@ -570,7 +574,7 @@
                 details.open = false;
                 // document.body.style.overflow = "auto";
                 document.getElementsByClassName("modal-container")[0].style.overflow = "auto";
-              }}>{d.mgmBldrgstPk} {d.bldNm == "" ? "" : "(" + d.bldNm + ")"}</button
+              }}>{d.mgmBldrgstPk} {d.bldNm == " " ? "" : "(" + d.bldNm + ")"}</button
             >
           </li>
         {/each}
@@ -596,17 +600,10 @@
   <ArchitectureLayout data={brTitleInfo} />
 
   <StackPlan {brFlrOulnInfo} />
-  <blockquote cite="https://www.data.go.kr" class="text-secondary my-5 text-sm text-slate-700 ml-2">
+  <blockquote cite="https://www.data.go.kr" class="text-secondary my-8 text-sm text-slate-700 ml-2" style="margin-bottom:env(safe-area-inset-bottom)">
     국토교통부 건축물대장정보서비스 | <cite class="text-muted">공공데이터포털</cite>
   </blockquote>
 {:catch error}
   <h5 class="text-lg pl-2" style="color: red">에러 발생 : 건물정보를 찾지 못했습니다. 주소를 다시 확인해주세요.</h5>
   <!-- <p class="text-sm">{error.message}</p> -->
 {/await}
-
-<style>
-  details summary::marker {
-    font-size: 0;
-    display: none;
-  }
-</style>

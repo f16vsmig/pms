@@ -1193,7 +1193,7 @@ var app = (function () {
     const { Error: Error_1$1, Object: Object_1$1, console: console_1$5 } = globals;
 
     // (267:0) {:else}
-    function create_else_block$6(ctx) {
+    function create_else_block$7(ctx) {
     	let switch_instance;
     	let switch_instance_anchor;
     	let current;
@@ -1275,7 +1275,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_else_block$6.name,
+    		id: create_else_block$7.name,
     		type: "else",
     		source: "(267:0) {:else}",
     		ctx
@@ -1384,7 +1384,7 @@ var app = (function () {
     	let if_block;
     	let if_block_anchor;
     	let current;
-    	const if_block_creators = [create_if_block$c, create_else_block$6];
+    	const if_block_creators = [create_if_block$c, create_else_block$7];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -3026,7 +3026,7 @@ var app = (function () {
 
     const file$k = "src/components/Navbar.svelte";
 
-    // (239:6) {:else}
+    // (234:6) {:else}
     function create_else_block_1(ctx) {
     	let svg;
     	let path;
@@ -3038,13 +3038,13 @@ var app = (function () {
     			attr_dev(path, "fill-rule", "evenodd");
     			attr_dev(path, "d", "M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z");
     			attr_dev(path, "clip-rule", "evenodd");
-    			add_location(path, file$k, 240, 11, 7889);
+    			add_location(path, file$k, 235, 11, 7638);
     			attr_dev(svg, "class", "w-6 h-6");
     			attr_dev(svg, "aria-hidden", "true");
     			attr_dev(svg, "fill", "currentColor");
     			attr_dev(svg, "viewBox", "0 0 20 20");
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
-    			add_location(svg, file$k, 239, 8, 7763);
+    			add_location(svg, file$k, 234, 8, 7512);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, svg, anchor);
@@ -3059,15 +3059,15 @@ var app = (function () {
     		block,
     		id: create_else_block_1.name,
     		type: "else",
-    		source: "(239:6) {:else}",
+    		source: "(234:6) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (235:6) {#if open}
-    function create_if_block_2$2(ctx) {
+    // (230:6) {#if open}
+    function create_if_block_2$3(ctx) {
     	let svg;
     	let path;
 
@@ -3078,14 +3078,14 @@ var app = (function () {
     			attr_dev(path, "stroke-linecap", "round");
     			attr_dev(path, "stroke-linejoin", "round");
     			attr_dev(path, "d", "M4.5 15.75l7.5-7.5 7.5 7.5");
-    			add_location(path, file$k, 236, 10, 7639);
+    			add_location(path, file$k, 231, 10, 7388);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "fill", "none");
     			attr_dev(svg, "viewBox", "0 0 24 24");
     			attr_dev(svg, "stroke-width", "1.5");
     			attr_dev(svg, "stroke", "currentColor");
     			attr_dev(svg, "class", "w-6 h-6");
-    			add_location(svg, file$k, 235, 8, 7499);
+    			add_location(svg, file$k, 230, 8, 7248);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, svg, anchor);
@@ -3098,16 +3098,16 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_2$2.name,
+    		id: create_if_block_2$3.name,
     		type: "if",
-    		source: "(235:6) {#if open}",
+    		source: "(230:6) {#if open}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (248:4) {#if open}
+    // (243:4) {#if open}
     function create_if_block_1$5(ctx) {
     	let ul;
     	let li0;
@@ -3134,16 +3134,16 @@ var app = (function () {
     			t2 = text("About");
     			attr_dev(a0, "href", "/");
     			attr_dev(a0, "class", a0_class_value = "" + ((/*$location*/ ctx[3] === '/' ? 'active' : '') + " flex-initial py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 dark:text-white md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" + " svelte-13gtopq"));
-    			add_location(a0, file$k, 253, 10, 8633);
+    			add_location(a0, file$k, 248, 10, 8382);
     			attr_dev(li0, "class", "max-sm:my-2");
-    			add_location(li0, file$k, 252, 8, 8598);
+    			add_location(li0, file$k, 247, 8, 8347);
     			attr_dev(a1, "href", "/about");
     			attr_dev(a1, "class", a1_class_value = "" + ((/*$location*/ ctx[3] === '/about' ? 'active' : '') + " flex-initial py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 dark:text-white md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" + " svelte-13gtopq"));
-    			add_location(a1, file$k, 262, 10, 9052);
+    			add_location(a1, file$k, 257, 10, 8801);
     			attr_dev(li1, "class", "max-sm:my-2");
-    			add_location(li1, file$k, 261, 8, 9017);
+    			add_location(li1, file$k, 256, 8, 8766);
     			attr_dev(ul, "class", "flex flex-col p-4 border border-gray-100 rounded-lg bg-gray-50 z-50 max-sm:absolute max-sm:top-14 max-sm:left-2 md:flex-row md:space-x-8 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700");
-    			add_location(ul, file$k, 249, 6, 8317);
+    			add_location(ul, file$k, 244, 6, 8066);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, ul, anchor);
@@ -3184,15 +3184,15 @@ var app = (function () {
     		block,
     		id: create_if_block_1$5.name,
     		type: "if",
-    		source: "(248:4) {#if open}",
+    		source: "(243:4) {#if open}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (292:8) {:else}
-    function create_else_block$5(ctx) {
+    // (287:8) {:else}
+    function create_else_block$6(ctx) {
     	let div;
     	let button;
     	let svg;
@@ -3208,19 +3208,18 @@ var app = (function () {
     			path = svg_element("path");
     			attr_dev(path, "stroke-linecap", "round");
     			attr_dev(path, "stroke-linejoin", "round");
-    			attr_dev(path, "d", "M6 18L18 6M6 6l12 12");
-    			add_location(path, file$k, 301, 16, 10861);
+    			attr_dev(path, "d", "M4.5 15.75l7.5-7.5 7.5 7.5");
+    			add_location(path, file$k, 295, 16, 10559);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "fill", "none");
     			attr_dev(svg, "viewBox", "0 0 24 24");
     			attr_dev(svg, "stroke-width", "1.5");
     			attr_dev(svg, "stroke", "currentColor");
     			attr_dev(svg, "class", "w-5 h-5");
-    			add_location(svg, file$k, 300, 14, 10715);
-    			attr_dev(button, "style", "pt-1 pr-2");
-    			add_location(button, file$k, 293, 12, 10523);
+    			add_location(svg, file$k, 294, 14, 10413);
+    			add_location(button, file$k, 288, 12, 10253);
     			attr_dev(div, "class", "flex-initial inset-y-0 items-center pl-3 pr-2");
-    			add_location(div, file$k, 292, 10, 10451);
+    			add_location(div, file$k, 287, 10, 10181);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -3243,16 +3242,16 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_else_block$5.name,
+    		id: create_else_block$6.name,
     		type: "else",
-    		source: "(292:8) {:else}",
+    		source: "(287:8) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (277:8) {#if !searchToggle}
+    // (272:8) {#if !searchToggle}
     function create_if_block$a(ctx) {
     	let div;
     	let button;
@@ -3270,17 +3269,17 @@ var app = (function () {
     			attr_dev(path, "fill-rule", "evenodd");
     			attr_dev(path, "d", "M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z");
     			attr_dev(path, "clip-rule", "evenodd");
-    			add_location(path, file$k, 287, 17, 10199);
+    			add_location(path, file$k, 282, 17, 9929);
     			attr_dev(svg, "aria-hidden", "true");
-    			attr_dev(svg, "class", "w-5 h-5 text-gray-500 dark:text-gray-400");
+    			attr_dev(svg, "class", "w-5 h-5 text-gray-500");
     			attr_dev(svg, "fill", "currentColor");
     			attr_dev(svg, "viewBox", "0 0 20 20");
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
-    			add_location(svg, file$k, 286, 14, 10034);
+    			add_location(svg, file$k, 281, 14, 9783);
     			attr_dev(button, "class", "pt-1 pr-2");
-    			add_location(button, file$k, 279, 12, 9829);
+    			add_location(button, file$k, 274, 12, 9578);
     			attr_dev(div, "class", "flex-initial inset-y-0 items-center pl-3");
-    			add_location(div, file$k, 277, 10, 9676);
+    			add_location(div, file$k, 272, 10, 9425);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -3305,7 +3304,7 @@ var app = (function () {
     		block,
     		id: create_if_block$a.name,
     		type: "if",
-    		source: "(277:8) {#if !searchToggle}",
+    		source: "(272:8) {#if !searchToggle}",
     		ctx
     	});
 
@@ -3316,23 +3315,21 @@ var app = (function () {
     	let nav;
     	let div1;
     	let button;
-    	let span;
-    	let t1;
-    	let t2;
+    	let t0;
     	let h1;
-    	let t4;
-    	let t5;
+    	let t2;
+    	let t3;
     	let form;
     	let label;
-    	let t7;
+    	let t5;
     	let div0;
-    	let t8;
+    	let t6;
     	let div2;
     	let mounted;
     	let dispose;
 
     	function select_block_type(ctx, dirty) {
-    		if (/*open*/ ctx[0]) return create_if_block_2$2;
+    		if (/*open*/ ctx[0]) return create_if_block_2$3;
     		return create_else_block_1;
     	}
 
@@ -3342,7 +3339,7 @@ var app = (function () {
 
     	function select_block_type_1(ctx, dirty) {
     		if (!/*searchToggle*/ ctx[1]) return create_if_block$a;
-    		return create_else_block$5;
+    		return create_else_block$6;
     	}
 
     	let current_block_type_1 = select_block_type_1(ctx);
@@ -3353,48 +3350,42 @@ var app = (function () {
     			nav = element("nav");
     			div1 = element("div");
     			button = element("button");
-    			span = element("span");
-    			span.textContent = "Open main menu";
-    			t1 = space();
     			if_block0.c();
-    			t2 = space();
+    			t0 = space();
     			h1 = element("h1");
     			h1.textContent = "건물대장";
-    			t4 = space();
+    			t2 = space();
     			if (if_block1) if_block1.c();
-    			t5 = space();
+    			t3 = space();
     			form = element("form");
     			label = element("label");
     			label.textContent = "검색";
-    			t7 = space();
+    			t5 = space();
     			div0 = element("div");
     			if_block2.c();
-    			t8 = space();
+    			t6 = space();
     			div2 = element("div");
-    			attr_dev(span, "class", "sr-only");
-    			add_location(span, file$k, 233, 6, 7430);
-    			attr_dev(button, "type", "button");
-    			attr_dev(button, "class", "flex-none items-center p-2 my-1 ml-2 text-sm rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600");
-    			add_location(button, file$k, 228, 4, 7135);
+    			attr_dev(button, "class", "flex-none items-center p-2 my-1 ml-2 text-sm md:hidden");
+    			add_location(button, file$k, 228, 4, 7119);
     			attr_dev(h1, "class", "flex-none p-1 text-lg md:ml-8 dark:text-white");
-    			add_location(h1, file$k, 245, 4, 8132);
+    			add_location(h1, file$k, 240, 4, 7881);
     			attr_dev(label, "for", "simple-search");
     			attr_dev(label, "class", "sr-only");
-    			add_location(label, file$k, 274, 6, 9547);
+    			add_location(label, file$k, 269, 6, 9296);
     			attr_dev(div0, "class", "flex justify-end");
-    			add_location(div0, file$k, 275, 6, 9607);
+    			add_location(div0, file$k, 270, 6, 9356);
     			attr_dev(form, "class", "relative flex-none flex justify-self-end mr-2");
     			attr_dev(form, "role", "search");
-    			add_location(form, file$k, 273, 4, 9466);
+    			add_location(form, file$k, 268, 4, 9215);
     			attr_dev(div1, "class", "flex items-center justify-between");
-    			add_location(div1, file$k, 227, 2, 7083);
-    			attr_dev(div2, "class", "fixed bg-white py-2 border max-sm:w-full md:w-96 md:h-[500px] md:right-0 h-96 top-10 md:top-14");
+    			add_location(div1, file$k, 227, 2, 7067);
+    			attr_dev(div2, "class", "fixed bg-white py-2 border max-sm:w-full max-sm:h-[400px] md:w-96 md:h-[500px] md:right-0 h-96 top-10 md:top-14");
     			set_style(div2, "display", "none");
     			set_style(div2, "overflow", "hidden");
     			set_style(div2, "z-index", "999");
     			set_style(div2, "-webkit-overflow-scrolling", "touch");
-    			add_location(div2, file$k, 329, 2, 12126);
-    			attr_dev(nav, "class", "bg-white border-b border-gray-100 z-50");
+    			add_location(div2, file$k, 323, 2, 11830);
+    			attr_dev(nav, "class", "bg-white border-b z-50");
     			add_location(nav, file$k, 226, 0, 7028);
     		},
     		l: function claim(nodes) {
@@ -3404,20 +3395,18 @@ var app = (function () {
     			insert_dev(target, nav, anchor);
     			append_dev(nav, div1);
     			append_dev(div1, button);
-    			append_dev(button, span);
-    			append_dev(button, t1);
     			if_block0.m(button, null);
-    			append_dev(div1, t2);
+    			append_dev(div1, t0);
     			append_dev(div1, h1);
-    			append_dev(div1, t4);
+    			append_dev(div1, t2);
     			if (if_block1) if_block1.m(div1, null);
-    			append_dev(div1, t5);
+    			append_dev(div1, t3);
     			append_dev(div1, form);
     			append_dev(form, label);
-    			append_dev(form, t7);
+    			append_dev(form, t5);
     			append_dev(form, div0);
     			if_block2.m(div0, null);
-    			append_dev(nav, t8);
+    			append_dev(nav, t6);
     			append_dev(nav, div2);
     			/*div2_binding*/ ctx[9](div2);
 
@@ -3443,7 +3432,7 @@ var app = (function () {
     				} else {
     					if_block1 = create_if_block_1$5(ctx);
     					if_block1.c();
-    					if_block1.m(div1, t5);
+    					if_block1.m(div1, t3);
     				}
     			} else if (if_block1) {
     				if_block1.d(1);
@@ -4160,7 +4149,7 @@ var app = (function () {
     }
 
     // (65:39) 
-    function create_if_block_3$1(ctx) {
+    function create_if_block_3$2(ctx) {
     	let t;
 
     	const block = {
@@ -4177,7 +4166,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_3$1.name,
+    		id: create_if_block_3$2.name,
     		type: "if",
     		source: "(65:39) ",
     		ctx
@@ -4187,7 +4176,7 @@ var app = (function () {
     }
 
     // (63:10) {#if data.platGbCd == 0}
-    function create_if_block_2$1(ctx) {
+    function create_if_block_2$2(ctx) {
     	let t;
 
     	const block = {
@@ -4204,7 +4193,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_2$1.name,
+    		id: create_if_block_2$2.name,
     		type: "if",
     		source: "(63:10) {#if data.platGbCd == 0}",
     		ctx
@@ -5173,7 +5162,7 @@ var app = (function () {
     }
 
     // (429:2) {:else}
-    function create_else_block$4(ctx) {
+    function create_else_block$5(ctx) {
     	let button;
     	let t;
     	let svg;
@@ -5196,7 +5185,7 @@ var app = (function () {
     			attr_dev(svg, "viewBox", "0 0 24 24");
     			attr_dev(svg, "stroke-width", "1.5");
     			attr_dev(svg, "stroke", "currentColor");
-    			attr_dev(svg, "class", "w-6 h-6");
+    			attr_dev(svg, "class", "w-5 h-5");
     			add_location(svg, file$i, 434, 11, 19605);
     			attr_dev(button, "class", "flex mt-3 mb-10 text-slate-600 text-sm max-sm:ml-3");
     			add_location(button, file$i, 429, 4, 19464);
@@ -5222,7 +5211,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_else_block$4.name,
+    		id: create_else_block$5.name,
     		type: "else",
     		source: "(429:2) {:else}",
     		ctx
@@ -5255,7 +5244,7 @@ var app = (function () {
     			attr_dev(svg, "viewBox", "0 0 24 24");
     			attr_dev(svg, "stroke-width", "1.5");
     			attr_dev(svg, "stroke", "currentColor");
-    			attr_dev(svg, "class", "w-6 h-6");
+    			attr_dev(svg, "class", "w-5 h-5");
     			add_location(svg, file$i, 424, 10, 19198);
     			attr_dev(button, "class", "flex mt-3 mb-10 text-slate-600 text-sm max-sm:ml-3");
     			add_location(button, file$i, 418, 4, 19003);
@@ -5396,8 +5385,8 @@ var app = (function () {
     	let if_block0 = /*$roadViewUrl*/ ctx[2] && create_if_block_5$1(ctx);
 
     	function select_block_type(ctx, dirty) {
-    		if (/*data*/ ctx[0].platGbCd == 0) return create_if_block_2$1;
-    		if (/*data*/ ctx[0].platGbCd == 1) return create_if_block_3$1;
+    		if (/*data*/ ctx[0].platGbCd == 0) return create_if_block_2$2;
+    		if (/*data*/ ctx[0].platGbCd == 1) return create_if_block_3$2;
     		if (/*data*/ ctx[0].platGbCd == 2) return create_if_block_4$1;
     	}
 
@@ -5407,7 +5396,7 @@ var app = (function () {
 
     	function select_block_type_1(ctx, dirty) {
     		if (/*visable*/ ctx[1]) return create_if_block$9;
-    		return create_else_block$4;
+    		return create_else_block$5;
     	}
 
     	let current_block_type_1 = select_block_type_1(ctx);
@@ -5897,7 +5886,7 @@ var app = (function () {
     }
 
     // (14:0) {:else}
-    function create_else_block$3(ctx) {
+    function create_else_block$4(ctx) {
     	let architecturebasis;
     	let current;
 
@@ -5935,7 +5924,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_else_block$3.name,
+    		id: create_else_block$4.name,
     		type: "else",
     		source: "(14:0) {:else}",
     		ctx
@@ -6160,7 +6149,7 @@ var app = (function () {
     	let if_block;
     	let if_block_anchor;
     	let current;
-    	const if_block_creators = [create_if_block$8, create_else_block$3];
+    	const if_block_creators = [create_if_block$8, create_else_block$4];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -6303,27 +6292,28 @@ var app = (function () {
 
     function get_each_context$4(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[4] = list[i];
-    	child_ctx[6] = i;
+    	child_ctx[6] = list[i];
+    	child_ctx[8] = i;
     	return child_ctx;
     }
 
-    // (39:4) {#if fl.mgmBldrgstPk == $mgmBldrgstPk}
+    // (41:4) {#if fl.mgmBldrgstPk == $mgmBldrgstPk}
     function create_if_block$7(ctx) {
     	let t0;
     	let div;
     	let button;
-    	let t1_value = /*fl*/ ctx[4].mainPurpsCdNm + "";
+    	let t1_value = /*fl*/ ctx[6].mainPurpsCdNm + "";
     	let t1;
     	let t2;
     	let span;
     	let t3;
-    	let t4_value = addComma(/*fl*/ ctx[4].area) + "";
+    	let t4_value = addComma(/*fl*/ ctx[6].area) + "";
     	let t4;
     	let t5;
     	let span_class_value;
+    	let button_class_value;
     	let t6;
-    	let if_block = (/*id*/ ctx[6] == 0 || /*fl*/ ctx[4].flrNoNm != /*brFlrOulnInfo*/ ctx[0][/*id*/ ctx[6] - 1].flrNoNm || /*fl*/ ctx[4].mgmBldrgstPk != /*brFlrOulnInfo*/ ctx[0][/*id*/ ctx[6] - 1].mgmBldrgstPk) && create_if_block_1$2(ctx);
+    	let if_block = (/*id*/ ctx[8] == 0 || /*fl*/ ctx[6].flrNoNm != /*brFlrOulnInfo*/ ctx[0][/*id*/ ctx[8] - 1].flrNoNm || /*fl*/ ctx[6].mgmBldrgstPk != /*brFlrOulnInfo*/ ctx[0][/*id*/ ctx[8] - 1].mgmBldrgstPk) && create_if_block_1$2(ctx);
 
     	const block = {
     		c: function create() {
@@ -6338,12 +6328,16 @@ var app = (function () {
     			t4 = text(t4_value);
     			t5 = text(")");
     			t6 = space();
-    			attr_dev(span, "class", span_class_value = "" + (/*fl*/ ctx[4].flrNoNm + " " + (/*fl*/ ctx[4].areaExctYn == 1 ? 'text-muted' : '')));
-    			add_location(span, file$h, 57, 10, 2366);
-    			attr_dev(button, "class", "w-full py-2.5 px-5 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:text-blue-700 cursor-default");
-    			add_location(button, file$h, 55, 8, 2155);
+    			attr_dev(span, "class", span_class_value = "" + (/*fl*/ ctx[6].flrNoNm + " " + (/*fl*/ ctx[6].areaExctYn == 1 ? 'text-muted' : '')));
+    			add_location(span, file$h, 85, 10, 3655);
+
+    			attr_dev(button, "class", button_class_value = "" + ((/*openFloor*/ ctx[3] != /*fl*/ ctx[6].flrNoNm
+    			? 'hidden'
+    			: '') + " w-full py-2.5 px-5 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:text-blue-700 cursor-default"));
+
+    			add_location(button, file$h, 83, 8, 3402);
     			attr_dev(div, "class", "flex-none fw-light px-1 my-1");
-    			add_location(div, file$h, 54, 6, 2104);
+    			add_location(div, file$h, 82, 6, 3351);
     		},
     		m: function mount(target, anchor) {
     			if (if_block) if_block.m(target, anchor);
@@ -6359,7 +6353,7 @@ var app = (function () {
     			append_dev(div, t6);
     		},
     		p: function update(ctx, dirty) {
-    			if (/*id*/ ctx[6] == 0 || /*fl*/ ctx[4].flrNoNm != /*brFlrOulnInfo*/ ctx[0][/*id*/ ctx[6] - 1].flrNoNm || /*fl*/ ctx[4].mgmBldrgstPk != /*brFlrOulnInfo*/ ctx[0][/*id*/ ctx[6] - 1].mgmBldrgstPk) {
+    			if (/*id*/ ctx[8] == 0 || /*fl*/ ctx[6].flrNoNm != /*brFlrOulnInfo*/ ctx[0][/*id*/ ctx[8] - 1].flrNoNm || /*fl*/ ctx[6].mgmBldrgstPk != /*brFlrOulnInfo*/ ctx[0][/*id*/ ctx[8] - 1].mgmBldrgstPk) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
@@ -6372,11 +6366,17 @@ var app = (function () {
     				if_block = null;
     			}
 
-    			if (dirty & /*brFlrOulnInfo*/ 1 && t1_value !== (t1_value = /*fl*/ ctx[4].mainPurpsCdNm + "")) set_data_dev(t1, t1_value);
-    			if (dirty & /*brFlrOulnInfo*/ 1 && t4_value !== (t4_value = addComma(/*fl*/ ctx[4].area) + "")) set_data_dev(t4, t4_value);
+    			if (dirty & /*brFlrOulnInfo*/ 1 && t1_value !== (t1_value = /*fl*/ ctx[6].mainPurpsCdNm + "")) set_data_dev(t1, t1_value);
+    			if (dirty & /*brFlrOulnInfo*/ 1 && t4_value !== (t4_value = addComma(/*fl*/ ctx[6].area) + "")) set_data_dev(t4, t4_value);
 
-    			if (dirty & /*brFlrOulnInfo*/ 1 && span_class_value !== (span_class_value = "" + (/*fl*/ ctx[4].flrNoNm + " " + (/*fl*/ ctx[4].areaExctYn == 1 ? 'text-muted' : '')))) {
+    			if (dirty & /*brFlrOulnInfo*/ 1 && span_class_value !== (span_class_value = "" + (/*fl*/ ctx[6].flrNoNm + " " + (/*fl*/ ctx[6].areaExctYn == 1 ? 'text-muted' : '')))) {
     				attr_dev(span, "class", span_class_value);
+    			}
+
+    			if (dirty & /*openFloor, brFlrOulnInfo*/ 9 && button_class_value !== (button_class_value = "" + ((/*openFloor*/ ctx[3] != /*fl*/ ctx[6].flrNoNm
+    			? 'hidden'
+    			: '') + " w-full py-2.5 px-5 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:text-blue-700 cursor-default"))) {
+    				attr_dev(button, "class", button_class_value);
     			}
     		},
     		d: function destroy(detaching) {
@@ -6390,76 +6390,167 @@ var app = (function () {
     		block,
     		id: create_if_block$7.name,
     		type: "if",
-    		source: "(39:4) {#if fl.mgmBldrgstPk == $mgmBldrgstPk}",
+    		source: "(41:4) {#if fl.mgmBldrgstPk == $mgmBldrgstPk}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (40:6) {#if id == 0 || fl.flrNoNm != brFlrOulnInfo[id - 1].flrNoNm || fl.mgmBldrgstPk != brFlrOulnInfo[id - 1].mgmBldrgstPk}
+    // (42:6) {#if id == 0 || fl.flrNoNm != brFlrOulnInfo[id - 1].flrNoNm || fl.mgmBldrgstPk != brFlrOulnInfo[id - 1].mgmBldrgstPk}
     function create_if_block_1$2(ctx) {
     	let div;
+    	let button;
     	let span0;
-    	let t0_value = /*fl*/ ctx[4].flrNoNm + "";
+    	let t0_value = /*fl*/ ctx[6].flrNoNm + "";
     	let t0;
     	let t1;
     	let span1;
+    	let t2_value = /*fl*/ ctx[6].mainPurpsCdNm + "";
+    	let t2;
+    	let t3;
+    	let span3;
     	let svg;
     	let path;
-    	let t2;
-    	let t3_value = addComma(/*floorAreaArr*/ ctx[2][/*fl*/ ctx[4].flrNoNm]) + "";
-    	let t3;
     	let t4;
+    	let span2;
+    	let t5_value = addComma(/*floorAreaArr*/ ctx[2][/*fl*/ ctx[6].flrNoNm]) + "";
+    	let t5;
+    	let t6;
+    	let t7;
+    	let t8;
+    	let div_class_value;
+    	let mounted;
+    	let dispose;
+
+    	function select_block_type(ctx, dirty) {
+    		if (/*openFloor*/ ctx[3] == /*fl*/ ctx[6].flrNoNm) return create_if_block_3$1;
+    		return create_else_block$3;
+    	}
+
+    	let current_block_type = select_block_type(ctx);
+    	let if_block0 = current_block_type(ctx);
+
+    	function click_handler() {
+    		return /*click_handler*/ ctx[4](/*fl*/ ctx[6]);
+    	}
+
+    	let if_block1 = /*openFloor*/ ctx[3] != /*fl*/ ctx[6].flrNoNm && create_if_block_2$1(ctx);
 
     	const block = {
     		c: function create() {
     			div = element("div");
+    			button = element("button");
     			span0 = element("span");
     			t0 = text(t0_value);
     			t1 = space();
     			span1 = element("span");
+    			t2 = text(t2_value);
+    			t3 = space();
+    			span3 = element("span");
     			svg = svg_element("svg");
     			path = svg_element("path");
-    			t2 = space();
-    			t3 = text(t3_value);
-    			t4 = text(" m2");
-    			attr_dev(span0, "class", "flex-none pl-1");
-    			add_location(span0, file$h, 41, 10, 1391);
+    			t4 = space();
+    			span2 = element("span");
+    			t5 = text(t5_value);
+    			t6 = text(" m2");
+    			t7 = space();
+    			if_block0.c();
+    			t8 = space();
+    			if (if_block1) if_block1.c();
+    			attr_dev(span0, "class", "flex-none flex text-sm pl-1");
+    			add_location(span0, file$h, 53, 12, 1730);
+    			attr_dev(span1, "class", "flex-none text-muted flex text-sm");
+    			add_location(span1, file$h, 54, 12, 1804);
     			attr_dev(path, "stroke-linecap", "round");
     			attr_dev(path, "stroke-linejoin", "round");
     			attr_dev(path, "d", "M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0l-5.571 3-5.571-3");
-    			add_location(path, file$h, 44, 14, 1663);
+    			add_location(path, file$h, 57, 16, 2108);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "fill", "none");
     			attr_dev(svg, "viewBox", "0 0 24 24");
     			attr_dev(svg, "stroke-width", "1");
     			attr_dev(svg, "stroke", "currentColor");
     			attr_dev(svg, "class", "w-6 h-6 pr-1");
-    			add_location(svg, file$h, 43, 13, 1516);
-    			attr_dev(span1, "class", "flex-none text-muted flex text-sm pr-1");
-    			add_location(span1, file$h, 42, 10, 1450);
-    			attr_dev(div, "class", "grow mt-3 px-1 text-sm flex justify-between font-light");
-    			add_location(div, file$h, 40, 8, 1312);
+    			add_location(svg, file$h, 56, 15, 1959);
+    			attr_dev(span2, "class", "mr-1");
+    			add_location(span2, file$h, 63, 14, 2470);
+    			attr_dev(span3, "class", "flex-none text-muted flex text-sm pr-1");
+    			add_location(span3, file$h, 55, 12, 1891);
+    			attr_dev(button, "class", "flex justify-between w-full my-1");
+    			add_location(button, file$h, 43, 10, 1444);
+
+    			attr_dev(div, "class", div_class_value = "grow mt-3 px-1 text-sm font-light " + (/*openFloor*/ ctx[3] == /*fl*/ ctx[6].flrNoNm
+    			? 'text-indigo-600'
+    			: ''));
+
+    			add_location(div, file$h, 42, 8, 1335);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
-    			append_dev(div, span0);
+    			append_dev(div, button);
+    			append_dev(button, span0);
     			append_dev(span0, t0);
-    			append_dev(div, t1);
-    			append_dev(div, span1);
-    			append_dev(span1, svg);
-    			append_dev(svg, path);
+    			append_dev(button, t1);
+    			append_dev(button, span1);
     			append_dev(span1, t2);
-    			append_dev(span1, t3);
-    			append_dev(span1, t4);
+    			append_dev(button, t3);
+    			append_dev(button, span3);
+    			append_dev(span3, svg);
+    			append_dev(svg, path);
+    			append_dev(span3, t4);
+    			append_dev(span3, span2);
+    			append_dev(span2, t5);
+    			append_dev(span2, t6);
+    			append_dev(span3, t7);
+    			if_block0.m(span3, null);
+    			append_dev(div, t8);
+    			if (if_block1) if_block1.m(div, null);
+
+    			if (!mounted) {
+    				dispose = listen_dev(button, "click", click_handler, false, false, false);
+    				mounted = true;
+    			}
     		},
-    		p: function update(ctx, dirty) {
-    			if (dirty & /*brFlrOulnInfo*/ 1 && t0_value !== (t0_value = /*fl*/ ctx[4].flrNoNm + "")) set_data_dev(t0, t0_value);
-    			if (dirty & /*floorAreaArr, brFlrOulnInfo*/ 5 && t3_value !== (t3_value = addComma(/*floorAreaArr*/ ctx[2][/*fl*/ ctx[4].flrNoNm]) + "")) set_data_dev(t3, t3_value);
+    		p: function update(new_ctx, dirty) {
+    			ctx = new_ctx;
+    			if (dirty & /*brFlrOulnInfo*/ 1 && t0_value !== (t0_value = /*fl*/ ctx[6].flrNoNm + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*brFlrOulnInfo*/ 1 && t2_value !== (t2_value = /*fl*/ ctx[6].mainPurpsCdNm + "")) set_data_dev(t2, t2_value);
+    			if (dirty & /*floorAreaArr, brFlrOulnInfo*/ 5 && t5_value !== (t5_value = addComma(/*floorAreaArr*/ ctx[2][/*fl*/ ctx[6].flrNoNm]) + "")) set_data_dev(t5, t5_value);
+
+    			if (current_block_type !== (current_block_type = select_block_type(ctx))) {
+    				if_block0.d(1);
+    				if_block0 = current_block_type(ctx);
+
+    				if (if_block0) {
+    					if_block0.c();
+    					if_block0.m(span3, null);
+    				}
+    			}
+
+    			if (/*openFloor*/ ctx[3] != /*fl*/ ctx[6].flrNoNm) {
+    				if (if_block1) ; else {
+    					if_block1 = create_if_block_2$1(ctx);
+    					if_block1.c();
+    					if_block1.m(div, null);
+    				}
+    			} else if (if_block1) {
+    				if_block1.d(1);
+    				if_block1 = null;
+    			}
+
+    			if (dirty & /*openFloor, brFlrOulnInfo*/ 9 && div_class_value !== (div_class_value = "grow mt-3 px-1 text-sm font-light " + (/*openFloor*/ ctx[3] == /*fl*/ ctx[6].flrNoNm
+    			? 'text-indigo-600'
+    			: ''))) {
+    				attr_dev(div, "class", div_class_value);
+    			}
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
+    			if_block0.d();
+    			if (if_block1) if_block1.d();
+    			mounted = false;
+    			dispose();
     		}
     	};
 
@@ -6467,17 +6558,127 @@ var app = (function () {
     		block,
     		id: create_if_block_1$2.name,
     		type: "if",
-    		source: "(40:6) {#if id == 0 || fl.flrNoNm != brFlrOulnInfo[id - 1].flrNoNm || fl.mgmBldrgstPk != brFlrOulnInfo[id - 1].mgmBldrgstPk}",
+    		source: "(42:6) {#if id == 0 || fl.flrNoNm != brFlrOulnInfo[id - 1].flrNoNm || fl.mgmBldrgstPk != brFlrOulnInfo[id - 1].mgmBldrgstPk}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (38:2) {#each brFlrOulnInfo as fl, id}
+    // (71:14) {:else}
+    function create_else_block$3(ctx) {
+    	let svg;
+    	let path;
+
+    	const block = {
+    		c: function create() {
+    			svg = svg_element("svg");
+    			path = svg_element("path");
+    			attr_dev(path, "stroke-linecap", "round");
+    			attr_dev(path, "stroke-linejoin", "round");
+    			attr_dev(path, "d", "M19.5 8.25l-7.5 7.5-7.5-7.5");
+    			add_location(path, file$h, 72, 18, 3072);
+    			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
+    			attr_dev(svg, "fill", "none");
+    			attr_dev(svg, "viewBox", "0 0 24 24");
+    			attr_dev(svg, "stroke-width", "1.5");
+    			attr_dev(svg, "stroke", "currentColor");
+    			attr_dev(svg, "class", "w-5 h-5");
+    			add_location(svg, file$h, 71, 16, 2924);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, svg, anchor);
+    			append_dev(svg, path);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(svg);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_else_block$3.name,
+    		type: "else",
+    		source: "(71:14) {:else}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (67:14) {#if openFloor == fl.flrNoNm}
+    function create_if_block_3$1(ctx) {
+    	let svg;
+    	let path;
+
+    	const block = {
+    		c: function create() {
+    			svg = svg_element("svg");
+    			path = svg_element("path");
+    			attr_dev(path, "stroke-linecap", "round");
+    			attr_dev(path, "stroke-linejoin", "round");
+    			attr_dev(path, "d", "M4.5 15.75l7.5-7.5 7.5 7.5");
+    			add_location(path, file$h, 68, 18, 2776);
+    			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
+    			attr_dev(svg, "fill", "none");
+    			attr_dev(svg, "viewBox", "0 0 24 24");
+    			attr_dev(svg, "stroke-width", "1.5");
+    			attr_dev(svg, "stroke", "currentColor");
+    			attr_dev(svg, "class", "w-5 h-5");
+    			add_location(svg, file$h, 67, 16, 2628);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, svg, anchor);
+    			append_dev(svg, path);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(svg);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_3$1.name,
+    		type: "if",
+    		source: "(67:14) {#if openFloor == fl.flrNoNm}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (78:10) {#if openFloor != fl.flrNoNm}
+    function create_if_block_2$1(ctx) {
+    	let hr;
+
+    	const block = {
+    		c: function create() {
+    			hr = element("hr");
+    			add_location(hr, file$h, 78, 12, 3295);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, hr, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(hr);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_2$1.name,
+    		type: "if",
+    		source: "(78:10) {#if openFloor != fl.flrNoNm}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (40:2) {#each brFlrOulnInfo as fl, id}
     function create_each_block$4(ctx) {
     	let if_block_anchor;
-    	let if_block = /*fl*/ ctx[4].mgmBldrgstPk == /*$mgmBldrgstPk*/ ctx[1] && create_if_block$7(ctx);
+    	let if_block = /*fl*/ ctx[6].mgmBldrgstPk == /*$mgmBldrgstPk*/ ctx[1] && create_if_block$7(ctx);
 
     	const block = {
     		c: function create() {
@@ -6489,7 +6690,7 @@ var app = (function () {
     			insert_dev(target, if_block_anchor, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (/*fl*/ ctx[4].mgmBldrgstPk == /*$mgmBldrgstPk*/ ctx[1]) {
+    			if (/*fl*/ ctx[6].mgmBldrgstPk == /*$mgmBldrgstPk*/ ctx[1]) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
@@ -6512,7 +6713,7 @@ var app = (function () {
     		block,
     		id: create_each_block$4.name,
     		type: "each",
-    		source: "(38:2) {#each brFlrOulnInfo as fl, id}",
+    		source: "(40:2) {#each brFlrOulnInfo as fl, id}",
     		ctx
     	});
 
@@ -6538,7 +6739,7 @@ var app = (function () {
     			}
 
     			attr_dev(div, "class", "flex-col flex-wrap mb-4");
-    			add_location(div, file$h, 36, 0, 1065);
+    			add_location(div, file$h, 38, 0, 1088);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -6551,7 +6752,7 @@ var app = (function () {
     			}
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*brFlrOulnInfo, addComma, floorAreaArr, $mgmBldrgstPk*/ 7) {
+    			if (dirty & /*openFloor, brFlrOulnInfo, addComma, floorAreaArr, $mgmBldrgstPk*/ 15) {
     				each_value = /*brFlrOulnInfo*/ ctx[0];
     				validate_each_argument(each_value);
     				let i;
@@ -6627,6 +6828,12 @@ var app = (function () {
     		return floorArea;
     	}
 
+    	// onMount(() => {
+    	// floorTotalArea($mgmBldrgstPk);
+    	// console.log("floorAreaArr : ", floorAreaArr);
+    	// });
+    	let openFloor = "";
+
     	$$self.$$.on_mount.push(function () {
     		if (brFlrOulnInfo === undefined && !('brFlrOulnInfo' in $$props || $$self.$$.bound[$$self.$$.props['brFlrOulnInfo']])) {
     			console_1$2.warn("<ArchitectureStackplan> was created without expected prop 'brFlrOulnInfo'");
@@ -6639,6 +6846,14 @@ var app = (function () {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console_1$2.warn(`<ArchitectureStackplan> was created with unknown prop '${key}'`);
     	});
 
+    	const click_handler = fl => {
+    		if (openFloor == fl.flrNoNm) {
+    			$$invalidate(3, openFloor = "");
+    		} else {
+    			$$invalidate(3, openFloor = fl.flrNoNm);
+    		}
+    	};
+
     	$$self.$$set = $$props => {
     		if ('brFlrOulnInfo' in $$props) $$invalidate(0, brFlrOulnInfo = $$props.brFlrOulnInfo);
     	};
@@ -6650,12 +6865,14 @@ var app = (function () {
     		brFlrOulnInfo,
     		floorAreaArr,
     		floorTotalArea,
+    		openFloor,
     		$mgmBldrgstPk
     	});
 
     	$$self.$inject_state = $$props => {
     		if ('brFlrOulnInfo' in $$props) $$invalidate(0, brFlrOulnInfo = $$props.brFlrOulnInfo);
     		if ('floorAreaArr' in $$props) $$invalidate(2, floorAreaArr = $$props.floorAreaArr);
+    		if ('openFloor' in $$props) $$invalidate(3, openFloor = $$props.openFloor);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -6668,7 +6885,7 @@ var app = (function () {
     		}
     	};
 
-    	return [brFlrOulnInfo, $mgmBldrgstPk, floorAreaArr];
+    	return [brFlrOulnInfo, $mgmBldrgstPk, floorAreaArr, openFloor, click_handler];
     }
 
     class ArchitectureStackplan extends SvelteComponentDev {
@@ -6700,12 +6917,12 @@ var app = (function () {
 
     function get_each_context$3(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[31] = list[i];
-    	child_ctx[33] = i;
+    	child_ctx[32] = list[i];
+    	child_ctx[34] = i;
     	return child_ctx;
     }
 
-    // (602:0) {:catch error}
+    // (606:0) {:catch error}
     function create_catch_block$1(ctx) {
     	let h5;
 
@@ -6715,7 +6932,7 @@ var app = (function () {
     			h5.textContent = "에러 발생 : 건물정보를 찾지 못했습니다. 주소를 다시 확인해주세요.";
     			attr_dev(h5, "class", "text-lg pl-2");
     			set_style(h5, "color", "red");
-    			add_location(h5, file$g, 602, 2, 17343);
+    			add_location(h5, file$g, 606, 2, 17505);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h5, anchor);
@@ -6732,14 +6949,14 @@ var app = (function () {
     		block,
     		id: create_catch_block$1.name,
     		type: "catch",
-    		source: "(602:0) {:catch error}",
+    		source: "(606:0) {:catch error}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (543:0) {:then}
+    // (547:0) {:then}
     function create_then_block$1(ctx) {
     	let show_if = Array.isArray(/*brTitleInfo*/ ctx[0]);
     	let t0;
@@ -6776,10 +6993,11 @@ var app = (function () {
     			cite = element("cite");
     			cite.textContent = "공공데이터포털";
     			attr_dev(cite, "class", "text-muted");
-    			add_location(cite, file$g, 599, 23, 17270);
+    			add_location(cite, file$g, 603, 23, 17432);
     			attr_dev(blockquote, "cite", "https://www.data.go.kr");
-    			attr_dev(blockquote, "class", "text-secondary my-5 text-sm text-slate-700 ml-2");
-    			add_location(blockquote, file$g, 598, 2, 17148);
+    			attr_dev(blockquote, "class", "text-secondary my-8 text-sm text-slate-700 ml-2");
+    			set_style(blockquote, "margin-bottom", "env(safe-area-inset-bottom)");
+    			add_location(blockquote, file$g, 602, 2, 17260);
     		},
     		m: function mount(target, anchor) {
     			if (if_block) if_block.m(target, anchor);
@@ -6842,14 +7060,14 @@ var app = (function () {
     		block,
     		id: create_then_block$1.name,
     		type: "then",
-    		source: "(543:0) {:then}",
+    		source: "(547:0) {:then}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (544:2) {#if Array.isArray(brTitleInfo)}
+    // (548:2) {#if Array.isArray(brTitleInfo)}
     function create_if_block$6(ctx) {
     	let details_1;
     	let summary_1;
@@ -6889,20 +7107,20 @@ var app = (function () {
     			attr_dev(path, "stroke-linecap", "round");
     			attr_dev(path, "stroke-linejoin", "round");
     			attr_dev(path, "d", "M19.5 8.25l-7.5 7.5-7.5-7.5");
-    			add_location(path, file$g, 559, 10, 15622);
+    			add_location(path, file$g, 563, 10, 15766);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "fill", "none");
     			attr_dev(svg, "viewBox", "0 0 24 24");
     			attr_dev(svg, "stroke-width", "1.5");
     			attr_dev(svg, "stroke", "currentColor");
     			attr_dev(svg, "class", "w-5 h-5 ml-1 pt-2");
-    			add_location(svg, file$g, 558, 8, 15472);
-    			attr_dev(summary_1, "class", "flex mb-2 hover:text-indigo-600 cursor-pointer svelte-oex3ks");
-    			add_location(summary_1, file$g, 545, 6, 14939);
-    			attr_dev(ul, "class", "absolute top-full border-2 border-slate-200 rounded-sm p-3 bg-white max-h-96 w-5/6 overflow-auto z-20");
-    			add_location(ul, file$g, 562, 6, 15748);
-    			attr_dev(details_1, "class", "relative px-2 text-slate-700 svelte-oex3ks");
-    			add_location(details_1, file$g, 544, 4, 14866);
+    			add_location(svg, file$g, 562, 8, 15616);
+    			attr_dev(summary_1, "class", "flex mb-2 hover:text-indigo-600 cursor-pointer");
+    			add_location(summary_1, file$g, 549, 6, 15083);
+    			attr_dev(ul, "class", "border-2 border-t-slate-200 p-3 bg-white max-h-96 overflow-auto z-20");
+    			add_location(ul, file$g, 566, 6, 15892);
+    			attr_dev(details_1, "class", "relative px-2 text-slate-700");
+    			add_location(details_1, file$g, 548, 4, 15010);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, details_1, anchor);
@@ -6968,24 +7186,24 @@ var app = (function () {
     		block,
     		id: create_if_block$6.name,
     		type: "if",
-    		source: "(544:2) {#if Array.isArray(brTitleInfo)}",
+    		source: "(548:2) {#if Array.isArray(brTitleInfo)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (564:8) {#each brTitleInfo as d, id}
+    // (568:8) {#each brTitleInfo as d, id}
     function create_each_block$3(ctx) {
     	let li;
     	let button;
-    	let t0_value = /*d*/ ctx[31].mgmBldrgstPk + "";
+    	let t0_value = /*d*/ ctx[32].mgmBldrgstPk + "";
     	let t0;
     	let t1;
 
-    	let t2_value = (/*d*/ ctx[31].bldNm == ""
+    	let t2_value = (/*d*/ ctx[32].bldNm == " "
     	? ""
-    	: "(" + /*d*/ ctx[31].bldNm + ")") + "";
+    	: "(" + /*d*/ ctx[32].bldNm + ")") + "";
 
     	let t2;
     	let button_class_value;
@@ -6994,7 +7212,7 @@ var app = (function () {
     	let dispose;
 
     	function click_handler_1() {
-    		return /*click_handler_1*/ ctx[9](/*d*/ ctx[31]);
+    		return /*click_handler_1*/ ctx[9](/*d*/ ctx[32]);
     	}
 
     	const block = {
@@ -7006,13 +7224,13 @@ var app = (function () {
     			t2 = text(t2_value);
     			t3 = space();
 
-    			attr_dev(button, "class", button_class_value = "page-link " + (/*d*/ ctx[31].mgmBldrgstPk == /*$mgmBldrgstPk*/ ctx[5]
+    			attr_dev(button, "class", button_class_value = "page-link " + (/*d*/ ctx[32].mgmBldrgstPk == /*$mgmBldrgstPk*/ ctx[5]
     			? 'text-indigo-600'
     			: ''));
 
-    			add_location(button, file$g, 565, 12, 15987);
+    			add_location(button, file$g, 569, 12, 16098);
     			attr_dev(li, "class", "page-item hover:text-indigo-600 cursor-pointer my-2");
-    			add_location(li, file$g, 564, 10, 15910);
+    			add_location(li, file$g, 568, 10, 16021);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -7029,13 +7247,13 @@ var app = (function () {
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty[0] & /*brTitleInfo*/ 1 && t0_value !== (t0_value = /*d*/ ctx[31].mgmBldrgstPk + "")) set_data_dev(t0, t0_value);
+    			if (dirty[0] & /*brTitleInfo*/ 1 && t0_value !== (t0_value = /*d*/ ctx[32].mgmBldrgstPk + "")) set_data_dev(t0, t0_value);
 
-    			if (dirty[0] & /*brTitleInfo*/ 1 && t2_value !== (t2_value = (/*d*/ ctx[31].bldNm == ""
+    			if (dirty[0] & /*brTitleInfo*/ 1 && t2_value !== (t2_value = (/*d*/ ctx[32].bldNm == " "
     			? ""
-    			: "(" + /*d*/ ctx[31].bldNm + ")") + "")) set_data_dev(t2, t2_value);
+    			: "(" + /*d*/ ctx[32].bldNm + ")") + "")) set_data_dev(t2, t2_value);
 
-    			if (dirty[0] & /*brTitleInfo, $mgmBldrgstPk*/ 33 && button_class_value !== (button_class_value = "page-link " + (/*d*/ ctx[31].mgmBldrgstPk == /*$mgmBldrgstPk*/ ctx[5]
+    			if (dirty[0] & /*brTitleInfo, $mgmBldrgstPk*/ 33 && button_class_value !== (button_class_value = "page-link " + (/*d*/ ctx[32].mgmBldrgstPk == /*$mgmBldrgstPk*/ ctx[5]
     			? 'text-indigo-600'
     			: ''))) {
     				attr_dev(button, "class", button_class_value);
@@ -7052,14 +7270,14 @@ var app = (function () {
     		block,
     		id: create_each_block$3.name,
     		type: "each",
-    		source: "(564:8) {#each brTitleInfo as d, id}",
+    		source: "(568:8) {#each brTitleInfo as d, id}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (541:16)    <Loading /> {:then}
+    // (545:16)    <Loading /> {:then}
     function create_pending_block$1(ctx) {
     	let loading;
     	let current;
@@ -7092,7 +7310,7 @@ var app = (function () {
     		block,
     		id: create_pending_block$1.name,
     		type: "pending",
-    		source: "(541:16)    <Loading /> {:then}",
+    		source: "(545:16)    <Loading /> {:then}",
     		ctx
     	});
 
@@ -7112,7 +7330,7 @@ var app = (function () {
     		pending: create_pending_block$1,
     		then: create_then_block$1,
     		catch: create_catch_block$1,
-    		error: 34,
+    		error: 35,
     		blocks: [,,,]
     	};
 
@@ -7369,7 +7587,7 @@ var app = (function () {
     	let ji = "0000"; // 지
     	let startDate = ""; // YYYYMMDD
     	let endDate = ""; // YYYYMMDD
-    	let numOfRows = 100; // 페이지당 목록 수
+    	let numOfRows = 500; // 페이지당 목록 수
     	let pageNo = 1; // 페이지번호
     	let brTitleInfo; // 건축물대장 표제부
     	let brFlrOulnInfo; // 건축층별정보
@@ -7534,6 +7752,8 @@ var app = (function () {
     		});
     	}
 
+    	let brHsprcInfo;
+
     	// 주택가격 api
     	async function getBrHsprcInfo() {
     		// let url = "/api/getBrTitleInfo";
@@ -7544,7 +7764,12 @@ var app = (function () {
     		url += "&platGbCd=" + platGbCd;
     		url += "&bun=" + bun;
     		url += "&ji=" + ji;
-    		url += "&numOfRows=" + numOfRows;
+
+    		// url += "&numOfRows=" + numOfRows;
+    		url += "&numOfRows=" + 1;
+
+    		url += "&startDate=" + "20221201";
+    		url += "&endDate=" + "20230201";
     		url += "&pageNo=" + pageNo;
     		url += "&serviceKey=" + apiKey;
     		console.log("주택가격url : ", url);
@@ -7569,7 +7794,7 @@ var app = (function () {
     				return data.sort(sortACN("mgmBldrgstPk"));
     			}
 
-    			return data;
+    			return brHsprcInfo = data;
     		}).catch(error => {
     			throw new Error(error);
     		});
@@ -7795,6 +8020,7 @@ var app = (function () {
     		getBrBasisOulnInfo,
     		getBrTitleInfo,
     		ownerInfoService,
+    		brHsprcInfo,
     		getBrHsprcInfo,
     		getMaintenanceHistory,
     		promise,
@@ -7825,6 +8051,7 @@ var app = (function () {
     		if ('brTitleInfo' in $$props) $$invalidate(0, brTitleInfo = $$props.brTitleInfo);
     		if ('brFlrOulnInfo' in $$props) $$invalidate(1, brFlrOulnInfo = $$props.brFlrOulnInfo);
     		if ('floorInfoTitle' in $$props) floorInfoTitle = $$props.floorInfoTitle;
+    		if ('brHsprcInfo' in $$props) brHsprcInfo = $$props.brHsprcInfo;
     		if ('promise' in $$props) $$invalidate(2, promise = $$props.promise);
     		if ('elem' in $$props) $$invalidate(6, elem = $$props.elem);
     		if ('details' in $$props) $$invalidate(3, details = $$props.details);
@@ -8414,15 +8641,15 @@ var app = (function () {
     			attr_dev(path, "stroke-linecap", "round");
     			attr_dev(path, "stroke-linejoin", "round");
     			attr_dev(path, "d", "M12 19.5v-15m0 0l-6.75 6.75M12 4.5l6.75 6.75");
-    			add_location(path, file$b, 27, 8, 889);
+    			add_location(path, file$b, 27, 8, 899);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "fill", "none");
     			attr_dev(svg, "viewBox", "0 0 24 24");
     			attr_dev(svg, "stroke-width", "1.5");
     			attr_dev(svg, "stroke", "currentColor");
     			attr_dev(svg, "class", "w-5 h-5");
-    			add_location(svg, file$b, 26, 7, 751);
-    			attr_dev(button, "class", "text-blue-700 hover:text-blue-500 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 dark:text-blue-500 max-sm:bottom-14 md:bottom-3 right-1 z-50");
+    			add_location(svg, file$b, 26, 7, 761);
+    			attr_dev(button, "class", "text-blue-700 hover:text-blue-500 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 dark:text-blue-500 max-sm:bottom-14 bottom-10 md:bottom-3 right-1 z-50");
     			set_style(button, "position", "fixed");
     			set_style(button, "z-index", "999");
     			add_location(button, file$b, 22, 4, 477);
@@ -11937,7 +12164,7 @@ var app = (function () {
     			attr_dev(svg1, "class", "w-6 h-6");
     			add_location(svg1, file, 1135, 16, 30771);
     			add_location(button1, file, 1128, 14, 30564);
-    			attr_dev(div0, "class", "flex justify-between px-2 mb-5 max-sm:mt-3");
+    			attr_dev(div0, "class", "flex justify-between px-2 mb-5 max-sm:mt-5");
     			add_location(div0, file, 1116, 12, 30010);
     			attr_dev(div1, "class", "grow");
     			add_location(div1, file, 1159, 12, 31856);
