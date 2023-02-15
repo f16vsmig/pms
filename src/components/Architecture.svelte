@@ -491,7 +491,6 @@
     // 지번 주소에서 번지수를 지우고 주소 생성
     let jibunArr = jibun.split(" ");
     let dong = jibun.replaceAll(jibunArr[jibunArr.length - 1], "");
-    console.log("법정동 api 과정", jibun, jibunArr, dong);
     // 법정동 코드 호출을 위한 url 생성
     // let url = "/api/getStanReginCd";
     let url = "http://apis.data.go.kr/1741000/StanReginCd/getStanReginCdList";
@@ -508,9 +507,7 @@
         return resp.json();
       })
       .then((code) => {
-        console.log("법정동api_code : ", code);
         let cd = code.StanReginCd[1].row[0];
-        console.log("법정동api_code : ", cd);
         sigunguCd = cd.sido_cd + cd.sgg_cd;
         bjdongCd = cd.umd_cd + cd.ri_cd;
         return;
@@ -604,6 +601,13 @@
     국토교통부 건축물대장정보서비스 | <cite class="text-muted">공공데이터포털</cite>
   </blockquote>
 {:catch error}
-  <h5 class="text-lg pl-2" style="color: red">에러 발생 : 건물정보를 찾지 못했습니다. 주소를 다시 확인해주세요.</h5>
-  <!-- <p class="text-sm">{error.message}</p> -->
+  <div class="px-2 flex flex-col justify-center">
+    <div class="mx-auto mt-10">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-14 h-14 text-red-400">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+      </svg>
+    </div>
+    <h5 class="flex-none my-2 text-center text-red-400">{elem.jibun}</h5>
+    <h5 class="flex-none text-lg my-2 text-center">건물정보를 찾지 못했습니다.</h5>
+  </div>
 {/await}

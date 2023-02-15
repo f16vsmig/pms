@@ -298,26 +298,6 @@
             </button>
           </div>
         {/if}
-
-        <!-- {:else}
-          <div class="flex-initial inset-y-0 items-center pl-3">
-            <button class="pt-1 pr-2" on:click|preventDefault={() => (searchToggle = false)}>
-            <button class="pt-1 pr-2" on:click|preventDefault={findBuilding}>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-          <input
-            bind:this={searchInput}
-            on:keyup={(e) => (searchTerm = e.target.value)}
-            type="text"
-            id="simple-search"
-            class="absolute top-0 right-10 border-b-2 rounded-none max-sm:w-64 text-gray-900 text-sm focus:outline-none focus:border-b-indigo-500 p-1 pl-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500"
-            placeholder="Search"
-            required
-          />
-        {/if} -->
       </div>
     </form>
   </div>

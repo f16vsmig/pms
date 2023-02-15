@@ -3384,7 +3384,7 @@ var app = (function () {
     			set_style(div2, "overflow", "hidden");
     			set_style(div2, "z-index", "999");
     			set_style(div2, "-webkit-overflow-scrolling", "touch");
-    			add_location(div2, file$k, 323, 2, 11830);
+    			add_location(div2, file$k, 303, 2, 10756);
     			attr_dev(nav, "class", "bg-white border-b z-50");
     			add_location(nav, file$k, 226, 0, 7028);
     		},
@@ -4080,20 +4080,20 @@ var app = (function () {
     			path = svg_element("path");
     			attr_dev(path, "stroke-linecap", "round");
     			attr_dev(path, "d", "M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z");
-    			add_location(path, file$i, 53, 16, 2731);
+    			add_location(path, file$i, 53, 16, 2385);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "fill", "none");
     			attr_dev(svg, "viewBox", "0 0 24 24");
     			attr_dev(svg, "stroke-width", "1.5");
     			attr_dev(svg, "stroke", "currentColor");
     			attr_dev(svg, "class", "w-5 h-5 pointer-events-none");
-    			add_location(svg, file$i, 52, 15, 2565);
+    			add_location(svg, file$i, 52, 15, 2219);
     			attr_dev(a, "href", /*$roadViewUrl*/ ctx[2]);
     			attr_dev(a, "target", "_blank");
     			attr_dev(a, "rel", "noreferrer");
     			attr_dev(a, "class", "text-indigo-600 hover:text-indigo-500 ml-2");
     			attr_dev(a, "title", "로드맵 보기");
-    			add_location(a, file$i, 51, 12, 2428);
+    			add_location(a, file$i, 51, 12, 2082);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, a, anchor);
@@ -4645,222 +4645,222 @@ var app = (function () {
     			td30 = element("td");
     			t124 = text(t124_value);
     			attr_dev(th0, "scope", "row");
-    			attr_dev(th0, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800");
-    			add_location(th0, file$i, 98, 10, 5219);
+    			attr_dev(th0, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
+    			add_location(th0, file$i, 98, 10, 4474);
     			attr_dev(td0, "class", "px-6 py-4");
-    			add_location(td0, file$i, 99, 10, 5364);
-    			attr_dev(tr0, "class", "border-b border-gray-200 dark:border-gray-700");
-    			add_location(tr0, file$i, 97, 8, 5150);
+    			add_location(td0, file$i, 99, 10, 4586);
+    			attr_dev(tr0, "class", "border-b border-gray-200");
+    			add_location(tr0, file$i, 97, 8, 4426);
     			attr_dev(th1, "scope", "row");
-    			attr_dev(th1, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800");
-    			add_location(th1, file$i, 102, 10, 5516);
+    			attr_dev(th1, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
+    			add_location(th1, file$i, 102, 10, 4717);
     			attr_dev(td1, "class", "px-6 py-4");
-    			add_location(td1, file$i, 103, 10, 5657);
-    			attr_dev(tr1, "class", "border-b border-gray-200 dark:border-gray-700");
-    			add_location(tr1, file$i, 101, 8, 5447);
+    			add_location(td1, file$i, 103, 10, 4825);
+    			attr_dev(tr1, "class", "border-b border-gray-200");
+    			add_location(tr1, file$i, 101, 8, 4669);
     			attr_dev(th2, "scope", "row");
-    			attr_dev(th2, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800");
-    			add_location(th2, file$i, 106, 10, 5788);
+    			attr_dev(th2, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
+    			add_location(th2, file$i, 106, 10, 4935);
     			attr_dev(td2, "class", "px-6 py-4");
-    			add_location(td2, file$i, 107, 10, 5928);
-    			attr_dev(tr2, "class", "border-b border-gray-200 dark:border-gray-700");
-    			add_location(tr2, file$i, 105, 8, 5719);
+    			add_location(td2, file$i, 107, 10, 5042);
+    			attr_dev(tr2, "class", "border-b border-gray-200");
+    			add_location(tr2, file$i, 105, 8, 4887);
     			attr_dev(th3, "scope", "row");
-    			attr_dev(th3, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800");
-    			add_location(th3, file$i, 110, 10, 6063);
+    			attr_dev(th3, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
+    			add_location(th3, file$i, 110, 10, 5156);
     			attr_dev(td3, "class", "px-6 py-4");
-    			add_location(td3, file$i, 111, 10, 6205);
-    			attr_dev(tr3, "class", "border-b border-gray-200 dark:border-gray-700");
-    			add_location(tr3, file$i, 109, 8, 5994);
+    			add_location(td3, file$i, 111, 10, 5265);
+    			attr_dev(tr3, "class", "border-b border-gray-200");
+    			add_location(tr3, file$i, 109, 8, 5108);
     			attr_dev(th4, "scope", "row");
-    			attr_dev(th4, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800");
-    			add_location(th4, file$i, 114, 10, 6339);
+    			attr_dev(th4, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
+    			add_location(th4, file$i, 114, 10, 5378);
     			attr_dev(td4, "class", "px-6 py-4");
-    			add_location(td4, file$i, 115, 10, 6480);
-    			attr_dev(tr4, "class", "border-b border-gray-200 dark:border-gray-700");
-    			add_location(tr4, file$i, 113, 8, 6270);
+    			add_location(td4, file$i, 115, 10, 5486);
+    			attr_dev(tr4, "class", "border-b border-gray-200");
+    			add_location(tr4, file$i, 113, 8, 5330);
     			attr_dev(th5, "scope", "row");
-    			attr_dev(th5, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800");
-    			add_location(th5, file$i, 118, 10, 6619);
+    			attr_dev(th5, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
+    			add_location(th5, file$i, 118, 10, 5604);
     			attr_dev(td5, "class", "px-6 py-4");
-    			add_location(td5, file$i, 119, 10, 6761);
-    			attr_dev(tr5, "class", "border-b border-gray-200 dark:border-gray-700");
-    			add_location(tr5, file$i, 117, 8, 6550);
+    			add_location(td5, file$i, 119, 10, 5713);
+    			attr_dev(tr5, "class", "border-b border-gray-200");
+    			add_location(tr5, file$i, 117, 8, 5556);
     			attr_dev(th6, "scope", "row");
-    			attr_dev(th6, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800");
-    			add_location(th6, file$i, 122, 10, 6895);
+    			attr_dev(th6, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
+    			add_location(th6, file$i, 122, 10, 5826);
     			attr_dev(td6, "class", "px-6 py-4");
-    			add_location(td6, file$i, 123, 10, 7035);
-    			attr_dev(tr6, "class", "border-b border-gray-200 dark:border-gray-700");
-    			add_location(tr6, file$i, 121, 8, 6826);
+    			add_location(td6, file$i, 123, 10, 5933);
+    			attr_dev(tr6, "class", "border-b border-gray-200");
+    			add_location(tr6, file$i, 121, 8, 5778);
     			attr_dev(th7, "scope", "row");
-    			attr_dev(th7, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800");
-    			add_location(th7, file$i, 126, 10, 7169);
+    			attr_dev(th7, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
+    			add_location(th7, file$i, 126, 10, 6046);
     			attr_dev(td7, "class", "px-6 py-4");
-    			add_location(td7, file$i, 127, 10, 7311);
-    			attr_dev(tr7, "class", "border-b border-gray-200 dark:border-gray-700");
-    			add_location(tr7, file$i, 125, 8, 7100);
+    			add_location(td7, file$i, 127, 10, 6155);
+    			attr_dev(tr7, "class", "border-b border-gray-200");
+    			add_location(tr7, file$i, 125, 8, 5998);
     			attr_dev(th8, "scope", "row");
-    			attr_dev(th8, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800");
-    			add_location(th8, file$i, 130, 10, 7444);
+    			attr_dev(th8, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
+    			add_location(th8, file$i, 130, 10, 6267);
     			attr_dev(td8, "class", "px-6 py-4");
-    			add_location(td8, file$i, 131, 10, 7584);
-    			attr_dev(tr8, "class", "border-b border-gray-200 dark:border-gray-700");
-    			add_location(tr8, file$i, 129, 8, 7375);
+    			add_location(td8, file$i, 131, 10, 6374);
+    			attr_dev(tr8, "class", "border-b border-gray-200");
+    			add_location(tr8, file$i, 129, 8, 6219);
     			attr_dev(th9, "scope", "row");
-    			attr_dev(th9, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800");
-    			add_location(th9, file$i, 134, 10, 7714);
+    			attr_dev(th9, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
+    			add_location(th9, file$i, 134, 10, 6483);
     			attr_dev(td9, "class", "px-6 py-4");
-    			add_location(td9, file$i, 135, 10, 7854);
-    			attr_dev(tr9, "class", "border-b border-gray-200 dark:border-gray-700");
-    			add_location(tr9, file$i, 133, 8, 7645);
+    			add_location(td9, file$i, 135, 10, 6590);
+    			attr_dev(tr9, "class", "border-b border-gray-200");
+    			add_location(tr9, file$i, 133, 8, 6435);
     			attr_dev(th10, "scope", "row");
-    			attr_dev(th10, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800");
-    			add_location(th10, file$i, 138, 10, 8013);
+    			attr_dev(th10, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
+    			add_location(th10, file$i, 138, 10, 6728);
     			attr_dev(td10, "class", "px-6 py-4");
-    			add_location(td10, file$i, 139, 10, 8154);
-    			attr_dev(tr10, "class", "border-b border-gray-200 dark:border-gray-700");
-    			add_location(tr10, file$i, 137, 8, 7944);
+    			add_location(td10, file$i, 139, 10, 6836);
+    			attr_dev(tr10, "class", "border-b border-gray-200");
+    			add_location(tr10, file$i, 137, 8, 6680);
     			attr_dev(th11, "scope", "row");
-    			attr_dev(th11, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800");
-    			add_location(th11, file$i, 142, 10, 8294);
+    			attr_dev(th11, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
+    			add_location(th11, file$i, 142, 10, 6955);
     			attr_dev(td11, "class", "px-6 py-4");
-    			add_location(td11, file$i, 143, 10, 8438);
-    			attr_dev(tr11, "class", "border-b border-gray-200 dark:border-gray-700");
-    			add_location(tr11, file$i, 141, 8, 8225);
+    			add_location(td11, file$i, 143, 10, 7066);
+    			attr_dev(tr11, "class", "border-b border-gray-200");
+    			add_location(tr11, file$i, 141, 8, 6907);
     			attr_dev(th12, "scope", "row");
-    			attr_dev(th12, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800");
-    			add_location(th12, file$i, 146, 10, 8579);
+    			attr_dev(th12, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
+    			add_location(th12, file$i, 146, 10, 7186);
     			attr_dev(td12, "class", "px-6 py-4");
-    			add_location(td12, file$i, 147, 10, 8721);
-    			attr_dev(tr12, "class", "border-b border-gray-200 dark:border-gray-700");
-    			add_location(tr12, file$i, 145, 8, 8510);
+    			add_location(td12, file$i, 147, 10, 7295);
+    			attr_dev(tr12, "class", "border-b border-gray-200");
+    			add_location(tr12, file$i, 145, 8, 7138);
     			attr_dev(th13, "scope", "row");
-    			attr_dev(th13, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800");
-    			add_location(th13, file$i, 150, 10, 8857);
+    			attr_dev(th13, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
+    			add_location(th13, file$i, 150, 10, 7410);
     			attr_dev(td13, "class", "px-6 py-4");
-    			add_location(td13, file$i, 151, 10, 9001);
-    			attr_dev(tr13, "class", "border-b border-gray-200 dark:border-gray-700");
-    			add_location(tr13, file$i, 149, 8, 8788);
+    			add_location(td13, file$i, 151, 10, 7521);
+    			attr_dev(tr13, "class", "border-b border-gray-200");
+    			add_location(tr13, file$i, 149, 8, 7362);
     			attr_dev(th14, "scope", "row");
-    			attr_dev(th14, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800");
-    			add_location(th14, file$i, 154, 10, 9138);
+    			attr_dev(th14, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
+    			add_location(th14, file$i, 154, 10, 7637);
     			attr_dev(td14, "class", "px-6 py-4");
-    			add_location(td14, file$i, 155, 10, 9282);
-    			attr_dev(tr14, "class", "border-b border-gray-200 dark:border-gray-700");
-    			add_location(tr14, file$i, 153, 8, 9069);
+    			add_location(td14, file$i, 155, 10, 7748);
+    			attr_dev(tr14, "class", "border-b border-gray-200");
+    			add_location(tr14, file$i, 153, 8, 7589);
     			attr_dev(th15, "scope", "row");
-    			attr_dev(th15, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800");
-    			add_location(th15, file$i, 158, 10, 9422);
+    			attr_dev(th15, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
+    			add_location(th15, file$i, 158, 10, 7867);
     			attr_dev(td15, "class", "px-6 py-4");
-    			add_location(td15, file$i, 159, 10, 9568);
-    			attr_dev(tr15, "class", "border-b border-gray-200 dark:border-gray-700");
-    			add_location(tr15, file$i, 157, 8, 9353);
+    			add_location(td15, file$i, 159, 10, 7980);
+    			attr_dev(tr15, "class", "border-b border-gray-200");
+    			add_location(tr15, file$i, 157, 8, 7819);
     			attr_dev(th16, "scope", "row");
-    			attr_dev(th16, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800");
-    			add_location(th16, file$i, 162, 10, 9707);
+    			attr_dev(th16, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
+    			add_location(th16, file$i, 162, 10, 8098);
     			attr_dev(td16, "class", "px-6 py-4");
-    			add_location(td16, file$i, 163, 10, 9853);
-    			attr_dev(tr16, "class", "border-b border-gray-200 dark:border-gray-700");
-    			add_location(tr16, file$i, 161, 8, 9638);
+    			add_location(td16, file$i, 163, 10, 8211);
+    			attr_dev(tr16, "class", "border-b border-gray-200");
+    			add_location(tr16, file$i, 161, 8, 8050);
     			attr_dev(th17, "scope", "row");
-    			attr_dev(th17, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800");
-    			add_location(th17, file$i, 166, 10, 9992);
+    			attr_dev(th17, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
+    			add_location(th17, file$i, 166, 10, 8329);
     			attr_dev(td17, "class", "px-6 py-4");
-    			add_location(td17, file$i, 167, 10, 10138);
-    			attr_dev(tr17, "class", "border-b border-gray-200 dark:border-gray-700");
-    			add_location(tr17, file$i, 165, 8, 9923);
+    			add_location(td17, file$i, 167, 10, 8442);
+    			attr_dev(tr17, "class", "border-b border-gray-200");
+    			add_location(tr17, file$i, 165, 8, 8281);
     			attr_dev(th18, "scope", "row");
-    			attr_dev(th18, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800");
-    			add_location(th18, file$i, 170, 10, 10277);
+    			attr_dev(th18, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
+    			add_location(th18, file$i, 170, 10, 8560);
     			attr_dev(td18, "class", "px-6 py-4");
-    			add_location(td18, file$i, 171, 10, 10418);
-    			attr_dev(tr18, "class", "border-b border-gray-200 dark:border-gray-700");
-    			add_location(tr18, file$i, 169, 8, 10208);
+    			add_location(td18, file$i, 171, 10, 8668);
+    			attr_dev(tr18, "class", "border-b border-gray-200");
+    			add_location(tr18, file$i, 169, 8, 8512);
     			attr_dev(th19, "scope", "row");
-    			attr_dev(th19, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800");
-    			add_location(th19, file$i, 174, 10, 10558);
+    			attr_dev(th19, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
+    			add_location(th19, file$i, 174, 10, 8787);
     			attr_dev(td19, "class", "px-6 py-4");
-    			add_location(td19, file$i, 175, 10, 10699);
-    			attr_dev(tr19, "class", "border-b border-gray-200 dark:border-gray-700");
-    			add_location(tr19, file$i, 173, 8, 10489);
+    			add_location(td19, file$i, 175, 10, 8895);
+    			attr_dev(tr19, "class", "border-b border-gray-200");
+    			add_location(tr19, file$i, 173, 8, 8739);
     			attr_dev(th20, "scope", "row");
-    			attr_dev(th20, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800");
-    			add_location(th20, file$i, 178, 10, 10841);
+    			attr_dev(th20, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
+    			add_location(th20, file$i, 178, 10, 9016);
     			attr_dev(td20, "class", "px-6 py-4");
-    			add_location(td20, file$i, 179, 10, 10984);
-    			attr_dev(tr20, "class", "border-b border-gray-200 dark:border-gray-700");
-    			add_location(tr20, file$i, 177, 8, 10772);
+    			add_location(td20, file$i, 179, 10, 9126);
+    			attr_dev(tr20, "class", "border-b border-gray-200");
+    			add_location(tr20, file$i, 177, 8, 8968);
     			attr_dev(th21, "scope", "row");
-    			attr_dev(th21, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800");
-    			add_location(th21, file$i, 182, 10, 11127);
+    			attr_dev(th21, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
+    			add_location(th21, file$i, 182, 10, 9248);
     			attr_dev(td21, "class", "px-6 py-4");
-    			add_location(td21, file$i, 183, 10, 11269);
-    			attr_dev(tr21, "class", "border-b border-gray-200 dark:border-gray-700");
-    			add_location(tr21, file$i, 181, 8, 11058);
+    			add_location(td21, file$i, 183, 10, 9357);
+    			attr_dev(tr21, "class", "border-b border-gray-200");
+    			add_location(tr21, file$i, 181, 8, 9200);
     			attr_dev(th22, "scope", "row");
-    			attr_dev(th22, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800");
-    			add_location(th22, file$i, 186, 10, 11404);
+    			attr_dev(th22, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
+    			add_location(th22, file$i, 186, 10, 9471);
     			attr_dev(td22, "class", "px-6 py-4");
-    			add_location(td22, file$i, 187, 10, 11546);
-    			attr_dev(tr22, "class", "border-b border-gray-200 dark:border-gray-700");
-    			add_location(tr22, file$i, 185, 8, 11335);
+    			add_location(td22, file$i, 187, 10, 9580);
+    			attr_dev(tr22, "class", "border-b border-gray-200");
+    			add_location(tr22, file$i, 185, 8, 9423);
     			attr_dev(th23, "scope", "row");
-    			attr_dev(th23, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800");
-    			add_location(th23, file$i, 190, 10, 11684);
+    			attr_dev(th23, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
+    			add_location(th23, file$i, 190, 10, 9697);
     			attr_dev(td23, "class", "px-6 py-4");
-    			add_location(td23, file$i, 191, 10, 11829);
-    			attr_dev(tr23, "class", "border-b border-gray-200 dark:border-gray-700");
-    			add_location(tr23, file$i, 189, 8, 11615);
+    			add_location(td23, file$i, 191, 10, 9809);
+    			attr_dev(tr23, "class", "border-b border-gray-200");
+    			add_location(tr23, file$i, 189, 8, 9649);
     			attr_dev(th24, "scope", "row");
-    			attr_dev(th24, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800");
-    			add_location(th24, file$i, 194, 10, 11964);
+    			attr_dev(th24, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
+    			add_location(th24, file$i, 194, 10, 9923);
     			attr_dev(td24, "class", "px-6 py-4");
-    			add_location(td24, file$i, 195, 10, 12109);
-    			attr_dev(tr24, "class", "border-b border-gray-200 dark:border-gray-700");
-    			add_location(tr24, file$i, 193, 8, 11895);
+    			add_location(td24, file$i, 195, 10, 10035);
+    			attr_dev(tr24, "class", "border-b border-gray-200");
+    			add_location(tr24, file$i, 193, 8, 9875);
     			attr_dev(th25, "scope", "row");
-    			attr_dev(th25, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800");
-    			add_location(th25, file$i, 198, 10, 12245);
+    			attr_dev(th25, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
+    			add_location(th25, file$i, 198, 10, 10150);
     			attr_dev(td25, "class", "px-6 py-4");
-    			add_location(td25, file$i, 199, 10, 12390);
-    			attr_dev(tr25, "class", "border-b border-gray-200 dark:border-gray-700");
-    			add_location(tr25, file$i, 197, 8, 12176);
+    			add_location(td25, file$i, 199, 10, 10262);
+    			attr_dev(tr25, "class", "border-b border-gray-200");
+    			add_location(tr25, file$i, 197, 8, 10102);
     			attr_dev(th26, "scope", "row");
-    			attr_dev(th26, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800");
-    			add_location(th26, file$i, 202, 10, 12525);
+    			attr_dev(th26, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
+    			add_location(th26, file$i, 202, 10, 10376);
     			attr_dev(td26, "class", "px-6 py-4");
-    			add_location(td26, file$i, 203, 10, 12671);
-    			attr_dev(tr26, "class", "border-b border-gray-200 dark:border-gray-700");
-    			add_location(tr26, file$i, 201, 8, 12456);
+    			add_location(td26, file$i, 203, 10, 10489);
+    			attr_dev(tr26, "class", "border-b border-gray-200");
+    			add_location(tr26, file$i, 201, 8, 10328);
     			attr_dev(th27, "scope", "row");
-    			attr_dev(th27, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800");
-    			add_location(th27, file$i, 206, 10, 12808);
+    			attr_dev(th27, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
+    			add_location(th27, file$i, 206, 10, 10605);
     			attr_dev(td27, "class", "px-6 py-4");
-    			add_location(td27, file$i, 207, 10, 12956);
-    			attr_dev(tr27, "class", "border-b border-gray-200 dark:border-gray-700");
-    			add_location(tr27, file$i, 205, 8, 12739);
+    			add_location(td27, file$i, 207, 10, 10720);
+    			attr_dev(tr27, "class", "border-b border-gray-200");
+    			add_location(tr27, file$i, 205, 8, 10557);
     			attr_dev(th28, "scope", "row");
-    			attr_dev(th28, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800");
-    			add_location(th28, file$i, 210, 10, 13092);
+    			attr_dev(th28, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
+    			add_location(th28, file$i, 210, 10, 10835);
     			attr_dev(td28, "class", "px-6 py-4");
-    			add_location(td28, file$i, 211, 10, 13238);
-    			attr_dev(tr28, "class", "border-b border-gray-200 dark:border-gray-700");
-    			add_location(tr28, file$i, 209, 8, 13023);
+    			add_location(td28, file$i, 211, 10, 10948);
+    			attr_dev(tr28, "class", "border-b border-gray-200");
+    			add_location(tr28, file$i, 209, 8, 10787);
     			attr_dev(th29, "scope", "row");
-    			attr_dev(th29, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800");
-    			add_location(th29, file$i, 214, 10, 13383);
+    			attr_dev(th29, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
+    			add_location(th29, file$i, 214, 10, 11072);
     			attr_dev(td29, "class", "px-6 py-4");
-    			add_location(td29, file$i, 215, 10, 13525);
-    			attr_dev(tr29, "class", "border-b border-gray-200 dark:border-gray-700");
-    			add_location(tr29, file$i, 213, 8, 13314);
+    			add_location(td29, file$i, 215, 10, 11181);
+    			attr_dev(tr29, "class", "border-b border-gray-200");
+    			add_location(tr29, file$i, 213, 8, 11024);
     			attr_dev(th30, "scope", "row");
-    			attr_dev(th30, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800");
-    			add_location(th30, file$i, 218, 10, 13664);
+    			attr_dev(th30, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
+    			add_location(th30, file$i, 218, 10, 11299);
     			attr_dev(td30, "class", "px-6 py-4");
-    			add_location(td30, file$i, 219, 10, 13806);
-    			attr_dev(tr30, "class", "border-b border-gray-200 dark:border-gray-700");
-    			add_location(tr30, file$i, 217, 8, 13595);
+    			add_location(td30, file$i, 219, 10, 11408);
+    			attr_dev(tr30, "class", "border-b border-gray-200");
+    			add_location(tr30, file$i, 217, 8, 11251);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr0, anchor);
@@ -5161,7 +5161,7 @@ var app = (function () {
     	return block;
     }
 
-    // (429:2) {:else}
+    // (239:2) {:else}
     function create_else_block$5(ctx) {
     	let button;
     	let t;
@@ -5179,16 +5179,16 @@ var app = (function () {
     			attr_dev(path, "stroke-linecap", "round");
     			attr_dev(path, "stroke-linejoin", "round");
     			attr_dev(path, "d", "M19.5 8.25l-7.5 7.5-7.5-7.5");
-    			add_location(path, file$i, 435, 8, 19743);
+    			add_location(path, file$i, 245, 8, 12315);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "fill", "none");
     			attr_dev(svg, "viewBox", "0 0 24 24");
     			attr_dev(svg, "stroke-width", "1.5");
     			attr_dev(svg, "stroke", "currentColor");
     			attr_dev(svg, "class", "w-5 h-5");
-    			add_location(svg, file$i, 434, 11, 19605);
+    			add_location(svg, file$i, 244, 11, 12177);
     			attr_dev(button, "class", "flex mt-3 mb-10 text-slate-600 text-sm max-sm:ml-3");
-    			add_location(button, file$i, 429, 4, 19464);
+    			add_location(button, file$i, 239, 4, 12036);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -5213,14 +5213,14 @@ var app = (function () {
     		block,
     		id: create_else_block$5.name,
     		type: "else",
-    		source: "(429:2) {:else}",
+    		source: "(239:2) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (418:2) {#if visable}
+    // (228:2) {#if visable}
     function create_if_block$9(ctx) {
     	let button;
     	let t;
@@ -5238,16 +5238,16 @@ var app = (function () {
     			attr_dev(path, "stroke-linecap", "round");
     			attr_dev(path, "stroke-linejoin", "round");
     			attr_dev(path, "d", "M4.5 15.75l7.5-7.5 7.5 7.5");
-    			add_location(path, file$i, 425, 8, 19336);
+    			add_location(path, file$i, 235, 8, 11908);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "fill", "none");
     			attr_dev(svg, "viewBox", "0 0 24 24");
     			attr_dev(svg, "stroke-width", "1.5");
     			attr_dev(svg, "stroke", "currentColor");
     			attr_dev(svg, "class", "w-5 h-5");
-    			add_location(svg, file$i, 424, 10, 19198);
+    			add_location(svg, file$i, 234, 10, 11770);
     			attr_dev(button, "class", "flex mt-3 mb-10 text-slate-600 text-sm max-sm:ml-3");
-    			add_location(button, file$i, 418, 4, 19003);
+    			add_location(button, file$i, 228, 4, 11575);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -5272,7 +5272,7 @@ var app = (function () {
     		block,
     		id: create_if_block$9.name,
     		type: "if",
-    		source: "(418:2) {#if visable}",
+    		source: "(228:2) {#if visable}",
     		ctx
     	});
 
@@ -5507,103 +5507,103 @@ var app = (function () {
     			div1 = element("div");
     			if_block3.c();
     			attr_dev(th0, "scope", "row");
-    			attr_dev(th0, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800");
-    			add_location(th0, file$i, 27, 8, 801);
+    			attr_dev(th0, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
+    			add_location(th0, file$i, 27, 8, 758);
     			attr_dev(td0, "class", "px-6 py-4");
-    			add_location(td0, file$i, 28, 8, 940);
-    			attr_dev(tr0, "class", "border-b border-gray-200 dark:border-gray-700");
-    			add_location(tr0, file$i, 26, 6, 734);
+    			add_location(td0, file$i, 28, 8, 864);
+    			attr_dev(tr0, "class", "border-b border-gray-200");
+    			add_location(tr0, file$i, 26, 6, 712);
     			attr_dev(th1, "scope", "row");
-    			attr_dev(th1, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800");
-    			add_location(th1, file$i, 31, 8, 1065);
+    			attr_dev(th1, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
+    			add_location(th1, file$i, 31, 8, 968);
     			attr_dev(td1, "class", "px-6 py-4");
-    			add_location(td1, file$i, 32, 8, 1205);
-    			attr_dev(tr1, "class", "border-b border-gray-200 dark:border-gray-700");
-    			add_location(tr1, file$i, 30, 6, 998);
+    			add_location(td1, file$i, 32, 8, 1075);
+    			attr_dev(tr1, "class", "border-b border-gray-200");
+    			add_location(tr1, file$i, 30, 6, 922);
     			attr_dev(th2, "scope", "row");
-    			attr_dev(th2, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800");
-    			add_location(th2, file$i, 35, 8, 1337);
+    			attr_dev(th2, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
+    			add_location(th2, file$i, 35, 8, 1186);
     			attr_dev(td2, "class", "px-6 py-4");
-    			add_location(td2, file$i, 36, 8, 1477);
-    			attr_dev(tr2, "class", "border-b border-gray-200 dark:border-gray-700");
-    			add_location(tr2, file$i, 34, 6, 1270);
+    			add_location(td2, file$i, 36, 8, 1293);
+    			attr_dev(tr2, "class", "border-b border-gray-200");
+    			add_location(tr2, file$i, 34, 6, 1140);
     			attr_dev(th3, "scope", "row");
-    			attr_dev(th3, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800");
-    			add_location(th3, file$i, 39, 8, 1652);
+    			attr_dev(th3, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
+    			add_location(th3, file$i, 39, 8, 1447);
     			attr_dev(td3, "class", "px-6 py-4");
-    			add_location(td3, file$i, 40, 8, 1790);
-    			attr_dev(tr3, "class", "border-b border-gray-200 dark:border-gray-700");
-    			add_location(tr3, file$i, 38, 6, 1585);
+    			add_location(td3, file$i, 40, 8, 1552);
+    			attr_dev(tr3, "class", "border-b border-gray-200");
+    			add_location(tr3, file$i, 38, 6, 1401);
     			attr_dev(th4, "scope", "row");
-    			attr_dev(th4, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800");
-    			add_location(th4, file$i, 43, 8, 1923);
+    			attr_dev(th4, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
+    			add_location(th4, file$i, 43, 8, 1664);
     			attr_dev(td4, "class", "px-6 py-4");
-    			add_location(td4, file$i, 44, 8, 2063);
-    			attr_dev(tr4, "class", "border-b border-gray-200 dark:border-gray-700");
-    			add_location(tr4, file$i, 42, 6, 1856);
+    			add_location(td4, file$i, 44, 8, 1771);
+    			attr_dev(tr4, "class", "border-b border-gray-200");
+    			add_location(tr4, file$i, 42, 6, 1618);
     			attr_dev(th5, "scope", "row");
-    			attr_dev(th5, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800");
-    			add_location(th5, file$i, 47, 8, 2190);
+    			attr_dev(th5, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
+    			add_location(th5, file$i, 47, 8, 1877);
     			attr_dev(td5, "class", "px-6 py-4 flex");
-    			add_location(td5, file$i, 48, 8, 2331);
-    			attr_dev(tr5, "class", "border-b border-gray-200 dark:border-gray-700");
-    			add_location(tr5, file$i, 46, 6, 2123);
+    			add_location(td5, file$i, 48, 8, 1985);
+    			attr_dev(tr5, "class", "border-b border-gray-200");
+    			add_location(tr5, file$i, 46, 6, 1831);
     			attr_dev(th6, "scope", "row");
-    			attr_dev(th6, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800");
-    			add_location(th6, file$i, 60, 8, 3115);
+    			attr_dev(th6, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
+    			add_location(th6, file$i, 60, 8, 2748);
     			attr_dev(td6, "class", "px-6 py-4");
-    			add_location(td6, file$i, 61, 8, 3255);
-    			attr_dev(tr6, "class", "border-b border-gray-200 dark:border-gray-700");
-    			add_location(tr6, file$i, 59, 6, 3048);
+    			add_location(td6, file$i, 61, 8, 2855);
+    			attr_dev(tr6, "class", "border-b border-gray-200");
+    			add_location(tr6, file$i, 59, 6, 2702);
     			attr_dev(th7, "scope", "row");
-    			attr_dev(th7, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800");
-    			add_location(th7, file$i, 72, 8, 3552);
+    			attr_dev(th7, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
+    			add_location(th7, file$i, 72, 8, 3131);
     			attr_dev(td7, "class", "px-6 py-4");
-    			add_location(td7, file$i, 73, 8, 3692);
-    			attr_dev(tr7, "class", "border-b border-gray-200 dark:border-gray-700");
-    			add_location(tr7, file$i, 71, 6, 3485);
+    			add_location(td7, file$i, 73, 8, 3238);
+    			attr_dev(tr7, "class", "border-b border-gray-200");
+    			add_location(tr7, file$i, 71, 6, 3085);
     			attr_dev(th8, "scope", "row");
-    			attr_dev(th8, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800");
-    			add_location(th8, file$i, 76, 8, 3824);
+    			attr_dev(th8, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
+    			add_location(th8, file$i, 76, 8, 3349);
     			attr_dev(td8, "class", "px-6 py-4");
-    			add_location(td8, file$i, 77, 8, 3964);
-    			attr_dev(tr8, "class", "border-b border-gray-200 dark:border-gray-700");
-    			add_location(tr8, file$i, 75, 6, 3757);
+    			add_location(td8, file$i, 77, 8, 3456);
+    			attr_dev(tr8, "class", "border-b border-gray-200");
+    			add_location(tr8, file$i, 75, 6, 3303);
     			attr_dev(th9, "scope", "row");
-    			attr_dev(th9, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800");
-    			add_location(th9, file$i, 80, 8, 4098);
+    			attr_dev(th9, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
+    			add_location(th9, file$i, 80, 8, 3569);
     			attr_dev(td9, "class", "px-6 py-4");
-    			add_location(td9, file$i, 81, 8, 4238);
-    			attr_dev(tr9, "class", "border-b border-gray-200 dark:border-gray-700");
-    			add_location(tr9, file$i, 79, 6, 4031);
+    			add_location(td9, file$i, 81, 8, 3676);
+    			attr_dev(tr9, "class", "border-b border-gray-200");
+    			add_location(tr9, file$i, 79, 6, 3523);
     			attr_dev(th10, "scope", "row");
-    			attr_dev(th10, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800");
-    			add_location(th10, file$i, 84, 8, 4376);
+    			attr_dev(th10, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
+    			add_location(th10, file$i, 84, 8, 3793);
     			attr_dev(td10, "class", "px-6 py-4");
-    			add_location(td10, file$i, 85, 8, 4516);
-    			attr_dev(tr10, "class", "border-b border-gray-200 dark:border-gray-700");
-    			add_location(tr10, file$i, 83, 6, 4309);
+    			add_location(td10, file$i, 85, 8, 3900);
+    			attr_dev(tr10, "class", "border-b border-gray-200");
+    			add_location(tr10, file$i, 83, 6, 3747);
     			attr_dev(th11, "scope", "row");
-    			attr_dev(th11, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800");
-    			add_location(th11, file$i, 88, 8, 4654);
+    			attr_dev(th11, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
+    			add_location(th11, file$i, 88, 8, 4017);
     			attr_dev(td11, "class", "px-6 py-4");
-    			add_location(td11, file$i, 89, 8, 4793);
-    			attr_dev(tr11, "class", "border-b border-gray-200 dark:border-gray-700");
-    			add_location(tr11, file$i, 87, 6, 4587);
+    			add_location(td11, file$i, 89, 8, 4123);
+    			attr_dev(tr11, "class", "border-b border-gray-200");
+    			add_location(tr11, file$i, 87, 6, 3971);
     			attr_dev(th12, "scope", "row");
-    			attr_dev(th12, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800");
-    			add_location(th12, file$i, 92, 8, 4918);
+    			attr_dev(th12, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
+    			add_location(th12, file$i, 92, 8, 4227);
     			attr_dev(td12, "class", "px-6 py-4");
-    			add_location(td12, file$i, 93, 8, 5057);
-    			attr_dev(tr12, "class", "border-b border-gray-200 dark:border-gray-700");
-    			add_location(tr12, file$i, 91, 6, 4851);
-    			add_location(tbody, file$i, 25, 4, 720);
-    			attr_dev(table_1, "class", "w-full text-sm text-left text-gray-500 dark:text-gray-400");
-    			add_location(table_1, file$i, 19, 2, 446);
-    			attr_dev(div0, "class", "relative overflow-x-auto shadow-md sm:rounded-lg");
-    			add_location(div0, file$i, 18, 0, 381);
+    			add_location(td12, file$i, 93, 8, 4333);
+    			attr_dev(tr12, "class", "border-b border-gray-200");
+    			add_location(tr12, file$i, 91, 6, 4181);
+    			add_location(tbody, file$i, 25, 4, 698);
+    			attr_dev(table_1, "class", "w-full text-sm text-left text-gray-500");
+    			add_location(table_1, file$i, 19, 2, 443);
+    			attr_dev(div0, "class", "relative overflow-x-auto sm:rounded-lg");
+    			add_location(div0, file$i, 18, 0, 388);
     			attr_dev(div1, "class", "grow flex justify-center");
-    			add_location(div1, file$i, 416, 0, 18944);
+    			add_location(div1, file$i, 226, 0, 11516);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -5809,7 +5809,7 @@ var app = (function () {
     	//   return str.slice(0, 4) + "-" + str.slice(4, 6) + "-" + str.slice(6, 8);
     	// }
     	onMount(() => {
-    		console.log("입력데이터 : ", data);
+    		console.log("기본정보 테이블 데이터 : ", data);
     	});
 
     	const writable_props = ['data'];
@@ -6301,18 +6301,19 @@ var app = (function () {
     function create_if_block$7(ctx) {
     	let t0;
     	let div;
-    	let button;
-    	let t1_value = /*fl*/ ctx[6].mainPurpsCdNm + "";
+    	let span0;
     	let t1;
+    	let span1;
+    	let t2_value = /*fl*/ ctx[6].mainPurpsCdNm + "";
     	let t2;
-    	let span;
     	let t3;
+    	let span2;
     	let t4_value = addComma(/*fl*/ ctx[6].area) + "";
     	let t4;
     	let t5;
-    	let span_class_value;
-    	let button_class_value;
+    	let span2_class_value;
     	let t6;
+    	let div_class_value;
     	let if_block = (/*id*/ ctx[8] == 0 || /*fl*/ ctx[6].flrNoNm != /*brFlrOulnInfo*/ ctx[0][/*id*/ ctx[8] - 1].flrNoNm || /*fl*/ ctx[6].mgmBldrgstPk != /*brFlrOulnInfo*/ ctx[0][/*id*/ ctx[8] - 1].mgmBldrgstPk) && create_if_block_1$2(ctx);
 
     	const block = {
@@ -6320,36 +6321,40 @@ var app = (function () {
     			if (if_block) if_block.c();
     			t0 = space();
     			div = element("div");
-    			button = element("button");
-    			t1 = text(t1_value);
-    			t2 = space();
-    			span = element("span");
-    			t3 = text("(");
+    			span0 = element("span");
+    			t1 = space();
+    			span1 = element("span");
+    			t2 = text(t2_value);
+    			t3 = space();
+    			span2 = element("span");
     			t4 = text(t4_value);
-    			t5 = text(")");
+    			t5 = text(" m2");
     			t6 = space();
-    			attr_dev(span, "class", span_class_value = "" + (/*fl*/ ctx[6].flrNoNm + " " + (/*fl*/ ctx[6].areaExctYn == 1 ? 'text-muted' : '')));
-    			add_location(span, file$h, 85, 10, 3655);
+    			attr_dev(span0, "class", "basis-2/12 flex text-sm pl-1");
+    			add_location(span0, file$h, 86, 8, 3486);
+    			attr_dev(span1, "class", "basis-6/12 text-muted flex text-sm justify-center");
+    			add_location(span1, file$h, 87, 8, 3540);
+    			attr_dev(span2, "class", span2_class_value = "basis-4/12 text-end pr-1 text-muted " + (/*fl*/ ctx[6].areaExctYn == 1 ? 'text-red-200' : '') + " text-sm");
+    			add_location(span2, file$h, 90, 8, 3658);
 
-    			attr_dev(button, "class", button_class_value = "" + ((/*openFloor*/ ctx[3] != /*fl*/ ctx[6].flrNoNm
+    			attr_dev(div, "class", div_class_value = "" + ((/*openFloor*/ ctx[3] != /*fl*/ ctx[6].flrNoNm
     			? 'hidden'
-    			: '') + " w-full py-2.5 px-5 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:text-blue-700 cursor-default"));
+    			: '') + " grow flex bg-slate-50 fw-light px-1 py-1.5 font-light"));
 
-    			add_location(button, file$h, 83, 8, 3402);
-    			attr_dev(div, "class", "flex-none fw-light px-1 my-1");
-    			add_location(div, file$h, 82, 6, 3351);
+    			add_location(div, file$h, 85, 6, 3368);
     		},
     		m: function mount(target, anchor) {
     			if (if_block) if_block.m(target, anchor);
     			insert_dev(target, t0, anchor);
     			insert_dev(target, div, anchor);
-    			append_dev(div, button);
-    			append_dev(button, t1);
-    			append_dev(button, t2);
-    			append_dev(button, span);
-    			append_dev(span, t3);
-    			append_dev(span, t4);
-    			append_dev(span, t5);
+    			append_dev(div, span0);
+    			append_dev(div, t1);
+    			append_dev(div, span1);
+    			append_dev(span1, t2);
+    			append_dev(div, t3);
+    			append_dev(div, span2);
+    			append_dev(span2, t4);
+    			append_dev(span2, t5);
     			append_dev(div, t6);
     		},
     		p: function update(ctx, dirty) {
@@ -6366,17 +6371,17 @@ var app = (function () {
     				if_block = null;
     			}
 
-    			if (dirty & /*brFlrOulnInfo*/ 1 && t1_value !== (t1_value = /*fl*/ ctx[6].mainPurpsCdNm + "")) set_data_dev(t1, t1_value);
+    			if (dirty & /*brFlrOulnInfo*/ 1 && t2_value !== (t2_value = /*fl*/ ctx[6].mainPurpsCdNm + "")) set_data_dev(t2, t2_value);
     			if (dirty & /*brFlrOulnInfo*/ 1 && t4_value !== (t4_value = addComma(/*fl*/ ctx[6].area) + "")) set_data_dev(t4, t4_value);
 
-    			if (dirty & /*brFlrOulnInfo*/ 1 && span_class_value !== (span_class_value = "" + (/*fl*/ ctx[6].flrNoNm + " " + (/*fl*/ ctx[6].areaExctYn == 1 ? 'text-muted' : '')))) {
-    				attr_dev(span, "class", span_class_value);
+    			if (dirty & /*brFlrOulnInfo*/ 1 && span2_class_value !== (span2_class_value = "basis-4/12 text-end pr-1 text-muted " + (/*fl*/ ctx[6].areaExctYn == 1 ? 'text-red-200' : '') + " text-sm")) {
+    				attr_dev(span2, "class", span2_class_value);
     			}
 
-    			if (dirty & /*openFloor, brFlrOulnInfo*/ 9 && button_class_value !== (button_class_value = "" + ((/*openFloor*/ ctx[3] != /*fl*/ ctx[6].flrNoNm
+    			if (dirty & /*openFloor, brFlrOulnInfo*/ 9 && div_class_value !== (div_class_value = "" + ((/*openFloor*/ ctx[3] != /*fl*/ ctx[6].flrNoNm
     			? 'hidden'
-    			: '') + " w-full py-2.5 px-5 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:text-blue-700 cursor-default"))) {
-    				attr_dev(button, "class", button_class_value);
+    			: '') + " grow flex bg-slate-50 fw-light px-1 py-1.5 font-light"))) {
+    				attr_dev(div, "class", div_class_value);
     			}
     		},
     		d: function destroy(detaching) {
@@ -6405,17 +6410,16 @@ var app = (function () {
     	let t0_value = /*fl*/ ctx[6].flrNoNm + "";
     	let t0;
     	let t1;
-    	let span1;
-    	let t2_value = /*fl*/ ctx[6].mainPurpsCdNm + "";
     	let t2;
+    	let span1;
+    	let t3_value = /*fl*/ ctx[6].mainPurpsCdNm + "";
     	let t3;
-    	let span3;
-    	let svg;
-    	let path;
     	let t4;
     	let span2;
-    	let t5_value = addComma(/*floorAreaArr*/ ctx[2][/*fl*/ ctx[6].flrNoNm]) + "";
+    	let svg;
+    	let path;
     	let t5;
+    	let t6_value = addComma(/*floorAreaArr*/ ctx[2][/*fl*/ ctx[6].flrNoNm]) + "";
     	let t6;
     	let t7;
     	let t8;
@@ -6444,40 +6448,37 @@ var app = (function () {
     			span0 = element("span");
     			t0 = text(t0_value);
     			t1 = space();
+    			if_block0.c();
+    			t2 = space();
     			span1 = element("span");
-    			t2 = text(t2_value);
-    			t3 = space();
-    			span3 = element("span");
-    			svg = svg_element("svg");
-    			path = svg_element("path");
+    			t3 = text(t3_value);
     			t4 = space();
     			span2 = element("span");
-    			t5 = text(t5_value);
-    			t6 = text(" m2");
-    			t7 = space();
-    			if_block0.c();
+    			svg = svg_element("svg");
+    			path = svg_element("path");
+    			t5 = space();
+    			t6 = text(t6_value);
+    			t7 = text(" m2");
     			t8 = space();
     			if (if_block1) if_block1.c();
-    			attr_dev(span0, "class", "flex-none flex text-sm pl-1");
-    			add_location(span0, file$h, 53, 12, 1730);
-    			attr_dev(span1, "class", "flex-none text-muted flex text-sm");
-    			add_location(span1, file$h, 54, 12, 1804);
+    			attr_dev(span0, "class", "basis-2/12 w-16 flex text-sm pl-1");
+    			add_location(span0, file$h, 53, 12, 1714);
+    			attr_dev(span1, "class", "basis-6/12 text-muted flex text-sm justify-center");
+    			add_location(span1, file$h, 66, 12, 2458);
     			attr_dev(path, "stroke-linecap", "round");
     			attr_dev(path, "stroke-linejoin", "round");
     			attr_dev(path, "d", "M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0l-5.571 3-5.571-3");
-    			add_location(path, file$h, 57, 16, 2108);
+    			add_location(path, file$h, 71, 16, 2818);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "fill", "none");
     			attr_dev(svg, "viewBox", "0 0 24 24");
     			attr_dev(svg, "stroke-width", "1");
     			attr_dev(svg, "stroke", "currentColor");
     			attr_dev(svg, "class", "w-6 h-6 pr-1");
-    			add_location(svg, file$h, 56, 15, 1959);
-    			attr_dev(span2, "class", "mr-1");
-    			add_location(span2, file$h, 63, 14, 2470);
-    			attr_dev(span3, "class", "flex-none text-muted flex text-sm pr-1");
-    			add_location(span3, file$h, 55, 12, 1891);
-    			attr_dev(button, "class", "flex justify-between w-full my-1");
+    			add_location(svg, file$h, 70, 14, 2669);
+    			attr_dev(span2, "class", "basis-4/12 text-muted flex justify-end text-sm pr-1");
+    			add_location(span2, file$h, 69, 12, 2588);
+    			attr_dev(button, "class", "flex w-full my-1");
     			add_location(button, file$h, 43, 10, 1444);
 
     			attr_dev(div, "class", div_class_value = "grow mt-3 px-1 text-sm font-light " + (/*openFloor*/ ctx[3] == /*fl*/ ctx[6].flrNoNm
@@ -6491,19 +6492,18 @@ var app = (function () {
     			append_dev(div, button);
     			append_dev(button, span0);
     			append_dev(span0, t0);
-    			append_dev(button, t1);
+    			append_dev(span0, t1);
+    			if_block0.m(span0, null);
+    			append_dev(button, t2);
     			append_dev(button, span1);
-    			append_dev(span1, t2);
-    			append_dev(button, t3);
-    			append_dev(button, span3);
-    			append_dev(span3, svg);
+    			append_dev(span1, t3);
+    			append_dev(button, t4);
+    			append_dev(button, span2);
+    			append_dev(span2, svg);
     			append_dev(svg, path);
-    			append_dev(span3, t4);
-    			append_dev(span3, span2);
     			append_dev(span2, t5);
     			append_dev(span2, t6);
-    			append_dev(span3, t7);
-    			if_block0.m(span3, null);
+    			append_dev(span2, t7);
     			append_dev(div, t8);
     			if (if_block1) if_block1.m(div, null);
 
@@ -6515,8 +6515,6 @@ var app = (function () {
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
     			if (dirty & /*brFlrOulnInfo*/ 1 && t0_value !== (t0_value = /*fl*/ ctx[6].flrNoNm + "")) set_data_dev(t0, t0_value);
-    			if (dirty & /*brFlrOulnInfo*/ 1 && t2_value !== (t2_value = /*fl*/ ctx[6].mainPurpsCdNm + "")) set_data_dev(t2, t2_value);
-    			if (dirty & /*floorAreaArr, brFlrOulnInfo*/ 5 && t5_value !== (t5_value = addComma(/*floorAreaArr*/ ctx[2][/*fl*/ ctx[6].flrNoNm]) + "")) set_data_dev(t5, t5_value);
 
     			if (current_block_type !== (current_block_type = select_block_type(ctx))) {
     				if_block0.d(1);
@@ -6524,9 +6522,12 @@ var app = (function () {
 
     				if (if_block0) {
     					if_block0.c();
-    					if_block0.m(span3, null);
+    					if_block0.m(span0, null);
     				}
     			}
+
+    			if (dirty & /*brFlrOulnInfo*/ 1 && t3_value !== (t3_value = /*fl*/ ctx[6].mainPurpsCdNm + "")) set_data_dev(t3, t3_value);
+    			if (dirty & /*floorAreaArr, brFlrOulnInfo*/ 5 && t6_value !== (t6_value = addComma(/*floorAreaArr*/ ctx[2][/*fl*/ ctx[6].flrNoNm]) + "")) set_data_dev(t6, t6_value);
 
     			if (/*openFloor*/ ctx[3] != /*fl*/ ctx[6].flrNoNm) {
     				if (if_block1) ; else {
@@ -6565,7 +6566,7 @@ var app = (function () {
     	return block;
     }
 
-    // (71:14) {:else}
+    // (61:14) {:else}
     function create_else_block$3(ctx) {
     	let svg;
     	let path;
@@ -6577,14 +6578,14 @@ var app = (function () {
     			attr_dev(path, "stroke-linecap", "round");
     			attr_dev(path, "stroke-linejoin", "round");
     			attr_dev(path, "d", "M19.5 8.25l-7.5 7.5-7.5-7.5");
-    			add_location(path, file$h, 72, 18, 3072);
+    			add_location(path, file$h, 62, 18, 2295);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "fill", "none");
     			attr_dev(svg, "viewBox", "0 0 24 24");
     			attr_dev(svg, "stroke-width", "1.5");
     			attr_dev(svg, "stroke", "currentColor");
     			attr_dev(svg, "class", "w-5 h-5");
-    			add_location(svg, file$h, 71, 16, 2924);
+    			add_location(svg, file$h, 61, 16, 2147);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, svg, anchor);
@@ -6599,14 +6600,14 @@ var app = (function () {
     		block,
     		id: create_else_block$3.name,
     		type: "else",
-    		source: "(71:14) {:else}",
+    		source: "(61:14) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (67:14) {#if openFloor == fl.flrNoNm}
+    // (57:14) {#if openFloor == fl.flrNoNm}
     function create_if_block_3$1(ctx) {
     	let svg;
     	let path;
@@ -6618,14 +6619,14 @@ var app = (function () {
     			attr_dev(path, "stroke-linecap", "round");
     			attr_dev(path, "stroke-linejoin", "round");
     			attr_dev(path, "d", "M4.5 15.75l7.5-7.5 7.5 7.5");
-    			add_location(path, file$h, 68, 18, 2776);
+    			add_location(path, file$h, 58, 18, 1999);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "fill", "none");
     			attr_dev(svg, "viewBox", "0 0 24 24");
     			attr_dev(svg, "stroke-width", "1.5");
     			attr_dev(svg, "stroke", "currentColor");
     			attr_dev(svg, "class", "w-5 h-5");
-    			add_location(svg, file$h, 67, 16, 2628);
+    			add_location(svg, file$h, 57, 16, 1851);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, svg, anchor);
@@ -6640,21 +6641,21 @@ var app = (function () {
     		block,
     		id: create_if_block_3$1.name,
     		type: "if",
-    		source: "(67:14) {#if openFloor == fl.flrNoNm}",
+    		source: "(57:14) {#if openFloor == fl.flrNoNm}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (78:10) {#if openFloor != fl.flrNoNm}
+    // (81:10) {#if openFloor != fl.flrNoNm}
     function create_if_block_2$1(ctx) {
     	let hr;
 
     	const block = {
     		c: function create() {
     			hr = element("hr");
-    			add_location(hr, file$h, 78, 12, 3295);
+    			add_location(hr, file$h, 81, 12, 3312);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, hr, anchor);
@@ -6668,7 +6669,7 @@ var app = (function () {
     		block,
     		id: create_if_block_2$1.name,
     		type: "if",
-    		source: "(78:10) {#if openFloor != fl.flrNoNm}",
+    		source: "(81:10) {#if openFloor != fl.flrNoNm}",
     		ctx
     	});
 
@@ -6922,26 +6923,69 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (606:0) {:catch error}
+    // (603:0) {:catch error}
     function create_catch_block$1(ctx) {
-    	let h5;
+    	let div1;
+    	let div0;
+    	let svg;
+    	let path;
+    	let t0;
+    	let h50;
+    	let t1_value = /*elem*/ ctx[0].jibun + "";
+    	let t1;
+    	let t2;
+    	let h51;
 
     	const block = {
     		c: function create() {
-    			h5 = element("h5");
-    			h5.textContent = "에러 발생 : 건물정보를 찾지 못했습니다. 주소를 다시 확인해주세요.";
-    			attr_dev(h5, "class", "text-lg pl-2");
-    			set_style(h5, "color", "red");
-    			add_location(h5, file$g, 606, 2, 17461);
+    			div1 = element("div");
+    			div0 = element("div");
+    			svg = svg_element("svg");
+    			path = svg_element("path");
+    			t0 = space();
+    			h50 = element("h5");
+    			t1 = text(t1_value);
+    			t2 = space();
+    			h51 = element("h5");
+    			h51.textContent = "건물정보를 찾지 못했습니다.";
+    			attr_dev(path, "stroke-linecap", "round");
+    			attr_dev(path, "stroke-linejoin", "round");
+    			attr_dev(path, "d", "M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z");
+    			add_location(path, file$g, 606, 8, 17558);
+    			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
+    			attr_dev(svg, "fill", "none");
+    			attr_dev(svg, "viewBox", "0 0 24 24");
+    			attr_dev(svg, "stroke-width", "1.5");
+    			attr_dev(svg, "stroke", "currentColor");
+    			attr_dev(svg, "class", "w-14 h-14 text-red-400");
+    			add_location(svg, file$g, 605, 6, 17405);
+    			attr_dev(div0, "class", "mx-auto mt-10");
+    			add_location(div0, file$g, 604, 4, 17371);
+    			attr_dev(h50, "class", "flex-none my-2 text-center text-red-400");
+    			add_location(h50, file$g, 609, 4, 17823);
+    			attr_dev(h51, "class", "flex-none text-lg my-2 text-center");
+    			add_location(h51, file$g, 610, 4, 17897);
+    			attr_dev(div1, "class", "px-2 flex flex-col justify-center");
+    			add_location(div1, file$g, 603, 2, 17319);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, h5, anchor);
+    			insert_dev(target, div1, anchor);
+    			append_dev(div1, div0);
+    			append_dev(div0, svg);
+    			append_dev(svg, path);
+    			append_dev(div1, t0);
+    			append_dev(div1, h50);
+    			append_dev(h50, t1);
+    			append_dev(div1, t2);
+    			append_dev(div1, h51);
     		},
-    		p: noop,
+    		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*elem*/ 1 && t1_value !== (t1_value = /*elem*/ ctx[0].jibun + "")) set_data_dev(t1, t1_value);
+    		},
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(h5);
+    			if (detaching) detach_dev(div1);
     		}
     	};
 
@@ -6949,16 +6993,16 @@ var app = (function () {
     		block,
     		id: create_catch_block$1.name,
     		type: "catch",
-    		source: "(606:0) {:catch error}",
+    		source: "(603:0) {:catch error}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (547:0) {:then}
+    // (544:0) {:then}
     function create_then_block$1(ctx) {
-    	let show_if = Array.isArray(/*brTitleInfo*/ ctx[0]);
+    	let show_if = Array.isArray(/*brTitleInfo*/ ctx[1]);
     	let t0;
     	let architecturelayout;
     	let t1;
@@ -6971,12 +7015,12 @@ var app = (function () {
     	let if_block = show_if && create_if_block$6(ctx);
 
     	architecturelayout = new ArchitectureLayout({
-    			props: { data: /*brTitleInfo*/ ctx[0] },
+    			props: { data: /*brTitleInfo*/ ctx[1] },
     			$$inline: true
     		});
 
     	stackplan = new ArchitectureStackplan({
-    			props: { brFlrOulnInfo: /*brFlrOulnInfo*/ ctx[1] },
+    			props: { brFlrOulnInfo: /*brFlrOulnInfo*/ ctx[2] },
     			$$inline: true
     		});
 
@@ -6993,10 +7037,10 @@ var app = (function () {
     			cite = element("cite");
     			cite.textContent = "공공데이터포털";
     			attr_dev(cite, "class", "text-muted");
-    			add_location(cite, file$g, 603, 23, 17388);
+    			add_location(cite, file$g, 600, 23, 17246);
     			attr_dev(blockquote, "cite", "https://www.data.go.kr");
     			attr_dev(blockquote, "class", "text-secondary mt-8 mb-12 text-sm text-slate-700 ml-2");
-    			add_location(blockquote, file$g, 602, 2, 17260);
+    			add_location(blockquote, file$g, 599, 2, 17118);
     		},
     		m: function mount(target, anchor) {
     			if (if_block) if_block.m(target, anchor);
@@ -7011,7 +7055,7 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty[0] & /*brTitleInfo*/ 1) show_if = Array.isArray(/*brTitleInfo*/ ctx[0]);
+    			if (dirty[0] & /*brTitleInfo*/ 2) show_if = Array.isArray(/*brTitleInfo*/ ctx[1]);
 
     			if (show_if) {
     				if (if_block) {
@@ -7027,10 +7071,10 @@ var app = (function () {
     			}
 
     			const architecturelayout_changes = {};
-    			if (dirty[0] & /*brTitleInfo*/ 1) architecturelayout_changes.data = /*brTitleInfo*/ ctx[0];
+    			if (dirty[0] & /*brTitleInfo*/ 2) architecturelayout_changes.data = /*brTitleInfo*/ ctx[1];
     			architecturelayout.$set(architecturelayout_changes);
     			const stackplan_changes = {};
-    			if (dirty[0] & /*brFlrOulnInfo*/ 2) stackplan_changes.brFlrOulnInfo = /*brFlrOulnInfo*/ ctx[1];
+    			if (dirty[0] & /*brFlrOulnInfo*/ 4) stackplan_changes.brFlrOulnInfo = /*brFlrOulnInfo*/ ctx[2];
     			stackplan.$set(stackplan_changes);
     		},
     		i: function intro(local) {
@@ -7059,14 +7103,14 @@ var app = (function () {
     		block,
     		id: create_then_block$1.name,
     		type: "then",
-    		source: "(547:0) {:then}",
+    		source: "(544:0) {:then}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (548:2) {#if Array.isArray(brTitleInfo)}
+    // (545:2) {#if Array.isArray(brTitleInfo)}
     function create_if_block$6(ctx) {
     	let details_1;
     	let summary_1;
@@ -7079,7 +7123,7 @@ var app = (function () {
     	let ul;
     	let mounted;
     	let dispose;
-    	let each_value = /*brTitleInfo*/ ctx[0];
+    	let each_value = /*brTitleInfo*/ ctx[1];
     	validate_each_argument(each_value);
     	let each_blocks = [];
 
@@ -7092,7 +7136,7 @@ var app = (function () {
     			details_1 = element("details");
     			summary_1 = element("summary");
     			t0 = text("건물번호 : ");
-    			t1 = text(/*$mgmBldrgstPk*/ ctx[5]);
+    			t1 = text(/*$mgmBldrgstPk*/ ctx[6]);
     			t2 = space();
     			svg = svg_element("svg");
     			path = svg_element("path");
@@ -7106,20 +7150,20 @@ var app = (function () {
     			attr_dev(path, "stroke-linecap", "round");
     			attr_dev(path, "stroke-linejoin", "round");
     			attr_dev(path, "d", "M19.5 8.25l-7.5 7.5-7.5-7.5");
-    			add_location(path, file$g, 563, 10, 15766);
+    			add_location(path, file$g, 560, 10, 15624);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "fill", "none");
     			attr_dev(svg, "viewBox", "0 0 24 24");
     			attr_dev(svg, "stroke-width", "1.5");
     			attr_dev(svg, "stroke", "currentColor");
     			attr_dev(svg, "class", "w-5 h-5 ml-1 pt-2");
-    			add_location(svg, file$g, 562, 8, 15616);
+    			add_location(svg, file$g, 559, 8, 15474);
     			attr_dev(summary_1, "class", "flex mb-2 hover:text-indigo-600 cursor-pointer");
-    			add_location(summary_1, file$g, 549, 6, 15083);
+    			add_location(summary_1, file$g, 546, 6, 14941);
     			attr_dev(ul, "class", "border-2 border-t-slate-200 p-3 bg-white max-h-96 overflow-auto z-20");
-    			add_location(ul, file$g, 566, 6, 15892);
+    			add_location(ul, file$g, 563, 6, 15750);
     			attr_dev(details_1, "class", "relative px-2 text-slate-700");
-    			add_location(details_1, file$g, 548, 4, 15010);
+    			add_location(details_1, file$g, 545, 4, 14868);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, details_1, anchor);
@@ -7145,10 +7189,10 @@ var app = (function () {
     			}
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty[0] & /*$mgmBldrgstPk*/ 32) set_data_dev(t1, /*$mgmBldrgstPk*/ ctx[5]);
+    			if (dirty[0] & /*$mgmBldrgstPk*/ 64) set_data_dev(t1, /*$mgmBldrgstPk*/ ctx[6]);
 
-    			if (dirty[0] & /*brTitleInfo, $mgmBldrgstPk, details*/ 41) {
-    				each_value = /*brTitleInfo*/ ctx[0];
+    			if (dirty[0] & /*brTitleInfo, $mgmBldrgstPk, details*/ 82) {
+    				each_value = /*brTitleInfo*/ ctx[1];
     				validate_each_argument(each_value);
     				let i;
 
@@ -7185,14 +7229,14 @@ var app = (function () {
     		block,
     		id: create_if_block$6.name,
     		type: "if",
-    		source: "(548:2) {#if Array.isArray(brTitleInfo)}",
+    		source: "(545:2) {#if Array.isArray(brTitleInfo)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (568:8) {#each brTitleInfo as d, id}
+    // (565:8) {#each brTitleInfo as d, id}
     function create_each_block$3(ctx) {
     	let li;
     	let button;
@@ -7223,13 +7267,13 @@ var app = (function () {
     			t2 = text(t2_value);
     			t3 = space();
 
-    			attr_dev(button, "class", button_class_value = "page-link " + (/*d*/ ctx[32].mgmBldrgstPk == /*$mgmBldrgstPk*/ ctx[5]
+    			attr_dev(button, "class", button_class_value = "page-link " + (/*d*/ ctx[32].mgmBldrgstPk == /*$mgmBldrgstPk*/ ctx[6]
     			? 'text-indigo-600'
     			: ''));
 
-    			add_location(button, file$g, 569, 12, 16098);
+    			add_location(button, file$g, 566, 12, 15956);
     			attr_dev(li, "class", "page-item hover:text-indigo-600 cursor-pointer my-2");
-    			add_location(li, file$g, 568, 10, 16021);
+    			add_location(li, file$g, 565, 10, 15879);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -7246,13 +7290,13 @@ var app = (function () {
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty[0] & /*brTitleInfo*/ 1 && t0_value !== (t0_value = /*d*/ ctx[32].mgmBldrgstPk + "")) set_data_dev(t0, t0_value);
+    			if (dirty[0] & /*brTitleInfo*/ 2 && t0_value !== (t0_value = /*d*/ ctx[32].mgmBldrgstPk + "")) set_data_dev(t0, t0_value);
 
-    			if (dirty[0] & /*brTitleInfo*/ 1 && t2_value !== (t2_value = (/*d*/ ctx[32].bldNm == " "
+    			if (dirty[0] & /*brTitleInfo*/ 2 && t2_value !== (t2_value = (/*d*/ ctx[32].bldNm == " "
     			? ""
     			: "(" + /*d*/ ctx[32].bldNm + ")") + "")) set_data_dev(t2, t2_value);
 
-    			if (dirty[0] & /*brTitleInfo, $mgmBldrgstPk*/ 33 && button_class_value !== (button_class_value = "page-link " + (/*d*/ ctx[32].mgmBldrgstPk == /*$mgmBldrgstPk*/ ctx[5]
+    			if (dirty[0] & /*brTitleInfo, $mgmBldrgstPk*/ 66 && button_class_value !== (button_class_value = "page-link " + (/*d*/ ctx[32].mgmBldrgstPk == /*$mgmBldrgstPk*/ ctx[6]
     			? 'text-indigo-600'
     			: ''))) {
     				attr_dev(button, "class", button_class_value);
@@ -7269,14 +7313,14 @@ var app = (function () {
     		block,
     		id: create_each_block$3.name,
     		type: "each",
-    		source: "(568:8) {#each brTitleInfo as d, id}",
+    		source: "(565:8) {#each brTitleInfo as d, id}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (545:16)    <Loading /> {:then}
+    // (542:16)    <Loading /> {:then}
     function create_pending_block$1(ctx) {
     	let loading;
     	let current;
@@ -7309,7 +7353,7 @@ var app = (function () {
     		block,
     		id: create_pending_block$1.name,
     		type: "pending",
-    		source: "(545:16)    <Loading /> {:then}",
+    		source: "(542:16)    <Loading /> {:then}",
     		ctx
     	});
 
@@ -7333,7 +7377,7 @@ var app = (function () {
     		blocks: [,,,]
     	};
 
-    	handle_promise(promise_1 = /*promise*/ ctx[2], info);
+    	handle_promise(promise_1 = /*promise*/ ctx[3], info);
 
     	const block = {
     		c: function create() {
@@ -7354,7 +7398,7 @@ var app = (function () {
     			ctx = new_ctx;
     			info.ctx = ctx;
 
-    			if (dirty[0] & /*promise*/ 4 && promise_1 !== (promise_1 = /*promise*/ ctx[2]) && handle_promise(promise_1, info)) ; else {
+    			if (dirty[0] & /*promise*/ 8 && promise_1 !== (promise_1 = /*promise*/ ctx[3]) && handle_promise(promise_1, info)) ; else {
     				update_await_block_branch(info, ctx, dirty);
     			}
     		},
@@ -7576,7 +7620,7 @@ var app = (function () {
     function instance$i($$self, $$props, $$invalidate) {
     	let $mgmBldrgstPk;
     	validate_store(mgmBldrgstPk, 'mgmBldrgstPk');
-    	component_subscribe($$self, mgmBldrgstPk, $$value => $$invalidate(5, $mgmBldrgstPk = $$value));
+    	component_subscribe($$self, mgmBldrgstPk, $$value => $$invalidate(6, $mgmBldrgstPk = $$value));
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('Architecture', slots, []);
     	let platGbCd = 0; // 0:대지 1:산 2:블록
@@ -7653,7 +7697,7 @@ var app = (function () {
     			return xml2json(xml);
     		}).then(json => {
     			console.log("json : ", json);
-    			return $$invalidate(0, brTitleInfo = json.response.body.items.item);
+    			return $$invalidate(1, brTitleInfo = json.response.body.items.item);
     		}).catch(error => {
     			throw new Error(error);
     		});
@@ -7696,7 +7740,7 @@ var app = (function () {
 
     			return data;
     		}).then(data => {
-    			$$invalidate(0, brTitleInfo = data);
+    			$$invalidate(1, brTitleInfo = data);
     			console.log("==", brTitleInfo);
 
     			if (Array.isArray(data)) {
@@ -7884,7 +7928,7 @@ var app = (function () {
     		}).then(data => {
     			return sortBrFlr(data);
     		}).then(data => {
-    			return $$invalidate(1, brFlrOulnInfo = data.sort(sortACN("mgmBldrgstPk")));
+    			return $$invalidate(2, brFlrOulnInfo = data.sort(sortACN("mgmBldrgstPk")));
     		}).catch(error => {
     			throw new Error(error);
     		});
@@ -7896,7 +7940,6 @@ var app = (function () {
     		let jibunArr = jibun.split(" ");
 
     		let dong = jibun.replaceAll(jibunArr[jibunArr.length - 1], "");
-    		console.log("법정동 api 과정", jibun, jibunArr, dong);
 
     		// 법정동 코드 호출을 위한 url 생성
     		// let url = "/api/getStanReginCd";
@@ -7913,9 +7956,7 @@ var app = (function () {
     			console.log("법정동api : ", resp);
     			return resp.json();
     		}).then(code => {
-    			console.log("법정동api_code : ", code);
     			let cd = code.StanReginCd[1].row[0];
-    			console.log("법정동api_code : ", cd);
     			sigunguCd = cd.sido_cd + cd.sgg_cd;
     			bjdongCd = cd.umd_cd + cd.ri_cd;
     			return;
@@ -7959,7 +8000,7 @@ var app = (function () {
     	function summary_1_binding($$value) {
     		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
     			summary = $$value;
-    			$$invalidate(4, summary);
+    			$$invalidate(5, summary);
     		});
     	}
 
@@ -7975,7 +8016,7 @@ var app = (function () {
 
     	const click_handler_1 = d => {
     		set_store_value(mgmBldrgstPk, $mgmBldrgstPk = d.mgmBldrgstPk, $mgmBldrgstPk);
-    		$$invalidate(3, details.open = false, details);
+    		$$invalidate(4, details.open = false, details);
 
     		// document.body.style.overflow = "auto";
     		document.getElementsByClassName("modal-container")[0].style.overflow = "auto";
@@ -7984,12 +8025,12 @@ var app = (function () {
     	function details_1_binding($$value) {
     		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
     			details = $$value;
-    			$$invalidate(3, details);
+    			$$invalidate(4, details);
     		});
     	}
 
     	$$self.$$set = $$props => {
-    		if ('elem' in $$props) $$invalidate(6, elem = $$props.elem);
+    		if ('elem' in $$props) $$invalidate(0, elem = $$props.elem);
     	};
 
     	$$self.$capture_state = () => ({
@@ -8047,14 +8088,14 @@ var app = (function () {
     		if ('endDate' in $$props) endDate = $$props.endDate;
     		if ('numOfRows' in $$props) numOfRows = $$props.numOfRows;
     		if ('pageNo' in $$props) pageNo = $$props.pageNo;
-    		if ('brTitleInfo' in $$props) $$invalidate(0, brTitleInfo = $$props.brTitleInfo);
-    		if ('brFlrOulnInfo' in $$props) $$invalidate(1, brFlrOulnInfo = $$props.brFlrOulnInfo);
+    		if ('brTitleInfo' in $$props) $$invalidate(1, brTitleInfo = $$props.brTitleInfo);
+    		if ('brFlrOulnInfo' in $$props) $$invalidate(2, brFlrOulnInfo = $$props.brFlrOulnInfo);
     		if ('floorInfoTitle' in $$props) floorInfoTitle = $$props.floorInfoTitle;
     		if ('brHsprcInfo' in $$props) brHsprcInfo = $$props.brHsprcInfo;
-    		if ('promise' in $$props) $$invalidate(2, promise = $$props.promise);
-    		if ('elem' in $$props) $$invalidate(6, elem = $$props.elem);
-    		if ('details' in $$props) $$invalidate(3, details = $$props.details);
-    		if ('summary' in $$props) $$invalidate(4, summary = $$props.summary);
+    		if ('promise' in $$props) $$invalidate(3, promise = $$props.promise);
+    		if ('elem' in $$props) $$invalidate(0, elem = $$props.elem);
+    		if ('details' in $$props) $$invalidate(4, details = $$props.details);
+    		if ('summary' in $$props) $$invalidate(5, summary = $$props.summary);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -8062,19 +8103,19 @@ var app = (function () {
     	}
 
     	$$self.$$.update = () => {
-    		if ($$self.$$.dirty[0] & /*elem*/ 64) {
-    			$$invalidate(2, promise = prepare(elem.jibun));
+    		if ($$self.$$.dirty[0] & /*elem*/ 1) {
+    			$$invalidate(3, promise = prepare(elem.jibun));
     		}
     	};
 
     	return [
+    		elem,
     		brTitleInfo,
     		brFlrOulnInfo,
     		promise,
     		details,
     		summary,
     		$mgmBldrgstPk,
-    		elem,
     		summary_1_binding,
     		click_handler,
     		click_handler_1,
@@ -8085,7 +8126,7 @@ var app = (function () {
     class Architecture extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$i, create_fragment$i, safe_not_equal, { elem: 6 }, null, [-1, -1]);
+    		init(this, options, instance$i, create_fragment$i, safe_not_equal, { elem: 0 }, null, [-1, -1]);
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -12767,7 +12808,7 @@ var app = (function () {
     			//   ],
     			// },
     			{
-    				id: 2, // {
+    				id: 1, // {
     				//   id: 3,
     				address: "서울특별시 종로구 종로 33",
     				jibun: "서울특별시 종로구 청진동 70",
