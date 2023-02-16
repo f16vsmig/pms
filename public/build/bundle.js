@@ -34,6 +34,14 @@ var app = (function () {
     function safe_not_equal(a, b) {
         return a != a ? b == b : a !== b || ((a && typeof a === 'object') || typeof a === 'function');
     }
+    let src_url_equal_anchor;
+    function src_url_equal(element_src, url) {
+        if (!src_url_equal_anchor) {
+            src_url_equal_anchor = document.createElement('a');
+        }
+        src_url_equal_anchor.href = url;
+        return element_src === src_url_equal_anchor.href;
+    }
     function is_empty(obj) {
         return Object.keys(obj).length === 0;
     }
@@ -3880,28 +3888,184 @@ var app = (function () {
     	return block;
     }
 
-    // (9:2) 
+    // (8:2) 
     function create_content_slot$3(ctx) {
-    	let div;
-    	let h1;
+    	let div3;
+    	let div2;
+    	let h10;
+    	let t1;
+    	let p0;
+    	let t3;
+    	let p1;
+    	let t5;
+    	let p2;
+    	let t6;
+    	let span;
+    	let t8;
+    	let p3;
+    	let t9;
+    	let strong;
+    	let t11;
+    	let t12;
+    	let h11;
+    	let t14;
+    	let div0;
+    	let figure0;
+    	let img0;
+    	let img0_src_value;
+    	let t15;
+    	let figcaption0;
+    	let t17;
+    	let h12;
+    	let t19;
+    	let div1;
+    	let figure1;
+    	let img1;
+    	let img1_src_value;
+    	let t20;
+    	let figcaption1;
+    	let t22;
+    	let h13;
+    	let t24;
+    	let h14;
 
     	const block = {
     		c: function create() {
-    			div = element("div");
-    			h1 = element("h1");
-    			h1.textContent = "건축물대장 Beta (2023/02/11)";
-    			add_location(h1, file$j, 9, 4, 205);
-    			attr_dev(div, "class", "p-3 text-center");
-    			attr_dev(div, "slot", "content");
-    			add_location(div, file$j, 8, 2, 156);
+    			div3 = element("div");
+    			div2 = element("div");
+    			h10 = element("h1");
+    			h10.textContent = "간편한 모바일 건축물대장 열람";
+    			t1 = space();
+    			p0 = element("p");
+    			p0.textContent = "건축물대장 한 번 열어 보려고 회원가입 하고";
+    			t3 = space();
+    			p1 = element("p");
+    			p1.textContent = "이런저런 보안프로그램 깔고...";
+    			t5 = space();
+    			p2 = element("p");
+    			t6 = text("불편한건 이제 그만 ");
+    			span = element("span");
+    			span.textContent = "🙅🏻‍♀️";
+    			t8 = space();
+    			p3 = element("p");
+    			t9 = text("건축물대장 열람은 쉽고 빠르게 ");
+    			strong = element("strong");
+    			strong.textContent = "건물대장";
+    			t11 = text("에서!");
+    			t12 = space();
+    			h11 = element("h1");
+    			h11.textContent = "지도와 함께 건물정보";
+    			t14 = space();
+    			div0 = element("div");
+    			figure0 = element("figure");
+    			img0 = element("img");
+    			t15 = space();
+    			figcaption0 = element("figcaption");
+    			figcaption0.textContent = "PC 버전";
+    			t17 = space();
+    			h12 = element("h1");
+    			h12.textContent = "어디서든 모바일로 건물정보";
+    			t19 = space();
+    			div1 = element("div");
+    			figure1 = element("figure");
+    			img1 = element("img");
+    			t20 = space();
+    			figcaption1 = element("figcaption");
+    			figcaption1.textContent = "모바일 버전";
+    			t22 = space();
+    			h13 = element("h1");
+    			h13.textContent = "- 2023년 2월 11일 건축물대장 Beta 오픈";
+    			t24 = space();
+    			h14 = element("h1");
+    			h14.textContent = "gunmuldaejang@gmail.com";
+    			attr_dev(h10, "class", "text-3xl mb-10");
+    			add_location(h10, file$j, 9, 6, 244);
+    			attr_dev(p0, "class", "text-slate-600");
+    			add_location(p0, file$j, 10, 6, 299);
+    			attr_dev(p1, "class", "text-slate-600");
+    			add_location(p1, file$j, 11, 6, 360);
+    			attr_dev(span, "class", "text-3xl");
+    			add_location(span, file$j, 12, 49, 457);
+    			attr_dev(p2, "class", "text-slate-600 mb-10");
+    			add_location(p2, file$j, 12, 6, 414);
+    			add_location(strong, file$j, 14, 55, 555);
+    			attr_dev(p3, "class", "text-slate-600 mb-36");
+    			add_location(p3, file$j, 14, 6, 506);
+    			attr_dev(h11, "class", "text-3xl mb-10");
+    			add_location(h11, file$j, 16, 6, 591);
+    			attr_dev(img0, "class", "h-auto max-w-full rounded-lg");
+    			if (!src_url_equal(img0.src, img0_src_value = "/public/img/desktop.png")) attr_dev(img0, "src", img0_src_value);
+    			attr_dev(img0, "alt", "");
+    			add_location(img0, file$j, 20, 10, 737);
+    			attr_dev(figcaption0, "class", "mt-2 text-sm text-center text-gray-500");
+    			add_location(figcaption0, file$j, 21, 10, 829);
+    			attr_dev(figure0, "class", "max-w-lg mb-36");
+    			add_location(figure0, file$j, 19, 8, 695);
+    			attr_dev(div0, "class", "grow w-100 flex justify-center");
+    			add_location(div0, file$j, 18, 6, 642);
+    			attr_dev(h12, "class", "text-3xl mb-10");
+    			add_location(h12, file$j, 25, 6, 945);
+    			attr_dev(img1, "class", "h-auto max-w-full rounded-lg");
+    			if (!src_url_equal(img1.src, img1_src_value = "/public/img/mobile1.png")) attr_dev(img1, "src", img1_src_value);
+    			attr_dev(img1, "alt", "");
+    			add_location(img1, file$j, 28, 10, 1093);
+    			attr_dev(figcaption1, "class", "mt-2 text-sm text-center text-gray-500");
+    			add_location(figcaption1, file$j, 29, 10, 1185);
+    			attr_dev(figure1, "class", "max-w-xs mb-24");
+    			add_location(figure1, file$j, 27, 8, 1051);
+    			attr_dev(div1, "class", "grow w-100 flex justify-center");
+    			add_location(div1, file$j, 26, 6, 998);
+    			attr_dev(h13, "class", "text-lx font-thin");
+    			add_location(h13, file$j, 33, 6, 1302);
+    			attr_dev(h14, "class", "text-lx mb-36 font-thin");
+    			add_location(h14, file$j, 34, 6, 1372);
+    			attr_dev(div2, "class", "mt-10 flex flex-col");
+    			add_location(div2, file$j, 8, 4, 204);
+    			attr_dev(div3, "class", "p-3 text-center");
+    			attr_dev(div3, "slot", "content");
+    			add_location(div3, file$j, 7, 2, 155);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div, anchor);
-    			append_dev(div, h1);
+    			insert_dev(target, div3, anchor);
+    			append_dev(div3, div2);
+    			append_dev(div2, h10);
+    			append_dev(div2, t1);
+    			append_dev(div2, p0);
+    			append_dev(div2, t3);
+    			append_dev(div2, p1);
+    			append_dev(div2, t5);
+    			append_dev(div2, p2);
+    			append_dev(p2, t6);
+    			append_dev(p2, span);
+    			append_dev(div2, t8);
+    			append_dev(div2, p3);
+    			append_dev(p3, t9);
+    			append_dev(p3, strong);
+    			append_dev(p3, t11);
+    			append_dev(div2, t12);
+    			append_dev(div2, h11);
+    			append_dev(div2, t14);
+    			append_dev(div2, div0);
+    			append_dev(div0, figure0);
+    			append_dev(figure0, img0);
+    			append_dev(figure0, t15);
+    			append_dev(figure0, figcaption0);
+    			append_dev(div2, t17);
+    			append_dev(div2, h12);
+    			append_dev(div2, t19);
+    			append_dev(div2, div1);
+    			append_dev(div1, figure1);
+    			append_dev(figure1, img1);
+    			append_dev(figure1, t20);
+    			append_dev(figure1, figcaption1);
+    			append_dev(div2, t22);
+    			append_dev(div2, h13);
+    			append_dev(div2, t24);
+    			append_dev(div2, h14);
     		},
     		p: noop,
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div);
+    			if (detaching) detach_dev(div3);
     		}
     	};
 
@@ -3909,7 +4073,7 @@ var app = (function () {
     		block,
     		id: create_content_slot$3.name,
     		type: "slot",
-    		source: "(9:2) ",
+    		source: "(8:2) ",
     		ctx
     	});
 
