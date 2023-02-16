@@ -29,6 +29,10 @@ func main() {
 		return c.Render("index", nil)
 	})
 
+	app.Get("/about", func(c *fiber.Ctx) error {
+		return c.Render("index", nil)
+	})
+
 	// 404 Handler
 	app.Use(func(c *fiber.Ctx) error {
 		return c.SendStatus(404) // => 404 "Not Found"
