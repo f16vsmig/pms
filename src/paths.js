@@ -1,17 +1,17 @@
 import About from "./pages/About.svelte";
-import Dashboard from "./pages/Dashboard.svelte";
-import Insight from "./pages/Insight.svelte";
-import Map from "./pages/Map.svelte";
-import Setting from "./pages/Setting.svelte";
-import Sites from "./pages/Sites.svelte";
-import SitesDetailView from "./pages/SiteDetail.svelte";
-import Log from "./pages/Log.svelte";
-import Login from "./pages/Signin.svelte";
-import Signup from "./pages/Signup.svelte";
+import PermissionMap from "./pages/PermissionMap.svelte";
+// import Dashboard from "./pages/Dashboard.svelte";
+// import Insight from "./pages/Insight.svelte";
+// import Setting from "./pages/Setting.svelte";
+// import Sites from "./pages/Sites.svelte";
+// import SitesDetailView from "./pages/SiteDetail.svelte";
+// import Log from "./pages/Log.svelte";
+// import Login from "./pages/Signin.svelte";
+// import Signup from "./pages/Signup.svelte";
 
 const routes = {
-  "/": Map,
-  "/map": Map,
+  "/": PermissionMap,
+  "/map": PermissionMap,
   "/about": About,
   // "/login": Login,
   // "/signup": Signup,

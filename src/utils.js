@@ -94,3 +94,61 @@ export function clickOutside(node) {
 export function toggleBoolean(input) {
   return (input = !input);
 }
+
+function parseXML(data) {
+  var xml, tmp;
+  if (!data || typeof data !== "string") {
+    return null;
+  }
+  try {
+    if (window.DOMParser) {
+      // Standard
+      tmp = new DOMParser();
+      xml = tmp.parseFromString(data, "text/xml");
+    } else {
+      // IE
+      xml = new ActiveXObject("Microsoft.XMLDOM");
+      xml.async = "false";
+      xml.loadXML(data);
+    }
+  } catch (e) {
+    xml = undefined;
+  }
+  if (!xml || !xml.documentElement || xml.getElementsByTagName("parsererror").length) {
+    throw new Error("Invalid XML: " + data);
+  }
+  return xml;
+}
+
+function xml2json(xml) {
+  try {
+    var obj = {};
+    if (xml.children.length > 0) {
+      for (var i = 0; i < xml.children.length; i++) {
+        var item = xml.children.item(i);
+        var nodeName = item.nodeName;
+
+        if (typeof obj[nodeName] == "undefined") {
+          obj[nodeName] = xml2json(item);
+        } else {
+          if (typeof obj[nodeName].push == "undefined") {
+            var old = obj[nodeName];
+
+            obj[nodeName] = [];
+            obj[nodeName].push(old);
+          }
+          obj[nodeName].push(xml2json(item));
+        }
+      }
+    } else {
+      obj = xml.textContent;
+    }
+    return obj;
+  } catch (e) {
+    console.log(e.message);
+  }
+}
+
+export function xmlStr2Json(xmlStr) {
+  return xml2json(parseXML(xmlStr));
+}
