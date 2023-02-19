@@ -5,7 +5,7 @@
 
   import { detailVeiw } from "../assets/etc/Search.svelte";
 
-  import { mobileView, sidoArr, sidoMap, rightSideModal } from "../store";
+  import { mobileView, sidoArr, sidoMap, rightSideModal, roadViewUrl } from "../store";
   import { xmlStr2Json } from "../utils";
   import { onMount } from "svelte";
 
@@ -16,8 +16,9 @@
   // 모달 관련 변수
   let modalToggle = false;
   let siteListModalToggle = false;
-  let siteModalToggle = false;
+  let siteDetailToggle = false;
   let expand = "";
+  let sideModal;
 
   // 사이트 정보 관련 변수
   let siteDetailInfo; // 사이트 세부 정보를 담는 변수입니다.
@@ -25,9 +26,19 @@
 
   // 검색어를 담을 변수입니다.
   let searchTerm = "";
-  let start = "20221201"; // 시작일
-  let end = "20221231"; // 종료일
-  let area = 10000; // 면적 조건
+  let today = new Date();
+  let dateSelected = today.getFullYear() + "-" + String(today.getMonth()).padStart(2, "0");
+  let dateArr = dateSelected.split("-");
+  let year = dateArr[0];
+  let month = String(Number(dateArr[1])).padStart(2, "0");
+  let start = year + month + "01";
+  let nextMonth = new Date(year, month, 0, 0, 0, 0, 0);
+  let end = nextMonth.getFullYear() + String(nextMonth.getMonth() + 1).padStart(2, "0") + String(nextMonth.getDate()).padStart(2, "0"); // 종료일
+  let area = 100; // 면적 조건
+  let sidoSelected = "서울특별시"; // 시도
+
+  $: start = year + month + "01";
+  $: end = nextMonth.getFullYear() + String(nextMonth.getMonth() + 1).padStart(2, "0") + String(nextMonth.getDate()).padStart(2, "0");
 
   // 공공데이터 apiKey
   const apiKey = "GO8tFIo30%2BUG6NoXSzlVzxv2j8eQFigKu9a8RJ9qY47kAnl2u27pVjWIDlvlZ09Yo3NNJeyRt3UJovtQ5Z11ew%3D%3D";
@@ -48,10 +59,11 @@
   // 카카오지도에 마커를 표시하고 클릭 이벤트를 등록하는 함수입니다.
   function pin(elem) {
     let geocoder = new kakao.maps.services.Geocoder();
+    let rc = new kakao.maps.RoadviewClient(); // 좌표를 통한 로드뷰의 panoid를 추출하기 위한 로드뷰 help객체 생성
     return geocoder.addressSearch(elem.platPlc, function (coord, status) {
       if (status == kakao.maps.services.Status.OK) {
-        elem.coord = coord; // coord(위경도) 속성을 추가합니다.
-        let coords = new kakao.maps.LatLng(elem.coord[0].y, elem.coord[0].x);
+        elem.coord = coord[0]; // coord(위경도) 속성을 추가합니다.
+        let coords = new kakao.maps.LatLng(elem.coord.y, elem.coord.x);
         let marker = new kakao.maps.Marker({
           map: map,
           title: elem.id,
@@ -59,8 +71,16 @@
           clickable: true,
         });
         setMarker(elem, coord);
+        rc.getNearestPanoId(coords, 50, function (panoId) {
+          roadViewUrl.set("https://map.kakao.com/?panoid=" + panoId); //Kakao 지도 로드뷰로 보내는 링크
+        });
       }
     });
+  }
+
+  function focus(elem) {
+    map.setLevel(4);
+    map.setCenter(new kakao.maps.LatLng(elem.coord.y, elem.coord.x));
   }
 
   //////////
@@ -76,8 +96,8 @@
     kakao.maps.event.addListener(marker, "click", function () {
       map.setLevel(4);
       map.setCenter(new kakao.maps.LatLng(coord[0].y, coord[0].x));
-      modal = true;
-      siteModalToggle = true;
+      siteDetailInfo = elem;
+      siteDetailView();
     });
   }
 
@@ -105,16 +125,68 @@
       });
   }
 
+  // 법정동코드 api
+  async function getStanReginCdList() {
+    let url = "http://api.odcloud.kr/api/15063424/v1/uddi:6d7fd177-cc7d-426d-ba80-9b137edf6066";
+    url += "?serviceKey=" + apiKey;
+    url += "&page=" + 1;
+    url += "&perPage=" + 1000;
+    url += "&returnType=" + "json";
+    url += "&locatadd_nm=" + "서울특별시";
+    console.log("법정동 코드 api url : ", url);
+
+    return fetch(url)
+      .then((resp) => {
+        console.log("서울시 법정동: ", resp);
+        return resp.text();
+      })
+      .catch((error) => {
+        throw new Error(error);
+      });
+  }
+
   // 법정동코드(10자리)로 인허가정보를 반환합니다.
   async function getInfo(code, start, end) {
     let info = await getApBasisOulnInfo(code, start, end);
-    console.log("info: ", info);
-    Object.values(info).forEach(function (el) {
-      if (Number(el.totArea) >= area && el.archGbCdNm == "신축") {
-        pin(el);
-        siteList = [...siteList, el];
+    console.log("poppop:", info);
+    if (info == undefined) {
+      return;
+    }
+    if (Array.isArray(info)) {
+      Object.values(info).forEach(function (el) {
+        console.log("hhh122", el);
+        // console.log(el.archGbCdNm, el.archGbCdNm == "신축");
+        // console.log(Number(el.totArea), area, Number(el.totArea) >= area);
+        // console.log(Number(el.archPmsDay), Number(start), Number(el.archPmsDay) >= Number(start));
+        if (Number(el.totArea) >= area && Number(el.archPmsDay) >= Number(start) && el.archGbCdNm == "신축") {
+          console.log("el : ", el);
+          pin(el);
+          siteList = [...siteList, el];
+        }
+      });
+    } else {
+      if (Number(info.totArea) >= area && Number(info.archPmsDay) >= Number(start) && info.archGbCdNm == "신축") {
+        console.log("info : ", info);
+        pin(info);
+        siteList = [...siteList, info];
       }
-    });
+    }
+  }
+
+  function siteListView() {
+    modalToggle = true;
+    siteListModalToggle = true;
+    siteDetailToggle = false;
+  }
+
+  function siteDetailView() {
+    modalToggle = true;
+    siteListModalToggle = false;
+    siteDetailToggle = true;
+  }
+
+  function closeModal() {
+    modalToggle = false;
   }
 
   onMount(async () => {
@@ -126,21 +198,33 @@
     codeList.forEach(async function (code) {
       getInfo(code, start, end);
     });
+    // getStanReginCdList();
   });
 </script>
 
 <div class="h-full relative" bind:this={mapContainer}>
+  <!-- 검색창 영역 -->
+  <div class="absolute left-5 top-5 z-10 flex">
+    <select bind:value={sidoSelected} type="ra" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 mx-2">
+      <option value="서울특별시" selected>서울특별시</option>
+      <option value="경기도">경기도(예정)</option>
+    </select>
+    <input bind:value={dateSelected} type="month" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 mx-2" />
+    <button
+      on:click={() => {
+        console.log(dateSelected, start, end);
+        codeList.forEach(async function (code) {
+          getInfo(code, start, end);
+        });
+      }}
+      type="button"
+      class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mx-2">조회</button
+    >
+  </div>
+
   <!-- 모달 오픈 -->
   {#if !modalToggle}
-    <button
-      type="button"
-      class="openModal rounded-md absolute p-1.5 z-10 top-3 right-5"
-      on:click={() => {
-        modalToggle = true;
-        siteModalToggle = true;
-        siteListModalToggle = true;
-      }}
-      style="z-index: 99;"
+    <button type="button" class="openModal rounded-md absolute p-1.5 z-10 top-3 right-5" on:click={siteListView} style="z-index: 99;"
       ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
         <path
           stroke-linecap="round"
@@ -153,56 +237,154 @@
 
   {#if modalToggle}
     <SideModal>
-      <div slot="content" class="flex flex-col relative">
+      <div bind:this={sideModal} slot="content" class="flex flex-col relative px-2 pb-10">
+        <!-- 리스트뷰 영역 -->
         {#if siteListModalToggle}
-          <div class="px-2 mb-5 max-sm:mt-3">
-            <div class="flex justify-between mb-5">
-              <h3>건축인허가(신축) 리스트</h3>
+          <div class="flex justify-between my-3">
+            <h3>건축인허가(신축) 리스트</h3>
+            <button
+              on:click={() => {
+                modalToggle = false;
+              }}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 pointer-events-none">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <p>{start} ~ {end}</p>
+          <p>{siteList.length}개의 신축 인허가 정보가 있습니다.</p>
+          <div class="flex-col">
+            {#each siteList as site}
               <button
                 on:click={() => {
-                  modalToggle = false;
+                  siteDetailInfo = site;
+                  siteDetailView();
+                  focus(site);
                 }}
+                class="w-full p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 my-4"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 pointer-events-none">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">{site.platPlc}</h5>
+                <p class="font-normal text-gray-700 dark:text-gray-400">{site.mainPurpsCdNm}</p>
+                <p class="font-normal text-gray-700 dark:text-gray-400">{site.totArea}</p>
+                <p class="font-normal text-gray-700 dark:text-gray-400">{site.bldNm}</p>
+                <p class="font-normal text-gray-700 dark:text-gray-400">{site.useAprDay}</p>
+                <p class="font-normal text-gray-700 dark:text-gray-400">{site.archPmsDay}</p>
               </button>
-            </div>
-            <p>{start} ~ {end}</p>
-            <p>{siteList.length}개의 신축 인허가 정보가 있습니다.</p>
-            <div class="flex-col">
-              {#each siteList as site}
-                <button
-                  on:click={() => {
-                    if (expand == "" || expand != site.mgmPmsrgstPk) {
-                      expand = site.mgmPmsrgstPk;
-                    } else {
-                      expand = "";
-                    }
-                  }}
-                  class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 my-5"
-                >
-                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">{site.platPlc}</h5>
-                  <p class="font-normal text-gray-700 dark:text-gray-400">{site.mainPurpsCdNm}</p>
-                  <p class="font-normal text-gray-700 dark:text-gray-400">{site.totArea}</p>
-                  <p class="font-normal text-gray-700 dark:text-gray-400">{site.bldNm}</p>
-                  <p class="font-normal text-gray-700 dark:text-gray-400">{site.useAprDay}</p>
-                  <p class="font-normal text-gray-700 dark:text-gray-400">{site.archPmsDay}</p>
-                  {#if site.mgmPmsrgstPk == expand}
-                    <p class="font-normal text-gray-700 dark:text-gray-400">구역명 {site.guyukCdNm}</p>
-                    <p class="font-normal text-gray-700 dark:text-gray-400">건축면적(㎡) {site.archArea}</p>
-                    <p class="font-normal text-gray-700 dark:text-gray-400">건폐율(%) {site.bcRat}</p>
-                    <p class="font-normal text-gray-700 dark:text-gray-400">용적률산정연면적(㎡) {site.vlRatEstmTotArea}</p>
-                    <p class="font-normal text-gray-700 dark:text-gray-400">용적률 {site.vlRat}</p>
-                    <p class="font-normal text-gray-700 dark:text-gray-400">착공예정일 {site.stcnsSchedDay}</p>
-                    <p class="font-normal text-gray-700 dark:text-gray-400">착공연기일 {site.stcnsDelayDay}</p>
-                    <p class="font-normal text-gray-700 dark:text-gray-400">실제착공일 {site.realStcnsDay}</p>
-                    <p class="font-normal text-gray-700 dark:text-gray-400">지목 {site.jimokCdNm}</p>
-                    <p class="font-normal text-gray-700 dark:text-gray-400">지역 {site.jiyukCdNm}</p>
-                  {/if}
-                </button>
-              {/each}
-            </div>
+            {/each}
+          </div>
+        {/if}
+
+        <!-- 상세보기 영역 -->
+        {#if siteDetailToggle && siteDetailInfo}
+          <div class="flex justify-between my-3">
+            <button on:click={siteListView}>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+              </svg>
+            </button>
+            <h1>상세보기</h1>
+            <button
+              on:click={() => {
+                modalToggle = false;
+              }}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 pointer-events-none">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="relative overflow-x-auto shadow-md">
+            <table class="w-full text-sm text-left text-gray-500">
+              <!-- <thead class="text-xs text-gray-700 uppercase dark:text-gray-400">
+                <tr>
+                  <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800">기본정보</th>
+                </tr>
+              </thead> -->
+              <tbody>
+                <tr class="border-b border-gray-200">
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">주소</th>
+                  <td class="px-6 py-4 flex"
+                    >{siteDetailInfo.platPlc}
+                    {#if $roadViewUrl}
+                      <a href={$roadViewUrl} target="_blank" rel="noreferrer" class="text-indigo-600 hover:text-indigo-500 ml-2" title="로드맵 보기"
+                        ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 pointer-events-none">
+                          <path
+                            stroke-linecap="round"
+                            d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z"
+                          />
+                        </svg>
+                      </a>
+                    {/if}</td
+                  >
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">주용도</th>
+                  <td class="px-6 py-4">{siteDetailInfo.mainPurpsCdNm}</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">연면적</th>
+                  <td class="px-6 py-4">{siteDetailInfo.totArea}</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">건물명</th>
+                  <td class="px-6 py-4">{siteDetailInfo.bldNm}</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">사용승인일</th>
+                  <td class="px-6 py-4">{siteDetailInfo.useAprDay}</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">건축허가일</th>
+                  <td class="px-6 py-4">{siteDetailInfo.archPmsDay}</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">건축허가일</th>
+                  <td class="px-6 py-4">{siteDetailInfo.archPmsDay}</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">구역명</th>
+                  <td class="px-6 py-4">{siteDetailInfo.guyukCdNm}</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">건축면적(㎡)</th>
+                  <td class="px-6 py-4">{siteDetailInfo.archArea}</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">건폐율(%)</th>
+                  <td class="px-6 py-4">{siteDetailInfo.bcRat}</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">용적률(%)</th>
+                  <td class="px-6 py-4">{siteDetailInfo.vlRatEstmTotArea}</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">착공예정일</th>
+                  <td class="px-6 py-4">{siteDetailInfo.stcnsSchedDay}</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">착공연기일</th>
+                  <td class="px-6 py-4">{siteDetailInfo.stcnsDelayDay}</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">착공예정일</th>
+                  <td class="px-6 py-4">{siteDetailInfo.stcnsSchedDay}</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">실제착공일</th>
+                  <td class="px-6 py-4">{siteDetailInfo.realStcnsDay}</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">지목</th>
+                  <td class="px-6 py-4">{siteDetailInfo.jimokCdNm}</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">지역</th>
+                  <td class="px-6 py-4">{siteDetailInfo.jiyukCdNm}</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         {/if}
       </div>
