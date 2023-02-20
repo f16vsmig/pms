@@ -205,11 +205,11 @@
 <div class="h-full relative" bind:this={mapContainer}>
   <!-- 검색창 영역 -->
   <div class="absolute left-5 top-5 z-10 flex">
-    <select bind:value={sidoSelected} type="ra" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 mx-2">
+    <select bind:value={sidoSelected} type="ra" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mx-2">
       <option value="서울특별시" selected>서울특별시</option>
       <option value="경기도">경기도(예정)</option>
     </select>
-    <input bind:value={dateSelected} type="month" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 mx-2" />
+    <input bind:value={dateSelected} type="month" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mx-2 w-32" />
     <button
       on:click={() => {
         markers.forEach((marker) => marker.setMap(null)); // 이전에 지도에 표시된 마커를 모두 지웁니다.
@@ -220,13 +220,13 @@
         });
       }}
       type="button"
-      class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mx-2">조회</button
+      class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 mx-2">조회</button
     >
   </div>
 
-  <!-- 모달 오픈 -->
+  <!-- 모달 오픈 버튼 -->
   {#if !modalToggle}
-    <button type="button" class="openModal rounded-md absolute p-1.5 z-10 top-3 right-5" on:click={siteListView} style="z-index: 99;"
+    <button type="button" class="openModal rounded-md absolute p-1.5 z-10 max-sm:bottom-5 md:top-5 right-5" on:click={siteListView}
       ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
         <path
           stroke-linecap="round"
