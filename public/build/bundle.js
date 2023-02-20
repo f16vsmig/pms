@@ -7817,11 +7817,11 @@ var app = (function () {
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[38] = list[i];
+    	child_ctx[33] = list[i];
     	return child_ctx;
     }
 
-    // (226:2) {#if !modalToggle}
+    // (228:2) {#if !modalToggle}
     function create_if_block_4(ctx) {
     	let button;
     	let svg;
@@ -7837,18 +7837,18 @@ var app = (function () {
     			attr_dev(path, "stroke-linecap", "round");
     			attr_dev(path, "stroke-linejoin", "round");
     			attr_dev(path, "d", "M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z");
-    			add_location(path, file, 228, 8, 7454);
+    			add_location(path, file, 230, 8, 7126);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "fill", "none");
     			attr_dev(svg, "viewBox", "0 0 24 24");
     			attr_dev(svg, "stroke-width", "1.5");
     			attr_dev(svg, "stroke", "currentColor");
     			attr_dev(svg, "class", "w-6 h-6");
-    			add_location(svg, file, 227, 7, 7316);
+    			add_location(svg, file, 229, 7, 6988);
     			attr_dev(button, "type", "button");
     			attr_dev(button, "class", "openModal rounded-md absolute p-1.5 z-10 top-3 right-5 svelte-2i2pv4");
     			set_style(button, "z-index", "99");
-    			add_location(button, file, 226, 4, 7179);
+    			add_location(button, file, 228, 4, 6851);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -7856,7 +7856,7 @@ var app = (function () {
     			append_dev(svg, path);
 
     			if (!mounted) {
-    				dispose = listen_dev(button, "click", /*siteListView*/ ctx[15], false, false, false);
+    				dispose = listen_dev(button, "click", /*siteListView*/ ctx[14], false, false, false);
     				mounted = true;
     			}
     		},
@@ -7872,14 +7872,14 @@ var app = (function () {
     		block,
     		id: create_if_block_4.name,
     		type: "if",
-    		source: "(226:2) {#if !modalToggle}",
+    		source: "(228:2) {#if !modalToggle}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (238:2) {#if modalToggle}
+    // (240:2) {#if modalToggle}
     function create_if_block$1(ctx) {
     	let sidemodal;
     	let current;
@@ -7903,7 +7903,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const sidemodal_changes = {};
 
-    			if (dirty[0] & /*sideModal, siteDetailInfo, $roadViewUrl, modalToggle, siteDetailToggle, siteList, end, start, siteListModalToggle*/ 2942 | dirty[1] & /*$$scope*/ 1024) {
+    			if (dirty[0] & /*sideModal, siteDetailInfo, $roadViewUrl, modalToggle, siteDetailToggle, siteList, siteListModalToggle*/ 1276 | dirty[1] & /*$$scope*/ 32) {
     				sidemodal_changes.$$scope = { dirty, ctx };
     			}
 
@@ -7927,14 +7927,14 @@ var app = (function () {
     		block,
     		id: create_if_block$1.name,
     		type: "if",
-    		source: "(238:2) {#if modalToggle}",
+    		source: "(240:2) {#if modalToggle}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (242:8) {#if siteListModalToggle}
+    // (244:8) {#if siteListModalToggle}
     function create_if_block_3(ctx) {
     	let div0;
     	let h3;
@@ -7943,20 +7943,15 @@ var app = (function () {
     	let svg;
     	let path;
     	let t2;
-    	let p0;
+    	let p;
+    	let t3_value = /*siteList*/ ctx[7].length + "";
     	let t3;
     	let t4;
     	let t5;
-    	let t6;
-    	let p1;
-    	let t7_value = /*siteList*/ ctx[6].length + "";
-    	let t7;
-    	let t8;
-    	let t9;
     	let div1;
     	let mounted;
     	let dispose;
-    	let each_value = /*siteList*/ ctx[6];
+    	let each_value = /*siteList*/ ctx[7];
     	validate_each_argument(each_value);
     	let each_blocks = [];
 
@@ -7974,40 +7969,34 @@ var app = (function () {
     			svg = svg_element("svg");
     			path = svg_element("path");
     			t2 = space();
-    			p0 = element("p");
-    			t3 = text(/*start*/ ctx[8]);
-    			t4 = text(" ~ ");
-    			t5 = text(/*end*/ ctx[9]);
-    			t6 = space();
-    			p1 = element("p");
-    			t7 = text(t7_value);
-    			t8 = text("개의 신축 인허가 정보가 있습니다.");
-    			t9 = space();
+    			p = element("p");
+    			t3 = text(t3_value);
+    			t4 = text("개의 신축 인허가 정보가 있습니다.");
+    			t5 = space();
     			div1 = element("div");
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
-    			add_location(h3, file, 243, 12, 8105);
+    			add_location(h3, file, 245, 12, 7777);
     			attr_dev(path, "stroke-linecap", "round");
     			attr_dev(path, "stroke-linejoin", "round");
     			attr_dev(path, "d", "M6 18L18 6M6 6l12 12");
-    			add_location(path, file, 250, 16, 8428);
+    			add_location(path, file, 252, 16, 8100);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "fill", "none");
     			attr_dev(svg, "viewBox", "0 0 24 24");
     			attr_dev(svg, "stroke-width", "1.5");
     			attr_dev(svg, "stroke", "currentColor");
     			attr_dev(svg, "class", "w-5 h-5 pointer-events-none");
-    			add_location(svg, file, 249, 14, 8262);
-    			add_location(button, file, 244, 12, 8140);
+    			add_location(svg, file, 251, 14, 7934);
+    			add_location(button, file, 246, 12, 7812);
     			attr_dev(div0, "class", "flex justify-between my-3");
-    			add_location(div0, file, 242, 10, 8053);
-    			add_location(p0, file, 254, 10, 8579);
-    			add_location(p1, file, 255, 10, 8612);
+    			add_location(div0, file, 244, 10, 7725);
+    			add_location(p, file, 256, 10, 8251);
     			attr_dev(div1, "class", "flex-col");
-    			add_location(div1, file, 256, 10, 8666);
+    			add_location(div1, file, 257, 10, 8305);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div0, anchor);
@@ -8017,15 +8006,10 @@ var app = (function () {
     			append_dev(button, svg);
     			append_dev(svg, path);
     			insert_dev(target, t2, anchor);
-    			insert_dev(target, p0, anchor);
-    			append_dev(p0, t3);
-    			append_dev(p0, t4);
-    			append_dev(p0, t5);
-    			insert_dev(target, t6, anchor);
-    			insert_dev(target, p1, anchor);
-    			append_dev(p1, t7);
-    			append_dev(p1, t8);
-    			insert_dev(target, t9, anchor);
+    			insert_dev(target, p, anchor);
+    			append_dev(p, t3);
+    			append_dev(p, t4);
+    			insert_dev(target, t5, anchor);
     			insert_dev(target, div1, anchor);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -8033,17 +8017,15 @@ var app = (function () {
     			}
 
     			if (!mounted) {
-    				dispose = listen_dev(button, "click", /*click_handler_1*/ ctx[20], false, false, false);
+    				dispose = listen_dev(button, "click", /*click_handler_1*/ ctx[19], false, false, false);
     				mounted = true;
     			}
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty[0] & /*start*/ 256) set_data_dev(t3, /*start*/ ctx[8]);
-    			if (dirty[0] & /*end*/ 512) set_data_dev(t5, /*end*/ ctx[9]);
-    			if (dirty[0] & /*siteList*/ 64 && t7_value !== (t7_value = /*siteList*/ ctx[6].length + "")) set_data_dev(t7, t7_value);
+    			if (dirty[0] & /*siteList*/ 128 && t3_value !== (t3_value = /*siteList*/ ctx[7].length + "")) set_data_dev(t3, t3_value);
 
-    			if (dirty[0] & /*siteDetailInfo, siteList, siteDetailView, focus*/ 73824) {
-    				each_value = /*siteList*/ ctx[6];
+    			if (dirty[0] & /*siteDetailInfo, siteList, siteDetailView, focus*/ 37056) {
+    				each_value = /*siteList*/ ctx[7];
     				validate_each_argument(each_value);
     				let i;
 
@@ -8069,10 +8051,8 @@ var app = (function () {
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div0);
     			if (detaching) detach_dev(t2);
-    			if (detaching) detach_dev(p0);
-    			if (detaching) detach_dev(t6);
-    			if (detaching) detach_dev(p1);
-    			if (detaching) detach_dev(t9);
+    			if (detaching) detach_dev(p);
+    			if (detaching) detach_dev(t5);
     			if (detaching) detach_dev(div1);
     			destroy_each(each_blocks, detaching);
     			mounted = false;
@@ -8084,103 +8064,172 @@ var app = (function () {
     		block,
     		id: create_if_block_3.name,
     		type: "if",
-    		source: "(242:8) {#if siteListModalToggle}",
+    		source: "(244:8) {#if siteListModalToggle}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (258:12) {#each siteList as site}
+    // (259:12) {#each siteList as site}
     function create_each_block(ctx) {
     	let button;
-    	let h5;
-    	let t0_value = /*site*/ ctx[38].platPlc + "";
-    	let t0;
+    	let dl;
+    	let div0;
+    	let dd0;
     	let t1;
-    	let p0;
-    	let t2_value = /*site*/ ctx[38].mainPurpsCdNm + "";
+    	let dt0;
+    	let t2_value = /*site*/ ctx[33].bldNm + "";
     	let t2;
     	let t3;
-    	let p1;
-    	let t4_value = /*site*/ ctx[38].totArea + "";
-    	let t4;
+    	let div1;
+    	let dd1;
     	let t5;
-    	let p2;
-    	let t6_value = /*site*/ ctx[38].bldNm + "";
+    	let dt1;
+    	let t6_value = /*site*/ ctx[33].mainPurpsCdNm + "";
     	let t6;
     	let t7;
-    	let p3;
-    	let t8_value = /*site*/ ctx[38].useAprDay + "";
-    	let t8;
+    	let div2;
+    	let dd2;
     	let t9;
-    	let p4;
-    	let t10_value = /*site*/ ctx[38].archPmsDay + "";
+    	let dt2;
+    	let t10_value = addComma(/*site*/ ctx[33].totArea) + "";
     	let t10;
     	let t11;
+    	let t12;
+    	let div3;
+    	let dd3;
+    	let t14;
+    	let dt3;
+    	let t15_value = addComma(/*site*/ ctx[33].archArea) + "";
+    	let t15;
+    	let t16;
+    	let t17;
+    	let div4;
+    	let dd4;
+    	let t19;
+    	let dt4;
+    	let t20_value = /*site*/ ctx[33].platPlc + "";
+    	let t20;
+    	let t21;
     	let mounted;
     	let dispose;
 
     	function click_handler_2() {
-    		return /*click_handler_2*/ ctx[21](/*site*/ ctx[38]);
+    		return /*click_handler_2*/ ctx[20](/*site*/ ctx[33]);
     	}
 
     	const block = {
     		c: function create() {
     			button = element("button");
-    			h5 = element("h5");
-    			t0 = text(t0_value);
+    			dl = element("dl");
+    			div0 = element("div");
+    			dd0 = element("dd");
+    			dd0.textContent = "건물명";
     			t1 = space();
-    			p0 = element("p");
+    			dt0 = element("dt");
     			t2 = text(t2_value);
     			t3 = space();
-    			p1 = element("p");
-    			t4 = text(t4_value);
+    			div1 = element("div");
+    			dd1 = element("dd");
+    			dd1.textContent = "용도";
     			t5 = space();
-    			p2 = element("p");
+    			dt1 = element("dt");
     			t6 = text(t6_value);
     			t7 = space();
-    			p3 = element("p");
-    			t8 = text(t8_value);
+    			div2 = element("div");
+    			dd2 = element("dd");
+    			dd2.textContent = "연면적";
     			t9 = space();
-    			p4 = element("p");
+    			dt2 = element("dt");
     			t10 = text(t10_value);
-    			t11 = space();
-    			attr_dev(h5, "class", "mb-2 text-2xl font-bold tracking-tight text-gray-900");
-    			add_location(h5, file, 266, 16, 9049);
-    			attr_dev(p0, "class", "font-normal text-gray-700 dark:text-gray-400");
-    			add_location(p0, file, 267, 16, 9150);
-    			attr_dev(p1, "class", "font-normal text-gray-700 dark:text-gray-400");
-    			add_location(p1, file, 268, 16, 9247);
-    			attr_dev(p2, "class", "font-normal text-gray-700 dark:text-gray-400");
-    			add_location(p2, file, 269, 16, 9338);
-    			attr_dev(p3, "class", "font-normal text-gray-700 dark:text-gray-400");
-    			add_location(p3, file, 270, 16, 9427);
-    			attr_dev(p4, "class", "font-normal text-gray-700 dark:text-gray-400");
-    			add_location(p4, file, 271, 16, 9520);
-    			attr_dev(button, "class", "w-full p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 my-4");
-    			add_location(button, file, 258, 14, 8740);
+    			t11 = text(" ㎡");
+    			t12 = space();
+    			div3 = element("div");
+    			dd3 = element("dd");
+    			dd3.textContent = "건축면적";
+    			t14 = space();
+    			dt3 = element("dt");
+    			t15 = text(t15_value);
+    			t16 = text(" ㎡");
+    			t17 = space();
+    			div4 = element("div");
+    			dd4 = element("dd");
+    			dd4.textContent = "주소";
+    			t19 = space();
+    			dt4 = element("dt");
+    			t20 = text(t20_value);
+    			t21 = space();
+    			attr_dev(dd0, "class", "font-light text-gray-500 dark:text-gray-400");
+    			add_location(dd0, file, 269, 20, 8823);
+    			attr_dev(dt0, "class", "mb-2 text-xl font-bold truncate");
+    			add_location(dt0, file, 270, 20, 8908);
+    			attr_dev(div0, "class", "flex flex-col");
+    			add_location(div0, file, 268, 18, 8775);
+    			attr_dev(dd1, "class", "font-light text-gray-500 dark:text-gray-400");
+    			add_location(dd1, file, 274, 20, 9062);
+    			attr_dev(dt1, "class", "mb-2 text-xl font-bold");
+    			add_location(dt1, file, 275, 20, 9146);
+    			attr_dev(div1, "class", "flex flex-col");
+    			add_location(div1, file, 273, 18, 9014);
+    			attr_dev(dd2, "class", "font-light text-gray-500 dark:text-gray-400");
+    			add_location(dd2, file, 279, 20, 9299);
+    			attr_dev(dt2, "class", "mb-2 text-xl font-bold");
+    			add_location(dt2, file, 280, 20, 9384);
+    			attr_dev(div2, "class", "flex flex-col");
+    			add_location(div2, file, 278, 18, 9251);
+    			attr_dev(dd3, "class", "font-light text-gray-500 dark:text-gray-400");
+    			add_location(dd3, file, 284, 20, 9543);
+    			attr_dev(dt3, "class", "mb-2 text-xl font-bold");
+    			add_location(dt3, file, 285, 20, 9629);
+    			attr_dev(div3, "class", "flex flex-col");
+    			add_location(div3, file, 283, 18, 9495);
+    			attr_dev(dd4, "class", "font-light text-gray-500 dark:text-gray-400");
+    			add_location(dd4, file, 289, 20, 9786);
+    			attr_dev(dt4, "class", "mb-2 text-xl font-bold");
+    			add_location(dt4, file, 290, 20, 9870);
+    			attr_dev(div4, "class", "col-span-2");
+    			add_location(div4, file, 288, 18, 9741);
+    			attr_dev(dl, "class", "grid grid-cols-2 mx-auto text-gray-900 gap-4");
+    			add_location(dl, file, 267, 16, 8699);
+    			attr_dev(button, "class", "w-full p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 my-4 text-start");
+    			add_location(button, file, 259, 14, 8379);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
-    			append_dev(button, h5);
-    			append_dev(h5, t0);
-    			append_dev(button, t1);
-    			append_dev(button, p0);
-    			append_dev(p0, t2);
-    			append_dev(button, t3);
-    			append_dev(button, p1);
-    			append_dev(p1, t4);
-    			append_dev(button, t5);
-    			append_dev(button, p2);
-    			append_dev(p2, t6);
-    			append_dev(button, t7);
-    			append_dev(button, p3);
-    			append_dev(p3, t8);
-    			append_dev(button, t9);
-    			append_dev(button, p4);
-    			append_dev(p4, t10);
-    			append_dev(button, t11);
+    			append_dev(button, dl);
+    			append_dev(dl, div0);
+    			append_dev(div0, dd0);
+    			append_dev(div0, t1);
+    			append_dev(div0, dt0);
+    			append_dev(dt0, t2);
+    			append_dev(div0, t3);
+    			append_dev(dl, div1);
+    			append_dev(div1, dd1);
+    			append_dev(div1, t5);
+    			append_dev(div1, dt1);
+    			append_dev(dt1, t6);
+    			append_dev(div1, t7);
+    			append_dev(dl, div2);
+    			append_dev(div2, dd2);
+    			append_dev(div2, t9);
+    			append_dev(div2, dt2);
+    			append_dev(dt2, t10);
+    			append_dev(dt2, t11);
+    			append_dev(div2, t12);
+    			append_dev(dl, div3);
+    			append_dev(div3, dd3);
+    			append_dev(div3, t14);
+    			append_dev(div3, dt3);
+    			append_dev(dt3, t15);
+    			append_dev(dt3, t16);
+    			append_dev(div3, t17);
+    			append_dev(dl, div4);
+    			append_dev(div4, dd4);
+    			append_dev(div4, t19);
+    			append_dev(div4, dt4);
+    			append_dev(dt4, t20);
+    			append_dev(button, t21);
 
     			if (!mounted) {
     				dispose = listen_dev(button, "click", click_handler_2, false, false, false);
@@ -8189,12 +8238,11 @@ var app = (function () {
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty[0] & /*siteList*/ 64 && t0_value !== (t0_value = /*site*/ ctx[38].platPlc + "")) set_data_dev(t0, t0_value);
-    			if (dirty[0] & /*siteList*/ 64 && t2_value !== (t2_value = /*site*/ ctx[38].mainPurpsCdNm + "")) set_data_dev(t2, t2_value);
-    			if (dirty[0] & /*siteList*/ 64 && t4_value !== (t4_value = /*site*/ ctx[38].totArea + "")) set_data_dev(t4, t4_value);
-    			if (dirty[0] & /*siteList*/ 64 && t6_value !== (t6_value = /*site*/ ctx[38].bldNm + "")) set_data_dev(t6, t6_value);
-    			if (dirty[0] & /*siteList*/ 64 && t8_value !== (t8_value = /*site*/ ctx[38].useAprDay + "")) set_data_dev(t8, t8_value);
-    			if (dirty[0] & /*siteList*/ 64 && t10_value !== (t10_value = /*site*/ ctx[38].archPmsDay + "")) set_data_dev(t10, t10_value);
+    			if (dirty[0] & /*siteList*/ 128 && t2_value !== (t2_value = /*site*/ ctx[33].bldNm + "")) set_data_dev(t2, t2_value);
+    			if (dirty[0] & /*siteList*/ 128 && t6_value !== (t6_value = /*site*/ ctx[33].mainPurpsCdNm + "")) set_data_dev(t6, t6_value);
+    			if (dirty[0] & /*siteList*/ 128 && t10_value !== (t10_value = addComma(/*site*/ ctx[33].totArea) + "")) set_data_dev(t10, t10_value);
+    			if (dirty[0] & /*siteList*/ 128 && t15_value !== (t15_value = addComma(/*site*/ ctx[33].archArea) + "")) set_data_dev(t15, t15_value);
+    			if (dirty[0] & /*siteList*/ 128 && t20_value !== (t20_value = /*site*/ ctx[33].platPlc + "")) set_data_dev(t20, t20_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(button);
@@ -8207,14 +8255,14 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(258:12) {#each siteList as site}",
+    		source: "(259:12) {#each siteList as site}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (279:8) {#if siteDetailToggle && siteDetailInfo}
+    // (300:8) {#if siteDetailToggle && siteDetailInfo}
     function create_if_block_1(ctx) {
     	let div0;
     	let button0;
@@ -8234,7 +8282,7 @@ var app = (function () {
     	let th0;
     	let t5;
     	let td0;
-    	let t6_value = /*siteDetailInfo*/ ctx[5].platPlc + "";
+    	let t6_value = /*siteDetailInfo*/ ctx[6].platPlc + "";
     	let t6;
     	let t7;
     	let t8;
@@ -8242,116 +8290,116 @@ var app = (function () {
     	let th1;
     	let t10;
     	let td1;
-    	let t11_value = /*siteDetailInfo*/ ctx[5].mainPurpsCdNm + "";
+    	let t11_value = /*siteDetailInfo*/ ctx[6].mainPurpsCdNm + "";
     	let t11;
     	let t12;
     	let tr2;
     	let th2;
     	let t14;
     	let td2;
-    	let t15_value = /*siteDetailInfo*/ ctx[5].totArea + "";
+    	let t15_value = /*siteDetailInfo*/ ctx[6].totArea + "";
     	let t15;
     	let t16;
     	let tr3;
     	let th3;
     	let t18;
     	let td3;
-    	let t19_value = /*siteDetailInfo*/ ctx[5].bldNm + "";
+    	let t19_value = /*siteDetailInfo*/ ctx[6].bldNm + "";
     	let t19;
     	let t20;
     	let tr4;
     	let th4;
     	let t22;
     	let td4;
-    	let t23_value = /*siteDetailInfo*/ ctx[5].useAprDay + "";
+    	let t23_value = /*siteDetailInfo*/ ctx[6].useAprDay + "";
     	let t23;
     	let t24;
     	let tr5;
     	let th5;
     	let t26;
     	let td5;
-    	let t27_value = /*siteDetailInfo*/ ctx[5].archPmsDay + "";
+    	let t27_value = /*siteDetailInfo*/ ctx[6].archPmsDay + "";
     	let t27;
     	let t28;
     	let tr6;
     	let th6;
     	let t30;
     	let td6;
-    	let t31_value = /*siteDetailInfo*/ ctx[5].archPmsDay + "";
+    	let t31_value = /*siteDetailInfo*/ ctx[6].archPmsDay + "";
     	let t31;
     	let t32;
     	let tr7;
     	let th7;
     	let t34;
     	let td7;
-    	let t35_value = /*siteDetailInfo*/ ctx[5].guyukCdNm + "";
+    	let t35_value = /*siteDetailInfo*/ ctx[6].guyukCdNm + "";
     	let t35;
     	let t36;
     	let tr8;
     	let th8;
     	let t38;
     	let td8;
-    	let t39_value = /*siteDetailInfo*/ ctx[5].archArea + "";
+    	let t39_value = /*siteDetailInfo*/ ctx[6].archArea + "";
     	let t39;
     	let t40;
     	let tr9;
     	let th9;
     	let t42;
     	let td9;
-    	let t43_value = /*siteDetailInfo*/ ctx[5].bcRat + "";
+    	let t43_value = /*siteDetailInfo*/ ctx[6].bcRat + "";
     	let t43;
     	let t44;
     	let tr10;
     	let th10;
     	let t46;
     	let td10;
-    	let t47_value = /*siteDetailInfo*/ ctx[5].vlRatEstmTotArea + "";
+    	let t47_value = /*siteDetailInfo*/ ctx[6].vlRatEstmTotArea + "";
     	let t47;
     	let t48;
     	let tr11;
     	let th11;
     	let t50;
     	let td11;
-    	let t51_value = /*siteDetailInfo*/ ctx[5].stcnsSchedDay + "";
+    	let t51_value = /*siteDetailInfo*/ ctx[6].stcnsSchedDay + "";
     	let t51;
     	let t52;
     	let tr12;
     	let th12;
     	let t54;
     	let td12;
-    	let t55_value = /*siteDetailInfo*/ ctx[5].stcnsDelayDay + "";
+    	let t55_value = /*siteDetailInfo*/ ctx[6].stcnsDelayDay + "";
     	let t55;
     	let t56;
     	let tr13;
     	let th13;
     	let t58;
     	let td13;
-    	let t59_value = /*siteDetailInfo*/ ctx[5].stcnsSchedDay + "";
+    	let t59_value = /*siteDetailInfo*/ ctx[6].stcnsSchedDay + "";
     	let t59;
     	let t60;
     	let tr14;
     	let th14;
     	let t62;
     	let td14;
-    	let t63_value = /*siteDetailInfo*/ ctx[5].realStcnsDay + "";
+    	let t63_value = /*siteDetailInfo*/ ctx[6].realStcnsDay + "";
     	let t63;
     	let t64;
     	let tr15;
     	let th15;
     	let t66;
     	let td15;
-    	let t67_value = /*siteDetailInfo*/ ctx[5].jimokCdNm + "";
+    	let t67_value = /*siteDetailInfo*/ ctx[6].jimokCdNm + "";
     	let t67;
     	let t68;
     	let tr16;
     	let th16;
     	let t70;
     	let td16;
-    	let t71_value = /*siteDetailInfo*/ ctx[5].jiyukCdNm + "";
+    	let t71_value = /*siteDetailInfo*/ ctx[6].jiyukCdNm + "";
     	let t71;
     	let mounted;
     	let dispose;
-    	let if_block = /*$roadViewUrl*/ ctx[11] && create_if_block_2(ctx);
+    	let if_block = /*$roadViewUrl*/ ctx[10] && create_if_block_2(ctx);
 
     	const block = {
     		c: function create() {
@@ -8493,154 +8541,154 @@ var app = (function () {
     			attr_dev(path0, "stroke-linecap", "round");
     			attr_dev(path0, "stroke-linejoin", "round");
     			attr_dev(path0, "d", "M15.75 19.5L8.25 12l7.5-7.5");
-    			add_location(path0, file, 282, 16, 10003);
+    			add_location(path0, file, 303, 16, 10377);
     			attr_dev(svg0, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg0, "fill", "none");
     			attr_dev(svg0, "viewBox", "0 0 24 24");
     			attr_dev(svg0, "stroke-width", "1.5");
     			attr_dev(svg0, "stroke", "currentColor");
     			attr_dev(svg0, "class", "w-6 h-6");
-    			add_location(svg0, file, 281, 14, 9857);
-    			add_location(button0, file, 280, 12, 9810);
-    			add_location(h1, file, 285, 12, 10146);
+    			add_location(svg0, file, 302, 14, 10231);
+    			add_location(button0, file, 301, 12, 10184);
+    			add_location(h1, file, 306, 12, 10520);
     			attr_dev(path1, "stroke-linecap", "round");
     			attr_dev(path1, "stroke-linejoin", "round");
     			attr_dev(path1, "d", "M6 18L18 6M6 6l12 12");
-    			add_location(path1, file, 292, 16, 10460);
+    			add_location(path1, file, 313, 16, 10834);
     			attr_dev(svg1, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg1, "fill", "none");
     			attr_dev(svg1, "viewBox", "0 0 24 24");
     			attr_dev(svg1, "stroke-width", "1.5");
     			attr_dev(svg1, "stroke", "currentColor");
     			attr_dev(svg1, "class", "w-5 h-5 pointer-events-none");
-    			add_location(svg1, file, 291, 14, 10294);
-    			add_location(button1, file, 286, 12, 10172);
+    			add_location(svg1, file, 312, 14, 10668);
+    			add_location(button1, file, 307, 12, 10546);
     			attr_dev(div0, "class", "flex justify-between my-3");
-    			add_location(div0, file, 279, 10, 9758);
+    			add_location(div0, file, 300, 10, 10132);
     			attr_dev(th0, "scope", "row");
     			attr_dev(th0, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th0, file, 306, 18, 11068);
+    			add_location(th0, file, 327, 18, 11442);
     			attr_dev(td0, "class", "px-6 py-4 flex");
-    			add_location(td0, file, 307, 18, 11183);
+    			add_location(td0, file, 328, 18, 11557);
     			attr_dev(tr0, "class", "border-b border-gray-200");
-    			add_location(tr0, file, 305, 16, 11012);
+    			add_location(tr0, file, 326, 16, 11386);
     			attr_dev(th1, "scope", "row");
     			attr_dev(th1, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th1, file, 322, 18, 12155);
+    			add_location(th1, file, 343, 18, 12529);
     			attr_dev(td1, "class", "px-6 py-4");
-    			add_location(td1, file, 323, 18, 12271);
+    			add_location(td1, file, 344, 18, 12645);
     			attr_dev(tr1, "class", "border-b border-gray-200");
-    			add_location(tr1, file, 321, 16, 12099);
+    			add_location(tr1, file, 342, 16, 12473);
     			attr_dev(th2, "scope", "row");
     			attr_dev(th2, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th2, file, 326, 18, 12423);
+    			add_location(th2, file, 347, 18, 12797);
     			attr_dev(td2, "class", "px-6 py-4");
-    			add_location(td2, file, 327, 18, 12539);
+    			add_location(td2, file, 348, 18, 12913);
     			attr_dev(tr2, "class", "border-b border-gray-200");
-    			add_location(tr2, file, 325, 16, 12367);
+    			add_location(tr2, file, 346, 16, 12741);
     			attr_dev(th3, "scope", "row");
     			attr_dev(th3, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th3, file, 330, 18, 12685);
+    			add_location(th3, file, 351, 18, 13059);
     			attr_dev(td3, "class", "px-6 py-4");
-    			add_location(td3, file, 331, 18, 12801);
+    			add_location(td3, file, 352, 18, 13175);
     			attr_dev(tr3, "class", "border-b border-gray-200");
-    			add_location(tr3, file, 329, 16, 12629);
+    			add_location(tr3, file, 350, 16, 13003);
     			attr_dev(th4, "scope", "row");
     			attr_dev(th4, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th4, file, 334, 18, 12945);
+    			add_location(th4, file, 355, 18, 13319);
     			attr_dev(td4, "class", "px-6 py-4");
-    			add_location(td4, file, 335, 18, 13063);
+    			add_location(td4, file, 356, 18, 13437);
     			attr_dev(tr4, "class", "border-b border-gray-200");
-    			add_location(tr4, file, 333, 16, 12889);
+    			add_location(tr4, file, 354, 16, 13263);
     			attr_dev(th5, "scope", "row");
     			attr_dev(th5, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th5, file, 338, 18, 13211);
+    			add_location(th5, file, 359, 18, 13585);
     			attr_dev(td5, "class", "px-6 py-4");
-    			add_location(td5, file, 339, 18, 13329);
+    			add_location(td5, file, 360, 18, 13703);
     			attr_dev(tr5, "class", "border-b border-gray-200");
-    			add_location(tr5, file, 337, 16, 13155);
+    			add_location(tr5, file, 358, 16, 13529);
     			attr_dev(th6, "scope", "row");
     			attr_dev(th6, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th6, file, 342, 18, 13478);
+    			add_location(th6, file, 363, 18, 13852);
     			attr_dev(td6, "class", "px-6 py-4");
-    			add_location(td6, file, 343, 18, 13596);
+    			add_location(td6, file, 364, 18, 13970);
     			attr_dev(tr6, "class", "border-b border-gray-200");
-    			add_location(tr6, file, 341, 16, 13422);
+    			add_location(tr6, file, 362, 16, 13796);
     			attr_dev(th7, "scope", "row");
     			attr_dev(th7, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th7, file, 346, 18, 13745);
+    			add_location(th7, file, 367, 18, 14119);
     			attr_dev(td7, "class", "px-6 py-4");
-    			add_location(td7, file, 347, 18, 13861);
+    			add_location(td7, file, 368, 18, 14235);
     			attr_dev(tr7, "class", "border-b border-gray-200");
-    			add_location(tr7, file, 345, 16, 13689);
+    			add_location(tr7, file, 366, 16, 14063);
     			attr_dev(th8, "scope", "row");
     			attr_dev(th8, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th8, file, 350, 18, 14009);
+    			add_location(th8, file, 371, 18, 14383);
     			attr_dev(td8, "class", "px-6 py-4");
-    			add_location(td8, file, 351, 18, 14129);
+    			add_location(td8, file, 372, 18, 14503);
     			attr_dev(tr8, "class", "border-b border-gray-200");
-    			add_location(tr8, file, 349, 16, 13953);
+    			add_location(tr8, file, 370, 16, 14327);
     			attr_dev(th9, "scope", "row");
     			attr_dev(th9, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th9, file, 354, 18, 14276);
+    			add_location(th9, file, 375, 18, 14650);
     			attr_dev(td9, "class", "px-6 py-4");
-    			add_location(td9, file, 355, 18, 14395);
+    			add_location(td9, file, 376, 18, 14769);
     			attr_dev(tr9, "class", "border-b border-gray-200");
-    			add_location(tr9, file, 353, 16, 14220);
+    			add_location(tr9, file, 374, 16, 14594);
     			attr_dev(th10, "scope", "row");
     			attr_dev(th10, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th10, file, 358, 18, 14539);
+    			add_location(th10, file, 379, 18, 14913);
     			attr_dev(td10, "class", "px-6 py-4");
-    			add_location(td10, file, 359, 18, 14658);
+    			add_location(td10, file, 380, 18, 15032);
     			attr_dev(tr10, "class", "border-b border-gray-200");
-    			add_location(tr10, file, 357, 16, 14483);
+    			add_location(tr10, file, 378, 16, 14857);
     			attr_dev(th11, "scope", "row");
     			attr_dev(th11, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th11, file, 362, 18, 14813);
+    			add_location(th11, file, 383, 18, 15187);
     			attr_dev(td11, "class", "px-6 py-4");
-    			add_location(td11, file, 363, 18, 14931);
+    			add_location(td11, file, 384, 18, 15305);
     			attr_dev(tr11, "class", "border-b border-gray-200");
-    			add_location(tr11, file, 361, 16, 14757);
+    			add_location(tr11, file, 382, 16, 15131);
     			attr_dev(th12, "scope", "row");
     			attr_dev(th12, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th12, file, 366, 18, 15083);
+    			add_location(th12, file, 387, 18, 15457);
     			attr_dev(td12, "class", "px-6 py-4");
-    			add_location(td12, file, 367, 18, 15201);
+    			add_location(td12, file, 388, 18, 15575);
     			attr_dev(tr12, "class", "border-b border-gray-200");
-    			add_location(tr12, file, 365, 16, 15027);
+    			add_location(tr12, file, 386, 16, 15401);
     			attr_dev(th13, "scope", "row");
     			attr_dev(th13, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th13, file, 370, 18, 15353);
+    			add_location(th13, file, 391, 18, 15727);
     			attr_dev(td13, "class", "px-6 py-4");
-    			add_location(td13, file, 371, 18, 15471);
+    			add_location(td13, file, 392, 18, 15845);
     			attr_dev(tr13, "class", "border-b border-gray-200");
-    			add_location(tr13, file, 369, 16, 15297);
+    			add_location(tr13, file, 390, 16, 15671);
     			attr_dev(th14, "scope", "row");
     			attr_dev(th14, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th14, file, 374, 18, 15623);
+    			add_location(th14, file, 395, 18, 15997);
     			attr_dev(td14, "class", "px-6 py-4");
-    			add_location(td14, file, 375, 18, 15741);
+    			add_location(td14, file, 396, 18, 16115);
     			attr_dev(tr14, "class", "border-b border-gray-200");
-    			add_location(tr14, file, 373, 16, 15567);
+    			add_location(tr14, file, 394, 16, 15941);
     			attr_dev(th15, "scope", "row");
     			attr_dev(th15, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th15, file, 378, 18, 15892);
+    			add_location(th15, file, 399, 18, 16266);
     			attr_dev(td15, "class", "px-6 py-4");
-    			add_location(td15, file, 379, 18, 16007);
+    			add_location(td15, file, 400, 18, 16381);
     			attr_dev(tr15, "class", "border-b border-gray-200");
-    			add_location(tr15, file, 377, 16, 15836);
+    			add_location(tr15, file, 398, 16, 16210);
     			attr_dev(th16, "scope", "row");
     			attr_dev(th16, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th16, file, 382, 18, 16155);
+    			add_location(th16, file, 403, 18, 16529);
     			attr_dev(td16, "class", "px-6 py-4");
-    			add_location(td16, file, 383, 18, 16270);
+    			add_location(td16, file, 404, 18, 16644);
     			attr_dev(tr16, "class", "border-b border-gray-200");
-    			add_location(tr16, file, 381, 16, 16099);
-    			add_location(tbody, file, 304, 14, 10988);
+    			add_location(tr16, file, 402, 16, 16473);
+    			add_location(tbody, file, 325, 14, 11362);
     			attr_dev(table, "class", "w-full text-sm text-left text-gray-500");
-    			add_location(table, file, 298, 12, 10673);
+    			add_location(table, file, 319, 12, 11047);
     			attr_dev(div1, "class", "relative overflow-x-auto shadow-md");
-    			add_location(div1, file, 297, 10, 10612);
+    			add_location(div1, file, 318, 10, 10986);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div0, anchor);
@@ -8763,17 +8811,17 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(button0, "click", /*siteListView*/ ctx[15], false, false, false),
-    					listen_dev(button1, "click", /*click_handler_3*/ ctx[22], false, false, false)
+    					listen_dev(button0, "click", /*siteListView*/ ctx[14], false, false, false),
+    					listen_dev(button1, "click", /*click_handler_3*/ ctx[21], false, false, false)
     				];
 
     				mounted = true;
     			}
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty[0] & /*siteDetailInfo*/ 32 && t6_value !== (t6_value = /*siteDetailInfo*/ ctx[5].platPlc + "")) set_data_dev(t6, t6_value);
+    			if (dirty[0] & /*siteDetailInfo*/ 64 && t6_value !== (t6_value = /*siteDetailInfo*/ ctx[6].platPlc + "")) set_data_dev(t6, t6_value);
 
-    			if (/*$roadViewUrl*/ ctx[11]) {
+    			if (/*$roadViewUrl*/ ctx[10]) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
@@ -8786,22 +8834,22 @@ var app = (function () {
     				if_block = null;
     			}
 
-    			if (dirty[0] & /*siteDetailInfo*/ 32 && t11_value !== (t11_value = /*siteDetailInfo*/ ctx[5].mainPurpsCdNm + "")) set_data_dev(t11, t11_value);
-    			if (dirty[0] & /*siteDetailInfo*/ 32 && t15_value !== (t15_value = /*siteDetailInfo*/ ctx[5].totArea + "")) set_data_dev(t15, t15_value);
-    			if (dirty[0] & /*siteDetailInfo*/ 32 && t19_value !== (t19_value = /*siteDetailInfo*/ ctx[5].bldNm + "")) set_data_dev(t19, t19_value);
-    			if (dirty[0] & /*siteDetailInfo*/ 32 && t23_value !== (t23_value = /*siteDetailInfo*/ ctx[5].useAprDay + "")) set_data_dev(t23, t23_value);
-    			if (dirty[0] & /*siteDetailInfo*/ 32 && t27_value !== (t27_value = /*siteDetailInfo*/ ctx[5].archPmsDay + "")) set_data_dev(t27, t27_value);
-    			if (dirty[0] & /*siteDetailInfo*/ 32 && t31_value !== (t31_value = /*siteDetailInfo*/ ctx[5].archPmsDay + "")) set_data_dev(t31, t31_value);
-    			if (dirty[0] & /*siteDetailInfo*/ 32 && t35_value !== (t35_value = /*siteDetailInfo*/ ctx[5].guyukCdNm + "")) set_data_dev(t35, t35_value);
-    			if (dirty[0] & /*siteDetailInfo*/ 32 && t39_value !== (t39_value = /*siteDetailInfo*/ ctx[5].archArea + "")) set_data_dev(t39, t39_value);
-    			if (dirty[0] & /*siteDetailInfo*/ 32 && t43_value !== (t43_value = /*siteDetailInfo*/ ctx[5].bcRat + "")) set_data_dev(t43, t43_value);
-    			if (dirty[0] & /*siteDetailInfo*/ 32 && t47_value !== (t47_value = /*siteDetailInfo*/ ctx[5].vlRatEstmTotArea + "")) set_data_dev(t47, t47_value);
-    			if (dirty[0] & /*siteDetailInfo*/ 32 && t51_value !== (t51_value = /*siteDetailInfo*/ ctx[5].stcnsSchedDay + "")) set_data_dev(t51, t51_value);
-    			if (dirty[0] & /*siteDetailInfo*/ 32 && t55_value !== (t55_value = /*siteDetailInfo*/ ctx[5].stcnsDelayDay + "")) set_data_dev(t55, t55_value);
-    			if (dirty[0] & /*siteDetailInfo*/ 32 && t59_value !== (t59_value = /*siteDetailInfo*/ ctx[5].stcnsSchedDay + "")) set_data_dev(t59, t59_value);
-    			if (dirty[0] & /*siteDetailInfo*/ 32 && t63_value !== (t63_value = /*siteDetailInfo*/ ctx[5].realStcnsDay + "")) set_data_dev(t63, t63_value);
-    			if (dirty[0] & /*siteDetailInfo*/ 32 && t67_value !== (t67_value = /*siteDetailInfo*/ ctx[5].jimokCdNm + "")) set_data_dev(t67, t67_value);
-    			if (dirty[0] & /*siteDetailInfo*/ 32 && t71_value !== (t71_value = /*siteDetailInfo*/ ctx[5].jiyukCdNm + "")) set_data_dev(t71, t71_value);
+    			if (dirty[0] & /*siteDetailInfo*/ 64 && t11_value !== (t11_value = /*siteDetailInfo*/ ctx[6].mainPurpsCdNm + "")) set_data_dev(t11, t11_value);
+    			if (dirty[0] & /*siteDetailInfo*/ 64 && t15_value !== (t15_value = /*siteDetailInfo*/ ctx[6].totArea + "")) set_data_dev(t15, t15_value);
+    			if (dirty[0] & /*siteDetailInfo*/ 64 && t19_value !== (t19_value = /*siteDetailInfo*/ ctx[6].bldNm + "")) set_data_dev(t19, t19_value);
+    			if (dirty[0] & /*siteDetailInfo*/ 64 && t23_value !== (t23_value = /*siteDetailInfo*/ ctx[6].useAprDay + "")) set_data_dev(t23, t23_value);
+    			if (dirty[0] & /*siteDetailInfo*/ 64 && t27_value !== (t27_value = /*siteDetailInfo*/ ctx[6].archPmsDay + "")) set_data_dev(t27, t27_value);
+    			if (dirty[0] & /*siteDetailInfo*/ 64 && t31_value !== (t31_value = /*siteDetailInfo*/ ctx[6].archPmsDay + "")) set_data_dev(t31, t31_value);
+    			if (dirty[0] & /*siteDetailInfo*/ 64 && t35_value !== (t35_value = /*siteDetailInfo*/ ctx[6].guyukCdNm + "")) set_data_dev(t35, t35_value);
+    			if (dirty[0] & /*siteDetailInfo*/ 64 && t39_value !== (t39_value = /*siteDetailInfo*/ ctx[6].archArea + "")) set_data_dev(t39, t39_value);
+    			if (dirty[0] & /*siteDetailInfo*/ 64 && t43_value !== (t43_value = /*siteDetailInfo*/ ctx[6].bcRat + "")) set_data_dev(t43, t43_value);
+    			if (dirty[0] & /*siteDetailInfo*/ 64 && t47_value !== (t47_value = /*siteDetailInfo*/ ctx[6].vlRatEstmTotArea + "")) set_data_dev(t47, t47_value);
+    			if (dirty[0] & /*siteDetailInfo*/ 64 && t51_value !== (t51_value = /*siteDetailInfo*/ ctx[6].stcnsSchedDay + "")) set_data_dev(t51, t51_value);
+    			if (dirty[0] & /*siteDetailInfo*/ 64 && t55_value !== (t55_value = /*siteDetailInfo*/ ctx[6].stcnsDelayDay + "")) set_data_dev(t55, t55_value);
+    			if (dirty[0] & /*siteDetailInfo*/ 64 && t59_value !== (t59_value = /*siteDetailInfo*/ ctx[6].stcnsSchedDay + "")) set_data_dev(t59, t59_value);
+    			if (dirty[0] & /*siteDetailInfo*/ 64 && t63_value !== (t63_value = /*siteDetailInfo*/ ctx[6].realStcnsDay + "")) set_data_dev(t63, t63_value);
+    			if (dirty[0] & /*siteDetailInfo*/ 64 && t67_value !== (t67_value = /*siteDetailInfo*/ ctx[6].jimokCdNm + "")) set_data_dev(t67, t67_value);
+    			if (dirty[0] & /*siteDetailInfo*/ 64 && t71_value !== (t71_value = /*siteDetailInfo*/ ctx[6].jiyukCdNm + "")) set_data_dev(t71, t71_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div0);
@@ -8817,14 +8865,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(279:8) {#if siteDetailToggle && siteDetailInfo}",
+    		source: "(300:8) {#if siteDetailToggle && siteDetailInfo}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (310:20) {#if $roadViewUrl}
+    // (331:20) {#if $roadViewUrl}
     function create_if_block_2(ctx) {
     	let a;
     	let svg;
@@ -8837,20 +8885,20 @@ var app = (function () {
     			path = svg_element("path");
     			attr_dev(path, "stroke-linecap", "round");
     			attr_dev(path, "d", "M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z");
-    			add_location(path, file, 312, 26, 11640);
+    			add_location(path, file, 333, 26, 12014);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "fill", "none");
     			attr_dev(svg, "viewBox", "0 0 24 24");
     			attr_dev(svg, "stroke-width", "1.5");
     			attr_dev(svg, "stroke", "currentColor");
     			attr_dev(svg, "class", "w-5 h-5 pointer-events-none");
-    			add_location(svg, file, 311, 25, 11464);
-    			attr_dev(a, "href", /*$roadViewUrl*/ ctx[11]);
+    			add_location(svg, file, 332, 25, 11838);
+    			attr_dev(a, "href", /*$roadViewUrl*/ ctx[10]);
     			attr_dev(a, "target", "_blank");
     			attr_dev(a, "rel", "noreferrer");
     			attr_dev(a, "class", "text-indigo-600 hover:text-indigo-500 ml-2");
     			attr_dev(a, "title", "로드맵 보기");
-    			add_location(a, file, 310, 22, 11317);
+    			add_location(a, file, 331, 22, 11691);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, a, anchor);
@@ -8858,8 +8906,8 @@ var app = (function () {
     			append_dev(svg, path);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty[0] & /*$roadViewUrl*/ 2048) {
-    				attr_dev(a, "href", /*$roadViewUrl*/ ctx[11]);
+    			if (dirty[0] & /*$roadViewUrl*/ 1024) {
+    				attr_dev(a, "href", /*$roadViewUrl*/ ctx[10]);
     			}
     		},
     		d: function destroy(detaching) {
@@ -8871,19 +8919,19 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(310:20) {#if $roadViewUrl}",
+    		source: "(331:20) {#if $roadViewUrl}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (240:6) 
+    // (242:6) 
     function create_content_slot(ctx) {
     	let div;
     	let t;
-    	let if_block0 = /*siteListModalToggle*/ ctx[2] && create_if_block_3(ctx);
-    	let if_block1 = /*siteDetailToggle*/ ctx[3] && /*siteDetailInfo*/ ctx[5] && create_if_block_1(ctx);
+    	let if_block0 = /*siteListModalToggle*/ ctx[3] && create_if_block_3(ctx);
+    	let if_block1 = /*siteDetailToggle*/ ctx[4] && /*siteDetailInfo*/ ctx[6] && create_if_block_1(ctx);
 
     	const block = {
     		c: function create() {
@@ -8893,17 +8941,17 @@ var app = (function () {
     			if (if_block1) if_block1.c();
     			attr_dev(div, "slot", "content");
     			attr_dev(div, "class", "flex flex-col relative px-2 pb-10");
-    			add_location(div, file, 239, 6, 7899);
+    			add_location(div, file, 241, 6, 7571);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
     			if (if_block0) if_block0.m(div, null);
     			append_dev(div, t);
     			if (if_block1) if_block1.m(div, null);
-    			/*div_binding*/ ctx[23](div);
+    			/*div_binding*/ ctx[22](div);
     		},
     		p: function update(ctx, dirty) {
-    			if (/*siteListModalToggle*/ ctx[2]) {
+    			if (/*siteListModalToggle*/ ctx[3]) {
     				if (if_block0) {
     					if_block0.p(ctx, dirty);
     				} else {
@@ -8916,7 +8964,7 @@ var app = (function () {
     				if_block0 = null;
     			}
 
-    			if (/*siteDetailToggle*/ ctx[3] && /*siteDetailInfo*/ ctx[5]) {
+    			if (/*siteDetailToggle*/ ctx[4] && /*siteDetailInfo*/ ctx[6]) {
     				if (if_block1) {
     					if_block1.p(ctx, dirty);
     				} else {
@@ -8933,7 +8981,7 @@ var app = (function () {
     			if (detaching) detach_dev(div);
     			if (if_block0) if_block0.d();
     			if (if_block1) if_block1.d();
-    			/*div_binding*/ ctx[23](null);
+    			/*div_binding*/ ctx[22](null);
     		}
     	};
 
@@ -8941,7 +8989,7 @@ var app = (function () {
     		block,
     		id: create_content_slot.name,
     		type: "slot",
-    		source: "(240:6) ",
+    		source: "(242:6) ",
     		ctx
     	});
 
@@ -8963,8 +9011,8 @@ var app = (function () {
     	let current;
     	let mounted;
     	let dispose;
-    	let if_block0 = !/*modalToggle*/ ctx[1] && create_if_block_4(ctx);
-    	let if_block1 = /*modalToggle*/ ctx[1] && create_if_block$1(ctx);
+    	let if_block0 = !/*modalToggle*/ ctx[2] && create_if_block_4(ctx);
+    	let if_block1 = /*modalToggle*/ ctx[2] && create_if_block$1(ctx);
 
     	const block = {
     		c: function create() {
@@ -8987,24 +9035,24 @@ var app = (function () {
     			option0.__value = "서울특별시";
     			option0.value = option0.__value;
     			option0.selected = true;
-    			add_location(option0, file, 208, 6, 6474);
+    			add_location(option0, file, 208, 6, 6050);
     			option1.__value = "경기도";
     			option1.value = option1.__value;
-    			add_location(option1, file, 209, 6, 6526);
+    			add_location(option1, file, 209, 6, 6102);
     			attr_dev(select, "type", "ra");
     			attr_dev(select, "class", "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 mx-2");
-    			if (/*sidoSelected*/ ctx[10] === void 0) add_render_callback(() => /*select_change_handler*/ ctx[17].call(select));
-    			add_location(select, file, 207, 4, 6289);
+    			if (/*sidoSelected*/ ctx[9] === void 0) add_render_callback(() => /*select_change_handler*/ ctx[16].call(select));
+    			add_location(select, file, 207, 4, 5865);
     			attr_dev(input, "type", "month");
     			attr_dev(input, "class", "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 mx-2");
-    			add_location(input, file, 211, 4, 6581);
+    			add_location(input, file, 211, 4, 6157);
     			attr_dev(button, "type", "button");
     			attr_dev(button, "class", "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mx-2");
-    			add_location(button, file, 212, 4, 6768);
+    			add_location(button, file, 212, 4, 6344);
     			attr_dev(div0, "class", "absolute left-5 top-5 z-10 flex");
-    			add_location(div0, file, 206, 2, 6239);
+    			add_location(div0, file, 206, 2, 5815);
     			attr_dev(div1, "class", "h-full relative");
-    			add_location(div1, file, 204, 0, 6164);
+    			add_location(div1, file, 204, 0, 5740);
     		},
     		l: function claim(nodes) {
     			throw new Error_1("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -9015,39 +9063,39 @@ var app = (function () {
     			append_dev(div0, select);
     			append_dev(select, option0);
     			append_dev(select, option1);
-    			select_option(select, /*sidoSelected*/ ctx[10]);
+    			select_option(select, /*sidoSelected*/ ctx[9]);
     			append_dev(div0, t2);
     			append_dev(div0, input);
-    			set_input_value(input, /*dateSelected*/ ctx[7]);
+    			set_input_value(input, /*dateSelected*/ ctx[8]);
     			append_dev(div0, t3);
     			append_dev(div0, button);
     			append_dev(div1, t5);
     			if (if_block0) if_block0.m(div1, null);
     			append_dev(div1, t6);
     			if (if_block1) if_block1.m(div1, null);
-    			/*div1_binding*/ ctx[24](div1);
+    			/*div1_binding*/ ctx[23](div1);
     			current = true;
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(select, "change", /*select_change_handler*/ ctx[17]),
-    					listen_dev(input, "input", /*input_input_handler*/ ctx[18]),
-    					listen_dev(button, "click", /*click_handler*/ ctx[19], false, false, false)
+    					listen_dev(select, "change", /*select_change_handler*/ ctx[16]),
+    					listen_dev(input, "input", /*input_input_handler*/ ctx[17]),
+    					listen_dev(button, "click", /*click_handler*/ ctx[18], false, false, false)
     				];
 
     				mounted = true;
     			}
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty[0] & /*sidoSelected*/ 1024) {
-    				select_option(select, /*sidoSelected*/ ctx[10]);
+    			if (dirty[0] & /*sidoSelected*/ 512) {
+    				select_option(select, /*sidoSelected*/ ctx[9]);
     			}
 
-    			if (dirty[0] & /*dateSelected*/ 128) {
-    				set_input_value(input, /*dateSelected*/ ctx[7]);
+    			if (dirty[0] & /*dateSelected*/ 256) {
+    				set_input_value(input, /*dateSelected*/ ctx[8]);
     			}
 
-    			if (!/*modalToggle*/ ctx[1]) {
+    			if (!/*modalToggle*/ ctx[2]) {
     				if (if_block0) {
     					if_block0.p(ctx, dirty);
     				} else {
@@ -9060,11 +9108,11 @@ var app = (function () {
     				if_block0 = null;
     			}
 
-    			if (/*modalToggle*/ ctx[1]) {
+    			if (/*modalToggle*/ ctx[2]) {
     				if (if_block1) {
     					if_block1.p(ctx, dirty);
 
-    					if (dirty[0] & /*modalToggle*/ 2) {
+    					if (dirty[0] & /*modalToggle*/ 4) {
     						transition_in(if_block1, 1);
     					}
     				} else {
@@ -9096,7 +9144,7 @@ var app = (function () {
     			if (detaching) detach_dev(div1);
     			if (if_block0) if_block0.d();
     			if (if_block1) if_block1.d();
-    			/*div1_binding*/ ctx[24](null);
+    			/*div1_binding*/ ctx[23](null);
     			mounted = false;
     			run_all(dispose);
     		}
@@ -9126,7 +9174,6 @@ var app = (function () {
     	console.log("법정동 코드 api url : ", url);
 
     	return fetch(url).then(resp => {
-    		console.log("서울시 법정동: ", resp);
     		return resp.text();
     	}).catch(error => {
     		throw new Error(error);
@@ -9136,11 +9183,12 @@ var app = (function () {
     function instance$2($$self, $$props, $$invalidate) {
     	let $roadViewUrl;
     	validate_store(roadViewUrl, 'roadViewUrl');
-    	component_subscribe($$self, roadViewUrl, $$value => $$invalidate(11, $roadViewUrl = $$value));
+    	component_subscribe($$self, roadViewUrl, $$value => $$invalidate(10, $roadViewUrl = $$value));
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('PermissionMap', slots, []);
     	let map; // 카카오지도 객체를 담을 변수입니다.
     	let mapContainer; // 카카오지도를 담을 영역 태그 컨테이너 입니다.
+    	let markers = []; // 마커를 담을 배열입니다.
 
     	// 모달 관련 변수
     	let modalToggle = false;
@@ -9160,13 +9208,7 @@ var app = (function () {
 
     	let today = new Date();
     	let dateSelected = today.getFullYear() + "-" + String(today.getMonth()).padStart(2, "0");
-    	let dateArr = dateSelected.split("-");
-    	let year = dateArr[0];
-    	let month = String(Number(dateArr[1])).padStart(2, "0");
-    	let start = year + month + "01";
-    	let nextMonth = new Date(year, month, 0, 0, 0, 0, 0);
-    	let end = nextMonth.getFullYear() + String(nextMonth.getMonth() + 1).padStart(2, "0") + String(nextMonth.getDate()).padStart(2, "0"); // 종료일
-    	let area = 100; // 면적 조건
+    	let totalArea = 10000; // 면적 조건
     	let sidoSelected = "서울특별시"; // 시도
 
     	// 법정동코드 리스트
@@ -9179,8 +9221,10 @@ var app = (function () {
     		"1165010700",
     		"1165010800",
     		"1165010900",
-    		"1165011000"
+    		"1165011000",
+    		"1111010100"
     	]; //서울특별시 서초구 방배동
+    	// 서울특별시 종로구 청운동
 
     	// 카카오지도에 마커를 표시하고 클릭 이벤트를 등록하는 함수입니다.
     	function pin(elem) {
@@ -9192,13 +9236,12 @@ var app = (function () {
     				elem.coord = coord[0]; // coord(위경도) 속성을 추가합니다.
     				let coords = new kakao.maps.LatLng(elem.coord.y, elem.coord.x);
 
-    				new kakao.maps.Marker({
-    						map,
-    						title: elem.id,
-    						position: coords,
-    						clickable: true
-    					});
-
+    				// let marker = new kakao.maps.Marker({
+    				//   map: map,
+    				//   title: elem.id,
+    				//   position: coords,
+    				//   clickable: true,
+    				// });
     				setMarker(elem, coord);
 
     				rc.getNearestPanoId(coords, 50, function (panoId) {
@@ -9224,10 +9267,13 @@ var app = (function () {
     				clickable: true
     			});
 
+    		$$invalidate(1, markers = [...markers, marker]);
+    		$$invalidate(1, markers = [...markers, marker]);
+
     		kakao.maps.event.addListener(marker, "click", function () {
     			map.setLevel(4);
     			map.setCenter(new kakao.maps.LatLng(coord[0].y, coord[0].x));
-    			$$invalidate(5, siteDetailInfo = elem);
+    			$$invalidate(6, siteDetailInfo = elem);
     			siteDetailView();
     		});
     	}
@@ -9242,7 +9288,6 @@ var app = (function () {
     		url += "&startDate=" + start;
     		url += "&endDate=" + end;
     		url += "&serviceKey=" + apiKey;
-    		console.log("건축인허가정보 서비스 url : ", url);
 
     		return fetch(url).then(resp => {
     			return resp.text();
@@ -9254,50 +9299,49 @@ var app = (function () {
     	}
 
     	// 법정동코드(10자리)로 인허가정보를 반환합니다.
-    	async function getInfo(code, start, end) {
+    	async function getInfo(code) {
+    		let dateArr = dateSelected.split("-");
+    		let year = dateArr[0];
+    		let month = String(Number(dateArr[1])).padStart(2, "0");
+    		let start = year + month + "01";
+    		let nextMonth = new Date(year, month, 0, 0, 0, 0, 0);
+    		let end = nextMonth.getFullYear() + String(nextMonth.getMonth() + 1).padStart(2, "0") + String(nextMonth.getDate()).padStart(2, "0"); // 종료일
     		let info = await getApBasisOulnInfo(code, start, end);
-    		console.log("poppop:", info);
 
     		if (info == undefined) {
+    			// 인허가정보가 없으면 함수를 종료합니다.
     			return;
     		}
 
     		if (Array.isArray(info)) {
     			Object.values(info).forEach(function (el) {
-    				console.log("hhh122", el);
-
-    				// console.log(el.archGbCdNm, el.archGbCdNm == "신축");
-    				// console.log(Number(el.totArea), area, Number(el.totArea) >= area);
-    				// console.log(Number(el.archPmsDay), Number(start), Number(el.archPmsDay) >= Number(start));
-    				if (Number(el.totArea) >= area && Number(el.archPmsDay) >= Number(start) && el.archGbCdNm == "신축") {
-    					console.log("el : ", el);
+    				if (Number(el.totArea) >= totalArea && Number(el.archPmsDay) >= Number(start) && el.archGbCdNm == "신축") {
     					pin(el);
-    					$$invalidate(6, siteList = [...siteList, el]);
+    					$$invalidate(7, siteList = [...siteList, el]);
     				}
     			});
     		} else {
-    			if (Number(info.totArea) >= area && Number(info.archPmsDay) >= Number(start) && info.archGbCdNm == "신축") {
-    				console.log("info : ", info);
+    			if (Number(info.totArea) >= totalArea && Number(info.archPmsDay) >= Number(start) && info.archGbCdNm == "신축") {
     				pin(info);
-    				$$invalidate(6, siteList = [...siteList, info]);
+    				$$invalidate(7, siteList = [...siteList, info]);
     			}
     		}
     	}
 
     	function siteListView() {
-    		$$invalidate(1, modalToggle = true);
-    		$$invalidate(2, siteListModalToggle = true);
-    		$$invalidate(3, siteDetailToggle = false);
+    		$$invalidate(2, modalToggle = true);
+    		$$invalidate(3, siteListModalToggle = true);
+    		$$invalidate(4, siteDetailToggle = false);
     	}
 
     	function siteDetailView() {
-    		$$invalidate(1, modalToggle = true);
-    		$$invalidate(2, siteListModalToggle = false);
-    		$$invalidate(3, siteDetailToggle = true);
+    		$$invalidate(2, modalToggle = true);
+    		$$invalidate(3, siteListModalToggle = false);
+    		$$invalidate(4, siteDetailToggle = true);
     	}
 
     	function closeModal() {
-    		$$invalidate(1, modalToggle = false);
+    		$$invalidate(2, modalToggle = false);
     	}
 
     	onMount(async () => {
@@ -9309,7 +9353,7 @@ var app = (function () {
     		map = new kakao.maps.Map(mapContainer, mapOption);
 
     		codeList.forEach(async function (code) {
-    			getInfo(code, start, end);
+    			getInfo(code);
     		});
     	}); // getStanReginCdList();
 
@@ -9321,40 +9365,42 @@ var app = (function () {
 
     	function select_change_handler() {
     		sidoSelected = select_value(this);
-    		$$invalidate(10, sidoSelected);
+    		$$invalidate(9, sidoSelected);
     	}
 
     	function input_input_handler() {
     		dateSelected = this.value;
-    		$$invalidate(7, dateSelected);
+    		$$invalidate(8, dateSelected);
     	}
 
     	const click_handler = () => {
-    		console.log(dateSelected, start, end);
+    		markers.forEach(marker => marker.setMap(null)); // 이전에 지도에 표시된 마커를 모두 지웁니다.
+    		$$invalidate(7, siteList = []); // 사이트 리스트 변수를 초기화 합니다.
+    		$$invalidate(1, markers = []);
 
     		codeList.forEach(async function (code) {
-    			getInfo(code, start, end);
+    			getInfo(code);
     		});
     	};
 
     	const click_handler_1 = () => {
-    		$$invalidate(1, modalToggle = false);
+    		$$invalidate(2, modalToggle = false);
     	};
 
     	const click_handler_2 = site => {
-    		$$invalidate(5, siteDetailInfo = site);
+    		$$invalidate(6, siteDetailInfo = site);
     		siteDetailView();
     		focus(site);
     	};
 
     	const click_handler_3 = () => {
-    		$$invalidate(1, modalToggle = false);
+    		$$invalidate(2, modalToggle = false);
     	};
 
     	function div_binding($$value) {
     		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
     			sideModal = $$value;
-    			$$invalidate(4, sideModal);
+    			$$invalidate(5, sideModal);
     		});
     	}
 
@@ -9375,9 +9421,11 @@ var app = (function () {
     		rightSideModal,
     		roadViewUrl,
     		xmlStr2Json,
+    		addComma,
     		onMount,
     		map,
     		mapContainer,
+    		markers,
     		modalToggle,
     		siteListModalToggle,
     		siteDetailToggle,
@@ -9388,13 +9436,7 @@ var app = (function () {
     		searchTerm,
     		today,
     		dateSelected,
-    		dateArr,
-    		year,
-    		month,
-    		start,
-    		nextMonth,
-    		end,
-    		area,
+    		totalArea,
     		sidoSelected,
     		apiKey,
     		codeList,
@@ -9413,35 +9455,28 @@ var app = (function () {
     	$$self.$inject_state = $$props => {
     		if ('map' in $$props) map = $$props.map;
     		if ('mapContainer' in $$props) $$invalidate(0, mapContainer = $$props.mapContainer);
-    		if ('modalToggle' in $$props) $$invalidate(1, modalToggle = $$props.modalToggle);
-    		if ('siteListModalToggle' in $$props) $$invalidate(2, siteListModalToggle = $$props.siteListModalToggle);
-    		if ('siteDetailToggle' in $$props) $$invalidate(3, siteDetailToggle = $$props.siteDetailToggle);
+    		if ('markers' in $$props) $$invalidate(1, markers = $$props.markers);
+    		if ('modalToggle' in $$props) $$invalidate(2, modalToggle = $$props.modalToggle);
+    		if ('siteListModalToggle' in $$props) $$invalidate(3, siteListModalToggle = $$props.siteListModalToggle);
+    		if ('siteDetailToggle' in $$props) $$invalidate(4, siteDetailToggle = $$props.siteDetailToggle);
     		if ('expand' in $$props) expand = $$props.expand;
-    		if ('sideModal' in $$props) $$invalidate(4, sideModal = $$props.sideModal);
-    		if ('siteDetailInfo' in $$props) $$invalidate(5, siteDetailInfo = $$props.siteDetailInfo);
-    		if ('siteList' in $$props) $$invalidate(6, siteList = $$props.siteList);
+    		if ('sideModal' in $$props) $$invalidate(5, sideModal = $$props.sideModal);
+    		if ('siteDetailInfo' in $$props) $$invalidate(6, siteDetailInfo = $$props.siteDetailInfo);
+    		if ('siteList' in $$props) $$invalidate(7, siteList = $$props.siteList);
     		if ('searchTerm' in $$props) searchTerm = $$props.searchTerm;
     		if ('today' in $$props) today = $$props.today;
-    		if ('dateSelected' in $$props) $$invalidate(7, dateSelected = $$props.dateSelected);
-    		if ('dateArr' in $$props) dateArr = $$props.dateArr;
-    		if ('year' in $$props) $$invalidate(30, year = $$props.year);
-    		if ('month' in $$props) $$invalidate(31, month = $$props.month);
-    		if ('start' in $$props) $$invalidate(8, start = $$props.start);
-    		if ('nextMonth' in $$props) $$invalidate(32, nextMonth = $$props.nextMonth);
-    		if ('end' in $$props) $$invalidate(9, end = $$props.end);
-    		if ('area' in $$props) area = $$props.area;
-    		if ('sidoSelected' in $$props) $$invalidate(10, sidoSelected = $$props.sidoSelected);
+    		if ('dateSelected' in $$props) $$invalidate(8, dateSelected = $$props.dateSelected);
+    		if ('totalArea' in $$props) totalArea = $$props.totalArea;
+    		if ('sidoSelected' in $$props) $$invalidate(9, sidoSelected = $$props.sidoSelected);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	$$invalidate(8, start = year + month + "01");
-    	$$invalidate(9, end = nextMonth.getFullYear() + String(nextMonth.getMonth() + 1).padStart(2, "0") + String(nextMonth.getDate()).padStart(2, "0"));
-
     	return [
     		mapContainer,
+    		markers,
     		modalToggle,
     		siteListModalToggle,
     		siteDetailToggle,
@@ -9449,8 +9484,6 @@ var app = (function () {
     		siteDetailInfo,
     		siteList,
     		dateSelected,
-    		start,
-    		end,
     		sidoSelected,
     		$roadViewUrl,
     		codeList,

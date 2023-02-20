@@ -6,12 +6,13 @@
   import { detailVeiw } from "../assets/etc/Search.svelte";
 
   import { mobileView, sidoArr, sidoMap, rightSideModal, roadViewUrl } from "../store";
-  import { xmlStr2Json } from "../utils";
+  import { xmlStr2Json, addComma } from "../utils";
   import { onMount } from "svelte";
 
   // 카카오지도 관련 변수
   let map; // 카카오지도 객체를 담을 변수입니다.
   let mapContainer; // 카카오지도를 담을 영역 태그 컨테이너 입니다.
+  let markers = []; // 마커를 담을 배열입니다.
 
   // 모달 관련 변수
   let modalToggle = false;
@@ -28,17 +29,9 @@
   let searchTerm = "";
   let today = new Date();
   let dateSelected = today.getFullYear() + "-" + String(today.getMonth()).padStart(2, "0");
-  let dateArr = dateSelected.split("-");
-  let year = dateArr[0];
-  let month = String(Number(dateArr[1])).padStart(2, "0");
-  let start = year + month + "01";
-  let nextMonth = new Date(year, month, 0, 0, 0, 0, 0);
-  let end = nextMonth.getFullYear() + String(nextMonth.getMonth() + 1).padStart(2, "0") + String(nextMonth.getDate()).padStart(2, "0"); // 종료일
-  let area = 100; // 면적 조건
-  let sidoSelected = "서울특별시"; // 시도
 
-  $: start = year + month + "01";
-  $: end = nextMonth.getFullYear() + String(nextMonth.getMonth() + 1).padStart(2, "0") + String(nextMonth.getDate()).padStart(2, "0");
+  let totalArea = 10000; // 면적 조건
+  let sidoSelected = "서울특별시"; // 시도
 
   // 공공데이터 apiKey
   const apiKey = "GO8tFIo30%2BUG6NoXSzlVzxv2j8eQFigKu9a8RJ9qY47kAnl2u27pVjWIDlvlZ09Yo3NNJeyRt3UJovtQ5Z11ew%3D%3D";
@@ -54,6 +47,7 @@
     "1165010800",
     "1165010900",
     "1165011000",
+    "1111010100", // 서울특별시 종로구 청운동
   ];
 
   // 카카오지도에 마커를 표시하고 클릭 이벤트를 등록하는 함수입니다.
@@ -64,13 +58,14 @@
       if (status == kakao.maps.services.Status.OK) {
         elem.coord = coord[0]; // coord(위경도) 속성을 추가합니다.
         let coords = new kakao.maps.LatLng(elem.coord.y, elem.coord.x);
-        let marker = new kakao.maps.Marker({
-          map: map,
-          title: elem.id,
-          position: coords,
-          clickable: true,
-        });
+        // let marker = new kakao.maps.Marker({
+        //   map: map,
+        //   title: elem.id,
+        //   position: coords,
+        //   clickable: true,
+        // });
         setMarker(elem, coord);
+
         rc.getNearestPanoId(coords, 50, function (panoId) {
           roadViewUrl.set("https://map.kakao.com/?panoid=" + panoId); //Kakao 지도 로드뷰로 보내는 링크
         });
@@ -93,6 +88,9 @@
       clickable: true,
     });
 
+    markers = [...markers, marker];
+
+    markers = [...markers, marker];
     kakao.maps.event.addListener(marker, "click", function () {
       map.setLevel(4);
       map.setCenter(new kakao.maps.LatLng(coord[0].y, coord[0].x));
@@ -111,7 +109,6 @@
     url += "&startDate=" + start;
     url += "&endDate=" + end;
     url += "&serviceKey=" + apiKey;
-    console.log("건축인허가정보 서비스 url : ", url);
 
     return fetch(url)
       .then((resp) => {
@@ -137,7 +134,6 @@
 
     return fetch(url)
       .then((resp) => {
-        console.log("서울시 법정동: ", resp);
         return resp.text();
       })
       .catch((error) => {
@@ -146,27 +142,30 @@
   }
 
   // 법정동코드(10자리)로 인허가정보를 반환합니다.
-  async function getInfo(code, start, end) {
+  async function getInfo(code) {
+    let dateArr = dateSelected.split("-");
+    let year = dateArr[0];
+    let month = String(Number(dateArr[1])).padStart(2, "0");
+    let start = year + month + "01";
+    let nextMonth = new Date(year, month, 0, 0, 0, 0, 0);
+    let end = nextMonth.getFullYear() + String(nextMonth.getMonth() + 1).padStart(2, "0") + String(nextMonth.getDate()).padStart(2, "0"); // 종료일
+
     let info = await getApBasisOulnInfo(code, start, end);
-    console.log("poppop:", info);
+
     if (info == undefined) {
+      // 인허가정보가 없으면 함수를 종료합니다.
       return;
     }
+
     if (Array.isArray(info)) {
       Object.values(info).forEach(function (el) {
-        console.log("hhh122", el);
-        // console.log(el.archGbCdNm, el.archGbCdNm == "신축");
-        // console.log(Number(el.totArea), area, Number(el.totArea) >= area);
-        // console.log(Number(el.archPmsDay), Number(start), Number(el.archPmsDay) >= Number(start));
-        if (Number(el.totArea) >= area && Number(el.archPmsDay) >= Number(start) && el.archGbCdNm == "신축") {
-          console.log("el : ", el);
+        if (Number(el.totArea) >= totalArea && Number(el.archPmsDay) >= Number(start) && el.archGbCdNm == "신축") {
           pin(el);
           siteList = [...siteList, el];
         }
       });
     } else {
-      if (Number(info.totArea) >= area && Number(info.archPmsDay) >= Number(start) && info.archGbCdNm == "신축") {
-        console.log("info : ", info);
+      if (Number(info.totArea) >= totalArea && Number(info.archPmsDay) >= Number(start) && info.archGbCdNm == "신축") {
         pin(info);
         siteList = [...siteList, info];
       }
@@ -195,8 +194,9 @@
       level: 8,
     };
     map = new kakao.maps.Map(mapContainer, mapOption);
+
     codeList.forEach(async function (code) {
-      getInfo(code, start, end);
+      getInfo(code);
     });
     // getStanReginCdList();
   });
@@ -212,9 +212,11 @@
     <input bind:value={dateSelected} type="month" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 mx-2" />
     <button
       on:click={() => {
-        console.log(dateSelected, start, end);
+        markers.forEach((marker) => marker.setMap(null)); // 이전에 지도에 표시된 마커를 모두 지웁니다.
+        siteList = []; // 사이트 리스트 변수를 초기화 합니다.
+        markers = [];
         codeList.forEach(async function (code) {
-          getInfo(code, start, end);
+          getInfo(code);
         });
       }}
       type="button"
@@ -252,7 +254,6 @@
               </svg>
             </button>
           </div>
-          <p>{start} ~ {end}</p>
           <p>{siteList.length}개의 신축 인허가 정보가 있습니다.</p>
           <div class="flex-col">
             {#each siteList as site}
@@ -262,14 +263,34 @@
                   siteDetailView();
                   focus(site);
                 }}
-                class="w-full p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 my-4"
+                class="w-full p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 my-4 text-start"
               >
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">{site.platPlc}</h5>
-                <p class="font-normal text-gray-700 dark:text-gray-400">{site.mainPurpsCdNm}</p>
-                <p class="font-normal text-gray-700 dark:text-gray-400">{site.totArea}</p>
-                <p class="font-normal text-gray-700 dark:text-gray-400">{site.bldNm}</p>
-                <p class="font-normal text-gray-700 dark:text-gray-400">{site.useAprDay}</p>
-                <p class="font-normal text-gray-700 dark:text-gray-400">{site.archPmsDay}</p>
+                <dl class="grid grid-cols-2 mx-auto text-gray-900 gap-4">
+                  <div class="flex flex-col">
+                    <dd class="font-light text-gray-500 dark:text-gray-400">건물명</dd>
+                    <dt class="mb-2 text-xl font-bold truncate">{site.bldNm}</dt>
+                  </div>
+
+                  <div class="flex flex-col">
+                    <dd class="font-light text-gray-500 dark:text-gray-400">용도</dd>
+                    <dt class="mb-2 text-xl font-bold">{site.mainPurpsCdNm}</dt>
+                  </div>
+
+                  <div class="flex flex-col">
+                    <dd class="font-light text-gray-500 dark:text-gray-400">연면적</dd>
+                    <dt class="mb-2 text-xl font-bold">{addComma(site.totArea)} ㎡</dt>
+                  </div>
+
+                  <div class="flex flex-col">
+                    <dd class="font-light text-gray-500 dark:text-gray-400">건축면적</dd>
+                    <dt class="mb-2 text-xl font-bold">{addComma(site.archArea)} ㎡</dt>
+                  </div>
+
+                  <div class="col-span-2">
+                    <dd class="font-light text-gray-500 dark:text-gray-400">주소</dd>
+                    <dt class="mb-2 text-xl font-bold">{site.platPlc}</dt>
+                  </div>
+                </dl>
               </button>
             {/each}
           </div>
