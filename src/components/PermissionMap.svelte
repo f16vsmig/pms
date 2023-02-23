@@ -1,6 +1,8 @@
 <script>
   import SideModal from "./SlideModal.svelte";
 
+  import MapTypeBtn from "../assets/btn/MapTypeBtn.svelte";
+
   import Architecture from "./Architecture.svelte";
 
   import { detailVeiw } from "../assets/etc/Search.svelte";
@@ -188,6 +190,21 @@
     modalToggle = false;
   }
 
+  /**
+   * map/MapTypeBtn.svelte에서 발생한 이벤트를 받아 지도 타입을 변경합니다.
+   * @param event
+   */
+  function setMapType(event) {
+    let mapType = event.detail.value;
+    console.log(mapType);
+
+    if (mapType == "mapView") {
+      return map.setMapTypeId(kakao.maps.MapTypeId.ROADMAP);
+    } else if (mapType == "skyView") {
+      return map.setMapTypeId(kakao.maps.MapTypeId.SKYVIEW);
+    }
+  }
+
   onMount(async () => {
     let mapOption = {
       center: new kakao.maps.LatLng(37.5042135, 127.0016985),
@@ -222,6 +239,10 @@
       type="button"
       class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 mx-2">조회</button
     >
+  </div>
+
+  <div class="absolute bottom-10 left-[calc(50%-53px)] z-10">
+    <MapTypeBtn on:dispatch={setMapType} />
   </div>
 
   <!-- 모달 오픈 버튼 -->

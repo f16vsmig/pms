@@ -4,13 +4,13 @@
   const dispatch = createEventDispatcher();
 
   function setMapView() {
-    dispatch("mapType", {
+    dispatch("dispatch", {
       value: "mapView",
     });
   }
 
   function setSkyView() {
-    dispatch("mapType", {
+    dispatch("dispatch", {
       value: "skyView",
     });
   }
