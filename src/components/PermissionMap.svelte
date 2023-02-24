@@ -6,7 +6,7 @@
   import { detailVeiw } from "../assets/etc/Search.svelte";
 
   import { mobileView, sidoArr, sidoMap, rightSideModal, roadViewUrl } from "../store";
-  import { xmlStr2Json, addComma } from "../utils";
+  import { xmlStr2Json, addComma, csvToJSON } from "../utils";
   import { onMount } from "svelte";
 
   // 카카오지도 관련 변수
@@ -15,8 +15,8 @@
   let markers = []; // 마커를 담을 배열입니다.
 
   // 모달 관련 변수
-  let modalToggle = false;
-  let siteListModalToggle = false;
+  let modalToggle = true;
+  let siteListModalToggle = true;
   let siteDetailToggle = false;
   let expand = "";
   let sideModal;
@@ -33,22 +33,14 @@
   let totalArea = 10000; // 면적 조건
   let sidoSelected = "서울특별시"; // 시도
 
+  let currentNum = 0;
+  let totalNum = 0;
+
   // 공공데이터 apiKey
   const apiKey = "GO8tFIo30%2BUG6NoXSzlVzxv2j8eQFigKu9a8RJ9qY47kAnl2u27pVjWIDlvlZ09Yo3NNJeyRt3UJovtQ5Z11ew%3D%3D";
 
   // 법정동코드 리스트
-  const codeList = [
-    "1165010100", //서울특별시 서초구 방배동
-    "1165010200",
-    "1165010300",
-    "1165010400",
-    "1165010600",
-    "1165010700",
-    "1165010800",
-    "1165010900",
-    "1165011000",
-    "1111010100", // 서울특별시 종로구 청운동
-  ];
+  let codeList = [];
 
   // 카카오지도에 마커를 표시하고 클릭 이벤트를 등록하는 함수입니다.
   function pin(elem) {
@@ -212,6 +204,17 @@
     };
     map = new kakao.maps.Map(mapContainer, mapOption);
 
+    await fetch("/public/seoul_dong_code.csv")
+      .then((response) => response.text())
+      .then((csvText) => csvToJSON(csvText))
+      .then((data) => {
+        totalNum = data.length;
+        for (let i = 0; i < data.length; i++) {
+          let code = data[i];
+          codeList = [...codeList, code["법정동코드"]];
+        }
+      });
+
     codeList.forEach(async function (code) {
       await getInfo(code);
     });
@@ -221,25 +224,6 @@
 
 <div class="h-full relative" bind:this={mapContainer}>
   <!-- 검색창 영역 -->
-  <div class="absolute left-5 top-5 z-10 flex">
-    <select bind:value={sidoSelected} type="ra" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mx-2">
-      <option value="서울특별시" selected>서울특별시</option>
-      <option value="경기도">경기도(예정)</option>
-    </select>
-    <input bind:value={dateSelected} type="month" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mx-2 w-32" />
-    <button
-      on:click={() => {
-        markers.forEach((marker) => marker.setMap(null)); // 이전에 지도에 표시된 마커를 모두 지웁니다.
-        siteList = []; // 사이트 리스트 변수를 초기화 합니다.
-        markers = [];
-        codeList.forEach(async function (code) {
-          getInfo(code);
-        });
-      }}
-      type="button"
-      class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 mx-2">조회</button
-    >
-  </div>
 
   <!-- 모달 오픈 버튼 -->
   {#if !modalToggle}
@@ -292,7 +276,7 @@
             >
           </div>
 
-          <p class="my-5">{siteList.length}개의 신축 인허가 정보가 있습니다.</p>
+          <p class="my-5">{siteList.length}개의 신축 인허가 정보가 있습니다. {(currentNum / totalNum) * 100} %</p>
           <div class="flex-col">
             {#each siteList as site}
               <button
