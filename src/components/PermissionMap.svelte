@@ -1,11 +1,7 @@
 <script>
   import SideModal from "./SlideModal.svelte";
-
-  import Architecture from "./Architecture.svelte";
-
-  import { detailVeiw } from "../assets/etc/Search.svelte";
-
-  import { mobileView, sidoArr, sidoMap, rightSideModal, roadViewUrl } from "../store";
+  import { roadViewUrl } from "../store";
+  // import { Loading } from "../assets/etc/Loading.svelte";
   import { xmlStr2Json, addComma } from "../utils";
   import { onMount } from "svelte";
 
@@ -28,7 +24,7 @@
   // 검색어를 담을 변수입니다.
   let searchTerm = "";
   let today = new Date();
-  let dateSelected = today.getFullYear() + "-" + String(today.getMonth()).padStart(2, "0");
+  let dateSelected = today.getFullYear();
 
   let totalArea = 10000; // 면적 조건
   let sidoSelected = "서울특별시"; // 시도
@@ -143,12 +139,14 @@
 
   // 법정동코드(10자리)로 인허가정보를 반환합니다.
   async function getInfo(code) {
-    let dateArr = dateSelected.split("-");
-    let year = dateArr[0];
-    let month = String(Number(dateArr[1])).padStart(2, "0");
-    let start = year + month + "01";
-    let nextMonth = new Date(year, month, 0, 0, 0, 0, 0);
-    let end = nextMonth.getFullYear() + String(nextMonth.getMonth() + 1).padStart(2, "0") + String(nextMonth.getDate()).padStart(2, "0"); // 종료일
+    let year = dateSelected;
+    let startMonth = "01";
+    let startDay = "01";
+    let endMonth = dateSelected == today.getFullYear() ? String(Number(today.getMonth() + 1)).padStart(2, "0") : "12";
+    let endDay = dateSelected == today.getFullYear() ? String(Number(today.getDate() - 1)).padStart(2, "0") : "31";
+
+    let start = year + startMonth + startDay;
+    let end = year + endMonth + endDay;
 
     let info = await getApBasisOulnInfo(code, start, end);
 
@@ -196,34 +194,13 @@
     map = new kakao.maps.Map(mapContainer, mapOption);
 
     codeList.forEach(async function (code) {
-      getInfo(code);
+      await getInfo(code);
     });
     // getStanReginCdList();
   });
 </script>
 
 <div class="h-full relative" bind:this={mapContainer}>
-  <!-- 검색창 영역 -->
-  <div class="absolute left-5 top-5 z-10 flex">
-    <select bind:value={sidoSelected} type="ra" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mx-2">
-      <option value="서울특별시" selected>서울특별시</option>
-      <option value="경기도">경기도(예정)</option>
-    </select>
-    <input bind:value={dateSelected} type="month" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mx-2 w-32" />
-    <button
-      on:click={() => {
-        markers.forEach((marker) => marker.setMap(null)); // 이전에 지도에 표시된 마커를 모두 지웁니다.
-        siteList = []; // 사이트 리스트 변수를 초기화 합니다.
-        markers = [];
-        codeList.forEach(async function (code) {
-          getInfo(code);
-        });
-      }}
-      type="button"
-      class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 mx-2">조회</button
-    >
-  </div>
-
   <!-- 모달 오픈 버튼 -->
   {#if !modalToggle}
     <button type="button" class="openModal rounded-md absolute p-1.5 z-10 max-sm:bottom-5 md:top-5 right-5" on:click={siteListView}
@@ -243,7 +220,7 @@
         <!-- 리스트뷰 영역 -->
         {#if siteListModalToggle}
           <div class="flex justify-between my-3">
-            <h3>건축인허가(신축) 리스트</h3>
+            <h1 class="text-lg font-bold">건축인허가(신축) 리스트</h1>
             <button
               on:click={() => {
                 modalToggle = false;
@@ -254,7 +231,28 @@
               </svg>
             </button>
           </div>
-          <p>{siteList.length}개의 신축 인허가 정보가 있습니다.</p>
+
+          <!-- 검색창 영역 -->
+          <div class="flex my-5">
+            <select bind:value={sidoSelected} type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-2">
+              <option value="서울특별시" selected>서울특별시</option>
+              <option value="경기도">경기도(예정)</option>
+            </select>
+            <input bind:value={dateSelected} type="number" step="1" max={today.getFullYear()} class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-2 w-32" />
+            <button
+              on:click={() => {
+                markers.forEach((marker) => marker.setMap(null)); // 이전에 지도에 표시된 마커를 모두 지웁니다.
+                siteList = []; // 사이트 리스트 변수를 초기화 합니다.
+                markers = [];
+
+                codeList.forEach((code) => getInfo(code));
+              }}
+              type="button"
+              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 mx-2">조회</button
+            >
+          </div>
+
+          <p class="my-5">{siteList.length}개의 신축 인허가 정보가 있습니다.</p>
           <div class="flex-col">
             {#each siteList as site}
               <button
