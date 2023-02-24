@@ -1,7 +1,11 @@
 <script>
   import SideModal from "./SlideModal.svelte";
-  import { roadViewUrl } from "../store";
-  // import { Loading } from "../assets/etc/Loading.svelte";
+
+  import Architecture from "./Architecture.svelte";
+
+  import { detailVeiw } from "../assets/etc/Search.svelte";
+
+  import { mobileView, sidoArr, sidoMap, rightSideModal, roadViewUrl } from "../store";
   import { xmlStr2Json, addComma } from "../utils";
   import { onMount } from "svelte";
 
@@ -186,6 +190,21 @@
     modalToggle = false;
   }
 
+  /**
+   * map/MapTypeBtn.svelte에서 발생한 이벤트를 받아 지도 타입을 변경합니다.
+   * @param event
+   */
+  function setMapType(event) {
+    let mapType = event.detail.value;
+    console.log(mapType);
+
+    if (mapType == "mapView") {
+      return map.setMapTypeId(kakao.maps.MapTypeId.ROADMAP);
+    } else if (mapType == "skyView") {
+      return map.setMapTypeId(kakao.maps.MapTypeId.SKYVIEW);
+    }
+  }
+
   onMount(async () => {
     let mapOption = {
       center: new kakao.maps.LatLng(37.5042135, 127.0016985),
@@ -201,6 +220,27 @@
 </script>
 
 <div class="h-full relative" bind:this={mapContainer}>
+  <!-- 검색창 영역 -->
+  <div class="absolute left-5 top-5 z-10 flex">
+    <select bind:value={sidoSelected} type="ra" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mx-2">
+      <option value="서울특별시" selected>서울특별시</option>
+      <option value="경기도">경기도(예정)</option>
+    </select>
+    <input bind:value={dateSelected} type="month" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mx-2 w-32" />
+    <button
+      on:click={() => {
+        markers.forEach((marker) => marker.setMap(null)); // 이전에 지도에 표시된 마커를 모두 지웁니다.
+        siteList = []; // 사이트 리스트 변수를 초기화 합니다.
+        markers = [];
+        codeList.forEach(async function (code) {
+          getInfo(code);
+        });
+      }}
+      type="button"
+      class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 mx-2">조회</button
+    >
+  </div>
+
   <!-- 모달 오픈 버튼 -->
   {#if !modalToggle}
     <button type="button" class="openModal rounded-md absolute p-1.5 z-10 max-sm:bottom-5 md:top-5 right-5" on:click={siteListView}
