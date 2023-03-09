@@ -30,7 +30,7 @@
   let today = new Date();
   let dateSelected = today.getFullYear();
 
-  let totalArea = 10000; // 면적 조건
+  let totalArea = 10000; // 면적 제한 조건(m2)
   let sidoSelected = "서울특별시"; // 시도
 
   let currentNum = 0;
@@ -107,6 +107,7 @@
         return resp.text();
       })
       .then((xmlStr) => {
+        console.log("응답: ", xmlStr);
         return xmlStr2Json(xmlStr).response.body.items.item;
       })
       .catch((error) => {
@@ -133,6 +134,15 @@
       });
   }
 
+  // 자체 api 테스트
+  async function getPerms() {
+    return fetch("/api/getPerms")
+      .then((resp) => resp.json())
+      .catch((error) => {
+        throw new Error(error);
+      });
+  }
+
   // 법정동코드(10자리)로 인허가정보를 반환합니다.
   async function getInfo(code) {
     let year = dateSelected;
@@ -145,8 +155,8 @@
     let end = year + endMonth + endDay;
 
     let info = await getApBasisOulnInfo(code, start, end);
-
     if (info == undefined) {
+      console.log("info: ", info, "인포가 없습니다.");
       // 인허가정보가 없으면 함수를 종료합니다.
       return;
     }
@@ -164,6 +174,8 @@
         siteList = [...siteList, info];
       }
     }
+
+    currentNum += 1;
   }
 
   function siteListView() {
@@ -204,6 +216,8 @@
     };
     map = new kakao.maps.Map(mapContainer, mapOption);
 
+    console.log("api test: ", getPerms());
+
     await fetch("/public/seoul_dong_code.csv")
       .then((response) => response.text())
       .then((csvText) => csvToJSON(csvText))
@@ -215,9 +229,9 @@
         }
       });
 
-    codeList.forEach(async function (code) {
-      await getInfo(code);
-    });
+    // codeList.forEach(async function (code) {
+    //   await getInfo(code);
+    // });
     // getStanReginCdList();
   });
 </script>
@@ -276,7 +290,7 @@
             >
           </div>
 
-          <p class="my-5">{siteList.length}개의 신축 인허가 정보가 있습니다. {(currentNum / totalNum) * 100} %</p>
+          <p class="my-5">{siteList.length}개의 신축 인허가 정보가 있습니다. {totalNum > 0 || currentNum != totalNum ? (currentNum / totalNum).toFixed(1) * 100 + " %" : ""} ({currentNum} / {totalNum})</p>
           <div class="flex-col">
             {#each siteList as site}
               <button
@@ -377,10 +391,6 @@
                 <tr class="border-b border-gray-200">
                   <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">사용승인일</th>
                   <td class="px-6 py-4">{siteDetailInfo.useAprDay}</td>
-                </tr>
-                <tr class="border-b border-gray-200">
-                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">건축허가일</th>
-                  <td class="px-6 py-4">{siteDetailInfo.archPmsDay}</td>
                 </tr>
                 <tr class="border-b border-gray-200">
                   <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">건축허가일</th>

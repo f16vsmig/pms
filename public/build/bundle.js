@@ -7861,7 +7861,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (229:2) {#if !modalToggle}
+    // (243:2) {#if !modalToggle}
     function create_if_block_4(ctx) {
     	let button;
     	let svg;
@@ -7877,17 +7877,17 @@ var app = (function () {
     			attr_dev(path, "stroke-linecap", "round");
     			attr_dev(path, "stroke-linejoin", "round");
     			attr_dev(path, "d", "M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z");
-    			add_location(path, file, 231, 8, 6680);
+    			add_location(path, file, 245, 8, 7034);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "fill", "none");
     			attr_dev(svg, "viewBox", "0 0 24 24");
     			attr_dev(svg, "stroke-width", "1.5");
     			attr_dev(svg, "stroke", "currentColor");
     			attr_dev(svg, "class", "w-6 h-6");
-    			add_location(svg, file, 230, 7, 6542);
+    			add_location(svg, file, 244, 7, 6896);
     			attr_dev(button, "type", "button");
     			attr_dev(button, "class", "openModal rounded-md absolute p-1.5 z-10 max-sm:bottom-5 md:top-5 right-5 svelte-2i2pv4");
-    			add_location(button, file, 229, 4, 6407);
+    			add_location(button, file, 243, 4, 6761);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -7911,14 +7911,14 @@ var app = (function () {
     		block,
     		id: create_if_block_4.name,
     		type: "if",
-    		source: "(229:2) {#if !modalToggle}",
+    		source: "(243:2) {#if !modalToggle}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (241:2) {#if modalToggle}
+    // (255:2) {#if modalToggle}
     function create_if_block$1(ctx) {
     	let sidemodal;
     	let current;
@@ -7942,7 +7942,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const sidemodal_changes = {};
 
-    			if (dirty[0] & /*sideModal, siteDetailInfo, $roadViewUrl, modalToggle, siteDetailToggle, siteList, totalNum, markers, codeList, dateSelected, sidoSelected, siteListModalToggle*/ 8190 | dirty[1] & /*$$scope*/ 256) {
+    			if (dirty[0] & /*sideModal, siteDetailInfo, $roadViewUrl, modalToggle, siteDetailToggle, siteList, totalNum, currentNum, markers, codeList, dateSelected, sidoSelected, siteListModalToggle*/ 16382 | dirty[1] & /*$$scope*/ 256) {
     				sidemodal_changes.$$scope = { dirty, ctx };
     			}
 
@@ -7966,14 +7966,14 @@ var app = (function () {
     		block,
     		id: create_if_block$1.name,
     		type: "if",
-    		source: "(241:2) {#if modalToggle}",
+    		source: "(255:2) {#if modalToggle}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (245:8) {#if siteListModalToggle}
+    // (259:8) {#if siteListModalToggle}
     function create_if_block_3(ctx) {
     	let div0;
     	let h1;
@@ -7995,10 +7995,18 @@ var app = (function () {
     	let t9_value = /*siteList*/ ctx[7].length + "";
     	let t9;
     	let t10;
-    	let t11_value = /*currentNum*/ ctx[14] / /*totalNum*/ ctx[10] * 100 + "";
+
+    	let t11_value = (/*totalNum*/ ctx[11] > 0 || /*currentNum*/ ctx[10] != /*totalNum*/ ctx[11]
+    	? (/*currentNum*/ ctx[10] / /*totalNum*/ ctx[11]).toFixed(1) * 100 + " %"
+    	: "") + "";
+
     	let t11;
     	let t12;
     	let t13;
+    	let t14;
+    	let t15;
+    	let t16;
+    	let t17;
     	let div2;
     	let mounted;
     	let dispose;
@@ -8036,8 +8044,12 @@ var app = (function () {
     			t9 = text(t9_value);
     			t10 = text("개의 신축 인허가 정보가 있습니다. ");
     			t11 = text(t11_value);
-    			t12 = text(" %");
-    			t13 = space();
+    			t12 = text(" (");
+    			t13 = text(/*currentNum*/ ctx[10]);
+    			t14 = text(" / ");
+    			t15 = text(/*totalNum*/ ctx[11]);
+    			t16 = text(")");
+    			t17 = space();
     			div2 = element("div");
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -8045,46 +8057,46 @@ var app = (function () {
     			}
 
     			attr_dev(h1, "class", "text-lg font-bold");
-    			add_location(h1, file, 246, 12, 7331);
+    			add_location(h1, file, 260, 12, 7685);
     			attr_dev(path, "stroke-linecap", "round");
     			attr_dev(path, "stroke-linejoin", "round");
     			attr_dev(path, "d", "M6 18L18 6M6 6l12 12");
-    			add_location(path, file, 253, 16, 7680);
+    			add_location(path, file, 267, 16, 8034);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "fill", "none");
     			attr_dev(svg, "viewBox", "0 0 24 24");
     			attr_dev(svg, "stroke-width", "1.5");
     			attr_dev(svg, "stroke", "currentColor");
     			attr_dev(svg, "class", "w-5 h-5 pointer-events-none");
-    			add_location(svg, file, 252, 14, 7514);
-    			add_location(button0, file, 247, 12, 7392);
+    			add_location(svg, file, 266, 14, 7868);
+    			add_location(button0, file, 261, 12, 7746);
     			attr_dev(div0, "class", "flex justify-between my-3");
-    			add_location(div0, file, 245, 10, 7279);
+    			add_location(div0, file, 259, 10, 7633);
     			option0.__value = "서울특별시";
     			option0.value = option0.__value;
     			option0.selected = true;
-    			add_location(option0, file, 261, 14, 8089);
+    			add_location(option0, file, 275, 14, 8443);
     			option1.__value = "경기도";
     			option1.value = option1.__value;
-    			add_location(option1, file, 262, 14, 8149);
+    			add_location(option1, file, 276, 14, 8503);
     			attr_dev(select, "type", "text");
     			attr_dev(select, "class", "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-2");
     			if (/*sidoSelected*/ ctx[9] === void 0) add_render_callback(() => /*select_change_handler*/ ctx[20].call(select));
-    			add_location(select, file, 260, 12, 7894);
+    			add_location(select, file, 274, 12, 8248);
     			attr_dev(input, "type", "number");
     			attr_dev(input, "step", "1");
-    			attr_dev(input, "max", /*today*/ ctx[13].getFullYear());
+    			attr_dev(input, "max", /*today*/ ctx[14].getFullYear());
     			attr_dev(input, "class", "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-2 w-32");
-    			add_location(input, file, 264, 12, 8220);
+    			add_location(input, file, 278, 12, 8574);
     			attr_dev(button1, "type", "button");
     			attr_dev(button1, "class", "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 mx-2");
-    			add_location(button1, file, 265, 12, 8456);
+    			add_location(button1, file, 279, 12, 8810);
     			attr_dev(div1, "class", "flex my-5");
-    			add_location(div1, file, 259, 10, 7858);
+    			add_location(div1, file, 273, 10, 8212);
     			attr_dev(p, "class", "my-5");
-    			add_location(p, file, 278, 10, 8977);
+    			add_location(p, file, 292, 10, 9331);
     			attr_dev(div2, "class", "flex-col");
-    			add_location(div2, file, 279, 10, 9078);
+    			add_location(div2, file, 293, 10, 9522);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div0, anchor);
@@ -8110,7 +8122,11 @@ var app = (function () {
     			append_dev(p, t10);
     			append_dev(p, t11);
     			append_dev(p, t12);
-    			insert_dev(target, t13, anchor);
+    			append_dev(p, t13);
+    			append_dev(p, t14);
+    			append_dev(p, t15);
+    			append_dev(p, t16);
+    			insert_dev(target, t17, anchor);
     			insert_dev(target, div2, anchor);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -8138,7 +8154,13 @@ var app = (function () {
     			}
 
     			if (dirty[0] & /*siteList*/ 128 && t9_value !== (t9_value = /*siteList*/ ctx[7].length + "")) set_data_dev(t9, t9_value);
-    			if (dirty[0] & /*totalNum*/ 1024 && t11_value !== (t11_value = /*currentNum*/ ctx[14] / /*totalNum*/ ctx[10] * 100 + "")) set_data_dev(t11, t11_value);
+
+    			if (dirty[0] & /*totalNum, currentNum*/ 3072 && t11_value !== (t11_value = (/*totalNum*/ ctx[11] > 0 || /*currentNum*/ ctx[10] != /*totalNum*/ ctx[11]
+    			? (/*currentNum*/ ctx[10] / /*totalNum*/ ctx[11]).toFixed(1) * 100 + " %"
+    			: "") + "")) set_data_dev(t11, t11_value);
+
+    			if (dirty[0] & /*currentNum*/ 1024) set_data_dev(t13, /*currentNum*/ ctx[10]);
+    			if (dirty[0] & /*totalNum*/ 2048) set_data_dev(t15, /*totalNum*/ ctx[11]);
 
     			if (dirty[0] & /*siteDetailInfo, siteList, siteDetailView, focus*/ 295104) {
     				each_value = /*siteList*/ ctx[7];
@@ -8170,7 +8192,7 @@ var app = (function () {
     			if (detaching) detach_dev(div1);
     			if (detaching) detach_dev(t8);
     			if (detaching) detach_dev(p);
-    			if (detaching) detach_dev(t13);
+    			if (detaching) detach_dev(t17);
     			if (detaching) detach_dev(div2);
     			destroy_each(each_blocks, detaching);
     			mounted = false;
@@ -8182,14 +8204,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3.name,
     		type: "if",
-    		source: "(245:8) {#if siteListModalToggle}",
+    		source: "(259:8) {#if siteListModalToggle}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (281:12) {#each siteList as site}
+    // (295:12) {#each siteList as site}
     function create_each_block(ctx) {
     	let button;
     	let dl;
@@ -8279,39 +8301,39 @@ var app = (function () {
     			t20 = text(t20_value);
     			t21 = space();
     			attr_dev(dd0, "class", "font-light text-gray-500 dark:text-gray-400");
-    			add_location(dd0, file, 291, 20, 9596);
+    			add_location(dd0, file, 305, 20, 10040);
     			attr_dev(dt0, "class", "mb-2 text-xl font-bold truncate");
-    			add_location(dt0, file, 292, 20, 9681);
+    			add_location(dt0, file, 306, 20, 10125);
     			attr_dev(div0, "class", "flex flex-col");
-    			add_location(div0, file, 290, 18, 9548);
+    			add_location(div0, file, 304, 18, 9992);
     			attr_dev(dd1, "class", "font-light text-gray-500 dark:text-gray-400");
-    			add_location(dd1, file, 296, 20, 9835);
+    			add_location(dd1, file, 310, 20, 10279);
     			attr_dev(dt1, "class", "mb-2 text-xl font-bold");
-    			add_location(dt1, file, 297, 20, 9919);
+    			add_location(dt1, file, 311, 20, 10363);
     			attr_dev(div1, "class", "flex flex-col");
-    			add_location(div1, file, 295, 18, 9787);
+    			add_location(div1, file, 309, 18, 10231);
     			attr_dev(dd2, "class", "font-light text-gray-500 dark:text-gray-400");
-    			add_location(dd2, file, 301, 20, 10072);
+    			add_location(dd2, file, 315, 20, 10516);
     			attr_dev(dt2, "class", "mb-2 text-xl font-bold");
-    			add_location(dt2, file, 302, 20, 10157);
+    			add_location(dt2, file, 316, 20, 10601);
     			attr_dev(div2, "class", "flex flex-col");
-    			add_location(div2, file, 300, 18, 10024);
+    			add_location(div2, file, 314, 18, 10468);
     			attr_dev(dd3, "class", "font-light text-gray-500 dark:text-gray-400");
-    			add_location(dd3, file, 306, 20, 10316);
+    			add_location(dd3, file, 320, 20, 10760);
     			attr_dev(dt3, "class", "mb-2 text-xl font-bold");
-    			add_location(dt3, file, 307, 20, 10402);
+    			add_location(dt3, file, 321, 20, 10846);
     			attr_dev(div3, "class", "flex flex-col");
-    			add_location(div3, file, 305, 18, 10268);
+    			add_location(div3, file, 319, 18, 10712);
     			attr_dev(dd4, "class", "font-light text-gray-500 dark:text-gray-400");
-    			add_location(dd4, file, 311, 20, 10559);
+    			add_location(dd4, file, 325, 20, 11003);
     			attr_dev(dt4, "class", "mb-2 text-xl font-bold");
-    			add_location(dt4, file, 312, 20, 10643);
+    			add_location(dt4, file, 326, 20, 11087);
     			attr_dev(div4, "class", "col-span-2");
-    			add_location(div4, file, 310, 18, 10514);
+    			add_location(div4, file, 324, 18, 10958);
     			attr_dev(dl, "class", "grid grid-cols-2 mx-auto text-gray-900 gap-4");
-    			add_location(dl, file, 289, 16, 9472);
+    			add_location(dl, file, 303, 16, 9916);
     			attr_dev(button, "class", "w-full p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 my-4 text-start");
-    			add_location(button, file, 281, 14, 9152);
+    			add_location(button, file, 295, 14, 9596);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -8373,14 +8395,14 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(281:12) {#each siteList as site}",
+    		source: "(295:12) {#each siteList as site}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (322:8) {#if siteDetailToggle && siteDetailInfo}
+    // (336:8) {#if siteDetailToggle && siteDetailInfo}
     function create_if_block_1(ctx) {
     	let div0;
     	let button0;
@@ -8443,81 +8465,74 @@ var app = (function () {
     	let th6;
     	let t30;
     	let td6;
-    	let t31_value = /*siteDetailInfo*/ ctx[6].archPmsDay + "";
+    	let t31_value = /*siteDetailInfo*/ ctx[6].guyukCdNm + "";
     	let t31;
     	let t32;
     	let tr7;
     	let th7;
     	let t34;
     	let td7;
-    	let t35_value = /*siteDetailInfo*/ ctx[6].guyukCdNm + "";
+    	let t35_value = /*siteDetailInfo*/ ctx[6].archArea + "";
     	let t35;
     	let t36;
     	let tr8;
     	let th8;
     	let t38;
     	let td8;
-    	let t39_value = /*siteDetailInfo*/ ctx[6].archArea + "";
+    	let t39_value = /*siteDetailInfo*/ ctx[6].bcRat + "";
     	let t39;
     	let t40;
     	let tr9;
     	let th9;
     	let t42;
     	let td9;
-    	let t43_value = /*siteDetailInfo*/ ctx[6].bcRat + "";
+    	let t43_value = /*siteDetailInfo*/ ctx[6].vlRatEstmTotArea + "";
     	let t43;
     	let t44;
     	let tr10;
     	let th10;
     	let t46;
     	let td10;
-    	let t47_value = /*siteDetailInfo*/ ctx[6].vlRatEstmTotArea + "";
+    	let t47_value = /*siteDetailInfo*/ ctx[6].stcnsSchedDay + "";
     	let t47;
     	let t48;
     	let tr11;
     	let th11;
     	let t50;
     	let td11;
-    	let t51_value = /*siteDetailInfo*/ ctx[6].stcnsSchedDay + "";
+    	let t51_value = /*siteDetailInfo*/ ctx[6].stcnsDelayDay + "";
     	let t51;
     	let t52;
     	let tr12;
     	let th12;
     	let t54;
     	let td12;
-    	let t55_value = /*siteDetailInfo*/ ctx[6].stcnsDelayDay + "";
+    	let t55_value = /*siteDetailInfo*/ ctx[6].stcnsSchedDay + "";
     	let t55;
     	let t56;
     	let tr13;
     	let th13;
     	let t58;
     	let td13;
-    	let t59_value = /*siteDetailInfo*/ ctx[6].stcnsSchedDay + "";
+    	let t59_value = /*siteDetailInfo*/ ctx[6].realStcnsDay + "";
     	let t59;
     	let t60;
     	let tr14;
     	let th14;
     	let t62;
     	let td14;
-    	let t63_value = /*siteDetailInfo*/ ctx[6].realStcnsDay + "";
+    	let t63_value = /*siteDetailInfo*/ ctx[6].jimokCdNm + "";
     	let t63;
     	let t64;
     	let tr15;
     	let th15;
     	let t66;
     	let td15;
-    	let t67_value = /*siteDetailInfo*/ ctx[6].jimokCdNm + "";
+    	let t67_value = /*siteDetailInfo*/ ctx[6].jiyukCdNm + "";
     	let t67;
-    	let t68;
-    	let tr16;
-    	let th16;
-    	let t70;
-    	let td16;
-    	let t71_value = /*siteDetailInfo*/ ctx[6].jiyukCdNm + "";
-    	let t71;
     	let mounted;
     	let dispose;
-    	let if_block = /*$roadViewUrl*/ ctx[12] && create_if_block_2(ctx);
+    	let if_block = /*$roadViewUrl*/ ctx[13] && create_if_block_2(ctx);
 
     	const block = {
     		c: function create() {
@@ -8582,231 +8597,217 @@ var app = (function () {
     			t28 = space();
     			tr6 = element("tr");
     			th6 = element("th");
-    			th6.textContent = "건축허가일";
+    			th6.textContent = "구역명";
     			t30 = space();
     			td6 = element("td");
     			t31 = text(t31_value);
     			t32 = space();
     			tr7 = element("tr");
     			th7 = element("th");
-    			th7.textContent = "구역명";
+    			th7.textContent = "건축면적(㎡)";
     			t34 = space();
     			td7 = element("td");
     			t35 = text(t35_value);
     			t36 = space();
     			tr8 = element("tr");
     			th8 = element("th");
-    			th8.textContent = "건축면적(㎡)";
+    			th8.textContent = "건폐율(%)";
     			t38 = space();
     			td8 = element("td");
     			t39 = text(t39_value);
     			t40 = space();
     			tr9 = element("tr");
     			th9 = element("th");
-    			th9.textContent = "건폐율(%)";
+    			th9.textContent = "용적률(%)";
     			t42 = space();
     			td9 = element("td");
     			t43 = text(t43_value);
     			t44 = space();
     			tr10 = element("tr");
     			th10 = element("th");
-    			th10.textContent = "용적률(%)";
+    			th10.textContent = "착공예정일";
     			t46 = space();
     			td10 = element("td");
     			t47 = text(t47_value);
     			t48 = space();
     			tr11 = element("tr");
     			th11 = element("th");
-    			th11.textContent = "착공예정일";
+    			th11.textContent = "착공연기일";
     			t50 = space();
     			td11 = element("td");
     			t51 = text(t51_value);
     			t52 = space();
     			tr12 = element("tr");
     			th12 = element("th");
-    			th12.textContent = "착공연기일";
+    			th12.textContent = "착공예정일";
     			t54 = space();
     			td12 = element("td");
     			t55 = text(t55_value);
     			t56 = space();
     			tr13 = element("tr");
     			th13 = element("th");
-    			th13.textContent = "착공예정일";
+    			th13.textContent = "실제착공일";
     			t58 = space();
     			td13 = element("td");
     			t59 = text(t59_value);
     			t60 = space();
     			tr14 = element("tr");
     			th14 = element("th");
-    			th14.textContent = "실제착공일";
+    			th14.textContent = "지목";
     			t62 = space();
     			td14 = element("td");
     			t63 = text(t63_value);
     			t64 = space();
     			tr15 = element("tr");
     			th15 = element("th");
-    			th15.textContent = "지목";
+    			th15.textContent = "지역";
     			t66 = space();
     			td15 = element("td");
     			t67 = text(t67_value);
-    			t68 = space();
-    			tr16 = element("tr");
-    			th16 = element("th");
-    			th16.textContent = "지역";
-    			t70 = space();
-    			td16 = element("td");
-    			t71 = text(t71_value);
     			attr_dev(path0, "stroke-linecap", "round");
     			attr_dev(path0, "stroke-linejoin", "round");
     			attr_dev(path0, "d", "M15.75 19.5L8.25 12l7.5-7.5");
-    			add_location(path0, file, 325, 16, 11150);
+    			add_location(path0, file, 339, 16, 11594);
     			attr_dev(svg0, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg0, "fill", "none");
     			attr_dev(svg0, "viewBox", "0 0 24 24");
     			attr_dev(svg0, "stroke-width", "1.5");
     			attr_dev(svg0, "stroke", "currentColor");
     			attr_dev(svg0, "class", "w-6 h-6");
-    			add_location(svg0, file, 324, 14, 11004);
-    			add_location(button0, file, 323, 12, 10957);
-    			add_location(h1, file, 328, 12, 11293);
+    			add_location(svg0, file, 338, 14, 11448);
+    			add_location(button0, file, 337, 12, 11401);
+    			add_location(h1, file, 342, 12, 11737);
     			attr_dev(path1, "stroke-linecap", "round");
     			attr_dev(path1, "stroke-linejoin", "round");
     			attr_dev(path1, "d", "M6 18L18 6M6 6l12 12");
-    			add_location(path1, file, 335, 16, 11607);
+    			add_location(path1, file, 349, 16, 12051);
     			attr_dev(svg1, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg1, "fill", "none");
     			attr_dev(svg1, "viewBox", "0 0 24 24");
     			attr_dev(svg1, "stroke-width", "1.5");
     			attr_dev(svg1, "stroke", "currentColor");
     			attr_dev(svg1, "class", "w-5 h-5 pointer-events-none");
-    			add_location(svg1, file, 334, 14, 11441);
-    			add_location(button1, file, 329, 12, 11319);
+    			add_location(svg1, file, 348, 14, 11885);
+    			add_location(button1, file, 343, 12, 11763);
     			attr_dev(div0, "class", "flex justify-between my-3");
-    			add_location(div0, file, 322, 10, 10905);
+    			add_location(div0, file, 336, 10, 11349);
     			attr_dev(th0, "scope", "row");
     			attr_dev(th0, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th0, file, 349, 18, 12215);
+    			add_location(th0, file, 363, 18, 12659);
     			attr_dev(td0, "class", "px-6 py-4 flex");
-    			add_location(td0, file, 350, 18, 12330);
+    			add_location(td0, file, 364, 18, 12774);
     			attr_dev(tr0, "class", "border-b border-gray-200");
-    			add_location(tr0, file, 348, 16, 12159);
+    			add_location(tr0, file, 362, 16, 12603);
     			attr_dev(th1, "scope", "row");
     			attr_dev(th1, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th1, file, 365, 18, 13302);
+    			add_location(th1, file, 379, 18, 13746);
     			attr_dev(td1, "class", "px-6 py-4");
-    			add_location(td1, file, 366, 18, 13418);
+    			add_location(td1, file, 380, 18, 13862);
     			attr_dev(tr1, "class", "border-b border-gray-200");
-    			add_location(tr1, file, 364, 16, 13246);
+    			add_location(tr1, file, 378, 16, 13690);
     			attr_dev(th2, "scope", "row");
     			attr_dev(th2, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th2, file, 369, 18, 13570);
+    			add_location(th2, file, 383, 18, 14014);
     			attr_dev(td2, "class", "px-6 py-4");
-    			add_location(td2, file, 370, 18, 13686);
+    			add_location(td2, file, 384, 18, 14130);
     			attr_dev(tr2, "class", "border-b border-gray-200");
-    			add_location(tr2, file, 368, 16, 13514);
+    			add_location(tr2, file, 382, 16, 13958);
     			attr_dev(th3, "scope", "row");
     			attr_dev(th3, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th3, file, 373, 18, 13832);
+    			add_location(th3, file, 387, 18, 14276);
     			attr_dev(td3, "class", "px-6 py-4");
-    			add_location(td3, file, 374, 18, 13948);
+    			add_location(td3, file, 388, 18, 14392);
     			attr_dev(tr3, "class", "border-b border-gray-200");
-    			add_location(tr3, file, 372, 16, 13776);
+    			add_location(tr3, file, 386, 16, 14220);
     			attr_dev(th4, "scope", "row");
     			attr_dev(th4, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th4, file, 377, 18, 14092);
+    			add_location(th4, file, 391, 18, 14536);
     			attr_dev(td4, "class", "px-6 py-4");
-    			add_location(td4, file, 378, 18, 14210);
+    			add_location(td4, file, 392, 18, 14654);
     			attr_dev(tr4, "class", "border-b border-gray-200");
-    			add_location(tr4, file, 376, 16, 14036);
+    			add_location(tr4, file, 390, 16, 14480);
     			attr_dev(th5, "scope", "row");
     			attr_dev(th5, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th5, file, 381, 18, 14358);
+    			add_location(th5, file, 395, 18, 14802);
     			attr_dev(td5, "class", "px-6 py-4");
-    			add_location(td5, file, 382, 18, 14476);
+    			add_location(td5, file, 396, 18, 14920);
     			attr_dev(tr5, "class", "border-b border-gray-200");
-    			add_location(tr5, file, 380, 16, 14302);
+    			add_location(tr5, file, 394, 16, 14746);
     			attr_dev(th6, "scope", "row");
     			attr_dev(th6, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th6, file, 385, 18, 14625);
+    			add_location(th6, file, 399, 18, 15069);
     			attr_dev(td6, "class", "px-6 py-4");
-    			add_location(td6, file, 386, 18, 14743);
+    			add_location(td6, file, 400, 18, 15185);
     			attr_dev(tr6, "class", "border-b border-gray-200");
-    			add_location(tr6, file, 384, 16, 14569);
+    			add_location(tr6, file, 398, 16, 15013);
     			attr_dev(th7, "scope", "row");
     			attr_dev(th7, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th7, file, 389, 18, 14892);
+    			add_location(th7, file, 403, 18, 15333);
     			attr_dev(td7, "class", "px-6 py-4");
-    			add_location(td7, file, 390, 18, 15008);
+    			add_location(td7, file, 404, 18, 15453);
     			attr_dev(tr7, "class", "border-b border-gray-200");
-    			add_location(tr7, file, 388, 16, 14836);
+    			add_location(tr7, file, 402, 16, 15277);
     			attr_dev(th8, "scope", "row");
     			attr_dev(th8, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th8, file, 393, 18, 15156);
+    			add_location(th8, file, 407, 18, 15600);
     			attr_dev(td8, "class", "px-6 py-4");
-    			add_location(td8, file, 394, 18, 15276);
+    			add_location(td8, file, 408, 18, 15719);
     			attr_dev(tr8, "class", "border-b border-gray-200");
-    			add_location(tr8, file, 392, 16, 15100);
+    			add_location(tr8, file, 406, 16, 15544);
     			attr_dev(th9, "scope", "row");
     			attr_dev(th9, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th9, file, 397, 18, 15423);
+    			add_location(th9, file, 411, 18, 15863);
     			attr_dev(td9, "class", "px-6 py-4");
-    			add_location(td9, file, 398, 18, 15542);
+    			add_location(td9, file, 412, 18, 15982);
     			attr_dev(tr9, "class", "border-b border-gray-200");
-    			add_location(tr9, file, 396, 16, 15367);
+    			add_location(tr9, file, 410, 16, 15807);
     			attr_dev(th10, "scope", "row");
     			attr_dev(th10, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th10, file, 401, 18, 15686);
+    			add_location(th10, file, 415, 18, 16137);
     			attr_dev(td10, "class", "px-6 py-4");
-    			add_location(td10, file, 402, 18, 15805);
+    			add_location(td10, file, 416, 18, 16255);
     			attr_dev(tr10, "class", "border-b border-gray-200");
-    			add_location(tr10, file, 400, 16, 15630);
+    			add_location(tr10, file, 414, 16, 16081);
     			attr_dev(th11, "scope", "row");
     			attr_dev(th11, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th11, file, 405, 18, 15960);
+    			add_location(th11, file, 419, 18, 16407);
     			attr_dev(td11, "class", "px-6 py-4");
-    			add_location(td11, file, 406, 18, 16078);
+    			add_location(td11, file, 420, 18, 16525);
     			attr_dev(tr11, "class", "border-b border-gray-200");
-    			add_location(tr11, file, 404, 16, 15904);
+    			add_location(tr11, file, 418, 16, 16351);
     			attr_dev(th12, "scope", "row");
     			attr_dev(th12, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th12, file, 409, 18, 16230);
+    			add_location(th12, file, 423, 18, 16677);
     			attr_dev(td12, "class", "px-6 py-4");
-    			add_location(td12, file, 410, 18, 16348);
+    			add_location(td12, file, 424, 18, 16795);
     			attr_dev(tr12, "class", "border-b border-gray-200");
-    			add_location(tr12, file, 408, 16, 16174);
+    			add_location(tr12, file, 422, 16, 16621);
     			attr_dev(th13, "scope", "row");
     			attr_dev(th13, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th13, file, 413, 18, 16500);
+    			add_location(th13, file, 427, 18, 16947);
     			attr_dev(td13, "class", "px-6 py-4");
-    			add_location(td13, file, 414, 18, 16618);
+    			add_location(td13, file, 428, 18, 17065);
     			attr_dev(tr13, "class", "border-b border-gray-200");
-    			add_location(tr13, file, 412, 16, 16444);
+    			add_location(tr13, file, 426, 16, 16891);
     			attr_dev(th14, "scope", "row");
     			attr_dev(th14, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th14, file, 417, 18, 16770);
+    			add_location(th14, file, 431, 18, 17216);
     			attr_dev(td14, "class", "px-6 py-4");
-    			add_location(td14, file, 418, 18, 16888);
+    			add_location(td14, file, 432, 18, 17331);
     			attr_dev(tr14, "class", "border-b border-gray-200");
-    			add_location(tr14, file, 416, 16, 16714);
+    			add_location(tr14, file, 430, 16, 17160);
     			attr_dev(th15, "scope", "row");
     			attr_dev(th15, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th15, file, 421, 18, 17039);
+    			add_location(th15, file, 435, 18, 17479);
     			attr_dev(td15, "class", "px-6 py-4");
-    			add_location(td15, file, 422, 18, 17154);
+    			add_location(td15, file, 436, 18, 17594);
     			attr_dev(tr15, "class", "border-b border-gray-200");
-    			add_location(tr15, file, 420, 16, 16983);
-    			attr_dev(th16, "scope", "row");
-    			attr_dev(th16, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th16, file, 425, 18, 17302);
-    			attr_dev(td16, "class", "px-6 py-4");
-    			add_location(td16, file, 426, 18, 17417);
-    			attr_dev(tr16, "class", "border-b border-gray-200");
-    			add_location(tr16, file, 424, 16, 17246);
-    			add_location(tbody, file, 347, 14, 12135);
+    			add_location(tr15, file, 434, 16, 17423);
+    			add_location(tbody, file, 361, 14, 12579);
     			attr_dev(table, "class", "w-full text-sm text-left text-gray-500");
-    			add_location(table, file, 341, 12, 11820);
+    			add_location(table, file, 355, 12, 12264);
     			attr_dev(div1, "class", "relative overflow-x-auto shadow-md");
-    			add_location(div1, file, 340, 10, 11759);
+    			add_location(div1, file, 354, 10, 12203);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div0, anchor);
@@ -8920,12 +8921,6 @@ var app = (function () {
     			append_dev(tr15, t66);
     			append_dev(tr15, td15);
     			append_dev(td15, t67);
-    			append_dev(tbody, t68);
-    			append_dev(tbody, tr16);
-    			append_dev(tr16, th16);
-    			append_dev(tr16, t70);
-    			append_dev(tr16, td16);
-    			append_dev(td16, t71);
 
     			if (!mounted) {
     				dispose = [
@@ -8939,7 +8934,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			if (dirty[0] & /*siteDetailInfo*/ 64 && t6_value !== (t6_value = /*siteDetailInfo*/ ctx[6].platPlc + "")) set_data_dev(t6, t6_value);
 
-    			if (/*$roadViewUrl*/ ctx[12]) {
+    			if (/*$roadViewUrl*/ ctx[13]) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
@@ -8957,17 +8952,16 @@ var app = (function () {
     			if (dirty[0] & /*siteDetailInfo*/ 64 && t19_value !== (t19_value = /*siteDetailInfo*/ ctx[6].bldNm + "")) set_data_dev(t19, t19_value);
     			if (dirty[0] & /*siteDetailInfo*/ 64 && t23_value !== (t23_value = /*siteDetailInfo*/ ctx[6].useAprDay + "")) set_data_dev(t23, t23_value);
     			if (dirty[0] & /*siteDetailInfo*/ 64 && t27_value !== (t27_value = /*siteDetailInfo*/ ctx[6].archPmsDay + "")) set_data_dev(t27, t27_value);
-    			if (dirty[0] & /*siteDetailInfo*/ 64 && t31_value !== (t31_value = /*siteDetailInfo*/ ctx[6].archPmsDay + "")) set_data_dev(t31, t31_value);
-    			if (dirty[0] & /*siteDetailInfo*/ 64 && t35_value !== (t35_value = /*siteDetailInfo*/ ctx[6].guyukCdNm + "")) set_data_dev(t35, t35_value);
-    			if (dirty[0] & /*siteDetailInfo*/ 64 && t39_value !== (t39_value = /*siteDetailInfo*/ ctx[6].archArea + "")) set_data_dev(t39, t39_value);
-    			if (dirty[0] & /*siteDetailInfo*/ 64 && t43_value !== (t43_value = /*siteDetailInfo*/ ctx[6].bcRat + "")) set_data_dev(t43, t43_value);
-    			if (dirty[0] & /*siteDetailInfo*/ 64 && t47_value !== (t47_value = /*siteDetailInfo*/ ctx[6].vlRatEstmTotArea + "")) set_data_dev(t47, t47_value);
-    			if (dirty[0] & /*siteDetailInfo*/ 64 && t51_value !== (t51_value = /*siteDetailInfo*/ ctx[6].stcnsSchedDay + "")) set_data_dev(t51, t51_value);
-    			if (dirty[0] & /*siteDetailInfo*/ 64 && t55_value !== (t55_value = /*siteDetailInfo*/ ctx[6].stcnsDelayDay + "")) set_data_dev(t55, t55_value);
-    			if (dirty[0] & /*siteDetailInfo*/ 64 && t59_value !== (t59_value = /*siteDetailInfo*/ ctx[6].stcnsSchedDay + "")) set_data_dev(t59, t59_value);
-    			if (dirty[0] & /*siteDetailInfo*/ 64 && t63_value !== (t63_value = /*siteDetailInfo*/ ctx[6].realStcnsDay + "")) set_data_dev(t63, t63_value);
-    			if (dirty[0] & /*siteDetailInfo*/ 64 && t67_value !== (t67_value = /*siteDetailInfo*/ ctx[6].jimokCdNm + "")) set_data_dev(t67, t67_value);
-    			if (dirty[0] & /*siteDetailInfo*/ 64 && t71_value !== (t71_value = /*siteDetailInfo*/ ctx[6].jiyukCdNm + "")) set_data_dev(t71, t71_value);
+    			if (dirty[0] & /*siteDetailInfo*/ 64 && t31_value !== (t31_value = /*siteDetailInfo*/ ctx[6].guyukCdNm + "")) set_data_dev(t31, t31_value);
+    			if (dirty[0] & /*siteDetailInfo*/ 64 && t35_value !== (t35_value = /*siteDetailInfo*/ ctx[6].archArea + "")) set_data_dev(t35, t35_value);
+    			if (dirty[0] & /*siteDetailInfo*/ 64 && t39_value !== (t39_value = /*siteDetailInfo*/ ctx[6].bcRat + "")) set_data_dev(t39, t39_value);
+    			if (dirty[0] & /*siteDetailInfo*/ 64 && t43_value !== (t43_value = /*siteDetailInfo*/ ctx[6].vlRatEstmTotArea + "")) set_data_dev(t43, t43_value);
+    			if (dirty[0] & /*siteDetailInfo*/ 64 && t47_value !== (t47_value = /*siteDetailInfo*/ ctx[6].stcnsSchedDay + "")) set_data_dev(t47, t47_value);
+    			if (dirty[0] & /*siteDetailInfo*/ 64 && t51_value !== (t51_value = /*siteDetailInfo*/ ctx[6].stcnsDelayDay + "")) set_data_dev(t51, t51_value);
+    			if (dirty[0] & /*siteDetailInfo*/ 64 && t55_value !== (t55_value = /*siteDetailInfo*/ ctx[6].stcnsSchedDay + "")) set_data_dev(t55, t55_value);
+    			if (dirty[0] & /*siteDetailInfo*/ 64 && t59_value !== (t59_value = /*siteDetailInfo*/ ctx[6].realStcnsDay + "")) set_data_dev(t59, t59_value);
+    			if (dirty[0] & /*siteDetailInfo*/ 64 && t63_value !== (t63_value = /*siteDetailInfo*/ ctx[6].jimokCdNm + "")) set_data_dev(t63, t63_value);
+    			if (dirty[0] & /*siteDetailInfo*/ 64 && t67_value !== (t67_value = /*siteDetailInfo*/ ctx[6].jiyukCdNm + "")) set_data_dev(t67, t67_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div0);
@@ -8983,14 +8977,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(322:8) {#if siteDetailToggle && siteDetailInfo}",
+    		source: "(336:8) {#if siteDetailToggle && siteDetailInfo}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (353:20) {#if $roadViewUrl}
+    // (367:20) {#if $roadViewUrl}
     function create_if_block_2(ctx) {
     	let a;
     	let svg;
@@ -9003,20 +8997,20 @@ var app = (function () {
     			path = svg_element("path");
     			attr_dev(path, "stroke-linecap", "round");
     			attr_dev(path, "d", "M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z");
-    			add_location(path, file, 355, 26, 12787);
+    			add_location(path, file, 369, 26, 13231);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "fill", "none");
     			attr_dev(svg, "viewBox", "0 0 24 24");
     			attr_dev(svg, "stroke-width", "1.5");
     			attr_dev(svg, "stroke", "currentColor");
     			attr_dev(svg, "class", "w-5 h-5 pointer-events-none");
-    			add_location(svg, file, 354, 25, 12611);
-    			attr_dev(a, "href", /*$roadViewUrl*/ ctx[12]);
+    			add_location(svg, file, 368, 25, 13055);
+    			attr_dev(a, "href", /*$roadViewUrl*/ ctx[13]);
     			attr_dev(a, "target", "_blank");
     			attr_dev(a, "rel", "noreferrer");
     			attr_dev(a, "class", "text-indigo-600 hover:text-indigo-500 ml-2");
     			attr_dev(a, "title", "로드맵 보기");
-    			add_location(a, file, 353, 22, 12464);
+    			add_location(a, file, 367, 22, 12908);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, a, anchor);
@@ -9024,8 +9018,8 @@ var app = (function () {
     			append_dev(svg, path);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty[0] & /*$roadViewUrl*/ 4096) {
-    				attr_dev(a, "href", /*$roadViewUrl*/ ctx[12]);
+    			if (dirty[0] & /*$roadViewUrl*/ 8192) {
+    				attr_dev(a, "href", /*$roadViewUrl*/ ctx[13]);
     			}
     		},
     		d: function destroy(detaching) {
@@ -9037,14 +9031,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(353:20) {#if $roadViewUrl}",
+    		source: "(367:20) {#if $roadViewUrl}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (243:6) 
+    // (257:6) 
     function create_content_slot(ctx) {
     	let div;
     	let t;
@@ -9059,7 +9053,7 @@ var app = (function () {
     			if (if_block1) if_block1.c();
     			attr_dev(div, "slot", "content");
     			attr_dev(div, "class", "flex flex-col relative px-2 pb-10");
-    			add_location(div, file, 242, 6, 7125);
+    			add_location(div, file, 256, 6, 7479);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -9107,7 +9101,7 @@ var app = (function () {
     		block,
     		id: create_content_slot.name,
     		type: "slot",
-    		source: "(243:6) ",
+    		source: "(257:6) ",
     		ctx
     	});
 
@@ -9128,7 +9122,7 @@ var app = (function () {
     			t = space();
     			if (if_block1) if_block1.c();
     			attr_dev(div, "class", "h-full relative");
-    			add_location(div, file, 224, 0, 6288);
+    			add_location(div, file, 238, 0, 6642);
     		},
     		l: function claim(nodes) {
     			throw new Error_1("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -9225,10 +9219,17 @@ var app = (function () {
     	});
     }
 
+    // 자체 api 테스트
+    async function getPerms() {
+    	return fetch("/api/getPerms").then(resp => resp.json()).catch(error => {
+    		throw new Error(error);
+    	});
+    }
+
     function instance$2($$self, $$props, $$invalidate) {
     	let $roadViewUrl;
     	validate_store(roadViewUrl, 'roadViewUrl');
-    	component_subscribe($$self, roadViewUrl, $$value => $$invalidate(12, $roadViewUrl = $$value));
+    	component_subscribe($$self, roadViewUrl, $$value => $$invalidate(13, $roadViewUrl = $$value));
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('PermissionMap', slots, []);
     	let map; // 카카오지도 객체를 담을 변수입니다.
@@ -9253,7 +9254,7 @@ var app = (function () {
 
     	let today = new Date();
     	let dateSelected = today.getFullYear();
-    	let totalArea = 10000; // 면적 조건
+    	let totalArea = 10000; // 면적 제한 조건(m2)
     	let sidoSelected = "서울특별시"; // 시도
     	let currentNum = 0;
     	let totalNum = 0;
@@ -9327,6 +9328,7 @@ var app = (function () {
     		return fetch(url).then(resp => {
     			return resp.text();
     		}).then(xmlStr => {
+    			console.log("응답: ", xmlStr);
     			return xmlStr2Json(xmlStr).response.body.items.item;
     		}).catch(error => {
     			throw new Error(error);
@@ -9352,6 +9354,8 @@ var app = (function () {
     		let info = await getApBasisOulnInfo(code, start, end);
 
     		if (info == undefined) {
+    			console.log("info: ", info, "인포가 없습니다.");
+
     			// 인허가정보가 없으면 함수를 종료합니다.
     			return;
     		}
@@ -9369,6 +9373,8 @@ var app = (function () {
     				$$invalidate(7, siteList = [...siteList, info]);
     			}
     		}
+
+    		$$invalidate(10, currentNum += 1);
     	}
 
     	function siteListView() {
@@ -9409,20 +9415,20 @@ var app = (function () {
     		};
 
     		map = new kakao.maps.Map(mapContainer, mapOption);
+    		console.log("api test: ", getPerms());
 
     		await fetch("/public/seoul_dong_code.csv").then(response => response.text()).then(csvText => csvToJSON(csvText)).then(data => {
-    			$$invalidate(10, totalNum = data.length);
+    			$$invalidate(11, totalNum = data.length);
 
     			for (let i = 0; i < data.length; i++) {
     				let code = data[i];
-    				$$invalidate(11, codeList = [...codeList, code["법정동코드"]]);
+    				$$invalidate(12, codeList = [...codeList, code["법정동코드"]]);
     			}
     		});
-
-    		codeList.forEach(async function (code) {
-    			await getInfo(code);
-    		});
-    	}); // getStanReginCdList();
+    	}); // codeList.forEach(async function (code) {
+    	//   await getInfo(code);
+    	// });
+    	// getStanReginCdList();
 
     	const writable_props = [];
 
@@ -9512,6 +9518,7 @@ var app = (function () {
     		setMarker,
     		getApBasisOulnInfo,
     		getStanReginCdList,
+    		getPerms,
     		getInfo,
     		siteListView,
     		siteDetailView,
@@ -9532,13 +9539,13 @@ var app = (function () {
     		if ('siteDetailInfo' in $$props) $$invalidate(6, siteDetailInfo = $$props.siteDetailInfo);
     		if ('siteList' in $$props) $$invalidate(7, siteList = $$props.siteList);
     		if ('searchTerm' in $$props) searchTerm = $$props.searchTerm;
-    		if ('today' in $$props) $$invalidate(13, today = $$props.today);
+    		if ('today' in $$props) $$invalidate(14, today = $$props.today);
     		if ('dateSelected' in $$props) $$invalidate(8, dateSelected = $$props.dateSelected);
     		if ('totalArea' in $$props) totalArea = $$props.totalArea;
     		if ('sidoSelected' in $$props) $$invalidate(9, sidoSelected = $$props.sidoSelected);
-    		if ('currentNum' in $$props) $$invalidate(14, currentNum = $$props.currentNum);
-    		if ('totalNum' in $$props) $$invalidate(10, totalNum = $$props.totalNum);
-    		if ('codeList' in $$props) $$invalidate(11, codeList = $$props.codeList);
+    		if ('currentNum' in $$props) $$invalidate(10, currentNum = $$props.currentNum);
+    		if ('totalNum' in $$props) $$invalidate(11, totalNum = $$props.totalNum);
+    		if ('codeList' in $$props) $$invalidate(12, codeList = $$props.codeList);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -9556,11 +9563,11 @@ var app = (function () {
     		siteList,
     		dateSelected,
     		sidoSelected,
+    		currentNum,
     		totalNum,
     		codeList,
     		$roadViewUrl,
     		today,
-    		currentNum,
     		focus,
     		getInfo,
     		siteListView,

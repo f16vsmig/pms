@@ -2,16 +2,22 @@ package main
 
 import (
 	"crypto/tls"
+	"gopms/db"
 	"log"
 	"os"
 	"strings"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
+	"github.com/gofiber/fiber/v2/middleware/logger"
+	"github.com/gofiber/fiber/v2/middleware/recover"
 	"github.com/gofiber/template/html"
 )
 
 func main() {
+
+	// 종료시 db 클라이언트 종료
+	defer db.Client.Close()
 
 	// Template render engine
 	engine := html.New("./templates", ".html")
@@ -24,11 +30,18 @@ func main() {
 	// Static resources
 	app.Static("/public", "./public")
 
+	// Default middleware config
+	app.Use(logger.New())
+
 	// Routes
 	app.Get("/", func(c *fiber.Ctx) error {
 		return c.Render("index", nil)
 	})
-
+	app.Get("/api/getPerms", func(c *fiber.Ctx) error {
+		return c.JSON(map[string]string{
+			"test": "success",
+		})
+	})
 	app.Get("/about", func(c *fiber.Ctx) error {
 		return c.Render("index", nil)
 	})
@@ -38,6 +51,9 @@ func main() {
 		return c.SendStatus(404) // => 404 "Not Found"
 	})
 
+	// Default middleware config
+	app.Use(recover.New())
+
 	// CORS middleware handler
 	// app.Use(cors.New())
 	app.Use(cors.New(cors.Config{
@@ -45,6 +61,10 @@ func main() {
 		AllowHeaders: "Origin, Content-Type, Accept",
 	}))
 
+	// 인허가 데이터 수집
+	// api.GetPermsDataFromCSV("20220101", "20221231")
+
+	// 서버 실행
 	debug := false
 	for _, v := range os.Args {
 		if strings.Index(v, "-debug") == 0 {
