@@ -8,6 +8,8 @@
   import { mobileView, sidoArr, sidoMap, rightSideModal, roadViewUrl } from "../store";
   import { xmlStr2Json, addComma, csvToJSON } from "../utils";
   import { onMount } from "svelte";
+  import Pagination from "./Pagination.svelte";
+  import Loading from "../assets/etc/Loading.svelte";
 
   // 카카오지도 관련 변수
   let map; // 카카오지도 객체를 담을 변수입니다.
@@ -134,13 +136,39 @@
       });
   }
 
-  // 자체 api 테스트
-  async function getPerms() {
-    return fetch("/api/getPerms")
-      .then((resp) => resp.json())
+  let permsResult; // 인허가정보를 담을 변수입니다.
+  let totalPermsCnt = 0; // 인허가정보 건수를 담을 변수입니다.
+  let lastPageNo = 1;
+  let currentPage = 1;
+
+  // 인허가정보 불러오는 api
+  async function getPerms(event) {
+    currentPage = event ? (currentPage = event.detail.currentPage) : 1;
+
+    let url = "/api/getPerms";
+    url = url + "?page=" + currentPage;
+    url = sidoSelected ? url + "&sido=" + sidoSelected : url;
+    console.log(url);
+
+    return fetch(url)
+      .then(async (resp) => (permsResult = await resp.json()))
+      .then((json) => {
+        totalPermsCnt = json.total_cnt;
+        lastPageNo = json.total_page;
+      })
       .catch((error) => {
         throw new Error(error);
       });
+  }
+
+  // 첫 페이지의 인허가 정보를 불러옵니다.
+  let perms = getPerms();
+
+  // 새로운 페이지의 인허가 정보를 불러옵니다. 이 때 하위 컴포넌트에서 dispatch된 이벤트를 받습니다.
+  function getPermsHandler(event) {
+    console.log(event);
+
+    perms = getPerms(event);
   }
 
   // 법정동코드(10자리)로 인허가정보를 반환합니다.
@@ -216,18 +244,16 @@
     };
     map = new kakao.maps.Map(mapContainer, mapOption);
 
-    console.log("api test: ", getPerms());
-
-    await fetch("/public/seoul_dong_code.csv")
-      .then((response) => response.text())
-      .then((csvText) => csvToJSON(csvText))
-      .then((data) => {
-        totalNum = data.length;
-        for (let i = 0; i < data.length; i++) {
-          let code = data[i];
-          codeList = [...codeList, code["법정동코드"]];
-        }
-      });
+    // await fetch("/public/seoul_dong_code.csv")
+    //   .then((response) => response.text())
+    //   .then((csvText) => csvToJSON(csvText))
+    //   .then((data) => {
+    //     totalNum = data.length;
+    //     for (let i = 0; i < data.length; i++) {
+    //       let code = data[i];
+    //       codeList = [...codeList, code["법정동코드"]];
+    //     }
+    //   });
 
     // codeList.forEach(async function (code) {
     //   await getInfo(code);
@@ -273,10 +299,10 @@
           <!-- 검색창 영역 -->
           <div class="flex my-5">
             <select bind:value={sidoSelected} type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-2">
-              <option value="서울특별시" selected>서울특별시</option>
-              <option value="경기도">경기도(예정)</option>
+              <option value="서울특별시" selected>서울특별시(예정)</option>
+              <!-- <option value="경기도">경기도(예정)</option> -->
             </select>
-            <input bind:value={dateSelected} type="number" step="1" max={today.getFullYear()} class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-2 w-32" />
+
             <button
               on:click={() => {
                 markers.forEach((marker) => marker.setMap(null)); // 이전에 지도에 표시된 마커를 모두 지웁니다.
@@ -290,46 +316,62 @@
             >
           </div>
 
-          <p class="my-5">{siteList.length}개의 신축 인허가 정보가 있습니다. {totalNum > 0 || currentNum != totalNum ? (currentNum / totalNum).toFixed(1) * 100 + " %" : ""} ({currentNum} / {totalNum})</p>
-          <div class="flex-col">
-            {#each siteList as site}
-              <button
-                on:click={() => {
-                  siteDetailInfo = site;
-                  siteDetailView();
-                  focus(site);
-                }}
-                class="w-full p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 my-4 text-start"
-              >
-                <dl class="grid grid-cols-2 mx-auto text-gray-900 gap-4">
-                  <div class="flex flex-col">
-                    <dd class="font-light text-gray-500 dark:text-gray-400">건물명</dd>
-                    <dt class="mb-2 text-xl font-bold truncate">{site.bldNm}</dt>
-                  </div>
+          {#await perms}
+            <p class="my-5">인허가 정보가 {addComma(totalPermsCnt, 0)}건 있습니다.</p>
 
-                  <div class="flex flex-col">
-                    <dd class="font-light text-gray-500 dark:text-gray-400">용도</dd>
-                    <dt class="mb-2 text-xl font-bold">{site.mainPurpsCdNm}</dt>
-                  </div>
+            <!-- 페이지 영역 -->
+            <Pagination on:moveTo={getPermsHandler} {lastPageNo} {currentPage} />
 
-                  <div class="flex flex-col">
-                    <dd class="font-light text-gray-500 dark:text-gray-400">연면적</dd>
-                    <dt class="mb-2 text-xl font-bold">{addComma(site.totArea)} ㎡</dt>
-                  </div>
+            <Loading />
+          {:then}
+            <p class="my-5">인허가 정보가 {addComma(totalPermsCnt, 0)}건 있습니다.</p>
 
-                  <div class="flex flex-col">
-                    <dd class="font-light text-gray-500 dark:text-gray-400">건축면적</dd>
-                    <dt class="mb-2 text-xl font-bold">{addComma(site.archArea)} ㎡</dt>
-                  </div>
+            <!-- 페이지 영역 -->
+            <Pagination on:moveTo={getPermsHandler} {lastPageNo} {currentPage} />
 
-                  <div class="col-span-2">
-                    <dd class="font-light text-gray-500 dark:text-gray-400">주소</dd>
-                    <dt class="mb-2 text-xl font-bold">{site.platPlc}</dt>
-                  </div>
-                </dl>
-              </button>
-            {/each}
-          </div>
+            <div class="flex-col">
+              {#each permsResult.result as site}
+                <button
+                  on:click={() => {
+                    siteDetailInfo = site;
+                    siteDetailView();
+                    focus(site);
+                  }}
+                  class="w-full p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 my-4 text-start"
+                >
+                  <dl class="flex-col mx-auto text-gray-900 gap-4">
+                    <div class="flex-col">
+                      <dt class="mb-2 truncate">건축허가일 {site.arch_pms_day}</dt>
+                    </div>
+
+                    <div class="flex-col">
+                      <dt class="mb-2 truncate">사용승인일 {site.use_apr_day}</dt>
+                    </div>
+
+                    <div class="flex-col">
+                      <dt class="mb-2 text-xl font-bold truncate">{site.arch_gb_cd_nm}</dt>
+                    </div>
+
+                    <div class="flex-col">
+                      <dt class="mb-2 text-xl font-bold truncate">{site.plat_plc}</dt>
+                    </div>
+
+                    <div class="flex-col">
+                      <dt class="mb-2 text-xl font-bold truncate">{site.bld_nm}</dt>
+                    </div>
+
+                    <div class="flex-col">
+                      <dt class="mb-2 text-xl font-bold">{site.main_purps_cd_nm}</dt>
+                    </div>
+
+                    <div class="flex-col">
+                      <dt class="mb-2 text-xl font-bold">{addComma(site.tot_area)} ㎡</dt>
+                    </div>
+                  </dl>
+                </button>
+              {/each}
+            </div>
+          {/await}
         {/if}
 
         <!-- 상세보기 영역 -->

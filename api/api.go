@@ -8,12 +8,18 @@ import (
 	"fmt"
 	"gopms/db"
 	"gopms/ent"
+	"gopms/ent/perms"
 	"io/ioutil"
+	"math"
 	"os"
 	"time"
 
 	"net/http"
+
+	"github.com/gofiber/fiber/v2"
 )
+
+var ctx = context.Background()
 
 type item struct {
 	GuyukCdNm        string  `xml:"guyukCdNm"`
@@ -60,7 +66,7 @@ type item struct {
 	JiguCdNm         string  `xml:"jiguCdNm"`
 }
 
-type response struct {
+type permsXmlResponse struct {
 	// XMLName xml.Name `xml:"response"`
 	// Header  string   `xml:"header"`
 	Items []item `xml:"body>items>item"`
@@ -97,7 +103,7 @@ func GetPermsData(code, startDate, endDate string) error {
 		return err
 	}
 
-	var response response
+	var response permsXmlResponse
 
 	xmlerr := xml.Unmarshal(body, &response)
 	if xmlerr != nil {
@@ -208,4 +214,39 @@ func GetPermsDataFromCSV(startDate, endDate string) error {
 	}
 
 	return nil
+}
+
+func GetPermsDataAPI(c *fiber.Ctx) error {
+	page := c.QueryInt("page", 1)
+	// sido := c.Query("sido", "서울특별시")
+	cnt := 10
+
+	instance := db.Client.Perms.Query().Order(ent.Desc(perms.FieldArchPmsDay))
+
+	totalCnt, err := instance.Count(ctx)
+	if err != nil {
+		fmt.Println("전체 인허가 정보수 쿼리중 에러가 발생했습니다. " + err.Error())
+		return c.JSON(fiber.NewError(fiber.StatusInternalServerError, "전체 인허가 정보수를 쿼라하던 중 에러가 발생했습니다. "+err.Error()))
+	}
+
+	totalPage := math.Round((float64(totalCnt / cnt)))
+
+	perms, err := instance.Offset(page * cnt).Limit(cnt).All(ctx)
+
+	if err != nil {
+		fmt.Println("인허가정보 쿼리중 에러가 발생했습니다. " + err.Error())
+		return c.JSON(fiber.NewError(fiber.StatusBadRequest, "인허가정보 쿼리중 에러가 발생했습니다. "+err.Error()))
+	}
+
+	return c.JSON(
+		fiber.Map{
+			"status":     fiber.StatusOK,
+			"msg":        "인허가 정보를 성공적으로 불러왔습니다.",
+			"total_page": totalPage,
+			"total_cnt":  totalCnt,
+			"page":       page,
+			"cnt":        cnt,
+			"result":     perms,
+		})
+
 }

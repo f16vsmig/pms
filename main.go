@@ -2,6 +2,7 @@ package main
 
 import (
 	"crypto/tls"
+	"gopms/api"
 	"gopms/db"
 	"log"
 	"os"
@@ -37,11 +38,8 @@ func main() {
 	app.Get("/", func(c *fiber.Ctx) error {
 		return c.Render("index", nil)
 	})
-	app.Get("/api/getPerms", func(c *fiber.Ctx) error {
-		return c.JSON(map[string]string{
-			"test": "success",
-		})
-	})
+	app.Get("/api/getPerms", api.GetPermsDataAPI)
+
 	app.Get("/about", func(c *fiber.Ctx) error {
 		return c.Render("index", nil)
 	})
