@@ -3,7 +3,7 @@
 
   export let lastPageNo;
   export let currentPage = 1;
-  const pageCnt = 10;
+  const pageCnt = 8;
 
   const pageArr = () => {
     const startPage = Math.ceil(currentPage / pageCnt);
@@ -43,9 +43,10 @@
       <li>
         <button
           on:click={() => {
-            currentPage = pageNo;
-            console.log(currentPage);
-            moveTo();
+            if (currentPage != pageNo) {
+              currentPage = pageNo;
+              moveTo();
+            }
           }}
           class="px-3 py-2 leading-tight {currentPage == pageNo ? 'text-blue-500 underline' : 'text-gray-500 hover:text-gray-700'}">{pageNo}</button
         >

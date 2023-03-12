@@ -20,13 +20,13 @@ type PermsCreate struct {
 	hooks    []Hook
 }
 
-// SetGuyukCd sets the "guyukCd" field.
+// SetGuyukCd sets the "guyuk_cd" field.
 func (pc *PermsCreate) SetGuyukCd(s string) *PermsCreate {
 	pc.mutation.SetGuyukCd(s)
 	return pc
 }
 
-// SetNillableGuyukCd sets the "guyukCd" field if the given value is not nil.
+// SetNillableGuyukCd sets the "guyuk_cd" field if the given value is not nil.
 func (pc *PermsCreate) SetNillableGuyukCd(s *string) *PermsCreate {
 	if s != nil {
 		pc.SetGuyukCd(*s)
@@ -34,13 +34,13 @@ func (pc *PermsCreate) SetNillableGuyukCd(s *string) *PermsCreate {
 	return pc
 }
 
-// SetGuyukCdNm sets the "guyukCdNm" field.
+// SetGuyukCdNm sets the "guyuk_cd_nm" field.
 func (pc *PermsCreate) SetGuyukCdNm(s string) *PermsCreate {
 	pc.mutation.SetGuyukCdNm(s)
 	return pc
 }
 
-// SetNillableGuyukCdNm sets the "guyukCdNm" field if the given value is not nil.
+// SetNillableGuyukCdNm sets the "guyuk_cd_nm" field if the given value is not nil.
 func (pc *PermsCreate) SetNillableGuyukCdNm(s *string) *PermsCreate {
 	if s != nil {
 		pc.SetGuyukCdNm(*s)
@@ -48,13 +48,13 @@ func (pc *PermsCreate) SetNillableGuyukCdNm(s *string) *PermsCreate {
 	return pc
 }
 
-// SetJimokCd sets the "jimokCd" field.
+// SetJimokCd sets the "jimok_cd" field.
 func (pc *PermsCreate) SetJimokCd(s string) *PermsCreate {
 	pc.mutation.SetJimokCd(s)
 	return pc
 }
 
-// SetNillableJimokCd sets the "jimokCd" field if the given value is not nil.
+// SetNillableJimokCd sets the "jimok_cd" field if the given value is not nil.
 func (pc *PermsCreate) SetNillableJimokCd(s *string) *PermsCreate {
 	if s != nil {
 		pc.SetJimokCd(*s)
@@ -62,13 +62,13 @@ func (pc *PermsCreate) SetNillableJimokCd(s *string) *PermsCreate {
 	return pc
 }
 
-// SetJimokCdNm sets the "jimokCdNm" field.
+// SetJimokCdNm sets the "jimok_cd_nm" field.
 func (pc *PermsCreate) SetJimokCdNm(s string) *PermsCreate {
 	pc.mutation.SetJimokCdNm(s)
 	return pc
 }
 
-// SetNillableJimokCdNm sets the "jimokCdNm" field if the given value is not nil.
+// SetNillableJimokCdNm sets the "jimok_cd_nm" field if the given value is not nil.
 func (pc *PermsCreate) SetNillableJimokCdNm(s *string) *PermsCreate {
 	if s != nil {
 		pc.SetJimokCdNm(*s)
@@ -76,13 +76,13 @@ func (pc *PermsCreate) SetNillableJimokCdNm(s *string) *PermsCreate {
 	return pc
 }
 
-// SetJiyukCd sets the "jiyukCd" field.
+// SetJiyukCd sets the "jiyuk_cd" field.
 func (pc *PermsCreate) SetJiyukCd(s string) *PermsCreate {
 	pc.mutation.SetJiyukCd(s)
 	return pc
 }
 
-// SetNillableJiyukCd sets the "jiyukCd" field if the given value is not nil.
+// SetNillableJiyukCd sets the "jiyuk_cd" field if the given value is not nil.
 func (pc *PermsCreate) SetNillableJiyukCd(s *string) *PermsCreate {
 	if s != nil {
 		pc.SetJiyukCd(*s)
@@ -90,13 +90,13 @@ func (pc *PermsCreate) SetNillableJiyukCd(s *string) *PermsCreate {
 	return pc
 }
 
-// SetJiyukCdNm sets the "jiyukCdNm" field.
+// SetJiyukCdNm sets the "jiyuk_cd_nm" field.
 func (pc *PermsCreate) SetJiyukCdNm(s string) *PermsCreate {
 	pc.mutation.SetJiyukCdNm(s)
 	return pc
 }
 
-// SetNillableJiyukCdNm sets the "jiyukCdNm" field if the given value is not nil.
+// SetNillableJiyukCdNm sets the "jiyuk_cd_nm" field if the given value is not nil.
 func (pc *PermsCreate) SetNillableJiyukCdNm(s *string) *PermsCreate {
 	if s != nil {
 		pc.SetJiyukCdNm(*s)
@@ -104,13 +104,13 @@ func (pc *PermsCreate) SetNillableJiyukCdNm(s *string) *PermsCreate {
 	return pc
 }
 
-// SetJiguCd sets the "jiguCd" field.
+// SetJiguCd sets the "jigu_cd" field.
 func (pc *PermsCreate) SetJiguCd(s string) *PermsCreate {
 	pc.mutation.SetJiguCd(s)
 	return pc
 }
 
-// SetNillableJiguCd sets the "jiguCd" field if the given value is not nil.
+// SetNillableJiguCd sets the "jigu_cd" field if the given value is not nil.
 func (pc *PermsCreate) SetNillableJiguCd(s *string) *PermsCreate {
 	if s != nil {
 		pc.SetJiguCd(*s)
@@ -118,13 +118,13 @@ func (pc *PermsCreate) SetNillableJiguCd(s *string) *PermsCreate {
 	return pc
 }
 
-// SetJiguCdNm sets the "jiguCdNm" field.
+// SetJiguCdNm sets the "jigu_cd_nm" field.
 func (pc *PermsCreate) SetJiguCdNm(s string) *PermsCreate {
 	pc.mutation.SetJiguCdNm(s)
 	return pc
 }
 
-// SetNillableJiguCdNm sets the "jiguCdNm" field if the given value is not nil.
+// SetNillableJiguCdNm sets the "jigu_cd_nm" field if the given value is not nil.
 func (pc *PermsCreate) SetNillableJiguCdNm(s *string) *PermsCreate {
 	if s != nil {
 		pc.SetJiguCdNm(*s)
@@ -426,13 +426,13 @@ func (pc *PermsCreate) SetNillableUseAprDay(s *string) *PermsCreate {
 	return pc
 }
 
-// SetPlatPlc sets the "platPlc" field.
+// SetPlatPlc sets the "plat_plc" field.
 func (pc *PermsCreate) SetPlatPlc(s string) *PermsCreate {
 	pc.mutation.SetPlatPlc(s)
 	return pc
 }
 
-// SetNillablePlatPlc sets the "platPlc" field if the given value is not nil.
+// SetNillablePlatPlc sets the "plat_plc" field if the given value is not nil.
 func (pc *PermsCreate) SetNillablePlatPlc(s *string) *PermsCreate {
 	if s != nil {
 		pc.SetPlatPlc(*s)
@@ -440,13 +440,13 @@ func (pc *PermsCreate) SetNillablePlatPlc(s *string) *PermsCreate {
 	return pc
 }
 
-// SetSigunguCd sets the "sigunguCd" field.
+// SetSigunguCd sets the "sigungu_cd" field.
 func (pc *PermsCreate) SetSigunguCd(s string) *PermsCreate {
 	pc.mutation.SetSigunguCd(s)
 	return pc
 }
 
-// SetNillableSigunguCd sets the "sigunguCd" field if the given value is not nil.
+// SetNillableSigunguCd sets the "sigungu_cd" field if the given value is not nil.
 func (pc *PermsCreate) SetNillableSigunguCd(s *string) *PermsCreate {
 	if s != nil {
 		pc.SetSigunguCd(*s)
@@ -454,13 +454,13 @@ func (pc *PermsCreate) SetNillableSigunguCd(s *string) *PermsCreate {
 	return pc
 }
 
-// SetBjdongCd sets the "bjdongCd" field.
+// SetBjdongCd sets the "bjdong_cd" field.
 func (pc *PermsCreate) SetBjdongCd(s string) *PermsCreate {
 	pc.mutation.SetBjdongCd(s)
 	return pc
 }
 
-// SetNillableBjdongCd sets the "bjdongCd" field if the given value is not nil.
+// SetNillableBjdongCd sets the "bjdong_cd" field if the given value is not nil.
 func (pc *PermsCreate) SetNillableBjdongCd(s *string) *PermsCreate {
 	if s != nil {
 		pc.SetBjdongCd(*s)
@@ -468,16 +468,16 @@ func (pc *PermsCreate) SetNillableBjdongCd(s *string) *PermsCreate {
 	return pc
 }
 
-// SetPlatGbCd sets the "platGbCd" field.
-func (pc *PermsCreate) SetPlatGbCd(s string) *PermsCreate {
-	pc.mutation.SetPlatGbCd(s)
+// SetPlatGBCd sets the "plat_gb_cd" field.
+func (pc *PermsCreate) SetPlatGBCd(s string) *PermsCreate {
+	pc.mutation.SetPlatGBCd(s)
 	return pc
 }
 
-// SetNillablePlatGbCd sets the "platGbCd" field if the given value is not nil.
-func (pc *PermsCreate) SetNillablePlatGbCd(s *string) *PermsCreate {
+// SetNillablePlatGBCd sets the "plat_gb_cd" field if the given value is not nil.
+func (pc *PermsCreate) SetNillablePlatGBCd(s *string) *PermsCreate {
 	if s != nil {
-		pc.SetPlatGbCd(*s)
+		pc.SetPlatGBCd(*s)
 	}
 	return pc
 }
@@ -516,13 +516,13 @@ func (pc *PermsCreate) SetMgmPmsrgstPk(s string) *PermsCreate {
 	return pc
 }
 
-// SetSplotNm sets the "splotNm" field.
+// SetSplotNm sets the "splot_nm" field.
 func (pc *PermsCreate) SetSplotNm(s string) *PermsCreate {
 	pc.mutation.SetSplotNm(s)
 	return pc
 }
 
-// SetNillableSplotNm sets the "splotNm" field if the given value is not nil.
+// SetNillableSplotNm sets the "splot_nm" field if the given value is not nil.
 func (pc *PermsCreate) SetNillableSplotNm(s *string) *PermsCreate {
 	if s != nil {
 		pc.SetSplotNm(*s)
@@ -838,9 +838,9 @@ func (pc *PermsCreate) createSpec() (*Perms, *sqlgraph.CreateSpec) {
 		_spec.SetField(perms.FieldBjdongCd, field.TypeString, value)
 		_node.BjdongCd = value
 	}
-	if value, ok := pc.mutation.PlatGbCd(); ok {
-		_spec.SetField(perms.FieldPlatGbCd, field.TypeString, value)
-		_node.PlatGbCd = value
+	if value, ok := pc.mutation.PlatGBCd(); ok {
+		_spec.SetField(perms.FieldPlatGBCd, field.TypeString, value)
+		_node.PlatGBCd = value
 	}
 	if value, ok := pc.mutation.Bun(); ok {
 		_spec.SetField(perms.FieldBun, field.TypeString, value)

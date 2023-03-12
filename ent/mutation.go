@@ -3811,14 +3811,14 @@ type PermsMutation struct {
 	op                      Op
 	typ                     string
 	id                      *int
-	guyukCd                 *string
-	guyukCdNm               *string
-	jimokCd                 *string
-	jimokCdNm               *string
-	jiyukCd                 *string
-	jiyukCdNm               *string
-	jiguCd                  *string
-	jiguCdNm                *string
+	guyuk_cd                *string
+	guyuk_cd_nm             *string
+	jimok_cd                *string
+	jimok_cd_nm             *string
+	jiyuk_cd                *string
+	jiyuk_cd_nm             *string
+	jigu_cd                 *string
+	jigu_cd_nm              *string
 	arch_gb_cd_nm           *string
 	arch_gb_cd              *string
 	plat_area               *uint32
@@ -3852,14 +3852,14 @@ type PermsMutation struct {
 	real_stcns_day          *string
 	arch_pms_day            *string
 	use_apr_day             *string
-	platPlc                 *string
-	sigunguCd               *string
-	bjdongCd                *string
-	platGbCd                *string
+	plat_plc                *string
+	sigungu_cd              *string
+	bjdong_cd               *string
+	plat_gb_cd              *string
 	bun                     *string
 	ji                      *string
 	mgm_pmsrgst_pk          *string
-	splotNm                 *string
+	splot_nm                *string
 	block                   *string
 	lot                     *string
 	crtn_day                *string
@@ -3972,21 +3972,21 @@ func (m *PermsMutation) IDs(ctx context.Context) ([]int, error) {
 	}
 }
 
-// SetGuyukCd sets the "guyukCd" field.
+// SetGuyukCd sets the "guyuk_cd" field.
 func (m *PermsMutation) SetGuyukCd(s string) {
-	m.guyukCd = &s
+	m.guyuk_cd = &s
 }
 
-// GuyukCd returns the value of the "guyukCd" field in the mutation.
+// GuyukCd returns the value of the "guyuk_cd" field in the mutation.
 func (m *PermsMutation) GuyukCd() (r string, exists bool) {
-	v := m.guyukCd
+	v := m.guyuk_cd
 	if v == nil {
 		return
 	}
 	return *v, true
 }
 
-// OldGuyukCd returns the old "guyukCd" field's value of the Perms entity.
+// OldGuyukCd returns the old "guyuk_cd" field's value of the Perms entity.
 // If the Perms object wasn't provided to the builder, the object is fetched from the database.
 // An error is returned if the mutation operation is not UpdateOne, or the database query fails.
 func (m *PermsMutation) OldGuyukCd(ctx context.Context) (v string, err error) {
@@ -4003,39 +4003,39 @@ func (m *PermsMutation) OldGuyukCd(ctx context.Context) (v string, err error) {
 	return oldValue.GuyukCd, nil
 }
 
-// ClearGuyukCd clears the value of the "guyukCd" field.
+// ClearGuyukCd clears the value of the "guyuk_cd" field.
 func (m *PermsMutation) ClearGuyukCd() {
-	m.guyukCd = nil
+	m.guyuk_cd = nil
 	m.clearedFields[perms.FieldGuyukCd] = struct{}{}
 }
 
-// GuyukCdCleared returns if the "guyukCd" field was cleared in this mutation.
+// GuyukCdCleared returns if the "guyuk_cd" field was cleared in this mutation.
 func (m *PermsMutation) GuyukCdCleared() bool {
 	_, ok := m.clearedFields[perms.FieldGuyukCd]
 	return ok
 }
 
-// ResetGuyukCd resets all changes to the "guyukCd" field.
+// ResetGuyukCd resets all changes to the "guyuk_cd" field.
 func (m *PermsMutation) ResetGuyukCd() {
-	m.guyukCd = nil
+	m.guyuk_cd = nil
 	delete(m.clearedFields, perms.FieldGuyukCd)
 }
 
-// SetGuyukCdNm sets the "guyukCdNm" field.
+// SetGuyukCdNm sets the "guyuk_cd_nm" field.
 func (m *PermsMutation) SetGuyukCdNm(s string) {
-	m.guyukCdNm = &s
+	m.guyuk_cd_nm = &s
 }
 
-// GuyukCdNm returns the value of the "guyukCdNm" field in the mutation.
+// GuyukCdNm returns the value of the "guyuk_cd_nm" field in the mutation.
 func (m *PermsMutation) GuyukCdNm() (r string, exists bool) {
-	v := m.guyukCdNm
+	v := m.guyuk_cd_nm
 	if v == nil {
 		return
 	}
 	return *v, true
 }
 
-// OldGuyukCdNm returns the old "guyukCdNm" field's value of the Perms entity.
+// OldGuyukCdNm returns the old "guyuk_cd_nm" field's value of the Perms entity.
 // If the Perms object wasn't provided to the builder, the object is fetched from the database.
 // An error is returned if the mutation operation is not UpdateOne, or the database query fails.
 func (m *PermsMutation) OldGuyukCdNm(ctx context.Context) (v string, err error) {
@@ -4052,39 +4052,39 @@ func (m *PermsMutation) OldGuyukCdNm(ctx context.Context) (v string, err error) 
 	return oldValue.GuyukCdNm, nil
 }
 
-// ClearGuyukCdNm clears the value of the "guyukCdNm" field.
+// ClearGuyukCdNm clears the value of the "guyuk_cd_nm" field.
 func (m *PermsMutation) ClearGuyukCdNm() {
-	m.guyukCdNm = nil
+	m.guyuk_cd_nm = nil
 	m.clearedFields[perms.FieldGuyukCdNm] = struct{}{}
 }
 
-// GuyukCdNmCleared returns if the "guyukCdNm" field was cleared in this mutation.
+// GuyukCdNmCleared returns if the "guyuk_cd_nm" field was cleared in this mutation.
 func (m *PermsMutation) GuyukCdNmCleared() bool {
 	_, ok := m.clearedFields[perms.FieldGuyukCdNm]
 	return ok
 }
 
-// ResetGuyukCdNm resets all changes to the "guyukCdNm" field.
+// ResetGuyukCdNm resets all changes to the "guyuk_cd_nm" field.
 func (m *PermsMutation) ResetGuyukCdNm() {
-	m.guyukCdNm = nil
+	m.guyuk_cd_nm = nil
 	delete(m.clearedFields, perms.FieldGuyukCdNm)
 }
 
-// SetJimokCd sets the "jimokCd" field.
+// SetJimokCd sets the "jimok_cd" field.
 func (m *PermsMutation) SetJimokCd(s string) {
-	m.jimokCd = &s
+	m.jimok_cd = &s
 }
 
-// JimokCd returns the value of the "jimokCd" field in the mutation.
+// JimokCd returns the value of the "jimok_cd" field in the mutation.
 func (m *PermsMutation) JimokCd() (r string, exists bool) {
-	v := m.jimokCd
+	v := m.jimok_cd
 	if v == nil {
 		return
 	}
 	return *v, true
 }
 
-// OldJimokCd returns the old "jimokCd" field's value of the Perms entity.
+// OldJimokCd returns the old "jimok_cd" field's value of the Perms entity.
 // If the Perms object wasn't provided to the builder, the object is fetched from the database.
 // An error is returned if the mutation operation is not UpdateOne, or the database query fails.
 func (m *PermsMutation) OldJimokCd(ctx context.Context) (v string, err error) {
@@ -4101,39 +4101,39 @@ func (m *PermsMutation) OldJimokCd(ctx context.Context) (v string, err error) {
 	return oldValue.JimokCd, nil
 }
 
-// ClearJimokCd clears the value of the "jimokCd" field.
+// ClearJimokCd clears the value of the "jimok_cd" field.
 func (m *PermsMutation) ClearJimokCd() {
-	m.jimokCd = nil
+	m.jimok_cd = nil
 	m.clearedFields[perms.FieldJimokCd] = struct{}{}
 }
 
-// JimokCdCleared returns if the "jimokCd" field was cleared in this mutation.
+// JimokCdCleared returns if the "jimok_cd" field was cleared in this mutation.
 func (m *PermsMutation) JimokCdCleared() bool {
 	_, ok := m.clearedFields[perms.FieldJimokCd]
 	return ok
 }
 
-// ResetJimokCd resets all changes to the "jimokCd" field.
+// ResetJimokCd resets all changes to the "jimok_cd" field.
 func (m *PermsMutation) ResetJimokCd() {
-	m.jimokCd = nil
+	m.jimok_cd = nil
 	delete(m.clearedFields, perms.FieldJimokCd)
 }
 
-// SetJimokCdNm sets the "jimokCdNm" field.
+// SetJimokCdNm sets the "jimok_cd_nm" field.
 func (m *PermsMutation) SetJimokCdNm(s string) {
-	m.jimokCdNm = &s
+	m.jimok_cd_nm = &s
 }
 
-// JimokCdNm returns the value of the "jimokCdNm" field in the mutation.
+// JimokCdNm returns the value of the "jimok_cd_nm" field in the mutation.
 func (m *PermsMutation) JimokCdNm() (r string, exists bool) {
-	v := m.jimokCdNm
+	v := m.jimok_cd_nm
 	if v == nil {
 		return
 	}
 	return *v, true
 }
 
-// OldJimokCdNm returns the old "jimokCdNm" field's value of the Perms entity.
+// OldJimokCdNm returns the old "jimok_cd_nm" field's value of the Perms entity.
 // If the Perms object wasn't provided to the builder, the object is fetched from the database.
 // An error is returned if the mutation operation is not UpdateOne, or the database query fails.
 func (m *PermsMutation) OldJimokCdNm(ctx context.Context) (v string, err error) {
@@ -4150,39 +4150,39 @@ func (m *PermsMutation) OldJimokCdNm(ctx context.Context) (v string, err error) 
 	return oldValue.JimokCdNm, nil
 }
 
-// ClearJimokCdNm clears the value of the "jimokCdNm" field.
+// ClearJimokCdNm clears the value of the "jimok_cd_nm" field.
 func (m *PermsMutation) ClearJimokCdNm() {
-	m.jimokCdNm = nil
+	m.jimok_cd_nm = nil
 	m.clearedFields[perms.FieldJimokCdNm] = struct{}{}
 }
 
-// JimokCdNmCleared returns if the "jimokCdNm" field was cleared in this mutation.
+// JimokCdNmCleared returns if the "jimok_cd_nm" field was cleared in this mutation.
 func (m *PermsMutation) JimokCdNmCleared() bool {
 	_, ok := m.clearedFields[perms.FieldJimokCdNm]
 	return ok
 }
 
-// ResetJimokCdNm resets all changes to the "jimokCdNm" field.
+// ResetJimokCdNm resets all changes to the "jimok_cd_nm" field.
 func (m *PermsMutation) ResetJimokCdNm() {
-	m.jimokCdNm = nil
+	m.jimok_cd_nm = nil
 	delete(m.clearedFields, perms.FieldJimokCdNm)
 }
 
-// SetJiyukCd sets the "jiyukCd" field.
+// SetJiyukCd sets the "jiyuk_cd" field.
 func (m *PermsMutation) SetJiyukCd(s string) {
-	m.jiyukCd = &s
+	m.jiyuk_cd = &s
 }
 
-// JiyukCd returns the value of the "jiyukCd" field in the mutation.
+// JiyukCd returns the value of the "jiyuk_cd" field in the mutation.
 func (m *PermsMutation) JiyukCd() (r string, exists bool) {
-	v := m.jiyukCd
+	v := m.jiyuk_cd
 	if v == nil {
 		return
 	}
 	return *v, true
 }
 
-// OldJiyukCd returns the old "jiyukCd" field's value of the Perms entity.
+// OldJiyukCd returns the old "jiyuk_cd" field's value of the Perms entity.
 // If the Perms object wasn't provided to the builder, the object is fetched from the database.
 // An error is returned if the mutation operation is not UpdateOne, or the database query fails.
 func (m *PermsMutation) OldJiyukCd(ctx context.Context) (v string, err error) {
@@ -4199,39 +4199,39 @@ func (m *PermsMutation) OldJiyukCd(ctx context.Context) (v string, err error) {
 	return oldValue.JiyukCd, nil
 }
 
-// ClearJiyukCd clears the value of the "jiyukCd" field.
+// ClearJiyukCd clears the value of the "jiyuk_cd" field.
 func (m *PermsMutation) ClearJiyukCd() {
-	m.jiyukCd = nil
+	m.jiyuk_cd = nil
 	m.clearedFields[perms.FieldJiyukCd] = struct{}{}
 }
 
-// JiyukCdCleared returns if the "jiyukCd" field was cleared in this mutation.
+// JiyukCdCleared returns if the "jiyuk_cd" field was cleared in this mutation.
 func (m *PermsMutation) JiyukCdCleared() bool {
 	_, ok := m.clearedFields[perms.FieldJiyukCd]
 	return ok
 }
 
-// ResetJiyukCd resets all changes to the "jiyukCd" field.
+// ResetJiyukCd resets all changes to the "jiyuk_cd" field.
 func (m *PermsMutation) ResetJiyukCd() {
-	m.jiyukCd = nil
+	m.jiyuk_cd = nil
 	delete(m.clearedFields, perms.FieldJiyukCd)
 }
 
-// SetJiyukCdNm sets the "jiyukCdNm" field.
+// SetJiyukCdNm sets the "jiyuk_cd_nm" field.
 func (m *PermsMutation) SetJiyukCdNm(s string) {
-	m.jiyukCdNm = &s
+	m.jiyuk_cd_nm = &s
 }
 
-// JiyukCdNm returns the value of the "jiyukCdNm" field in the mutation.
+// JiyukCdNm returns the value of the "jiyuk_cd_nm" field in the mutation.
 func (m *PermsMutation) JiyukCdNm() (r string, exists bool) {
-	v := m.jiyukCdNm
+	v := m.jiyuk_cd_nm
 	if v == nil {
 		return
 	}
 	return *v, true
 }
 
-// OldJiyukCdNm returns the old "jiyukCdNm" field's value of the Perms entity.
+// OldJiyukCdNm returns the old "jiyuk_cd_nm" field's value of the Perms entity.
 // If the Perms object wasn't provided to the builder, the object is fetched from the database.
 // An error is returned if the mutation operation is not UpdateOne, or the database query fails.
 func (m *PermsMutation) OldJiyukCdNm(ctx context.Context) (v string, err error) {
@@ -4248,39 +4248,39 @@ func (m *PermsMutation) OldJiyukCdNm(ctx context.Context) (v string, err error) 
 	return oldValue.JiyukCdNm, nil
 }
 
-// ClearJiyukCdNm clears the value of the "jiyukCdNm" field.
+// ClearJiyukCdNm clears the value of the "jiyuk_cd_nm" field.
 func (m *PermsMutation) ClearJiyukCdNm() {
-	m.jiyukCdNm = nil
+	m.jiyuk_cd_nm = nil
 	m.clearedFields[perms.FieldJiyukCdNm] = struct{}{}
 }
 
-// JiyukCdNmCleared returns if the "jiyukCdNm" field was cleared in this mutation.
+// JiyukCdNmCleared returns if the "jiyuk_cd_nm" field was cleared in this mutation.
 func (m *PermsMutation) JiyukCdNmCleared() bool {
 	_, ok := m.clearedFields[perms.FieldJiyukCdNm]
 	return ok
 }
 
-// ResetJiyukCdNm resets all changes to the "jiyukCdNm" field.
+// ResetJiyukCdNm resets all changes to the "jiyuk_cd_nm" field.
 func (m *PermsMutation) ResetJiyukCdNm() {
-	m.jiyukCdNm = nil
+	m.jiyuk_cd_nm = nil
 	delete(m.clearedFields, perms.FieldJiyukCdNm)
 }
 
-// SetJiguCd sets the "jiguCd" field.
+// SetJiguCd sets the "jigu_cd" field.
 func (m *PermsMutation) SetJiguCd(s string) {
-	m.jiguCd = &s
+	m.jigu_cd = &s
 }
 
-// JiguCd returns the value of the "jiguCd" field in the mutation.
+// JiguCd returns the value of the "jigu_cd" field in the mutation.
 func (m *PermsMutation) JiguCd() (r string, exists bool) {
-	v := m.jiguCd
+	v := m.jigu_cd
 	if v == nil {
 		return
 	}
 	return *v, true
 }
 
-// OldJiguCd returns the old "jiguCd" field's value of the Perms entity.
+// OldJiguCd returns the old "jigu_cd" field's value of the Perms entity.
 // If the Perms object wasn't provided to the builder, the object is fetched from the database.
 // An error is returned if the mutation operation is not UpdateOne, or the database query fails.
 func (m *PermsMutation) OldJiguCd(ctx context.Context) (v string, err error) {
@@ -4297,39 +4297,39 @@ func (m *PermsMutation) OldJiguCd(ctx context.Context) (v string, err error) {
 	return oldValue.JiguCd, nil
 }
 
-// ClearJiguCd clears the value of the "jiguCd" field.
+// ClearJiguCd clears the value of the "jigu_cd" field.
 func (m *PermsMutation) ClearJiguCd() {
-	m.jiguCd = nil
+	m.jigu_cd = nil
 	m.clearedFields[perms.FieldJiguCd] = struct{}{}
 }
 
-// JiguCdCleared returns if the "jiguCd" field was cleared in this mutation.
+// JiguCdCleared returns if the "jigu_cd" field was cleared in this mutation.
 func (m *PermsMutation) JiguCdCleared() bool {
 	_, ok := m.clearedFields[perms.FieldJiguCd]
 	return ok
 }
 
-// ResetJiguCd resets all changes to the "jiguCd" field.
+// ResetJiguCd resets all changes to the "jigu_cd" field.
 func (m *PermsMutation) ResetJiguCd() {
-	m.jiguCd = nil
+	m.jigu_cd = nil
 	delete(m.clearedFields, perms.FieldJiguCd)
 }
 
-// SetJiguCdNm sets the "jiguCdNm" field.
+// SetJiguCdNm sets the "jigu_cd_nm" field.
 func (m *PermsMutation) SetJiguCdNm(s string) {
-	m.jiguCdNm = &s
+	m.jigu_cd_nm = &s
 }
 
-// JiguCdNm returns the value of the "jiguCdNm" field in the mutation.
+// JiguCdNm returns the value of the "jigu_cd_nm" field in the mutation.
 func (m *PermsMutation) JiguCdNm() (r string, exists bool) {
-	v := m.jiguCdNm
+	v := m.jigu_cd_nm
 	if v == nil {
 		return
 	}
 	return *v, true
 }
 
-// OldJiguCdNm returns the old "jiguCdNm" field's value of the Perms entity.
+// OldJiguCdNm returns the old "jigu_cd_nm" field's value of the Perms entity.
 // If the Perms object wasn't provided to the builder, the object is fetched from the database.
 // An error is returned if the mutation operation is not UpdateOne, or the database query fails.
 func (m *PermsMutation) OldJiguCdNm(ctx context.Context) (v string, err error) {
@@ -4346,21 +4346,21 @@ func (m *PermsMutation) OldJiguCdNm(ctx context.Context) (v string, err error) {
 	return oldValue.JiguCdNm, nil
 }
 
-// ClearJiguCdNm clears the value of the "jiguCdNm" field.
+// ClearJiguCdNm clears the value of the "jigu_cd_nm" field.
 func (m *PermsMutation) ClearJiguCdNm() {
-	m.jiguCdNm = nil
+	m.jigu_cd_nm = nil
 	m.clearedFields[perms.FieldJiguCdNm] = struct{}{}
 }
 
-// JiguCdNmCleared returns if the "jiguCdNm" field was cleared in this mutation.
+// JiguCdNmCleared returns if the "jigu_cd_nm" field was cleared in this mutation.
 func (m *PermsMutation) JiguCdNmCleared() bool {
 	_, ok := m.clearedFields[perms.FieldJiguCdNm]
 	return ok
 }
 
-// ResetJiguCdNm resets all changes to the "jiguCdNm" field.
+// ResetJiguCdNm resets all changes to the "jigu_cd_nm" field.
 func (m *PermsMutation) ResetJiguCdNm() {
-	m.jiguCdNm = nil
+	m.jigu_cd_nm = nil
 	delete(m.clearedFields, perms.FieldJiguCdNm)
 }
 
@@ -5645,21 +5645,21 @@ func (m *PermsMutation) ResetUseAprDay() {
 	delete(m.clearedFields, perms.FieldUseAprDay)
 }
 
-// SetPlatPlc sets the "platPlc" field.
+// SetPlatPlc sets the "plat_plc" field.
 func (m *PermsMutation) SetPlatPlc(s string) {
-	m.platPlc = &s
+	m.plat_plc = &s
 }
 
-// PlatPlc returns the value of the "platPlc" field in the mutation.
+// PlatPlc returns the value of the "plat_plc" field in the mutation.
 func (m *PermsMutation) PlatPlc() (r string, exists bool) {
-	v := m.platPlc
+	v := m.plat_plc
 	if v == nil {
 		return
 	}
 	return *v, true
 }
 
-// OldPlatPlc returns the old "platPlc" field's value of the Perms entity.
+// OldPlatPlc returns the old "plat_plc" field's value of the Perms entity.
 // If the Perms object wasn't provided to the builder, the object is fetched from the database.
 // An error is returned if the mutation operation is not UpdateOne, or the database query fails.
 func (m *PermsMutation) OldPlatPlc(ctx context.Context) (v string, err error) {
@@ -5676,39 +5676,39 @@ func (m *PermsMutation) OldPlatPlc(ctx context.Context) (v string, err error) {
 	return oldValue.PlatPlc, nil
 }
 
-// ClearPlatPlc clears the value of the "platPlc" field.
+// ClearPlatPlc clears the value of the "plat_plc" field.
 func (m *PermsMutation) ClearPlatPlc() {
-	m.platPlc = nil
+	m.plat_plc = nil
 	m.clearedFields[perms.FieldPlatPlc] = struct{}{}
 }
 
-// PlatPlcCleared returns if the "platPlc" field was cleared in this mutation.
+// PlatPlcCleared returns if the "plat_plc" field was cleared in this mutation.
 func (m *PermsMutation) PlatPlcCleared() bool {
 	_, ok := m.clearedFields[perms.FieldPlatPlc]
 	return ok
 }
 
-// ResetPlatPlc resets all changes to the "platPlc" field.
+// ResetPlatPlc resets all changes to the "plat_plc" field.
 func (m *PermsMutation) ResetPlatPlc() {
-	m.platPlc = nil
+	m.plat_plc = nil
 	delete(m.clearedFields, perms.FieldPlatPlc)
 }
 
-// SetSigunguCd sets the "sigunguCd" field.
+// SetSigunguCd sets the "sigungu_cd" field.
 func (m *PermsMutation) SetSigunguCd(s string) {
-	m.sigunguCd = &s
+	m.sigungu_cd = &s
 }
 
-// SigunguCd returns the value of the "sigunguCd" field in the mutation.
+// SigunguCd returns the value of the "sigungu_cd" field in the mutation.
 func (m *PermsMutation) SigunguCd() (r string, exists bool) {
-	v := m.sigunguCd
+	v := m.sigungu_cd
 	if v == nil {
 		return
 	}
 	return *v, true
 }
 
-// OldSigunguCd returns the old "sigunguCd" field's value of the Perms entity.
+// OldSigunguCd returns the old "sigungu_cd" field's value of the Perms entity.
 // If the Perms object wasn't provided to the builder, the object is fetched from the database.
 // An error is returned if the mutation operation is not UpdateOne, or the database query fails.
 func (m *PermsMutation) OldSigunguCd(ctx context.Context) (v string, err error) {
@@ -5725,39 +5725,39 @@ func (m *PermsMutation) OldSigunguCd(ctx context.Context) (v string, err error) 
 	return oldValue.SigunguCd, nil
 }
 
-// ClearSigunguCd clears the value of the "sigunguCd" field.
+// ClearSigunguCd clears the value of the "sigungu_cd" field.
 func (m *PermsMutation) ClearSigunguCd() {
-	m.sigunguCd = nil
+	m.sigungu_cd = nil
 	m.clearedFields[perms.FieldSigunguCd] = struct{}{}
 }
 
-// SigunguCdCleared returns if the "sigunguCd" field was cleared in this mutation.
+// SigunguCdCleared returns if the "sigungu_cd" field was cleared in this mutation.
 func (m *PermsMutation) SigunguCdCleared() bool {
 	_, ok := m.clearedFields[perms.FieldSigunguCd]
 	return ok
 }
 
-// ResetSigunguCd resets all changes to the "sigunguCd" field.
+// ResetSigunguCd resets all changes to the "sigungu_cd" field.
 func (m *PermsMutation) ResetSigunguCd() {
-	m.sigunguCd = nil
+	m.sigungu_cd = nil
 	delete(m.clearedFields, perms.FieldSigunguCd)
 }
 
-// SetBjdongCd sets the "bjdongCd" field.
+// SetBjdongCd sets the "bjdong_cd" field.
 func (m *PermsMutation) SetBjdongCd(s string) {
-	m.bjdongCd = &s
+	m.bjdong_cd = &s
 }
 
-// BjdongCd returns the value of the "bjdongCd" field in the mutation.
+// BjdongCd returns the value of the "bjdong_cd" field in the mutation.
 func (m *PermsMutation) BjdongCd() (r string, exists bool) {
-	v := m.bjdongCd
+	v := m.bjdong_cd
 	if v == nil {
 		return
 	}
 	return *v, true
 }
 
-// OldBjdongCd returns the old "bjdongCd" field's value of the Perms entity.
+// OldBjdongCd returns the old "bjdong_cd" field's value of the Perms entity.
 // If the Perms object wasn't provided to the builder, the object is fetched from the database.
 // An error is returned if the mutation operation is not UpdateOne, or the database query fails.
 func (m *PermsMutation) OldBjdongCd(ctx context.Context) (v string, err error) {
@@ -5774,71 +5774,71 @@ func (m *PermsMutation) OldBjdongCd(ctx context.Context) (v string, err error) {
 	return oldValue.BjdongCd, nil
 }
 
-// ClearBjdongCd clears the value of the "bjdongCd" field.
+// ClearBjdongCd clears the value of the "bjdong_cd" field.
 func (m *PermsMutation) ClearBjdongCd() {
-	m.bjdongCd = nil
+	m.bjdong_cd = nil
 	m.clearedFields[perms.FieldBjdongCd] = struct{}{}
 }
 
-// BjdongCdCleared returns if the "bjdongCd" field was cleared in this mutation.
+// BjdongCdCleared returns if the "bjdong_cd" field was cleared in this mutation.
 func (m *PermsMutation) BjdongCdCleared() bool {
 	_, ok := m.clearedFields[perms.FieldBjdongCd]
 	return ok
 }
 
-// ResetBjdongCd resets all changes to the "bjdongCd" field.
+// ResetBjdongCd resets all changes to the "bjdong_cd" field.
 func (m *PermsMutation) ResetBjdongCd() {
-	m.bjdongCd = nil
+	m.bjdong_cd = nil
 	delete(m.clearedFields, perms.FieldBjdongCd)
 }
 
-// SetPlatGbCd sets the "platGbCd" field.
-func (m *PermsMutation) SetPlatGbCd(s string) {
-	m.platGbCd = &s
+// SetPlatGBCd sets the "plat_gb_cd" field.
+func (m *PermsMutation) SetPlatGBCd(s string) {
+	m.plat_gb_cd = &s
 }
 
-// PlatGbCd returns the value of the "platGbCd" field in the mutation.
-func (m *PermsMutation) PlatGbCd() (r string, exists bool) {
-	v := m.platGbCd
+// PlatGBCd returns the value of the "plat_gb_cd" field in the mutation.
+func (m *PermsMutation) PlatGBCd() (r string, exists bool) {
+	v := m.plat_gb_cd
 	if v == nil {
 		return
 	}
 	return *v, true
 }
 
-// OldPlatGbCd returns the old "platGbCd" field's value of the Perms entity.
+// OldPlatGBCd returns the old "plat_gb_cd" field's value of the Perms entity.
 // If the Perms object wasn't provided to the builder, the object is fetched from the database.
 // An error is returned if the mutation operation is not UpdateOne, or the database query fails.
-func (m *PermsMutation) OldPlatGbCd(ctx context.Context) (v string, err error) {
+func (m *PermsMutation) OldPlatGBCd(ctx context.Context) (v string, err error) {
 	if !m.op.Is(OpUpdateOne) {
-		return v, errors.New("OldPlatGbCd is only allowed on UpdateOne operations")
+		return v, errors.New("OldPlatGBCd is only allowed on UpdateOne operations")
 	}
 	if m.id == nil || m.oldValue == nil {
-		return v, errors.New("OldPlatGbCd requires an ID field in the mutation")
+		return v, errors.New("OldPlatGBCd requires an ID field in the mutation")
 	}
 	oldValue, err := m.oldValue(ctx)
 	if err != nil {
-		return v, fmt.Errorf("querying old value for OldPlatGbCd: %w", err)
+		return v, fmt.Errorf("querying old value for OldPlatGBCd: %w", err)
 	}
-	return oldValue.PlatGbCd, nil
+	return oldValue.PlatGBCd, nil
 }
 
-// ClearPlatGbCd clears the value of the "platGbCd" field.
-func (m *PermsMutation) ClearPlatGbCd() {
-	m.platGbCd = nil
-	m.clearedFields[perms.FieldPlatGbCd] = struct{}{}
+// ClearPlatGBCd clears the value of the "plat_gb_cd" field.
+func (m *PermsMutation) ClearPlatGBCd() {
+	m.plat_gb_cd = nil
+	m.clearedFields[perms.FieldPlatGBCd] = struct{}{}
 }
 
-// PlatGbCdCleared returns if the "platGbCd" field was cleared in this mutation.
-func (m *PermsMutation) PlatGbCdCleared() bool {
-	_, ok := m.clearedFields[perms.FieldPlatGbCd]
+// PlatGBCdCleared returns if the "plat_gb_cd" field was cleared in this mutation.
+func (m *PermsMutation) PlatGBCdCleared() bool {
+	_, ok := m.clearedFields[perms.FieldPlatGBCd]
 	return ok
 }
 
-// ResetPlatGbCd resets all changes to the "platGbCd" field.
-func (m *PermsMutation) ResetPlatGbCd() {
-	m.platGbCd = nil
-	delete(m.clearedFields, perms.FieldPlatGbCd)
+// ResetPlatGBCd resets all changes to the "plat_gb_cd" field.
+func (m *PermsMutation) ResetPlatGBCd() {
+	m.plat_gb_cd = nil
+	delete(m.clearedFields, perms.FieldPlatGBCd)
 }
 
 // SetBun sets the "bun" field.
@@ -5975,21 +5975,21 @@ func (m *PermsMutation) ResetMgmPmsrgstPk() {
 	m.mgm_pmsrgst_pk = nil
 }
 
-// SetSplotNm sets the "splotNm" field.
+// SetSplotNm sets the "splot_nm" field.
 func (m *PermsMutation) SetSplotNm(s string) {
-	m.splotNm = &s
+	m.splot_nm = &s
 }
 
-// SplotNm returns the value of the "splotNm" field in the mutation.
+// SplotNm returns the value of the "splot_nm" field in the mutation.
 func (m *PermsMutation) SplotNm() (r string, exists bool) {
-	v := m.splotNm
+	v := m.splot_nm
 	if v == nil {
 		return
 	}
 	return *v, true
 }
 
-// OldSplotNm returns the old "splotNm" field's value of the Perms entity.
+// OldSplotNm returns the old "splot_nm" field's value of the Perms entity.
 // If the Perms object wasn't provided to the builder, the object is fetched from the database.
 // An error is returned if the mutation operation is not UpdateOne, or the database query fails.
 func (m *PermsMutation) OldSplotNm(ctx context.Context) (v string, err error) {
@@ -6006,21 +6006,21 @@ func (m *PermsMutation) OldSplotNm(ctx context.Context) (v string, err error) {
 	return oldValue.SplotNm, nil
 }
 
-// ClearSplotNm clears the value of the "splotNm" field.
+// ClearSplotNm clears the value of the "splot_nm" field.
 func (m *PermsMutation) ClearSplotNm() {
-	m.splotNm = nil
+	m.splot_nm = nil
 	m.clearedFields[perms.FieldSplotNm] = struct{}{}
 }
 
-// SplotNmCleared returns if the "splotNm" field was cleared in this mutation.
+// SplotNmCleared returns if the "splot_nm" field was cleared in this mutation.
 func (m *PermsMutation) SplotNmCleared() bool {
 	_, ok := m.clearedFields[perms.FieldSplotNm]
 	return ok
 }
 
-// ResetSplotNm resets all changes to the "splotNm" field.
+// ResetSplotNm resets all changes to the "splot_nm" field.
 func (m *PermsMutation) ResetSplotNm() {
-	m.splotNm = nil
+	m.splot_nm = nil
 	delete(m.clearedFields, perms.FieldSplotNm)
 }
 
@@ -6397,28 +6397,28 @@ func (m *PermsMutation) Type() string {
 // AddedFields().
 func (m *PermsMutation) Fields() []string {
 	fields := make([]string, 0, 44)
-	if m.guyukCd != nil {
+	if m.guyuk_cd != nil {
 		fields = append(fields, perms.FieldGuyukCd)
 	}
-	if m.guyukCdNm != nil {
+	if m.guyuk_cd_nm != nil {
 		fields = append(fields, perms.FieldGuyukCdNm)
 	}
-	if m.jimokCd != nil {
+	if m.jimok_cd != nil {
 		fields = append(fields, perms.FieldJimokCd)
 	}
-	if m.jimokCdNm != nil {
+	if m.jimok_cd_nm != nil {
 		fields = append(fields, perms.FieldJimokCdNm)
 	}
-	if m.jiyukCd != nil {
+	if m.jiyuk_cd != nil {
 		fields = append(fields, perms.FieldJiyukCd)
 	}
-	if m.jiyukCdNm != nil {
+	if m.jiyuk_cd_nm != nil {
 		fields = append(fields, perms.FieldJiyukCdNm)
 	}
-	if m.jiguCd != nil {
+	if m.jigu_cd != nil {
 		fields = append(fields, perms.FieldJiguCd)
 	}
-	if m.jiguCdNm != nil {
+	if m.jigu_cd_nm != nil {
 		fields = append(fields, perms.FieldJiguCdNm)
 	}
 	if m.arch_gb_cd_nm != nil {
@@ -6484,17 +6484,17 @@ func (m *PermsMutation) Fields() []string {
 	if m.use_apr_day != nil {
 		fields = append(fields, perms.FieldUseAprDay)
 	}
-	if m.platPlc != nil {
+	if m.plat_plc != nil {
 		fields = append(fields, perms.FieldPlatPlc)
 	}
-	if m.sigunguCd != nil {
+	if m.sigungu_cd != nil {
 		fields = append(fields, perms.FieldSigunguCd)
 	}
-	if m.bjdongCd != nil {
+	if m.bjdong_cd != nil {
 		fields = append(fields, perms.FieldBjdongCd)
 	}
-	if m.platGbCd != nil {
-		fields = append(fields, perms.FieldPlatGbCd)
+	if m.plat_gb_cd != nil {
+		fields = append(fields, perms.FieldPlatGBCd)
 	}
 	if m.bun != nil {
 		fields = append(fields, perms.FieldBun)
@@ -6505,7 +6505,7 @@ func (m *PermsMutation) Fields() []string {
 	if m.mgm_pmsrgst_pk != nil {
 		fields = append(fields, perms.FieldMgmPmsrgstPk)
 	}
-	if m.splotNm != nil {
+	if m.splot_nm != nil {
 		fields = append(fields, perms.FieldSplotNm)
 	}
 	if m.block != nil {
@@ -6601,8 +6601,8 @@ func (m *PermsMutation) Field(name string) (ent.Value, bool) {
 		return m.SigunguCd()
 	case perms.FieldBjdongCd:
 		return m.BjdongCd()
-	case perms.FieldPlatGbCd:
-		return m.PlatGbCd()
+	case perms.FieldPlatGBCd:
+		return m.PlatGBCd()
 	case perms.FieldBun:
 		return m.Bun()
 	case perms.FieldJi:
@@ -6698,8 +6698,8 @@ func (m *PermsMutation) OldField(ctx context.Context, name string) (ent.Value, e
 		return m.OldSigunguCd(ctx)
 	case perms.FieldBjdongCd:
 		return m.OldBjdongCd(ctx)
-	case perms.FieldPlatGbCd:
-		return m.OldPlatGbCd(ctx)
+	case perms.FieldPlatGBCd:
+		return m.OldPlatGBCd(ctx)
 	case perms.FieldBun:
 		return m.OldBun(ctx)
 	case perms.FieldJi:
@@ -6955,12 +6955,12 @@ func (m *PermsMutation) SetField(name string, value ent.Value) error {
 		}
 		m.SetBjdongCd(v)
 		return nil
-	case perms.FieldPlatGbCd:
+	case perms.FieldPlatGBCd:
 		v, ok := value.(string)
 		if !ok {
 			return fmt.Errorf("unexpected type %T for field %s", value, name)
 		}
-		m.SetPlatGbCd(v)
+		m.SetPlatGBCd(v)
 		return nil
 	case perms.FieldBun:
 		v, ok := value.(string)
@@ -7324,8 +7324,8 @@ func (m *PermsMutation) ClearedFields() []string {
 	if m.FieldCleared(perms.FieldBjdongCd) {
 		fields = append(fields, perms.FieldBjdongCd)
 	}
-	if m.FieldCleared(perms.FieldPlatGbCd) {
-		fields = append(fields, perms.FieldPlatGbCd)
+	if m.FieldCleared(perms.FieldPlatGBCd) {
+		fields = append(fields, perms.FieldPlatGBCd)
 	}
 	if m.FieldCleared(perms.FieldBun) {
 		fields = append(fields, perms.FieldBun)
@@ -7461,8 +7461,8 @@ func (m *PermsMutation) ClearField(name string) error {
 	case perms.FieldBjdongCd:
 		m.ClearBjdongCd()
 		return nil
-	case perms.FieldPlatGbCd:
-		m.ClearPlatGbCd()
+	case perms.FieldPlatGBCd:
+		m.ClearPlatGBCd()
 		return nil
 	case perms.FieldBun:
 		m.ClearBun()
@@ -7592,8 +7592,8 @@ func (m *PermsMutation) ResetField(name string) error {
 	case perms.FieldBjdongCd:
 		m.ResetBjdongCd()
 		return nil
-	case perms.FieldPlatGbCd:
-		m.ResetPlatGbCd()
+	case perms.FieldPlatGBCd:
+		m.ResetPlatGBCd()
 		return nil
 	case perms.FieldBun:
 		m.ResetBun()

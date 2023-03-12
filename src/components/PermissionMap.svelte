@@ -33,7 +33,10 @@
   let dateSelected = today.getFullYear();
 
   let totalArea = 10000; // 면적 제한 조건(m2)
-  let sidoSelected = "서울특별시"; // 시도
+  let sidoSelected = ""; // 시도
+  let permTypeSelected = "";
+  let totAreaSelected = "";
+  let useSelected = "";
 
   let currentNum = 0;
   let totalNum = 0;
@@ -48,7 +51,8 @@
   function pin(elem) {
     let geocoder = new kakao.maps.services.Geocoder();
     let rc = new kakao.maps.RoadviewClient(); // 좌표를 통한 로드뷰의 panoid를 추출하기 위한 로드뷰 help객체 생성
-    return geocoder.addressSearch(elem.platPlc, function (coord, status) {
+    console.log(elem);
+    return geocoder.addressSearch(elem.plat_plc, function (coord, status) {
       if (status == kakao.maps.services.Status.OK) {
         elem.coord = coord[0]; // coord(위경도) 속성을 추가합니다.
         let coords = new kakao.maps.LatLng(elem.coord.y, elem.coord.x);
@@ -59,9 +63,14 @@
         //   clickable: true,
         // });
         setMarker(elem, coord);
+        focus(elem);
 
         rc.getNearestPanoId(coords, 50, function (panoId) {
-          roadViewUrl.set("https://map.kakao.com/?panoid=" + panoId); //Kakao 지도 로드뷰로 보내는 링크
+          if (panoId != null) {
+            roadViewUrl.set("https://map.kakao.com/?panoid=" + panoId); //Kakao 지도 로드뷰로 보내는 링크
+          } else {
+            roadViewUrl.set(""); // panoId를 못찾은 경우에는 공백으로 둔다.
+          }
         });
       }
     });
@@ -77,7 +86,7 @@
     let coords = new kakao.maps.LatLng(coord[0].y, coord[0].x);
     let marker = new kakao.maps.Marker({
       map: map,
-      title: elem.platPlc,
+      title: elem.plat_plc,
       position: coords,
       clickable: true,
     });
@@ -148,6 +157,9 @@
     let url = "/api/getPerms";
     url = url + "?page=" + currentPage;
     url = sidoSelected ? url + "&sido=" + sidoSelected : url;
+    url = permTypeSelected ? url + "&permsType=" + permTypeSelected : url;
+    url = totAreaSelected ? url + "&totAreaGt=" + totAreaSelected : url;
+    url = useSelected ? url + "&mainPurps=" + useSelected : url;
     console.log(url);
 
     return fetch(url)
@@ -155,6 +167,7 @@
       .then((json) => {
         totalPermsCnt = json.total_cnt;
         lastPageNo = json.total_page;
+        console.log(json);
       })
       .catch((error) => {
         throw new Error(error);
@@ -167,6 +180,11 @@
   // 새로운 페이지의 인허가 정보를 불러옵니다. 이 때 하위 컴포넌트에서 dispatch된 이벤트를 받습니다.
   function getPermsHandler(event) {
     console.log(event);
+    if (event == null) {
+      // 조회 버튼을 눌러서 조회하면 currentPage와 lastPageNo를 초기화 시킵니다.
+      currentPage = 1;
+      lastPageNo = 1;
+    }
 
     perms = getPerms(event);
   }
@@ -206,7 +224,7 @@
     currentNum += 1;
   }
 
-  function siteListView() {
+  function moveToSiteListView() {
     modalToggle = true;
     siteListModalToggle = true;
     siteDetailToggle = false;
@@ -262,12 +280,12 @@
   });
 </script>
 
-<div class="h-full relative" bind:this={mapContainer}>
+<div class="h-full relative" bind:this={mapContainer} draggable="false">
   <!-- 검색창 영역 -->
 
   <!-- 모달 오픈 버튼 -->
   {#if !modalToggle}
-    <button type="button" class="openModal rounded-md absolute p-1.5 z-10 max-sm:bottom-5 md:top-5 right-5" on:click={siteListView}
+    <button type="button" class="openModal rounded-md absolute p-1.5 z-10 max-sm:bottom-5 md:top-5 right-5" on:click={moveToSiteListView}
       ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
         <path
           stroke-linecap="round"
@@ -284,7 +302,7 @@
         <!-- 리스트뷰 영역 -->
         {#if siteListModalToggle}
           <div class="flex justify-between my-3">
-            <h1 class="text-lg font-bold">건축인허가(신축) 리스트</h1>
+            <h1 class="text-lg font-bold">건축인허가정보 <span class="italic font-light">Beta</span></h1>
             <button
               on:click={() => {
                 modalToggle = false;
@@ -299,21 +317,33 @@
           <!-- 검색창 영역 -->
           <div class="flex my-5">
             <select bind:value={sidoSelected} type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-2">
-              <option value="서울특별시" selected>서울특별시(예정)</option>
-              <!-- <option value="경기도">경기도(예정)</option> -->
+              <option value="" selected>전국</option>
+              <option value="11" selected>서울</option>
+              <option value="41">경기도</option>
             </select>
 
-            <button
-              on:click={() => {
-                markers.forEach((marker) => marker.setMap(null)); // 이전에 지도에 표시된 마커를 모두 지웁니다.
-                siteList = []; // 사이트 리스트 변수를 초기화 합니다.
-                markers = [];
+            <select bind:value={permTypeSelected} type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-2">
+              <option value="" selected>허가</option>
+              <option value="신축" selected>신축</option>
+              <option value="증축">증축</option>
+              <option value="용도변경">용도변경</option>
+            </select>
 
-                codeList.forEach((code) => getInfo(code));
-              }}
-              type="button"
-              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 mx-2">조회</button
-            >
+            <select bind:value={totAreaSelected} type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-2">
+              <option value="" selected>면적</option>
+              <option value="100000" selected>10만m2</option>
+              <option value="50000" selected>5만m2</option>
+              <option value="30000" selected>3만m2</option>
+              <option value="10000" selected>1만m2</option>
+            </select>
+
+            <select bind:value={useSelected} type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-2">
+              <option value="" selected>주용도(적용예정)</option>
+              <option value="오피스" selected>오피스</option>
+            </select>
+
+            <!-- 조회 버튼은 이벤트를 넘기지 않고 인허가 정보를 조회합니다. -->
+            <button on:click={() => getPermsHandler()} type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 mx-2">조회</button>
           </div>
 
           {#await perms}
@@ -326,7 +356,7 @@
           {:then}
             <p class="my-5">인허가 정보가 {addComma(totalPermsCnt, 0)}건 있습니다.</p>
 
-            <!-- 페이지 영역 -->
+            <!-- 상단 페이지 영역 -->
             <Pagination on:moveTo={getPermsHandler} {lastPageNo} {currentPage} />
 
             <div class="flex-col">
@@ -334,8 +364,9 @@
                 <button
                   on:click={() => {
                     siteDetailInfo = site;
+                    console.log(site);
                     siteDetailView();
-                    focus(site);
+                    pin(site);
                   }}
                   class="w-full p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 my-4 text-start"
                 >
@@ -371,13 +402,16 @@
                 </button>
               {/each}
             </div>
+
+            <!-- 하단 페이지 영역 -->
+            <Pagination on:moveTo={getPermsHandler} {lastPageNo} {currentPage} />
           {/await}
         {/if}
 
         <!-- 상세보기 영역 -->
         {#if siteDetailToggle && siteDetailInfo}
           <div class="flex justify-between my-3">
-            <button on:click={siteListView}>
+            <button on:click={moveToSiteListView}>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
               </svg>
@@ -405,7 +439,7 @@
                 <tr class="border-b border-gray-200">
                   <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">주소</th>
                   <td class="px-6 py-4 flex"
-                    >{siteDetailInfo.platPlc}
+                    >{siteDetailInfo.plat_plc}
                     {#if $roadViewUrl}
                       <a href={$roadViewUrl} target="_blank" rel="noreferrer" class="text-indigo-600 hover:text-indigo-500 ml-2" title="로드맵 보기"
                         ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 pointer-events-none">
@@ -420,63 +454,63 @@
                 </tr>
                 <tr class="border-b border-gray-200">
                   <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">주용도</th>
-                  <td class="px-6 py-4">{siteDetailInfo.mainPurpsCdNm}</td>
+                  <td class="px-6 py-4">{siteDetailInfo.main_purps_cd_nm}</td>
                 </tr>
                 <tr class="border-b border-gray-200">
                   <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">연면적</th>
-                  <td class="px-6 py-4">{siteDetailInfo.totArea}</td>
+                  <td class="px-6 py-4">{siteDetailInfo.tot_area}</td>
                 </tr>
                 <tr class="border-b border-gray-200">
                   <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">건물명</th>
-                  <td class="px-6 py-4">{siteDetailInfo.bldNm}</td>
+                  <td class="px-6 py-4">{siteDetailInfo.bld_nm}</td>
                 </tr>
                 <tr class="border-b border-gray-200">
                   <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">사용승인일</th>
-                  <td class="px-6 py-4">{siteDetailInfo.useAprDay}</td>
+                  <td class="px-6 py-4">{siteDetailInfo.use_apr_day}</td>
                 </tr>
                 <tr class="border-b border-gray-200">
                   <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">건축허가일</th>
-                  <td class="px-6 py-4">{siteDetailInfo.archPmsDay}</td>
+                  <td class="px-6 py-4">{siteDetailInfo.arch_pms_day}</td>
                 </tr>
                 <tr class="border-b border-gray-200">
                   <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">구역명</th>
-                  <td class="px-6 py-4">{siteDetailInfo.guyukCdNm}</td>
+                  <td class="px-6 py-4">{siteDetailInfo.guyuk_cd_nm}</td>
                 </tr>
                 <tr class="border-b border-gray-200">
                   <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">건축면적(㎡)</th>
-                  <td class="px-6 py-4">{siteDetailInfo.archArea}</td>
+                  <td class="px-6 py-4">{siteDetailInfo.arch_area}</td>
                 </tr>
                 <tr class="border-b border-gray-200">
                   <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">건폐율(%)</th>
-                  <td class="px-6 py-4">{siteDetailInfo.bcRat}</td>
+                  <td class="px-6 py-4">{siteDetailInfo.bc_rat}</td>
                 </tr>
                 <tr class="border-b border-gray-200">
                   <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">용적률(%)</th>
-                  <td class="px-6 py-4">{siteDetailInfo.vlRatEstmTotArea}</td>
+                  <td class="px-6 py-4">{siteDetailInfo.vl_rat_estm_tot_area}</td>
                 </tr>
                 <tr class="border-b border-gray-200">
                   <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">착공예정일</th>
-                  <td class="px-6 py-4">{siteDetailInfo.stcnsSchedDay}</td>
+                  <td class="px-6 py-4">{siteDetailInfo.stcns_sched_day}</td>
                 </tr>
                 <tr class="border-b border-gray-200">
                   <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">착공연기일</th>
-                  <td class="px-6 py-4">{siteDetailInfo.stcnsDelayDay}</td>
+                  <td class="px-6 py-4">{siteDetailInfo.stcns_delay_day}</td>
                 </tr>
                 <tr class="border-b border-gray-200">
                   <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">착공예정일</th>
-                  <td class="px-6 py-4">{siteDetailInfo.stcnsSchedDay}</td>
+                  <td class="px-6 py-4">{siteDetailInfo.stcns_sched_day}</td>
                 </tr>
                 <tr class="border-b border-gray-200">
                   <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">실제착공일</th>
-                  <td class="px-6 py-4">{siteDetailInfo.realStcnsDay}</td>
+                  <td class="px-6 py-4">{siteDetailInfo.real_stcns_day}</td>
                 </tr>
                 <tr class="border-b border-gray-200">
                   <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">지목</th>
-                  <td class="px-6 py-4">{siteDetailInfo.jimokCdNm}</td>
+                  <td class="px-6 py-4">{siteDetailInfo.jimok_cd_nm}</td>
                 </tr>
                 <tr class="border-b border-gray-200">
                   <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">지역</th>
-                  <td class="px-6 py-4">{siteDetailInfo.jiyukCdNm}</td>
+                  <td class="px-6 py-4">{siteDetailInfo.jiyuk_cd_nm}</td>
                 </tr>
               </tbody>
             </table>

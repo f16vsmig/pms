@@ -16,22 +16,22 @@ type Perms struct {
 	config `json:"-" xml:"-"`
 	// ID of the ent.
 	ID int `json:"id,omitempty"`
-	// GuyukCd holds the value of the "guyukCd" field.
-	GuyukCd string `json:"guyukCd,omitempty"`
-	// GuyukCdNm holds the value of the "guyukCdNm" field.
-	GuyukCdNm string `json:"guyukCdNm,omitempty"`
-	// JimokCd holds the value of the "jimokCd" field.
-	JimokCd string `json:"jimokCd,omitempty"`
-	// JimokCdNm holds the value of the "jimokCdNm" field.
-	JimokCdNm string `json:"jimokCdNm,omitempty"`
-	// JiyukCd holds the value of the "jiyukCd" field.
-	JiyukCd string `json:"jiyukCd,omitempty"`
-	// JiyukCdNm holds the value of the "jiyukCdNm" field.
-	JiyukCdNm string `json:"jiyukCdNm,omitempty"`
-	// JiguCd holds the value of the "jiguCd" field.
-	JiguCd string `json:"jiguCd,omitempty"`
-	// JiguCdNm holds the value of the "jiguCdNm" field.
-	JiguCdNm string `json:"jiguCdNm,omitempty"`
+	// GuyukCd holds the value of the "guyuk_cd" field.
+	GuyukCd string `json:"guyuk_cd,omitempty"`
+	// GuyukCdNm holds the value of the "guyuk_cd_nm" field.
+	GuyukCdNm string `json:"guyuk_cd_nm,omitempty"`
+	// JimokCd holds the value of the "jimok_cd" field.
+	JimokCd string `json:"jimok_cd,omitempty"`
+	// JimokCdNm holds the value of the "jimok_cd_nm" field.
+	JimokCdNm string `json:"jimok_cd_nm,omitempty"`
+	// JiyukCd holds the value of the "jiyuk_cd" field.
+	JiyukCd string `json:"jiyuk_cd,omitempty"`
+	// JiyukCdNm holds the value of the "jiyuk_cd_nm" field.
+	JiyukCdNm string `json:"jiyuk_cd_nm,omitempty"`
+	// JiguCd holds the value of the "jigu_cd" field.
+	JiguCd string `json:"jigu_cd,omitempty"`
+	// JiguCdNm holds the value of the "jigu_cd_nm" field.
+	JiguCdNm string `json:"jigu_cd_nm,omitempty"`
 	// ArchGBCdNm holds the value of the "arch_gb_cd_nm" field.
 	ArchGBCdNm string `json:"arch_gb_cd_nm,omitempty" xml:"archGbCdNm"`
 	// ArchGBCd holds the value of the "arch_gb_cd" field.
@@ -74,22 +74,22 @@ type Perms struct {
 	ArchPmsDay string `json:"arch_pms_day,omitempty" xml:"arch_pms_day"`
 	// UseAprDay holds the value of the "use_apr_day" field.
 	UseAprDay string `json:"use_apr_day,omitempty" xml:"use_apr_day"`
-	// PlatPlc holds the value of the "platPlc" field.
-	PlatPlc string `json:"platPlc,omitempty"`
-	// SigunguCd holds the value of the "sigunguCd" field.
-	SigunguCd string `json:"sigunguCd,omitempty"`
-	// BjdongCd holds the value of the "bjdongCd" field.
-	BjdongCd string `json:"bjdongCd,omitempty"`
-	// PlatGbCd holds the value of the "platGbCd" field.
-	PlatGbCd string `json:"platGbCd,omitempty"`
+	// PlatPlc holds the value of the "plat_plc" field.
+	PlatPlc string `json:"plat_plc,omitempty"`
+	// SigunguCd holds the value of the "sigungu_cd" field.
+	SigunguCd string `json:"sigungu_cd,omitempty"`
+	// BjdongCd holds the value of the "bjdong_cd" field.
+	BjdongCd string `json:"bjdong_cd,omitempty"`
+	// PlatGBCd holds the value of the "plat_gb_cd" field.
+	PlatGBCd string `json:"plat_gb_cd,omitempty"`
 	// Bun holds the value of the "bun" field.
 	Bun string `json:"bun,omitempty"`
 	// Ji holds the value of the "ji" field.
 	Ji string `json:"ji,omitempty"`
 	// MgmPmsrgstPk holds the value of the "mgm_pmsrgst_pk" field.
 	MgmPmsrgstPk string `json:"mgm_pmsrgst_pk,omitempty" xml:"mgmPmsrgstPk"`
-	// SplotNm holds the value of the "splotNm" field.
-	SplotNm string `json:"splotNm,omitempty"`
+	// SplotNm holds the value of the "splot_nm" field.
+	SplotNm string `json:"splot_nm,omitempty"`
 	// Block holds the value of the "block" field.
 	Block string `json:"block,omitempty"`
 	// Lot holds the value of the "lot" field.
@@ -113,7 +113,7 @@ func (*Perms) scanValues(columns []string) ([]any, error) {
 		switch columns[i] {
 		case perms.FieldID, perms.FieldPlatArea, perms.FieldArchArea, perms.FieldBcRat, perms.FieldTotArea, perms.FieldVlRatEstmTotArea, perms.FieldVlRat, perms.FieldMainBldCnt, perms.FieldAtchBldDongCnt, perms.FieldHhldCnt, perms.FieldHoCnt, perms.FieldFmlyCnt, perms.FieldTotPkngCnt, perms.FieldRnum:
 			values[i] = new(sql.NullInt64)
-		case perms.FieldGuyukCd, perms.FieldGuyukCdNm, perms.FieldJimokCd, perms.FieldJimokCdNm, perms.FieldJiyukCd, perms.FieldJiyukCdNm, perms.FieldJiguCd, perms.FieldJiguCdNm, perms.FieldArchGBCdNm, perms.FieldArchGBCd, perms.FieldMainPurpsCd, perms.FieldMainPurpsCdNm, perms.FieldStcnsSchedDay, perms.FieldStcnsDelayDay, perms.FieldRealStcnsDay, perms.FieldArchPmsDay, perms.FieldUseAprDay, perms.FieldPlatPlc, perms.FieldSigunguCd, perms.FieldBjdongCd, perms.FieldPlatGbCd, perms.FieldBun, perms.FieldJi, perms.FieldMgmPmsrgstPk, perms.FieldSplotNm, perms.FieldBlock, perms.FieldLot, perms.FieldCrtnDay, perms.FieldBldNm:
+		case perms.FieldGuyukCd, perms.FieldGuyukCdNm, perms.FieldJimokCd, perms.FieldJimokCdNm, perms.FieldJiyukCd, perms.FieldJiyukCdNm, perms.FieldJiguCd, perms.FieldJiguCdNm, perms.FieldArchGBCdNm, perms.FieldArchGBCd, perms.FieldMainPurpsCd, perms.FieldMainPurpsCdNm, perms.FieldStcnsSchedDay, perms.FieldStcnsDelayDay, perms.FieldRealStcnsDay, perms.FieldArchPmsDay, perms.FieldUseAprDay, perms.FieldPlatPlc, perms.FieldSigunguCd, perms.FieldBjdongCd, perms.FieldPlatGBCd, perms.FieldBun, perms.FieldJi, perms.FieldMgmPmsrgstPk, perms.FieldSplotNm, perms.FieldBlock, perms.FieldLot, perms.FieldCrtnDay, perms.FieldBldNm:
 			values[i] = new(sql.NullString)
 		case perms.FieldCreatedAt, perms.FieldUpdatedAt:
 			values[i] = new(sql.NullTime)
@@ -140,49 +140,49 @@ func (pe *Perms) assignValues(columns []string, values []any) error {
 			pe.ID = int(value.Int64)
 		case perms.FieldGuyukCd:
 			if value, ok := values[i].(*sql.NullString); !ok {
-				return fmt.Errorf("unexpected type %T for field guyukCd", values[i])
+				return fmt.Errorf("unexpected type %T for field guyuk_cd", values[i])
 			} else if value.Valid {
 				pe.GuyukCd = value.String
 			}
 		case perms.FieldGuyukCdNm:
 			if value, ok := values[i].(*sql.NullString); !ok {
-				return fmt.Errorf("unexpected type %T for field guyukCdNm", values[i])
+				return fmt.Errorf("unexpected type %T for field guyuk_cd_nm", values[i])
 			} else if value.Valid {
 				pe.GuyukCdNm = value.String
 			}
 		case perms.FieldJimokCd:
 			if value, ok := values[i].(*sql.NullString); !ok {
-				return fmt.Errorf("unexpected type %T for field jimokCd", values[i])
+				return fmt.Errorf("unexpected type %T for field jimok_cd", values[i])
 			} else if value.Valid {
 				pe.JimokCd = value.String
 			}
 		case perms.FieldJimokCdNm:
 			if value, ok := values[i].(*sql.NullString); !ok {
-				return fmt.Errorf("unexpected type %T for field jimokCdNm", values[i])
+				return fmt.Errorf("unexpected type %T for field jimok_cd_nm", values[i])
 			} else if value.Valid {
 				pe.JimokCdNm = value.String
 			}
 		case perms.FieldJiyukCd:
 			if value, ok := values[i].(*sql.NullString); !ok {
-				return fmt.Errorf("unexpected type %T for field jiyukCd", values[i])
+				return fmt.Errorf("unexpected type %T for field jiyuk_cd", values[i])
 			} else if value.Valid {
 				pe.JiyukCd = value.String
 			}
 		case perms.FieldJiyukCdNm:
 			if value, ok := values[i].(*sql.NullString); !ok {
-				return fmt.Errorf("unexpected type %T for field jiyukCdNm", values[i])
+				return fmt.Errorf("unexpected type %T for field jiyuk_cd_nm", values[i])
 			} else if value.Valid {
 				pe.JiyukCdNm = value.String
 			}
 		case perms.FieldJiguCd:
 			if value, ok := values[i].(*sql.NullString); !ok {
-				return fmt.Errorf("unexpected type %T for field jiguCd", values[i])
+				return fmt.Errorf("unexpected type %T for field jigu_cd", values[i])
 			} else if value.Valid {
 				pe.JiguCd = value.String
 			}
 		case perms.FieldJiguCdNm:
 			if value, ok := values[i].(*sql.NullString); !ok {
-				return fmt.Errorf("unexpected type %T for field jiguCdNm", values[i])
+				return fmt.Errorf("unexpected type %T for field jigu_cd_nm", values[i])
 			} else if value.Valid {
 				pe.JiguCdNm = value.String
 			}
@@ -314,27 +314,27 @@ func (pe *Perms) assignValues(columns []string, values []any) error {
 			}
 		case perms.FieldPlatPlc:
 			if value, ok := values[i].(*sql.NullString); !ok {
-				return fmt.Errorf("unexpected type %T for field platPlc", values[i])
+				return fmt.Errorf("unexpected type %T for field plat_plc", values[i])
 			} else if value.Valid {
 				pe.PlatPlc = value.String
 			}
 		case perms.FieldSigunguCd:
 			if value, ok := values[i].(*sql.NullString); !ok {
-				return fmt.Errorf("unexpected type %T for field sigunguCd", values[i])
+				return fmt.Errorf("unexpected type %T for field sigungu_cd", values[i])
 			} else if value.Valid {
 				pe.SigunguCd = value.String
 			}
 		case perms.FieldBjdongCd:
 			if value, ok := values[i].(*sql.NullString); !ok {
-				return fmt.Errorf("unexpected type %T for field bjdongCd", values[i])
+				return fmt.Errorf("unexpected type %T for field bjdong_cd", values[i])
 			} else if value.Valid {
 				pe.BjdongCd = value.String
 			}
-		case perms.FieldPlatGbCd:
+		case perms.FieldPlatGBCd:
 			if value, ok := values[i].(*sql.NullString); !ok {
-				return fmt.Errorf("unexpected type %T for field platGbCd", values[i])
+				return fmt.Errorf("unexpected type %T for field plat_gb_cd", values[i])
 			} else if value.Valid {
-				pe.PlatGbCd = value.String
+				pe.PlatGBCd = value.String
 			}
 		case perms.FieldBun:
 			if value, ok := values[i].(*sql.NullString); !ok {
@@ -356,7 +356,7 @@ func (pe *Perms) assignValues(columns []string, values []any) error {
 			}
 		case perms.FieldSplotNm:
 			if value, ok := values[i].(*sql.NullString); !ok {
-				return fmt.Errorf("unexpected type %T for field splotNm", values[i])
+				return fmt.Errorf("unexpected type %T for field splot_nm", values[i])
 			} else if value.Valid {
 				pe.SplotNm = value.String
 			}
@@ -430,28 +430,28 @@ func (pe *Perms) String() string {
 	var builder strings.Builder
 	builder.WriteString("Perms(")
 	builder.WriteString(fmt.Sprintf("id=%v, ", pe.ID))
-	builder.WriteString("guyukCd=")
+	builder.WriteString("guyuk_cd=")
 	builder.WriteString(pe.GuyukCd)
 	builder.WriteString(", ")
-	builder.WriteString("guyukCdNm=")
+	builder.WriteString("guyuk_cd_nm=")
 	builder.WriteString(pe.GuyukCdNm)
 	builder.WriteString(", ")
-	builder.WriteString("jimokCd=")
+	builder.WriteString("jimok_cd=")
 	builder.WriteString(pe.JimokCd)
 	builder.WriteString(", ")
-	builder.WriteString("jimokCdNm=")
+	builder.WriteString("jimok_cd_nm=")
 	builder.WriteString(pe.JimokCdNm)
 	builder.WriteString(", ")
-	builder.WriteString("jiyukCd=")
+	builder.WriteString("jiyuk_cd=")
 	builder.WriteString(pe.JiyukCd)
 	builder.WriteString(", ")
-	builder.WriteString("jiyukCdNm=")
+	builder.WriteString("jiyuk_cd_nm=")
 	builder.WriteString(pe.JiyukCdNm)
 	builder.WriteString(", ")
-	builder.WriteString("jiguCd=")
+	builder.WriteString("jigu_cd=")
 	builder.WriteString(pe.JiguCd)
 	builder.WriteString(", ")
-	builder.WriteString("jiguCdNm=")
+	builder.WriteString("jigu_cd_nm=")
 	builder.WriteString(pe.JiguCdNm)
 	builder.WriteString(", ")
 	builder.WriteString("arch_gb_cd_nm=")
@@ -517,17 +517,17 @@ func (pe *Perms) String() string {
 	builder.WriteString("use_apr_day=")
 	builder.WriteString(pe.UseAprDay)
 	builder.WriteString(", ")
-	builder.WriteString("platPlc=")
+	builder.WriteString("plat_plc=")
 	builder.WriteString(pe.PlatPlc)
 	builder.WriteString(", ")
-	builder.WriteString("sigunguCd=")
+	builder.WriteString("sigungu_cd=")
 	builder.WriteString(pe.SigunguCd)
 	builder.WriteString(", ")
-	builder.WriteString("bjdongCd=")
+	builder.WriteString("bjdong_cd=")
 	builder.WriteString(pe.BjdongCd)
 	builder.WriteString(", ")
-	builder.WriteString("platGbCd=")
-	builder.WriteString(pe.PlatGbCd)
+	builder.WriteString("plat_gb_cd=")
+	builder.WriteString(pe.PlatGBCd)
 	builder.WriteString(", ")
 	builder.WriteString("bun=")
 	builder.WriteString(pe.Bun)
@@ -538,7 +538,7 @@ func (pe *Perms) String() string {
 	builder.WriteString("mgm_pmsrgst_pk=")
 	builder.WriteString(pe.MgmPmsrgstPk)
 	builder.WriteString(", ")
-	builder.WriteString("splotNm=")
+	builder.WriteString("splot_nm=")
 	builder.WriteString(pe.SplotNm)
 	builder.WriteString(", ")
 	builder.WriteString("block=")

@@ -261,7 +261,7 @@ func (pq *PermsQuery) Clone() *PermsQuery {
 // Example:
 //
 //	var v []struct {
-//		GuyukCd string `json:"guyukCd,omitempty"`
+//		GuyukCd string `json:"guyuk_cd,omitempty"`
 //		Count int `json:"count,omitempty"`
 //	}
 //
@@ -284,7 +284,7 @@ func (pq *PermsQuery) GroupBy(field string, fields ...string) *PermsGroupBy {
 // Example:
 //
 //	var v []struct {
-//		GuyukCd string `json:"guyukCd,omitempty"`
+//		GuyukCd string `json:"guyuk_cd,omitempty"`
 //	}
 //
 //	client.Perms.Query().

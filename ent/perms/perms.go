@@ -11,21 +11,21 @@ const (
 	Label = "perms"
 	// FieldID holds the string denoting the id field in the database.
 	FieldID = "id"
-	// FieldGuyukCd holds the string denoting the guyukcd field in the database.
+	// FieldGuyukCd holds the string denoting the guyuk_cd field in the database.
 	FieldGuyukCd = "guyuk_cd"
-	// FieldGuyukCdNm holds the string denoting the guyukcdnm field in the database.
+	// FieldGuyukCdNm holds the string denoting the guyuk_cd_nm field in the database.
 	FieldGuyukCdNm = "guyuk_cd_nm"
-	// FieldJimokCd holds the string denoting the jimokcd field in the database.
+	// FieldJimokCd holds the string denoting the jimok_cd field in the database.
 	FieldJimokCd = "jimok_cd"
-	// FieldJimokCdNm holds the string denoting the jimokcdnm field in the database.
+	// FieldJimokCdNm holds the string denoting the jimok_cd_nm field in the database.
 	FieldJimokCdNm = "jimok_cd_nm"
-	// FieldJiyukCd holds the string denoting the jiyukcd field in the database.
+	// FieldJiyukCd holds the string denoting the jiyuk_cd field in the database.
 	FieldJiyukCd = "jiyuk_cd"
-	// FieldJiyukCdNm holds the string denoting the jiyukcdnm field in the database.
+	// FieldJiyukCdNm holds the string denoting the jiyuk_cd_nm field in the database.
 	FieldJiyukCdNm = "jiyuk_cd_nm"
-	// FieldJiguCd holds the string denoting the jigucd field in the database.
+	// FieldJiguCd holds the string denoting the jigu_cd field in the database.
 	FieldJiguCd = "jigu_cd"
-	// FieldJiguCdNm holds the string denoting the jigucdnm field in the database.
+	// FieldJiguCdNm holds the string denoting the jigu_cd_nm field in the database.
 	FieldJiguCdNm = "jigu_cd_nm"
 	// FieldArchGBCdNm holds the string denoting the arch_gb_cd_nm field in the database.
 	FieldArchGBCdNm = "arch_gb_cd_nm"
@@ -69,21 +69,21 @@ const (
 	FieldArchPmsDay = "arch_pms_day"
 	// FieldUseAprDay holds the string denoting the use_apr_day field in the database.
 	FieldUseAprDay = "use_apr_day"
-	// FieldPlatPlc holds the string denoting the platplc field in the database.
+	// FieldPlatPlc holds the string denoting the plat_plc field in the database.
 	FieldPlatPlc = "plat_plc"
-	// FieldSigunguCd holds the string denoting the sigungucd field in the database.
+	// FieldSigunguCd holds the string denoting the sigungu_cd field in the database.
 	FieldSigunguCd = "sigungu_cd"
-	// FieldBjdongCd holds the string denoting the bjdongcd field in the database.
+	// FieldBjdongCd holds the string denoting the bjdong_cd field in the database.
 	FieldBjdongCd = "bjdong_cd"
-	// FieldPlatGbCd holds the string denoting the platgbcd field in the database.
-	FieldPlatGbCd = "plat_gb_cd"
+	// FieldPlatGBCd holds the string denoting the plat_gb_cd field in the database.
+	FieldPlatGBCd = "plat_gb_cd"
 	// FieldBun holds the string denoting the bun field in the database.
 	FieldBun = "bun"
 	// FieldJi holds the string denoting the ji field in the database.
 	FieldJi = "ji"
 	// FieldMgmPmsrgstPk holds the string denoting the mgm_pmsrgst_pk field in the database.
 	FieldMgmPmsrgstPk = "mgm_pmsrgst_pk"
-	// FieldSplotNm holds the string denoting the splotnm field in the database.
+	// FieldSplotNm holds the string denoting the splot_nm field in the database.
 	FieldSplotNm = "splot_nm"
 	// FieldBlock holds the string denoting the block field in the database.
 	FieldBlock = "block"
@@ -138,7 +138,7 @@ var Columns = []string{
 	FieldPlatPlc,
 	FieldSigunguCd,
 	FieldBjdongCd,
-	FieldPlatGbCd,
+	FieldPlatGBCd,
 	FieldBun,
 	FieldJi,
 	FieldMgmPmsrgstPk,
@@ -167,4 +167,6 @@ var (
 	DefaultCreatedAt func() time.Time
 	// DefaultUpdatedAt holds the default value on creation for the "updated_at" field.
 	DefaultUpdatedAt func() time.Time
+	// UpdateDefaultUpdatedAt holds the default value on update for the "updated_at" field.
+	UpdateDefaultUpdatedAt func() time.Time
 )

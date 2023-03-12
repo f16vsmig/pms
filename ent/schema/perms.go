@@ -15,21 +15,21 @@ type Perms struct {
 // Fields of the Perms.
 func (Perms) Fields() []ent.Field {
 	return []ent.Field{
-		field.String("guyukCd").
+		field.String("guyuk_cd").
 			Optional(), // 구역코드
-		field.String("guyukCdNm").
+		field.String("guyuk_cd_nm").
 			Optional(), // 구역코드명
-		field.String("jimokCd").
+		field.String("jimok_cd").
 			Optional(), // 지목코드
-		field.String("jimokCdNm").
+		field.String("jimok_cd_nm").
 			Optional(), // 지목코드명
-		field.String("jiyukCd").
+		field.String("jiyuk_cd").
 			Optional(), // 지역코드
-		field.String("jiyukCdNm").
+		field.String("jiyuk_cd_nm").
 			Optional(), // 지역코드명
-		field.String("jiguCd").
+		field.String("jigu_cd").
 			Optional(), // 지구코드
-		field.String("jiguCdNm").
+		field.String("jigu_cd_nm").
 			Optional(), // 지구코드명
 		field.String("arch_gb_cd_nm").
 			Optional().
@@ -94,13 +94,13 @@ func (Perms) Fields() []ent.Field {
 		field.String("use_apr_day").
 			Optional().
 			StructTag(`xml:"use_apr_day"`), // 사용승인일
-		field.String("platPlc").
+		field.String("plat_plc").
 			Optional(), // 대지위치
-		field.String("sigunguCd").
+		field.String("sigungu_cd").
 			Optional(), // 시군구코드
-		field.String("bjdongCd").
+		field.String("bjdong_cd").
 			Optional(), // 법정동코드
-		field.String("platGbCd").
+		field.String("plat_gb_cd").
 			Optional(), // 대지구분코드
 		field.String("bun").
 			Optional(), // 번
@@ -109,7 +109,7 @@ func (Perms) Fields() []ent.Field {
 		field.String("mgm_pmsrgst_pk").
 			StructTag(`xml:"mgmPmsrgstPk"`).
 			Unique(), // 관리허가대장pk
-		field.String("splotNm").
+		field.String("splot_nm").
 			Optional(), // 특수지명
 		field.String("block").
 			Optional(), // 블록
@@ -128,7 +128,8 @@ func (Perms) Fields() []ent.Field {
 			Default(time.Now).
 			Immutable(), // 생성일자
 		field.Time("updated_at").
-			Default(time.Now), // 업데이트일자
+			Default(time.Now).
+			UpdateDefault(time.Now), // 업데이트일자
 	}
 }
 

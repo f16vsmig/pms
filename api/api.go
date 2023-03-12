@@ -152,7 +152,7 @@ func GetPermsData(code, startDate, endDate string) error {
 			SetMainPurpsCdNm(val.MainPurpsCdNm).
 			SetMgmPmsrgstPk(val.MgmPmsrgstPk).
 			SetPlatArea(uint32(val.PlatArea)).
-			SetPlatGbCd(val.PlatGbCd).
+			SetPlatGBCd(val.PlatGbCd).
 			SetPlatPlc(val.PlatPlc).
 			SetRealStcnsDay(val.RealStcnsDay).
 			SetRnum(val.Rnum).
@@ -216,12 +216,38 @@ func GetPermsDataFromCSV(startDate, endDate string) error {
 	return nil
 }
 
+// DB에서 인허가정보를 조회하여 클라이언트에 보내줍니다.
 func GetPermsDataAPI(c *fiber.Ctx) error {
+	sido := c.Query("sido", "")
+	permsType := c.Query("permsType", "")
+	totAreaGt := c.QueryInt("totAreaGt", 0)
+
 	page := c.QueryInt("page", 1)
-	// sido := c.Query("sido", "서울특별시")
 	cnt := 10
 
-	instance := db.Client.Perms.Query().Order(ent.Desc(perms.FieldArchPmsDay))
+	instance := db.Client.Perms.Query()
+	if sido != "" && permsType == "" { // sido(지역)에 대한 조건이 있으면 where절을 추가합니다.
+		instance = instance.Where(
+			perms.And(
+				perms.SigunguCdHasPrefix(sido),
+				perms.TotAreaGTE(uint32(totAreaGt)),
+			),
+		)
+	} else if sido != "" && permsType != "" {
+		instance = instance.Where(
+			perms.And(
+				perms.SigunguCdHasPrefix(sido),
+				perms.ArchGBCdNmEQ(permsType),
+				perms.TotAreaGTE(uint32(totAreaGt)),
+			),
+		)
+	} else if sido == "" && totAreaGt > 0 {
+		instance = instance.Where(perms.TotAreaGTE(uint32(totAreaGt)))
+	} else if sido == "" && permsType != "" {
+		instance = instance.Where(perms.ArchGBCdNmEQ(permsType))
+	}
+
+	instance = instance.Order(ent.Desc(perms.FieldMgmPmsrgstPk))
 
 	totalCnt, err := instance.Count(ctx)
 	if err != nil {
@@ -231,7 +257,7 @@ func GetPermsDataAPI(c *fiber.Ctx) error {
 
 	totalPage := math.Round((float64(totalCnt / cnt)))
 
-	perms, err := instance.Offset(page * cnt).Limit(cnt).All(ctx)
+	perms, err := instance.Offset((page - 1) * cnt).Limit(cnt).All(ctx)
 
 	if err != nil {
 		fmt.Println("인허가정보 쿼리중 에러가 발생했습니다. " + err.Error())

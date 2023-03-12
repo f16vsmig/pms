@@ -59,4 +59,6 @@ func init() {
 	permsDescUpdatedAt := permsFields[43].Descriptor()
 	// perms.DefaultUpdatedAt holds the default value on creation for the updated_at field.
 	perms.DefaultUpdatedAt = permsDescUpdatedAt.Default.(func() time.Time)
+	// perms.UpdateDefaultUpdatedAt holds the default value on update for the updated_at field.
+	perms.UpdateDefaultUpdatedAt = permsDescUpdatedAt.UpdateDefault.(func() time.Time)
 }

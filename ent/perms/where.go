@@ -54,42 +54,42 @@ func IDLTE(id int) predicate.Perms {
 	return predicate.Perms(sql.FieldLTE(FieldID, id))
 }
 
-// GuyukCd applies equality check predicate on the "guyukCd" field. It's identical to GuyukCdEQ.
+// GuyukCd applies equality check predicate on the "guyuk_cd" field. It's identical to GuyukCdEQ.
 func GuyukCd(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldEQ(FieldGuyukCd, v))
 }
 
-// GuyukCdNm applies equality check predicate on the "guyukCdNm" field. It's identical to GuyukCdNmEQ.
+// GuyukCdNm applies equality check predicate on the "guyuk_cd_nm" field. It's identical to GuyukCdNmEQ.
 func GuyukCdNm(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldEQ(FieldGuyukCdNm, v))
 }
 
-// JimokCd applies equality check predicate on the "jimokCd" field. It's identical to JimokCdEQ.
+// JimokCd applies equality check predicate on the "jimok_cd" field. It's identical to JimokCdEQ.
 func JimokCd(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldEQ(FieldJimokCd, v))
 }
 
-// JimokCdNm applies equality check predicate on the "jimokCdNm" field. It's identical to JimokCdNmEQ.
+// JimokCdNm applies equality check predicate on the "jimok_cd_nm" field. It's identical to JimokCdNmEQ.
 func JimokCdNm(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldEQ(FieldJimokCdNm, v))
 }
 
-// JiyukCd applies equality check predicate on the "jiyukCd" field. It's identical to JiyukCdEQ.
+// JiyukCd applies equality check predicate on the "jiyuk_cd" field. It's identical to JiyukCdEQ.
 func JiyukCd(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldEQ(FieldJiyukCd, v))
 }
 
-// JiyukCdNm applies equality check predicate on the "jiyukCdNm" field. It's identical to JiyukCdNmEQ.
+// JiyukCdNm applies equality check predicate on the "jiyuk_cd_nm" field. It's identical to JiyukCdNmEQ.
 func JiyukCdNm(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldEQ(FieldJiyukCdNm, v))
 }
 
-// JiguCd applies equality check predicate on the "jiguCd" field. It's identical to JiguCdEQ.
+// JiguCd applies equality check predicate on the "jigu_cd" field. It's identical to JiguCdEQ.
 func JiguCd(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldEQ(FieldJiguCd, v))
 }
 
-// JiguCdNm applies equality check predicate on the "jiguCdNm" field. It's identical to JiguCdNmEQ.
+// JiguCdNm applies equality check predicate on the "jigu_cd_nm" field. It's identical to JiguCdNmEQ.
 func JiguCdNm(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldEQ(FieldJiguCdNm, v))
 }
@@ -199,24 +199,24 @@ func UseAprDay(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldEQ(FieldUseAprDay, v))
 }
 
-// PlatPlc applies equality check predicate on the "platPlc" field. It's identical to PlatPlcEQ.
+// PlatPlc applies equality check predicate on the "plat_plc" field. It's identical to PlatPlcEQ.
 func PlatPlc(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldEQ(FieldPlatPlc, v))
 }
 
-// SigunguCd applies equality check predicate on the "sigunguCd" field. It's identical to SigunguCdEQ.
+// SigunguCd applies equality check predicate on the "sigungu_cd" field. It's identical to SigunguCdEQ.
 func SigunguCd(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldEQ(FieldSigunguCd, v))
 }
 
-// BjdongCd applies equality check predicate on the "bjdongCd" field. It's identical to BjdongCdEQ.
+// BjdongCd applies equality check predicate on the "bjdong_cd" field. It's identical to BjdongCdEQ.
 func BjdongCd(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldEQ(FieldBjdongCd, v))
 }
 
-// PlatGbCd applies equality check predicate on the "platGbCd" field. It's identical to PlatGbCdEQ.
-func PlatGbCd(v string) predicate.Perms {
-	return predicate.Perms(sql.FieldEQ(FieldPlatGbCd, v))
+// PlatGBCd applies equality check predicate on the "plat_gb_cd" field. It's identical to PlatGBCdEQ.
+func PlatGBCd(v string) predicate.Perms {
+	return predicate.Perms(sql.FieldEQ(FieldPlatGBCd, v))
 }
 
 // Bun applies equality check predicate on the "bun" field. It's identical to BunEQ.
@@ -234,7 +234,7 @@ func MgmPmsrgstPk(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldEQ(FieldMgmPmsrgstPk, v))
 }
 
-// SplotNm applies equality check predicate on the "splotNm" field. It's identical to SplotNmEQ.
+// SplotNm applies equality check predicate on the "splot_nm" field. It's identical to SplotNmEQ.
 func SplotNm(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldEQ(FieldSplotNm, v))
 }
@@ -274,602 +274,602 @@ func UpdatedAt(v time.Time) predicate.Perms {
 	return predicate.Perms(sql.FieldEQ(FieldUpdatedAt, v))
 }
 
-// GuyukCdEQ applies the EQ predicate on the "guyukCd" field.
+// GuyukCdEQ applies the EQ predicate on the "guyuk_cd" field.
 func GuyukCdEQ(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldEQ(FieldGuyukCd, v))
 }
 
-// GuyukCdNEQ applies the NEQ predicate on the "guyukCd" field.
+// GuyukCdNEQ applies the NEQ predicate on the "guyuk_cd" field.
 func GuyukCdNEQ(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldNEQ(FieldGuyukCd, v))
 }
 
-// GuyukCdIn applies the In predicate on the "guyukCd" field.
+// GuyukCdIn applies the In predicate on the "guyuk_cd" field.
 func GuyukCdIn(vs ...string) predicate.Perms {
 	return predicate.Perms(sql.FieldIn(FieldGuyukCd, vs...))
 }
 
-// GuyukCdNotIn applies the NotIn predicate on the "guyukCd" field.
+// GuyukCdNotIn applies the NotIn predicate on the "guyuk_cd" field.
 func GuyukCdNotIn(vs ...string) predicate.Perms {
 	return predicate.Perms(sql.FieldNotIn(FieldGuyukCd, vs...))
 }
 
-// GuyukCdGT applies the GT predicate on the "guyukCd" field.
+// GuyukCdGT applies the GT predicate on the "guyuk_cd" field.
 func GuyukCdGT(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldGT(FieldGuyukCd, v))
 }
 
-// GuyukCdGTE applies the GTE predicate on the "guyukCd" field.
+// GuyukCdGTE applies the GTE predicate on the "guyuk_cd" field.
 func GuyukCdGTE(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldGTE(FieldGuyukCd, v))
 }
 
-// GuyukCdLT applies the LT predicate on the "guyukCd" field.
+// GuyukCdLT applies the LT predicate on the "guyuk_cd" field.
 func GuyukCdLT(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldLT(FieldGuyukCd, v))
 }
 
-// GuyukCdLTE applies the LTE predicate on the "guyukCd" field.
+// GuyukCdLTE applies the LTE predicate on the "guyuk_cd" field.
 func GuyukCdLTE(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldLTE(FieldGuyukCd, v))
 }
 
-// GuyukCdContains applies the Contains predicate on the "guyukCd" field.
+// GuyukCdContains applies the Contains predicate on the "guyuk_cd" field.
 func GuyukCdContains(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldContains(FieldGuyukCd, v))
 }
 
-// GuyukCdHasPrefix applies the HasPrefix predicate on the "guyukCd" field.
+// GuyukCdHasPrefix applies the HasPrefix predicate on the "guyuk_cd" field.
 func GuyukCdHasPrefix(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldHasPrefix(FieldGuyukCd, v))
 }
 
-// GuyukCdHasSuffix applies the HasSuffix predicate on the "guyukCd" field.
+// GuyukCdHasSuffix applies the HasSuffix predicate on the "guyuk_cd" field.
 func GuyukCdHasSuffix(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldHasSuffix(FieldGuyukCd, v))
 }
 
-// GuyukCdIsNil applies the IsNil predicate on the "guyukCd" field.
+// GuyukCdIsNil applies the IsNil predicate on the "guyuk_cd" field.
 func GuyukCdIsNil() predicate.Perms {
 	return predicate.Perms(sql.FieldIsNull(FieldGuyukCd))
 }
 
-// GuyukCdNotNil applies the NotNil predicate on the "guyukCd" field.
+// GuyukCdNotNil applies the NotNil predicate on the "guyuk_cd" field.
 func GuyukCdNotNil() predicate.Perms {
 	return predicate.Perms(sql.FieldNotNull(FieldGuyukCd))
 }
 
-// GuyukCdEqualFold applies the EqualFold predicate on the "guyukCd" field.
+// GuyukCdEqualFold applies the EqualFold predicate on the "guyuk_cd" field.
 func GuyukCdEqualFold(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldEqualFold(FieldGuyukCd, v))
 }
 
-// GuyukCdContainsFold applies the ContainsFold predicate on the "guyukCd" field.
+// GuyukCdContainsFold applies the ContainsFold predicate on the "guyuk_cd" field.
 func GuyukCdContainsFold(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldContainsFold(FieldGuyukCd, v))
 }
 
-// GuyukCdNmEQ applies the EQ predicate on the "guyukCdNm" field.
+// GuyukCdNmEQ applies the EQ predicate on the "guyuk_cd_nm" field.
 func GuyukCdNmEQ(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldEQ(FieldGuyukCdNm, v))
 }
 
-// GuyukCdNmNEQ applies the NEQ predicate on the "guyukCdNm" field.
+// GuyukCdNmNEQ applies the NEQ predicate on the "guyuk_cd_nm" field.
 func GuyukCdNmNEQ(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldNEQ(FieldGuyukCdNm, v))
 }
 
-// GuyukCdNmIn applies the In predicate on the "guyukCdNm" field.
+// GuyukCdNmIn applies the In predicate on the "guyuk_cd_nm" field.
 func GuyukCdNmIn(vs ...string) predicate.Perms {
 	return predicate.Perms(sql.FieldIn(FieldGuyukCdNm, vs...))
 }
 
-// GuyukCdNmNotIn applies the NotIn predicate on the "guyukCdNm" field.
+// GuyukCdNmNotIn applies the NotIn predicate on the "guyuk_cd_nm" field.
 func GuyukCdNmNotIn(vs ...string) predicate.Perms {
 	return predicate.Perms(sql.FieldNotIn(FieldGuyukCdNm, vs...))
 }
 
-// GuyukCdNmGT applies the GT predicate on the "guyukCdNm" field.
+// GuyukCdNmGT applies the GT predicate on the "guyuk_cd_nm" field.
 func GuyukCdNmGT(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldGT(FieldGuyukCdNm, v))
 }
 
-// GuyukCdNmGTE applies the GTE predicate on the "guyukCdNm" field.
+// GuyukCdNmGTE applies the GTE predicate on the "guyuk_cd_nm" field.
 func GuyukCdNmGTE(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldGTE(FieldGuyukCdNm, v))
 }
 
-// GuyukCdNmLT applies the LT predicate on the "guyukCdNm" field.
+// GuyukCdNmLT applies the LT predicate on the "guyuk_cd_nm" field.
 func GuyukCdNmLT(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldLT(FieldGuyukCdNm, v))
 }
 
-// GuyukCdNmLTE applies the LTE predicate on the "guyukCdNm" field.
+// GuyukCdNmLTE applies the LTE predicate on the "guyuk_cd_nm" field.
 func GuyukCdNmLTE(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldLTE(FieldGuyukCdNm, v))
 }
 
-// GuyukCdNmContains applies the Contains predicate on the "guyukCdNm" field.
+// GuyukCdNmContains applies the Contains predicate on the "guyuk_cd_nm" field.
 func GuyukCdNmContains(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldContains(FieldGuyukCdNm, v))
 }
 
-// GuyukCdNmHasPrefix applies the HasPrefix predicate on the "guyukCdNm" field.
+// GuyukCdNmHasPrefix applies the HasPrefix predicate on the "guyuk_cd_nm" field.
 func GuyukCdNmHasPrefix(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldHasPrefix(FieldGuyukCdNm, v))
 }
 
-// GuyukCdNmHasSuffix applies the HasSuffix predicate on the "guyukCdNm" field.
+// GuyukCdNmHasSuffix applies the HasSuffix predicate on the "guyuk_cd_nm" field.
 func GuyukCdNmHasSuffix(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldHasSuffix(FieldGuyukCdNm, v))
 }
 
-// GuyukCdNmIsNil applies the IsNil predicate on the "guyukCdNm" field.
+// GuyukCdNmIsNil applies the IsNil predicate on the "guyuk_cd_nm" field.
 func GuyukCdNmIsNil() predicate.Perms {
 	return predicate.Perms(sql.FieldIsNull(FieldGuyukCdNm))
 }
 
-// GuyukCdNmNotNil applies the NotNil predicate on the "guyukCdNm" field.
+// GuyukCdNmNotNil applies the NotNil predicate on the "guyuk_cd_nm" field.
 func GuyukCdNmNotNil() predicate.Perms {
 	return predicate.Perms(sql.FieldNotNull(FieldGuyukCdNm))
 }
 
-// GuyukCdNmEqualFold applies the EqualFold predicate on the "guyukCdNm" field.
+// GuyukCdNmEqualFold applies the EqualFold predicate on the "guyuk_cd_nm" field.
 func GuyukCdNmEqualFold(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldEqualFold(FieldGuyukCdNm, v))
 }
 
-// GuyukCdNmContainsFold applies the ContainsFold predicate on the "guyukCdNm" field.
+// GuyukCdNmContainsFold applies the ContainsFold predicate on the "guyuk_cd_nm" field.
 func GuyukCdNmContainsFold(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldContainsFold(FieldGuyukCdNm, v))
 }
 
-// JimokCdEQ applies the EQ predicate on the "jimokCd" field.
+// JimokCdEQ applies the EQ predicate on the "jimok_cd" field.
 func JimokCdEQ(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldEQ(FieldJimokCd, v))
 }
 
-// JimokCdNEQ applies the NEQ predicate on the "jimokCd" field.
+// JimokCdNEQ applies the NEQ predicate on the "jimok_cd" field.
 func JimokCdNEQ(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldNEQ(FieldJimokCd, v))
 }
 
-// JimokCdIn applies the In predicate on the "jimokCd" field.
+// JimokCdIn applies the In predicate on the "jimok_cd" field.
 func JimokCdIn(vs ...string) predicate.Perms {
 	return predicate.Perms(sql.FieldIn(FieldJimokCd, vs...))
 }
 
-// JimokCdNotIn applies the NotIn predicate on the "jimokCd" field.
+// JimokCdNotIn applies the NotIn predicate on the "jimok_cd" field.
 func JimokCdNotIn(vs ...string) predicate.Perms {
 	return predicate.Perms(sql.FieldNotIn(FieldJimokCd, vs...))
 }
 
-// JimokCdGT applies the GT predicate on the "jimokCd" field.
+// JimokCdGT applies the GT predicate on the "jimok_cd" field.
 func JimokCdGT(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldGT(FieldJimokCd, v))
 }
 
-// JimokCdGTE applies the GTE predicate on the "jimokCd" field.
+// JimokCdGTE applies the GTE predicate on the "jimok_cd" field.
 func JimokCdGTE(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldGTE(FieldJimokCd, v))
 }
 
-// JimokCdLT applies the LT predicate on the "jimokCd" field.
+// JimokCdLT applies the LT predicate on the "jimok_cd" field.
 func JimokCdLT(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldLT(FieldJimokCd, v))
 }
 
-// JimokCdLTE applies the LTE predicate on the "jimokCd" field.
+// JimokCdLTE applies the LTE predicate on the "jimok_cd" field.
 func JimokCdLTE(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldLTE(FieldJimokCd, v))
 }
 
-// JimokCdContains applies the Contains predicate on the "jimokCd" field.
+// JimokCdContains applies the Contains predicate on the "jimok_cd" field.
 func JimokCdContains(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldContains(FieldJimokCd, v))
 }
 
-// JimokCdHasPrefix applies the HasPrefix predicate on the "jimokCd" field.
+// JimokCdHasPrefix applies the HasPrefix predicate on the "jimok_cd" field.
 func JimokCdHasPrefix(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldHasPrefix(FieldJimokCd, v))
 }
 
-// JimokCdHasSuffix applies the HasSuffix predicate on the "jimokCd" field.
+// JimokCdHasSuffix applies the HasSuffix predicate on the "jimok_cd" field.
 func JimokCdHasSuffix(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldHasSuffix(FieldJimokCd, v))
 }
 
-// JimokCdIsNil applies the IsNil predicate on the "jimokCd" field.
+// JimokCdIsNil applies the IsNil predicate on the "jimok_cd" field.
 func JimokCdIsNil() predicate.Perms {
 	return predicate.Perms(sql.FieldIsNull(FieldJimokCd))
 }
 
-// JimokCdNotNil applies the NotNil predicate on the "jimokCd" field.
+// JimokCdNotNil applies the NotNil predicate on the "jimok_cd" field.
 func JimokCdNotNil() predicate.Perms {
 	return predicate.Perms(sql.FieldNotNull(FieldJimokCd))
 }
 
-// JimokCdEqualFold applies the EqualFold predicate on the "jimokCd" field.
+// JimokCdEqualFold applies the EqualFold predicate on the "jimok_cd" field.
 func JimokCdEqualFold(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldEqualFold(FieldJimokCd, v))
 }
 
-// JimokCdContainsFold applies the ContainsFold predicate on the "jimokCd" field.
+// JimokCdContainsFold applies the ContainsFold predicate on the "jimok_cd" field.
 func JimokCdContainsFold(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldContainsFold(FieldJimokCd, v))
 }
 
-// JimokCdNmEQ applies the EQ predicate on the "jimokCdNm" field.
+// JimokCdNmEQ applies the EQ predicate on the "jimok_cd_nm" field.
 func JimokCdNmEQ(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldEQ(FieldJimokCdNm, v))
 }
 
-// JimokCdNmNEQ applies the NEQ predicate on the "jimokCdNm" field.
+// JimokCdNmNEQ applies the NEQ predicate on the "jimok_cd_nm" field.
 func JimokCdNmNEQ(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldNEQ(FieldJimokCdNm, v))
 }
 
-// JimokCdNmIn applies the In predicate on the "jimokCdNm" field.
+// JimokCdNmIn applies the In predicate on the "jimok_cd_nm" field.
 func JimokCdNmIn(vs ...string) predicate.Perms {
 	return predicate.Perms(sql.FieldIn(FieldJimokCdNm, vs...))
 }
 
-// JimokCdNmNotIn applies the NotIn predicate on the "jimokCdNm" field.
+// JimokCdNmNotIn applies the NotIn predicate on the "jimok_cd_nm" field.
 func JimokCdNmNotIn(vs ...string) predicate.Perms {
 	return predicate.Perms(sql.FieldNotIn(FieldJimokCdNm, vs...))
 }
 
-// JimokCdNmGT applies the GT predicate on the "jimokCdNm" field.
+// JimokCdNmGT applies the GT predicate on the "jimok_cd_nm" field.
 func JimokCdNmGT(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldGT(FieldJimokCdNm, v))
 }
 
-// JimokCdNmGTE applies the GTE predicate on the "jimokCdNm" field.
+// JimokCdNmGTE applies the GTE predicate on the "jimok_cd_nm" field.
 func JimokCdNmGTE(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldGTE(FieldJimokCdNm, v))
 }
 
-// JimokCdNmLT applies the LT predicate on the "jimokCdNm" field.
+// JimokCdNmLT applies the LT predicate on the "jimok_cd_nm" field.
 func JimokCdNmLT(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldLT(FieldJimokCdNm, v))
 }
 
-// JimokCdNmLTE applies the LTE predicate on the "jimokCdNm" field.
+// JimokCdNmLTE applies the LTE predicate on the "jimok_cd_nm" field.
 func JimokCdNmLTE(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldLTE(FieldJimokCdNm, v))
 }
 
-// JimokCdNmContains applies the Contains predicate on the "jimokCdNm" field.
+// JimokCdNmContains applies the Contains predicate on the "jimok_cd_nm" field.
 func JimokCdNmContains(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldContains(FieldJimokCdNm, v))
 }
 
-// JimokCdNmHasPrefix applies the HasPrefix predicate on the "jimokCdNm" field.
+// JimokCdNmHasPrefix applies the HasPrefix predicate on the "jimok_cd_nm" field.
 func JimokCdNmHasPrefix(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldHasPrefix(FieldJimokCdNm, v))
 }
 
-// JimokCdNmHasSuffix applies the HasSuffix predicate on the "jimokCdNm" field.
+// JimokCdNmHasSuffix applies the HasSuffix predicate on the "jimok_cd_nm" field.
 func JimokCdNmHasSuffix(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldHasSuffix(FieldJimokCdNm, v))
 }
 
-// JimokCdNmIsNil applies the IsNil predicate on the "jimokCdNm" field.
+// JimokCdNmIsNil applies the IsNil predicate on the "jimok_cd_nm" field.
 func JimokCdNmIsNil() predicate.Perms {
 	return predicate.Perms(sql.FieldIsNull(FieldJimokCdNm))
 }
 
-// JimokCdNmNotNil applies the NotNil predicate on the "jimokCdNm" field.
+// JimokCdNmNotNil applies the NotNil predicate on the "jimok_cd_nm" field.
 func JimokCdNmNotNil() predicate.Perms {
 	return predicate.Perms(sql.FieldNotNull(FieldJimokCdNm))
 }
 
-// JimokCdNmEqualFold applies the EqualFold predicate on the "jimokCdNm" field.
+// JimokCdNmEqualFold applies the EqualFold predicate on the "jimok_cd_nm" field.
 func JimokCdNmEqualFold(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldEqualFold(FieldJimokCdNm, v))
 }
 
-// JimokCdNmContainsFold applies the ContainsFold predicate on the "jimokCdNm" field.
+// JimokCdNmContainsFold applies the ContainsFold predicate on the "jimok_cd_nm" field.
 func JimokCdNmContainsFold(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldContainsFold(FieldJimokCdNm, v))
 }
 
-// JiyukCdEQ applies the EQ predicate on the "jiyukCd" field.
+// JiyukCdEQ applies the EQ predicate on the "jiyuk_cd" field.
 func JiyukCdEQ(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldEQ(FieldJiyukCd, v))
 }
 
-// JiyukCdNEQ applies the NEQ predicate on the "jiyukCd" field.
+// JiyukCdNEQ applies the NEQ predicate on the "jiyuk_cd" field.
 func JiyukCdNEQ(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldNEQ(FieldJiyukCd, v))
 }
 
-// JiyukCdIn applies the In predicate on the "jiyukCd" field.
+// JiyukCdIn applies the In predicate on the "jiyuk_cd" field.
 func JiyukCdIn(vs ...string) predicate.Perms {
 	return predicate.Perms(sql.FieldIn(FieldJiyukCd, vs...))
 }
 
-// JiyukCdNotIn applies the NotIn predicate on the "jiyukCd" field.
+// JiyukCdNotIn applies the NotIn predicate on the "jiyuk_cd" field.
 func JiyukCdNotIn(vs ...string) predicate.Perms {
 	return predicate.Perms(sql.FieldNotIn(FieldJiyukCd, vs...))
 }
 
-// JiyukCdGT applies the GT predicate on the "jiyukCd" field.
+// JiyukCdGT applies the GT predicate on the "jiyuk_cd" field.
 func JiyukCdGT(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldGT(FieldJiyukCd, v))
 }
 
-// JiyukCdGTE applies the GTE predicate on the "jiyukCd" field.
+// JiyukCdGTE applies the GTE predicate on the "jiyuk_cd" field.
 func JiyukCdGTE(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldGTE(FieldJiyukCd, v))
 }
 
-// JiyukCdLT applies the LT predicate on the "jiyukCd" field.
+// JiyukCdLT applies the LT predicate on the "jiyuk_cd" field.
 func JiyukCdLT(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldLT(FieldJiyukCd, v))
 }
 
-// JiyukCdLTE applies the LTE predicate on the "jiyukCd" field.
+// JiyukCdLTE applies the LTE predicate on the "jiyuk_cd" field.
 func JiyukCdLTE(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldLTE(FieldJiyukCd, v))
 }
 
-// JiyukCdContains applies the Contains predicate on the "jiyukCd" field.
+// JiyukCdContains applies the Contains predicate on the "jiyuk_cd" field.
 func JiyukCdContains(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldContains(FieldJiyukCd, v))
 }
 
-// JiyukCdHasPrefix applies the HasPrefix predicate on the "jiyukCd" field.
+// JiyukCdHasPrefix applies the HasPrefix predicate on the "jiyuk_cd" field.
 func JiyukCdHasPrefix(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldHasPrefix(FieldJiyukCd, v))
 }
 
-// JiyukCdHasSuffix applies the HasSuffix predicate on the "jiyukCd" field.
+// JiyukCdHasSuffix applies the HasSuffix predicate on the "jiyuk_cd" field.
 func JiyukCdHasSuffix(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldHasSuffix(FieldJiyukCd, v))
 }
 
-// JiyukCdIsNil applies the IsNil predicate on the "jiyukCd" field.
+// JiyukCdIsNil applies the IsNil predicate on the "jiyuk_cd" field.
 func JiyukCdIsNil() predicate.Perms {
 	return predicate.Perms(sql.FieldIsNull(FieldJiyukCd))
 }
 
-// JiyukCdNotNil applies the NotNil predicate on the "jiyukCd" field.
+// JiyukCdNotNil applies the NotNil predicate on the "jiyuk_cd" field.
 func JiyukCdNotNil() predicate.Perms {
 	return predicate.Perms(sql.FieldNotNull(FieldJiyukCd))
 }
 
-// JiyukCdEqualFold applies the EqualFold predicate on the "jiyukCd" field.
+// JiyukCdEqualFold applies the EqualFold predicate on the "jiyuk_cd" field.
 func JiyukCdEqualFold(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldEqualFold(FieldJiyukCd, v))
 }
 
-// JiyukCdContainsFold applies the ContainsFold predicate on the "jiyukCd" field.
+// JiyukCdContainsFold applies the ContainsFold predicate on the "jiyuk_cd" field.
 func JiyukCdContainsFold(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldContainsFold(FieldJiyukCd, v))
 }
 
-// JiyukCdNmEQ applies the EQ predicate on the "jiyukCdNm" field.
+// JiyukCdNmEQ applies the EQ predicate on the "jiyuk_cd_nm" field.
 func JiyukCdNmEQ(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldEQ(FieldJiyukCdNm, v))
 }
 
-// JiyukCdNmNEQ applies the NEQ predicate on the "jiyukCdNm" field.
+// JiyukCdNmNEQ applies the NEQ predicate on the "jiyuk_cd_nm" field.
 func JiyukCdNmNEQ(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldNEQ(FieldJiyukCdNm, v))
 }
 
-// JiyukCdNmIn applies the In predicate on the "jiyukCdNm" field.
+// JiyukCdNmIn applies the In predicate on the "jiyuk_cd_nm" field.
 func JiyukCdNmIn(vs ...string) predicate.Perms {
 	return predicate.Perms(sql.FieldIn(FieldJiyukCdNm, vs...))
 }
 
-// JiyukCdNmNotIn applies the NotIn predicate on the "jiyukCdNm" field.
+// JiyukCdNmNotIn applies the NotIn predicate on the "jiyuk_cd_nm" field.
 func JiyukCdNmNotIn(vs ...string) predicate.Perms {
 	return predicate.Perms(sql.FieldNotIn(FieldJiyukCdNm, vs...))
 }
 
-// JiyukCdNmGT applies the GT predicate on the "jiyukCdNm" field.
+// JiyukCdNmGT applies the GT predicate on the "jiyuk_cd_nm" field.
 func JiyukCdNmGT(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldGT(FieldJiyukCdNm, v))
 }
 
-// JiyukCdNmGTE applies the GTE predicate on the "jiyukCdNm" field.
+// JiyukCdNmGTE applies the GTE predicate on the "jiyuk_cd_nm" field.
 func JiyukCdNmGTE(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldGTE(FieldJiyukCdNm, v))
 }
 
-// JiyukCdNmLT applies the LT predicate on the "jiyukCdNm" field.
+// JiyukCdNmLT applies the LT predicate on the "jiyuk_cd_nm" field.
 func JiyukCdNmLT(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldLT(FieldJiyukCdNm, v))
 }
 
-// JiyukCdNmLTE applies the LTE predicate on the "jiyukCdNm" field.
+// JiyukCdNmLTE applies the LTE predicate on the "jiyuk_cd_nm" field.
 func JiyukCdNmLTE(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldLTE(FieldJiyukCdNm, v))
 }
 
-// JiyukCdNmContains applies the Contains predicate on the "jiyukCdNm" field.
+// JiyukCdNmContains applies the Contains predicate on the "jiyuk_cd_nm" field.
 func JiyukCdNmContains(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldContains(FieldJiyukCdNm, v))
 }
 
-// JiyukCdNmHasPrefix applies the HasPrefix predicate on the "jiyukCdNm" field.
+// JiyukCdNmHasPrefix applies the HasPrefix predicate on the "jiyuk_cd_nm" field.
 func JiyukCdNmHasPrefix(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldHasPrefix(FieldJiyukCdNm, v))
 }
 
-// JiyukCdNmHasSuffix applies the HasSuffix predicate on the "jiyukCdNm" field.
+// JiyukCdNmHasSuffix applies the HasSuffix predicate on the "jiyuk_cd_nm" field.
 func JiyukCdNmHasSuffix(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldHasSuffix(FieldJiyukCdNm, v))
 }
 
-// JiyukCdNmIsNil applies the IsNil predicate on the "jiyukCdNm" field.
+// JiyukCdNmIsNil applies the IsNil predicate on the "jiyuk_cd_nm" field.
 func JiyukCdNmIsNil() predicate.Perms {
 	return predicate.Perms(sql.FieldIsNull(FieldJiyukCdNm))
 }
 
-// JiyukCdNmNotNil applies the NotNil predicate on the "jiyukCdNm" field.
+// JiyukCdNmNotNil applies the NotNil predicate on the "jiyuk_cd_nm" field.
 func JiyukCdNmNotNil() predicate.Perms {
 	return predicate.Perms(sql.FieldNotNull(FieldJiyukCdNm))
 }
 
-// JiyukCdNmEqualFold applies the EqualFold predicate on the "jiyukCdNm" field.
+// JiyukCdNmEqualFold applies the EqualFold predicate on the "jiyuk_cd_nm" field.
 func JiyukCdNmEqualFold(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldEqualFold(FieldJiyukCdNm, v))
 }
 
-// JiyukCdNmContainsFold applies the ContainsFold predicate on the "jiyukCdNm" field.
+// JiyukCdNmContainsFold applies the ContainsFold predicate on the "jiyuk_cd_nm" field.
 func JiyukCdNmContainsFold(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldContainsFold(FieldJiyukCdNm, v))
 }
 
-// JiguCdEQ applies the EQ predicate on the "jiguCd" field.
+// JiguCdEQ applies the EQ predicate on the "jigu_cd" field.
 func JiguCdEQ(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldEQ(FieldJiguCd, v))
 }
 
-// JiguCdNEQ applies the NEQ predicate on the "jiguCd" field.
+// JiguCdNEQ applies the NEQ predicate on the "jigu_cd" field.
 func JiguCdNEQ(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldNEQ(FieldJiguCd, v))
 }
 
-// JiguCdIn applies the In predicate on the "jiguCd" field.
+// JiguCdIn applies the In predicate on the "jigu_cd" field.
 func JiguCdIn(vs ...string) predicate.Perms {
 	return predicate.Perms(sql.FieldIn(FieldJiguCd, vs...))
 }
 
-// JiguCdNotIn applies the NotIn predicate on the "jiguCd" field.
+// JiguCdNotIn applies the NotIn predicate on the "jigu_cd" field.
 func JiguCdNotIn(vs ...string) predicate.Perms {
 	return predicate.Perms(sql.FieldNotIn(FieldJiguCd, vs...))
 }
 
-// JiguCdGT applies the GT predicate on the "jiguCd" field.
+// JiguCdGT applies the GT predicate on the "jigu_cd" field.
 func JiguCdGT(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldGT(FieldJiguCd, v))
 }
 
-// JiguCdGTE applies the GTE predicate on the "jiguCd" field.
+// JiguCdGTE applies the GTE predicate on the "jigu_cd" field.
 func JiguCdGTE(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldGTE(FieldJiguCd, v))
 }
 
-// JiguCdLT applies the LT predicate on the "jiguCd" field.
+// JiguCdLT applies the LT predicate on the "jigu_cd" field.
 func JiguCdLT(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldLT(FieldJiguCd, v))
 }
 
-// JiguCdLTE applies the LTE predicate on the "jiguCd" field.
+// JiguCdLTE applies the LTE predicate on the "jigu_cd" field.
 func JiguCdLTE(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldLTE(FieldJiguCd, v))
 }
 
-// JiguCdContains applies the Contains predicate on the "jiguCd" field.
+// JiguCdContains applies the Contains predicate on the "jigu_cd" field.
 func JiguCdContains(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldContains(FieldJiguCd, v))
 }
 
-// JiguCdHasPrefix applies the HasPrefix predicate on the "jiguCd" field.
+// JiguCdHasPrefix applies the HasPrefix predicate on the "jigu_cd" field.
 func JiguCdHasPrefix(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldHasPrefix(FieldJiguCd, v))
 }
 
-// JiguCdHasSuffix applies the HasSuffix predicate on the "jiguCd" field.
+// JiguCdHasSuffix applies the HasSuffix predicate on the "jigu_cd" field.
 func JiguCdHasSuffix(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldHasSuffix(FieldJiguCd, v))
 }
 
-// JiguCdIsNil applies the IsNil predicate on the "jiguCd" field.
+// JiguCdIsNil applies the IsNil predicate on the "jigu_cd" field.
 func JiguCdIsNil() predicate.Perms {
 	return predicate.Perms(sql.FieldIsNull(FieldJiguCd))
 }
 
-// JiguCdNotNil applies the NotNil predicate on the "jiguCd" field.
+// JiguCdNotNil applies the NotNil predicate on the "jigu_cd" field.
 func JiguCdNotNil() predicate.Perms {
 	return predicate.Perms(sql.FieldNotNull(FieldJiguCd))
 }
 
-// JiguCdEqualFold applies the EqualFold predicate on the "jiguCd" field.
+// JiguCdEqualFold applies the EqualFold predicate on the "jigu_cd" field.
 func JiguCdEqualFold(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldEqualFold(FieldJiguCd, v))
 }
 
-// JiguCdContainsFold applies the ContainsFold predicate on the "jiguCd" field.
+// JiguCdContainsFold applies the ContainsFold predicate on the "jigu_cd" field.
 func JiguCdContainsFold(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldContainsFold(FieldJiguCd, v))
 }
 
-// JiguCdNmEQ applies the EQ predicate on the "jiguCdNm" field.
+// JiguCdNmEQ applies the EQ predicate on the "jigu_cd_nm" field.
 func JiguCdNmEQ(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldEQ(FieldJiguCdNm, v))
 }
 
-// JiguCdNmNEQ applies the NEQ predicate on the "jiguCdNm" field.
+// JiguCdNmNEQ applies the NEQ predicate on the "jigu_cd_nm" field.
 func JiguCdNmNEQ(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldNEQ(FieldJiguCdNm, v))
 }
 
-// JiguCdNmIn applies the In predicate on the "jiguCdNm" field.
+// JiguCdNmIn applies the In predicate on the "jigu_cd_nm" field.
 func JiguCdNmIn(vs ...string) predicate.Perms {
 	return predicate.Perms(sql.FieldIn(FieldJiguCdNm, vs...))
 }
 
-// JiguCdNmNotIn applies the NotIn predicate on the "jiguCdNm" field.
+// JiguCdNmNotIn applies the NotIn predicate on the "jigu_cd_nm" field.
 func JiguCdNmNotIn(vs ...string) predicate.Perms {
 	return predicate.Perms(sql.FieldNotIn(FieldJiguCdNm, vs...))
 }
 
-// JiguCdNmGT applies the GT predicate on the "jiguCdNm" field.
+// JiguCdNmGT applies the GT predicate on the "jigu_cd_nm" field.
 func JiguCdNmGT(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldGT(FieldJiguCdNm, v))
 }
 
-// JiguCdNmGTE applies the GTE predicate on the "jiguCdNm" field.
+// JiguCdNmGTE applies the GTE predicate on the "jigu_cd_nm" field.
 func JiguCdNmGTE(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldGTE(FieldJiguCdNm, v))
 }
 
-// JiguCdNmLT applies the LT predicate on the "jiguCdNm" field.
+// JiguCdNmLT applies the LT predicate on the "jigu_cd_nm" field.
 func JiguCdNmLT(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldLT(FieldJiguCdNm, v))
 }
 
-// JiguCdNmLTE applies the LTE predicate on the "jiguCdNm" field.
+// JiguCdNmLTE applies the LTE predicate on the "jigu_cd_nm" field.
 func JiguCdNmLTE(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldLTE(FieldJiguCdNm, v))
 }
 
-// JiguCdNmContains applies the Contains predicate on the "jiguCdNm" field.
+// JiguCdNmContains applies the Contains predicate on the "jigu_cd_nm" field.
 func JiguCdNmContains(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldContains(FieldJiguCdNm, v))
 }
 
-// JiguCdNmHasPrefix applies the HasPrefix predicate on the "jiguCdNm" field.
+// JiguCdNmHasPrefix applies the HasPrefix predicate on the "jigu_cd_nm" field.
 func JiguCdNmHasPrefix(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldHasPrefix(FieldJiguCdNm, v))
 }
 
-// JiguCdNmHasSuffix applies the HasSuffix predicate on the "jiguCdNm" field.
+// JiguCdNmHasSuffix applies the HasSuffix predicate on the "jigu_cd_nm" field.
 func JiguCdNmHasSuffix(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldHasSuffix(FieldJiguCdNm, v))
 }
 
-// JiguCdNmIsNil applies the IsNil predicate on the "jiguCdNm" field.
+// JiguCdNmIsNil applies the IsNil predicate on the "jigu_cd_nm" field.
 func JiguCdNmIsNil() predicate.Perms {
 	return predicate.Perms(sql.FieldIsNull(FieldJiguCdNm))
 }
 
-// JiguCdNmNotNil applies the NotNil predicate on the "jiguCdNm" field.
+// JiguCdNmNotNil applies the NotNil predicate on the "jigu_cd_nm" field.
 func JiguCdNmNotNil() predicate.Perms {
 	return predicate.Perms(sql.FieldNotNull(FieldJiguCdNm))
 }
 
-// JiguCdNmEqualFold applies the EqualFold predicate on the "jiguCdNm" field.
+// JiguCdNmEqualFold applies the EqualFold predicate on the "jigu_cd_nm" field.
 func JiguCdNmEqualFold(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldEqualFold(FieldJiguCdNm, v))
 }
 
-// JiguCdNmContainsFold applies the ContainsFold predicate on the "jiguCdNm" field.
+// JiguCdNmContainsFold applies the ContainsFold predicate on the "jigu_cd_nm" field.
 func JiguCdNmContainsFold(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldContainsFold(FieldJiguCdNm, v))
 }
@@ -2149,304 +2149,304 @@ func UseAprDayContainsFold(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldContainsFold(FieldUseAprDay, v))
 }
 
-// PlatPlcEQ applies the EQ predicate on the "platPlc" field.
+// PlatPlcEQ applies the EQ predicate on the "plat_plc" field.
 func PlatPlcEQ(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldEQ(FieldPlatPlc, v))
 }
 
-// PlatPlcNEQ applies the NEQ predicate on the "platPlc" field.
+// PlatPlcNEQ applies the NEQ predicate on the "plat_plc" field.
 func PlatPlcNEQ(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldNEQ(FieldPlatPlc, v))
 }
 
-// PlatPlcIn applies the In predicate on the "platPlc" field.
+// PlatPlcIn applies the In predicate on the "plat_plc" field.
 func PlatPlcIn(vs ...string) predicate.Perms {
 	return predicate.Perms(sql.FieldIn(FieldPlatPlc, vs...))
 }
 
-// PlatPlcNotIn applies the NotIn predicate on the "platPlc" field.
+// PlatPlcNotIn applies the NotIn predicate on the "plat_plc" field.
 func PlatPlcNotIn(vs ...string) predicate.Perms {
 	return predicate.Perms(sql.FieldNotIn(FieldPlatPlc, vs...))
 }
 
-// PlatPlcGT applies the GT predicate on the "platPlc" field.
+// PlatPlcGT applies the GT predicate on the "plat_plc" field.
 func PlatPlcGT(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldGT(FieldPlatPlc, v))
 }
 
-// PlatPlcGTE applies the GTE predicate on the "platPlc" field.
+// PlatPlcGTE applies the GTE predicate on the "plat_plc" field.
 func PlatPlcGTE(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldGTE(FieldPlatPlc, v))
 }
 
-// PlatPlcLT applies the LT predicate on the "platPlc" field.
+// PlatPlcLT applies the LT predicate on the "plat_plc" field.
 func PlatPlcLT(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldLT(FieldPlatPlc, v))
 }
 
-// PlatPlcLTE applies the LTE predicate on the "platPlc" field.
+// PlatPlcLTE applies the LTE predicate on the "plat_plc" field.
 func PlatPlcLTE(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldLTE(FieldPlatPlc, v))
 }
 
-// PlatPlcContains applies the Contains predicate on the "platPlc" field.
+// PlatPlcContains applies the Contains predicate on the "plat_plc" field.
 func PlatPlcContains(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldContains(FieldPlatPlc, v))
 }
 
-// PlatPlcHasPrefix applies the HasPrefix predicate on the "platPlc" field.
+// PlatPlcHasPrefix applies the HasPrefix predicate on the "plat_plc" field.
 func PlatPlcHasPrefix(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldHasPrefix(FieldPlatPlc, v))
 }
 
-// PlatPlcHasSuffix applies the HasSuffix predicate on the "platPlc" field.
+// PlatPlcHasSuffix applies the HasSuffix predicate on the "plat_plc" field.
 func PlatPlcHasSuffix(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldHasSuffix(FieldPlatPlc, v))
 }
 
-// PlatPlcIsNil applies the IsNil predicate on the "platPlc" field.
+// PlatPlcIsNil applies the IsNil predicate on the "plat_plc" field.
 func PlatPlcIsNil() predicate.Perms {
 	return predicate.Perms(sql.FieldIsNull(FieldPlatPlc))
 }
 
-// PlatPlcNotNil applies the NotNil predicate on the "platPlc" field.
+// PlatPlcNotNil applies the NotNil predicate on the "plat_plc" field.
 func PlatPlcNotNil() predicate.Perms {
 	return predicate.Perms(sql.FieldNotNull(FieldPlatPlc))
 }
 
-// PlatPlcEqualFold applies the EqualFold predicate on the "platPlc" field.
+// PlatPlcEqualFold applies the EqualFold predicate on the "plat_plc" field.
 func PlatPlcEqualFold(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldEqualFold(FieldPlatPlc, v))
 }
 
-// PlatPlcContainsFold applies the ContainsFold predicate on the "platPlc" field.
+// PlatPlcContainsFold applies the ContainsFold predicate on the "plat_plc" field.
 func PlatPlcContainsFold(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldContainsFold(FieldPlatPlc, v))
 }
 
-// SigunguCdEQ applies the EQ predicate on the "sigunguCd" field.
+// SigunguCdEQ applies the EQ predicate on the "sigungu_cd" field.
 func SigunguCdEQ(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldEQ(FieldSigunguCd, v))
 }
 
-// SigunguCdNEQ applies the NEQ predicate on the "sigunguCd" field.
+// SigunguCdNEQ applies the NEQ predicate on the "sigungu_cd" field.
 func SigunguCdNEQ(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldNEQ(FieldSigunguCd, v))
 }
 
-// SigunguCdIn applies the In predicate on the "sigunguCd" field.
+// SigunguCdIn applies the In predicate on the "sigungu_cd" field.
 func SigunguCdIn(vs ...string) predicate.Perms {
 	return predicate.Perms(sql.FieldIn(FieldSigunguCd, vs...))
 }
 
-// SigunguCdNotIn applies the NotIn predicate on the "sigunguCd" field.
+// SigunguCdNotIn applies the NotIn predicate on the "sigungu_cd" field.
 func SigunguCdNotIn(vs ...string) predicate.Perms {
 	return predicate.Perms(sql.FieldNotIn(FieldSigunguCd, vs...))
 }
 
-// SigunguCdGT applies the GT predicate on the "sigunguCd" field.
+// SigunguCdGT applies the GT predicate on the "sigungu_cd" field.
 func SigunguCdGT(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldGT(FieldSigunguCd, v))
 }
 
-// SigunguCdGTE applies the GTE predicate on the "sigunguCd" field.
+// SigunguCdGTE applies the GTE predicate on the "sigungu_cd" field.
 func SigunguCdGTE(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldGTE(FieldSigunguCd, v))
 }
 
-// SigunguCdLT applies the LT predicate on the "sigunguCd" field.
+// SigunguCdLT applies the LT predicate on the "sigungu_cd" field.
 func SigunguCdLT(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldLT(FieldSigunguCd, v))
 }
 
-// SigunguCdLTE applies the LTE predicate on the "sigunguCd" field.
+// SigunguCdLTE applies the LTE predicate on the "sigungu_cd" field.
 func SigunguCdLTE(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldLTE(FieldSigunguCd, v))
 }
 
-// SigunguCdContains applies the Contains predicate on the "sigunguCd" field.
+// SigunguCdContains applies the Contains predicate on the "sigungu_cd" field.
 func SigunguCdContains(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldContains(FieldSigunguCd, v))
 }
 
-// SigunguCdHasPrefix applies the HasPrefix predicate on the "sigunguCd" field.
+// SigunguCdHasPrefix applies the HasPrefix predicate on the "sigungu_cd" field.
 func SigunguCdHasPrefix(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldHasPrefix(FieldSigunguCd, v))
 }
 
-// SigunguCdHasSuffix applies the HasSuffix predicate on the "sigunguCd" field.
+// SigunguCdHasSuffix applies the HasSuffix predicate on the "sigungu_cd" field.
 func SigunguCdHasSuffix(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldHasSuffix(FieldSigunguCd, v))
 }
 
-// SigunguCdIsNil applies the IsNil predicate on the "sigunguCd" field.
+// SigunguCdIsNil applies the IsNil predicate on the "sigungu_cd" field.
 func SigunguCdIsNil() predicate.Perms {
 	return predicate.Perms(sql.FieldIsNull(FieldSigunguCd))
 }
 
-// SigunguCdNotNil applies the NotNil predicate on the "sigunguCd" field.
+// SigunguCdNotNil applies the NotNil predicate on the "sigungu_cd" field.
 func SigunguCdNotNil() predicate.Perms {
 	return predicate.Perms(sql.FieldNotNull(FieldSigunguCd))
 }
 
-// SigunguCdEqualFold applies the EqualFold predicate on the "sigunguCd" field.
+// SigunguCdEqualFold applies the EqualFold predicate on the "sigungu_cd" field.
 func SigunguCdEqualFold(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldEqualFold(FieldSigunguCd, v))
 }
 
-// SigunguCdContainsFold applies the ContainsFold predicate on the "sigunguCd" field.
+// SigunguCdContainsFold applies the ContainsFold predicate on the "sigungu_cd" field.
 func SigunguCdContainsFold(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldContainsFold(FieldSigunguCd, v))
 }
 
-// BjdongCdEQ applies the EQ predicate on the "bjdongCd" field.
+// BjdongCdEQ applies the EQ predicate on the "bjdong_cd" field.
 func BjdongCdEQ(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldEQ(FieldBjdongCd, v))
 }
 
-// BjdongCdNEQ applies the NEQ predicate on the "bjdongCd" field.
+// BjdongCdNEQ applies the NEQ predicate on the "bjdong_cd" field.
 func BjdongCdNEQ(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldNEQ(FieldBjdongCd, v))
 }
 
-// BjdongCdIn applies the In predicate on the "bjdongCd" field.
+// BjdongCdIn applies the In predicate on the "bjdong_cd" field.
 func BjdongCdIn(vs ...string) predicate.Perms {
 	return predicate.Perms(sql.FieldIn(FieldBjdongCd, vs...))
 }
 
-// BjdongCdNotIn applies the NotIn predicate on the "bjdongCd" field.
+// BjdongCdNotIn applies the NotIn predicate on the "bjdong_cd" field.
 func BjdongCdNotIn(vs ...string) predicate.Perms {
 	return predicate.Perms(sql.FieldNotIn(FieldBjdongCd, vs...))
 }
 
-// BjdongCdGT applies the GT predicate on the "bjdongCd" field.
+// BjdongCdGT applies the GT predicate on the "bjdong_cd" field.
 func BjdongCdGT(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldGT(FieldBjdongCd, v))
 }
 
-// BjdongCdGTE applies the GTE predicate on the "bjdongCd" field.
+// BjdongCdGTE applies the GTE predicate on the "bjdong_cd" field.
 func BjdongCdGTE(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldGTE(FieldBjdongCd, v))
 }
 
-// BjdongCdLT applies the LT predicate on the "bjdongCd" field.
+// BjdongCdLT applies the LT predicate on the "bjdong_cd" field.
 func BjdongCdLT(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldLT(FieldBjdongCd, v))
 }
 
-// BjdongCdLTE applies the LTE predicate on the "bjdongCd" field.
+// BjdongCdLTE applies the LTE predicate on the "bjdong_cd" field.
 func BjdongCdLTE(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldLTE(FieldBjdongCd, v))
 }
 
-// BjdongCdContains applies the Contains predicate on the "bjdongCd" field.
+// BjdongCdContains applies the Contains predicate on the "bjdong_cd" field.
 func BjdongCdContains(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldContains(FieldBjdongCd, v))
 }
 
-// BjdongCdHasPrefix applies the HasPrefix predicate on the "bjdongCd" field.
+// BjdongCdHasPrefix applies the HasPrefix predicate on the "bjdong_cd" field.
 func BjdongCdHasPrefix(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldHasPrefix(FieldBjdongCd, v))
 }
 
-// BjdongCdHasSuffix applies the HasSuffix predicate on the "bjdongCd" field.
+// BjdongCdHasSuffix applies the HasSuffix predicate on the "bjdong_cd" field.
 func BjdongCdHasSuffix(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldHasSuffix(FieldBjdongCd, v))
 }
 
-// BjdongCdIsNil applies the IsNil predicate on the "bjdongCd" field.
+// BjdongCdIsNil applies the IsNil predicate on the "bjdong_cd" field.
 func BjdongCdIsNil() predicate.Perms {
 	return predicate.Perms(sql.FieldIsNull(FieldBjdongCd))
 }
 
-// BjdongCdNotNil applies the NotNil predicate on the "bjdongCd" field.
+// BjdongCdNotNil applies the NotNil predicate on the "bjdong_cd" field.
 func BjdongCdNotNil() predicate.Perms {
 	return predicate.Perms(sql.FieldNotNull(FieldBjdongCd))
 }
 
-// BjdongCdEqualFold applies the EqualFold predicate on the "bjdongCd" field.
+// BjdongCdEqualFold applies the EqualFold predicate on the "bjdong_cd" field.
 func BjdongCdEqualFold(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldEqualFold(FieldBjdongCd, v))
 }
 
-// BjdongCdContainsFold applies the ContainsFold predicate on the "bjdongCd" field.
+// BjdongCdContainsFold applies the ContainsFold predicate on the "bjdong_cd" field.
 func BjdongCdContainsFold(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldContainsFold(FieldBjdongCd, v))
 }
 
-// PlatGbCdEQ applies the EQ predicate on the "platGbCd" field.
-func PlatGbCdEQ(v string) predicate.Perms {
-	return predicate.Perms(sql.FieldEQ(FieldPlatGbCd, v))
+// PlatGBCdEQ applies the EQ predicate on the "plat_gb_cd" field.
+func PlatGBCdEQ(v string) predicate.Perms {
+	return predicate.Perms(sql.FieldEQ(FieldPlatGBCd, v))
 }
 
-// PlatGbCdNEQ applies the NEQ predicate on the "platGbCd" field.
-func PlatGbCdNEQ(v string) predicate.Perms {
-	return predicate.Perms(sql.FieldNEQ(FieldPlatGbCd, v))
+// PlatGBCdNEQ applies the NEQ predicate on the "plat_gb_cd" field.
+func PlatGBCdNEQ(v string) predicate.Perms {
+	return predicate.Perms(sql.FieldNEQ(FieldPlatGBCd, v))
 }
 
-// PlatGbCdIn applies the In predicate on the "platGbCd" field.
-func PlatGbCdIn(vs ...string) predicate.Perms {
-	return predicate.Perms(sql.FieldIn(FieldPlatGbCd, vs...))
+// PlatGBCdIn applies the In predicate on the "plat_gb_cd" field.
+func PlatGBCdIn(vs ...string) predicate.Perms {
+	return predicate.Perms(sql.FieldIn(FieldPlatGBCd, vs...))
 }
 
-// PlatGbCdNotIn applies the NotIn predicate on the "platGbCd" field.
-func PlatGbCdNotIn(vs ...string) predicate.Perms {
-	return predicate.Perms(sql.FieldNotIn(FieldPlatGbCd, vs...))
+// PlatGBCdNotIn applies the NotIn predicate on the "plat_gb_cd" field.
+func PlatGBCdNotIn(vs ...string) predicate.Perms {
+	return predicate.Perms(sql.FieldNotIn(FieldPlatGBCd, vs...))
 }
 
-// PlatGbCdGT applies the GT predicate on the "platGbCd" field.
-func PlatGbCdGT(v string) predicate.Perms {
-	return predicate.Perms(sql.FieldGT(FieldPlatGbCd, v))
+// PlatGBCdGT applies the GT predicate on the "plat_gb_cd" field.
+func PlatGBCdGT(v string) predicate.Perms {
+	return predicate.Perms(sql.FieldGT(FieldPlatGBCd, v))
 }
 
-// PlatGbCdGTE applies the GTE predicate on the "platGbCd" field.
-func PlatGbCdGTE(v string) predicate.Perms {
-	return predicate.Perms(sql.FieldGTE(FieldPlatGbCd, v))
+// PlatGBCdGTE applies the GTE predicate on the "plat_gb_cd" field.
+func PlatGBCdGTE(v string) predicate.Perms {
+	return predicate.Perms(sql.FieldGTE(FieldPlatGBCd, v))
 }
 
-// PlatGbCdLT applies the LT predicate on the "platGbCd" field.
-func PlatGbCdLT(v string) predicate.Perms {
-	return predicate.Perms(sql.FieldLT(FieldPlatGbCd, v))
+// PlatGBCdLT applies the LT predicate on the "plat_gb_cd" field.
+func PlatGBCdLT(v string) predicate.Perms {
+	return predicate.Perms(sql.FieldLT(FieldPlatGBCd, v))
 }
 
-// PlatGbCdLTE applies the LTE predicate on the "platGbCd" field.
-func PlatGbCdLTE(v string) predicate.Perms {
-	return predicate.Perms(sql.FieldLTE(FieldPlatGbCd, v))
+// PlatGBCdLTE applies the LTE predicate on the "plat_gb_cd" field.
+func PlatGBCdLTE(v string) predicate.Perms {
+	return predicate.Perms(sql.FieldLTE(FieldPlatGBCd, v))
 }
 
-// PlatGbCdContains applies the Contains predicate on the "platGbCd" field.
-func PlatGbCdContains(v string) predicate.Perms {
-	return predicate.Perms(sql.FieldContains(FieldPlatGbCd, v))
+// PlatGBCdContains applies the Contains predicate on the "plat_gb_cd" field.
+func PlatGBCdContains(v string) predicate.Perms {
+	return predicate.Perms(sql.FieldContains(FieldPlatGBCd, v))
 }
 
-// PlatGbCdHasPrefix applies the HasPrefix predicate on the "platGbCd" field.
-func PlatGbCdHasPrefix(v string) predicate.Perms {
-	return predicate.Perms(sql.FieldHasPrefix(FieldPlatGbCd, v))
+// PlatGBCdHasPrefix applies the HasPrefix predicate on the "plat_gb_cd" field.
+func PlatGBCdHasPrefix(v string) predicate.Perms {
+	return predicate.Perms(sql.FieldHasPrefix(FieldPlatGBCd, v))
 }
 
-// PlatGbCdHasSuffix applies the HasSuffix predicate on the "platGbCd" field.
-func PlatGbCdHasSuffix(v string) predicate.Perms {
-	return predicate.Perms(sql.FieldHasSuffix(FieldPlatGbCd, v))
+// PlatGBCdHasSuffix applies the HasSuffix predicate on the "plat_gb_cd" field.
+func PlatGBCdHasSuffix(v string) predicate.Perms {
+	return predicate.Perms(sql.FieldHasSuffix(FieldPlatGBCd, v))
 }
 
-// PlatGbCdIsNil applies the IsNil predicate on the "platGbCd" field.
-func PlatGbCdIsNil() predicate.Perms {
-	return predicate.Perms(sql.FieldIsNull(FieldPlatGbCd))
+// PlatGBCdIsNil applies the IsNil predicate on the "plat_gb_cd" field.
+func PlatGBCdIsNil() predicate.Perms {
+	return predicate.Perms(sql.FieldIsNull(FieldPlatGBCd))
 }
 
-// PlatGbCdNotNil applies the NotNil predicate on the "platGbCd" field.
-func PlatGbCdNotNil() predicate.Perms {
-	return predicate.Perms(sql.FieldNotNull(FieldPlatGbCd))
+// PlatGBCdNotNil applies the NotNil predicate on the "plat_gb_cd" field.
+func PlatGBCdNotNil() predicate.Perms {
+	return predicate.Perms(sql.FieldNotNull(FieldPlatGBCd))
 }
 
-// PlatGbCdEqualFold applies the EqualFold predicate on the "platGbCd" field.
-func PlatGbCdEqualFold(v string) predicate.Perms {
-	return predicate.Perms(sql.FieldEqualFold(FieldPlatGbCd, v))
+// PlatGBCdEqualFold applies the EqualFold predicate on the "plat_gb_cd" field.
+func PlatGBCdEqualFold(v string) predicate.Perms {
+	return predicate.Perms(sql.FieldEqualFold(FieldPlatGBCd, v))
 }
 
-// PlatGbCdContainsFold applies the ContainsFold predicate on the "platGbCd" field.
-func PlatGbCdContainsFold(v string) predicate.Perms {
-	return predicate.Perms(sql.FieldContainsFold(FieldPlatGbCd, v))
+// PlatGBCdContainsFold applies the ContainsFold predicate on the "plat_gb_cd" field.
+func PlatGBCdContainsFold(v string) predicate.Perms {
+	return predicate.Perms(sql.FieldContainsFold(FieldPlatGBCd, v))
 }
 
 // BunEQ applies the EQ predicate on the "bun" field.
@@ -2664,77 +2664,77 @@ func MgmPmsrgstPkContainsFold(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldContainsFold(FieldMgmPmsrgstPk, v))
 }
 
-// SplotNmEQ applies the EQ predicate on the "splotNm" field.
+// SplotNmEQ applies the EQ predicate on the "splot_nm" field.
 func SplotNmEQ(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldEQ(FieldSplotNm, v))
 }
 
-// SplotNmNEQ applies the NEQ predicate on the "splotNm" field.
+// SplotNmNEQ applies the NEQ predicate on the "splot_nm" field.
 func SplotNmNEQ(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldNEQ(FieldSplotNm, v))
 }
 
-// SplotNmIn applies the In predicate on the "splotNm" field.
+// SplotNmIn applies the In predicate on the "splot_nm" field.
 func SplotNmIn(vs ...string) predicate.Perms {
 	return predicate.Perms(sql.FieldIn(FieldSplotNm, vs...))
 }
 
-// SplotNmNotIn applies the NotIn predicate on the "splotNm" field.
+// SplotNmNotIn applies the NotIn predicate on the "splot_nm" field.
 func SplotNmNotIn(vs ...string) predicate.Perms {
 	return predicate.Perms(sql.FieldNotIn(FieldSplotNm, vs...))
 }
 
-// SplotNmGT applies the GT predicate on the "splotNm" field.
+// SplotNmGT applies the GT predicate on the "splot_nm" field.
 func SplotNmGT(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldGT(FieldSplotNm, v))
 }
 
-// SplotNmGTE applies the GTE predicate on the "splotNm" field.
+// SplotNmGTE applies the GTE predicate on the "splot_nm" field.
 func SplotNmGTE(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldGTE(FieldSplotNm, v))
 }
 
-// SplotNmLT applies the LT predicate on the "splotNm" field.
+// SplotNmLT applies the LT predicate on the "splot_nm" field.
 func SplotNmLT(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldLT(FieldSplotNm, v))
 }
 
-// SplotNmLTE applies the LTE predicate on the "splotNm" field.
+// SplotNmLTE applies the LTE predicate on the "splot_nm" field.
 func SplotNmLTE(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldLTE(FieldSplotNm, v))
 }
 
-// SplotNmContains applies the Contains predicate on the "splotNm" field.
+// SplotNmContains applies the Contains predicate on the "splot_nm" field.
 func SplotNmContains(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldContains(FieldSplotNm, v))
 }
 
-// SplotNmHasPrefix applies the HasPrefix predicate on the "splotNm" field.
+// SplotNmHasPrefix applies the HasPrefix predicate on the "splot_nm" field.
 func SplotNmHasPrefix(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldHasPrefix(FieldSplotNm, v))
 }
 
-// SplotNmHasSuffix applies the HasSuffix predicate on the "splotNm" field.
+// SplotNmHasSuffix applies the HasSuffix predicate on the "splot_nm" field.
 func SplotNmHasSuffix(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldHasSuffix(FieldSplotNm, v))
 }
 
-// SplotNmIsNil applies the IsNil predicate on the "splotNm" field.
+// SplotNmIsNil applies the IsNil predicate on the "splot_nm" field.
 func SplotNmIsNil() predicate.Perms {
 	return predicate.Perms(sql.FieldIsNull(FieldSplotNm))
 }
 
-// SplotNmNotNil applies the NotNil predicate on the "splotNm" field.
+// SplotNmNotNil applies the NotNil predicate on the "splot_nm" field.
 func SplotNmNotNil() predicate.Perms {
 	return predicate.Perms(sql.FieldNotNull(FieldSplotNm))
 }
 
-// SplotNmEqualFold applies the EqualFold predicate on the "splotNm" field.
+// SplotNmEqualFold applies the EqualFold predicate on the "splot_nm" field.
 func SplotNmEqualFold(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldEqualFold(FieldSplotNm, v))
 }
 
-// SplotNmContainsFold applies the ContainsFold predicate on the "splotNm" field.
+// SplotNmContainsFold applies the ContainsFold predicate on the "splot_nm" field.
 func SplotNmContainsFold(v string) predicate.Perms {
 	return predicate.Perms(sql.FieldContainsFold(FieldSplotNm, v))
 }

@@ -28,13 +28,13 @@ func (pu *PermsUpdate) Where(ps ...predicate.Perms) *PermsUpdate {
 	return pu
 }
 
-// SetGuyukCd sets the "guyukCd" field.
+// SetGuyukCd sets the "guyuk_cd" field.
 func (pu *PermsUpdate) SetGuyukCd(s string) *PermsUpdate {
 	pu.mutation.SetGuyukCd(s)
 	return pu
 }
 
-// SetNillableGuyukCd sets the "guyukCd" field if the given value is not nil.
+// SetNillableGuyukCd sets the "guyuk_cd" field if the given value is not nil.
 func (pu *PermsUpdate) SetNillableGuyukCd(s *string) *PermsUpdate {
 	if s != nil {
 		pu.SetGuyukCd(*s)
@@ -42,19 +42,19 @@ func (pu *PermsUpdate) SetNillableGuyukCd(s *string) *PermsUpdate {
 	return pu
 }
 
-// ClearGuyukCd clears the value of the "guyukCd" field.
+// ClearGuyukCd clears the value of the "guyuk_cd" field.
 func (pu *PermsUpdate) ClearGuyukCd() *PermsUpdate {
 	pu.mutation.ClearGuyukCd()
 	return pu
 }
 
-// SetGuyukCdNm sets the "guyukCdNm" field.
+// SetGuyukCdNm sets the "guyuk_cd_nm" field.
 func (pu *PermsUpdate) SetGuyukCdNm(s string) *PermsUpdate {
 	pu.mutation.SetGuyukCdNm(s)
 	return pu
 }
 
-// SetNillableGuyukCdNm sets the "guyukCdNm" field if the given value is not nil.
+// SetNillableGuyukCdNm sets the "guyuk_cd_nm" field if the given value is not nil.
 func (pu *PermsUpdate) SetNillableGuyukCdNm(s *string) *PermsUpdate {
 	if s != nil {
 		pu.SetGuyukCdNm(*s)
@@ -62,19 +62,19 @@ func (pu *PermsUpdate) SetNillableGuyukCdNm(s *string) *PermsUpdate {
 	return pu
 }
 
-// ClearGuyukCdNm clears the value of the "guyukCdNm" field.
+// ClearGuyukCdNm clears the value of the "guyuk_cd_nm" field.
 func (pu *PermsUpdate) ClearGuyukCdNm() *PermsUpdate {
 	pu.mutation.ClearGuyukCdNm()
 	return pu
 }
 
-// SetJimokCd sets the "jimokCd" field.
+// SetJimokCd sets the "jimok_cd" field.
 func (pu *PermsUpdate) SetJimokCd(s string) *PermsUpdate {
 	pu.mutation.SetJimokCd(s)
 	return pu
 }
 
-// SetNillableJimokCd sets the "jimokCd" field if the given value is not nil.
+// SetNillableJimokCd sets the "jimok_cd" field if the given value is not nil.
 func (pu *PermsUpdate) SetNillableJimokCd(s *string) *PermsUpdate {
 	if s != nil {
 		pu.SetJimokCd(*s)
@@ -82,19 +82,19 @@ func (pu *PermsUpdate) SetNillableJimokCd(s *string) *PermsUpdate {
 	return pu
 }
 
-// ClearJimokCd clears the value of the "jimokCd" field.
+// ClearJimokCd clears the value of the "jimok_cd" field.
 func (pu *PermsUpdate) ClearJimokCd() *PermsUpdate {
 	pu.mutation.ClearJimokCd()
 	return pu
 }
 
-// SetJimokCdNm sets the "jimokCdNm" field.
+// SetJimokCdNm sets the "jimok_cd_nm" field.
 func (pu *PermsUpdate) SetJimokCdNm(s string) *PermsUpdate {
 	pu.mutation.SetJimokCdNm(s)
 	return pu
 }
 
-// SetNillableJimokCdNm sets the "jimokCdNm" field if the given value is not nil.
+// SetNillableJimokCdNm sets the "jimok_cd_nm" field if the given value is not nil.
 func (pu *PermsUpdate) SetNillableJimokCdNm(s *string) *PermsUpdate {
 	if s != nil {
 		pu.SetJimokCdNm(*s)
@@ -102,19 +102,19 @@ func (pu *PermsUpdate) SetNillableJimokCdNm(s *string) *PermsUpdate {
 	return pu
 }
 
-// ClearJimokCdNm clears the value of the "jimokCdNm" field.
+// ClearJimokCdNm clears the value of the "jimok_cd_nm" field.
 func (pu *PermsUpdate) ClearJimokCdNm() *PermsUpdate {
 	pu.mutation.ClearJimokCdNm()
 	return pu
 }
 
-// SetJiyukCd sets the "jiyukCd" field.
+// SetJiyukCd sets the "jiyuk_cd" field.
 func (pu *PermsUpdate) SetJiyukCd(s string) *PermsUpdate {
 	pu.mutation.SetJiyukCd(s)
 	return pu
 }
 
-// SetNillableJiyukCd sets the "jiyukCd" field if the given value is not nil.
+// SetNillableJiyukCd sets the "jiyuk_cd" field if the given value is not nil.
 func (pu *PermsUpdate) SetNillableJiyukCd(s *string) *PermsUpdate {
 	if s != nil {
 		pu.SetJiyukCd(*s)
@@ -122,19 +122,19 @@ func (pu *PermsUpdate) SetNillableJiyukCd(s *string) *PermsUpdate {
 	return pu
 }
 
-// ClearJiyukCd clears the value of the "jiyukCd" field.
+// ClearJiyukCd clears the value of the "jiyuk_cd" field.
 func (pu *PermsUpdate) ClearJiyukCd() *PermsUpdate {
 	pu.mutation.ClearJiyukCd()
 	return pu
 }
 
-// SetJiyukCdNm sets the "jiyukCdNm" field.
+// SetJiyukCdNm sets the "jiyuk_cd_nm" field.
 func (pu *PermsUpdate) SetJiyukCdNm(s string) *PermsUpdate {
 	pu.mutation.SetJiyukCdNm(s)
 	return pu
 }
 
-// SetNillableJiyukCdNm sets the "jiyukCdNm" field if the given value is not nil.
+// SetNillableJiyukCdNm sets the "jiyuk_cd_nm" field if the given value is not nil.
 func (pu *PermsUpdate) SetNillableJiyukCdNm(s *string) *PermsUpdate {
 	if s != nil {
 		pu.SetJiyukCdNm(*s)
@@ -142,19 +142,19 @@ func (pu *PermsUpdate) SetNillableJiyukCdNm(s *string) *PermsUpdate {
 	return pu
 }
 
-// ClearJiyukCdNm clears the value of the "jiyukCdNm" field.
+// ClearJiyukCdNm clears the value of the "jiyuk_cd_nm" field.
 func (pu *PermsUpdate) ClearJiyukCdNm() *PermsUpdate {
 	pu.mutation.ClearJiyukCdNm()
 	return pu
 }
 
-// SetJiguCd sets the "jiguCd" field.
+// SetJiguCd sets the "jigu_cd" field.
 func (pu *PermsUpdate) SetJiguCd(s string) *PermsUpdate {
 	pu.mutation.SetJiguCd(s)
 	return pu
 }
 
-// SetNillableJiguCd sets the "jiguCd" field if the given value is not nil.
+// SetNillableJiguCd sets the "jigu_cd" field if the given value is not nil.
 func (pu *PermsUpdate) SetNillableJiguCd(s *string) *PermsUpdate {
 	if s != nil {
 		pu.SetJiguCd(*s)
@@ -162,19 +162,19 @@ func (pu *PermsUpdate) SetNillableJiguCd(s *string) *PermsUpdate {
 	return pu
 }
 
-// ClearJiguCd clears the value of the "jiguCd" field.
+// ClearJiguCd clears the value of the "jigu_cd" field.
 func (pu *PermsUpdate) ClearJiguCd() *PermsUpdate {
 	pu.mutation.ClearJiguCd()
 	return pu
 }
 
-// SetJiguCdNm sets the "jiguCdNm" field.
+// SetJiguCdNm sets the "jigu_cd_nm" field.
 func (pu *PermsUpdate) SetJiguCdNm(s string) *PermsUpdate {
 	pu.mutation.SetJiguCdNm(s)
 	return pu
 }
 
-// SetNillableJiguCdNm sets the "jiguCdNm" field if the given value is not nil.
+// SetNillableJiguCdNm sets the "jigu_cd_nm" field if the given value is not nil.
 func (pu *PermsUpdate) SetNillableJiguCdNm(s *string) *PermsUpdate {
 	if s != nil {
 		pu.SetJiguCdNm(*s)
@@ -182,7 +182,7 @@ func (pu *PermsUpdate) SetNillableJiguCdNm(s *string) *PermsUpdate {
 	return pu
 }
 
-// ClearJiguCdNm clears the value of the "jiguCdNm" field.
+// ClearJiguCdNm clears the value of the "jigu_cd_nm" field.
 func (pu *PermsUpdate) ClearJiguCdNm() *PermsUpdate {
 	pu.mutation.ClearJiguCdNm()
 	return pu
@@ -692,13 +692,13 @@ func (pu *PermsUpdate) ClearUseAprDay() *PermsUpdate {
 	return pu
 }
 
-// SetPlatPlc sets the "platPlc" field.
+// SetPlatPlc sets the "plat_plc" field.
 func (pu *PermsUpdate) SetPlatPlc(s string) *PermsUpdate {
 	pu.mutation.SetPlatPlc(s)
 	return pu
 }
 
-// SetNillablePlatPlc sets the "platPlc" field if the given value is not nil.
+// SetNillablePlatPlc sets the "plat_plc" field if the given value is not nil.
 func (pu *PermsUpdate) SetNillablePlatPlc(s *string) *PermsUpdate {
 	if s != nil {
 		pu.SetPlatPlc(*s)
@@ -706,19 +706,19 @@ func (pu *PermsUpdate) SetNillablePlatPlc(s *string) *PermsUpdate {
 	return pu
 }
 
-// ClearPlatPlc clears the value of the "platPlc" field.
+// ClearPlatPlc clears the value of the "plat_plc" field.
 func (pu *PermsUpdate) ClearPlatPlc() *PermsUpdate {
 	pu.mutation.ClearPlatPlc()
 	return pu
 }
 
-// SetSigunguCd sets the "sigunguCd" field.
+// SetSigunguCd sets the "sigungu_cd" field.
 func (pu *PermsUpdate) SetSigunguCd(s string) *PermsUpdate {
 	pu.mutation.SetSigunguCd(s)
 	return pu
 }
 
-// SetNillableSigunguCd sets the "sigunguCd" field if the given value is not nil.
+// SetNillableSigunguCd sets the "sigungu_cd" field if the given value is not nil.
 func (pu *PermsUpdate) SetNillableSigunguCd(s *string) *PermsUpdate {
 	if s != nil {
 		pu.SetSigunguCd(*s)
@@ -726,19 +726,19 @@ func (pu *PermsUpdate) SetNillableSigunguCd(s *string) *PermsUpdate {
 	return pu
 }
 
-// ClearSigunguCd clears the value of the "sigunguCd" field.
+// ClearSigunguCd clears the value of the "sigungu_cd" field.
 func (pu *PermsUpdate) ClearSigunguCd() *PermsUpdate {
 	pu.mutation.ClearSigunguCd()
 	return pu
 }
 
-// SetBjdongCd sets the "bjdongCd" field.
+// SetBjdongCd sets the "bjdong_cd" field.
 func (pu *PermsUpdate) SetBjdongCd(s string) *PermsUpdate {
 	pu.mutation.SetBjdongCd(s)
 	return pu
 }
 
-// SetNillableBjdongCd sets the "bjdongCd" field if the given value is not nil.
+// SetNillableBjdongCd sets the "bjdong_cd" field if the given value is not nil.
 func (pu *PermsUpdate) SetNillableBjdongCd(s *string) *PermsUpdate {
 	if s != nil {
 		pu.SetBjdongCd(*s)
@@ -746,29 +746,29 @@ func (pu *PermsUpdate) SetNillableBjdongCd(s *string) *PermsUpdate {
 	return pu
 }
 
-// ClearBjdongCd clears the value of the "bjdongCd" field.
+// ClearBjdongCd clears the value of the "bjdong_cd" field.
 func (pu *PermsUpdate) ClearBjdongCd() *PermsUpdate {
 	pu.mutation.ClearBjdongCd()
 	return pu
 }
 
-// SetPlatGbCd sets the "platGbCd" field.
-func (pu *PermsUpdate) SetPlatGbCd(s string) *PermsUpdate {
-	pu.mutation.SetPlatGbCd(s)
+// SetPlatGBCd sets the "plat_gb_cd" field.
+func (pu *PermsUpdate) SetPlatGBCd(s string) *PermsUpdate {
+	pu.mutation.SetPlatGBCd(s)
 	return pu
 }
 
-// SetNillablePlatGbCd sets the "platGbCd" field if the given value is not nil.
-func (pu *PermsUpdate) SetNillablePlatGbCd(s *string) *PermsUpdate {
+// SetNillablePlatGBCd sets the "plat_gb_cd" field if the given value is not nil.
+func (pu *PermsUpdate) SetNillablePlatGBCd(s *string) *PermsUpdate {
 	if s != nil {
-		pu.SetPlatGbCd(*s)
+		pu.SetPlatGBCd(*s)
 	}
 	return pu
 }
 
-// ClearPlatGbCd clears the value of the "platGbCd" field.
-func (pu *PermsUpdate) ClearPlatGbCd() *PermsUpdate {
-	pu.mutation.ClearPlatGbCd()
+// ClearPlatGBCd clears the value of the "plat_gb_cd" field.
+func (pu *PermsUpdate) ClearPlatGBCd() *PermsUpdate {
+	pu.mutation.ClearPlatGBCd()
 	return pu
 }
 
@@ -818,13 +818,13 @@ func (pu *PermsUpdate) SetMgmPmsrgstPk(s string) *PermsUpdate {
 	return pu
 }
 
-// SetSplotNm sets the "splotNm" field.
+// SetSplotNm sets the "splot_nm" field.
 func (pu *PermsUpdate) SetSplotNm(s string) *PermsUpdate {
 	pu.mutation.SetSplotNm(s)
 	return pu
 }
 
-// SetNillableSplotNm sets the "splotNm" field if the given value is not nil.
+// SetNillableSplotNm sets the "splot_nm" field if the given value is not nil.
 func (pu *PermsUpdate) SetNillableSplotNm(s *string) *PermsUpdate {
 	if s != nil {
 		pu.SetSplotNm(*s)
@@ -832,7 +832,7 @@ func (pu *PermsUpdate) SetNillableSplotNm(s *string) *PermsUpdate {
 	return pu
 }
 
-// ClearSplotNm clears the value of the "splotNm" field.
+// ClearSplotNm clears the value of the "splot_nm" field.
 func (pu *PermsUpdate) ClearSplotNm() *PermsUpdate {
 	pu.mutation.ClearSplotNm()
 	return pu
@@ -951,14 +951,6 @@ func (pu *PermsUpdate) SetUpdatedAt(t time.Time) *PermsUpdate {
 	return pu
 }
 
-// SetNillableUpdatedAt sets the "updated_at" field if the given value is not nil.
-func (pu *PermsUpdate) SetNillableUpdatedAt(t *time.Time) *PermsUpdate {
-	if t != nil {
-		pu.SetUpdatedAt(*t)
-	}
-	return pu
-}
-
 // Mutation returns the PermsMutation object of the builder.
 func (pu *PermsUpdate) Mutation() *PermsMutation {
 	return pu.mutation
@@ -966,6 +958,7 @@ func (pu *PermsUpdate) Mutation() *PermsMutation {
 
 // Save executes the query and returns the number of nodes affected by the update operation.
 func (pu *PermsUpdate) Save(ctx context.Context) (int, error) {
+	pu.defaults()
 	return withHooks[int, PermsMutation](ctx, pu.sqlSave, pu.mutation, pu.hooks)
 }
 
@@ -988,6 +981,14 @@ func (pu *PermsUpdate) Exec(ctx context.Context) error {
 func (pu *PermsUpdate) ExecX(ctx context.Context) {
 	if err := pu.Exec(ctx); err != nil {
 		panic(err)
+	}
+}
+
+// defaults sets the default values of the builder before save.
+func (pu *PermsUpdate) defaults() {
+	if _, ok := pu.mutation.UpdatedAt(); !ok {
+		v := perms.UpdateDefaultUpdatedAt()
+		pu.mutation.SetUpdatedAt(v)
 	}
 }
 
@@ -1228,11 +1229,11 @@ func (pu *PermsUpdate) sqlSave(ctx context.Context) (n int, err error) {
 	if pu.mutation.BjdongCdCleared() {
 		_spec.ClearField(perms.FieldBjdongCd, field.TypeString)
 	}
-	if value, ok := pu.mutation.PlatGbCd(); ok {
-		_spec.SetField(perms.FieldPlatGbCd, field.TypeString, value)
+	if value, ok := pu.mutation.PlatGBCd(); ok {
+		_spec.SetField(perms.FieldPlatGBCd, field.TypeString, value)
 	}
-	if pu.mutation.PlatGbCdCleared() {
-		_spec.ClearField(perms.FieldPlatGbCd, field.TypeString)
+	if pu.mutation.PlatGBCdCleared() {
+		_spec.ClearField(perms.FieldPlatGBCd, field.TypeString)
 	}
 	if value, ok := pu.mutation.Bun(); ok {
 		_spec.SetField(perms.FieldBun, field.TypeString, value)
@@ -1311,13 +1312,13 @@ type PermsUpdateOne struct {
 	mutation *PermsMutation
 }
 
-// SetGuyukCd sets the "guyukCd" field.
+// SetGuyukCd sets the "guyuk_cd" field.
 func (puo *PermsUpdateOne) SetGuyukCd(s string) *PermsUpdateOne {
 	puo.mutation.SetGuyukCd(s)
 	return puo
 }
 
-// SetNillableGuyukCd sets the "guyukCd" field if the given value is not nil.
+// SetNillableGuyukCd sets the "guyuk_cd" field if the given value is not nil.
 func (puo *PermsUpdateOne) SetNillableGuyukCd(s *string) *PermsUpdateOne {
 	if s != nil {
 		puo.SetGuyukCd(*s)
@@ -1325,19 +1326,19 @@ func (puo *PermsUpdateOne) SetNillableGuyukCd(s *string) *PermsUpdateOne {
 	return puo
 }
 
-// ClearGuyukCd clears the value of the "guyukCd" field.
+// ClearGuyukCd clears the value of the "guyuk_cd" field.
 func (puo *PermsUpdateOne) ClearGuyukCd() *PermsUpdateOne {
 	puo.mutation.ClearGuyukCd()
 	return puo
 }
 
-// SetGuyukCdNm sets the "guyukCdNm" field.
+// SetGuyukCdNm sets the "guyuk_cd_nm" field.
 func (puo *PermsUpdateOne) SetGuyukCdNm(s string) *PermsUpdateOne {
 	puo.mutation.SetGuyukCdNm(s)
 	return puo
 }
 
-// SetNillableGuyukCdNm sets the "guyukCdNm" field if the given value is not nil.
+// SetNillableGuyukCdNm sets the "guyuk_cd_nm" field if the given value is not nil.
 func (puo *PermsUpdateOne) SetNillableGuyukCdNm(s *string) *PermsUpdateOne {
 	if s != nil {
 		puo.SetGuyukCdNm(*s)
@@ -1345,19 +1346,19 @@ func (puo *PermsUpdateOne) SetNillableGuyukCdNm(s *string) *PermsUpdateOne {
 	return puo
 }
 
-// ClearGuyukCdNm clears the value of the "guyukCdNm" field.
+// ClearGuyukCdNm clears the value of the "guyuk_cd_nm" field.
 func (puo *PermsUpdateOne) ClearGuyukCdNm() *PermsUpdateOne {
 	puo.mutation.ClearGuyukCdNm()
 	return puo
 }
 
-// SetJimokCd sets the "jimokCd" field.
+// SetJimokCd sets the "jimok_cd" field.
 func (puo *PermsUpdateOne) SetJimokCd(s string) *PermsUpdateOne {
 	puo.mutation.SetJimokCd(s)
 	return puo
 }
 
-// SetNillableJimokCd sets the "jimokCd" field if the given value is not nil.
+// SetNillableJimokCd sets the "jimok_cd" field if the given value is not nil.
 func (puo *PermsUpdateOne) SetNillableJimokCd(s *string) *PermsUpdateOne {
 	if s != nil {
 		puo.SetJimokCd(*s)
@@ -1365,19 +1366,19 @@ func (puo *PermsUpdateOne) SetNillableJimokCd(s *string) *PermsUpdateOne {
 	return puo
 }
 
-// ClearJimokCd clears the value of the "jimokCd" field.
+// ClearJimokCd clears the value of the "jimok_cd" field.
 func (puo *PermsUpdateOne) ClearJimokCd() *PermsUpdateOne {
 	puo.mutation.ClearJimokCd()
 	return puo
 }
 
-// SetJimokCdNm sets the "jimokCdNm" field.
+// SetJimokCdNm sets the "jimok_cd_nm" field.
 func (puo *PermsUpdateOne) SetJimokCdNm(s string) *PermsUpdateOne {
 	puo.mutation.SetJimokCdNm(s)
 	return puo
 }
 
-// SetNillableJimokCdNm sets the "jimokCdNm" field if the given value is not nil.
+// SetNillableJimokCdNm sets the "jimok_cd_nm" field if the given value is not nil.
 func (puo *PermsUpdateOne) SetNillableJimokCdNm(s *string) *PermsUpdateOne {
 	if s != nil {
 		puo.SetJimokCdNm(*s)
@@ -1385,19 +1386,19 @@ func (puo *PermsUpdateOne) SetNillableJimokCdNm(s *string) *PermsUpdateOne {
 	return puo
 }
 
-// ClearJimokCdNm clears the value of the "jimokCdNm" field.
+// ClearJimokCdNm clears the value of the "jimok_cd_nm" field.
 func (puo *PermsUpdateOne) ClearJimokCdNm() *PermsUpdateOne {
 	puo.mutation.ClearJimokCdNm()
 	return puo
 }
 
-// SetJiyukCd sets the "jiyukCd" field.
+// SetJiyukCd sets the "jiyuk_cd" field.
 func (puo *PermsUpdateOne) SetJiyukCd(s string) *PermsUpdateOne {
 	puo.mutation.SetJiyukCd(s)
 	return puo
 }
 
-// SetNillableJiyukCd sets the "jiyukCd" field if the given value is not nil.
+// SetNillableJiyukCd sets the "jiyuk_cd" field if the given value is not nil.
 func (puo *PermsUpdateOne) SetNillableJiyukCd(s *string) *PermsUpdateOne {
 	if s != nil {
 		puo.SetJiyukCd(*s)
@@ -1405,19 +1406,19 @@ func (puo *PermsUpdateOne) SetNillableJiyukCd(s *string) *PermsUpdateOne {
 	return puo
 }
 
-// ClearJiyukCd clears the value of the "jiyukCd" field.
+// ClearJiyukCd clears the value of the "jiyuk_cd" field.
 func (puo *PermsUpdateOne) ClearJiyukCd() *PermsUpdateOne {
 	puo.mutation.ClearJiyukCd()
 	return puo
 }
 
-// SetJiyukCdNm sets the "jiyukCdNm" field.
+// SetJiyukCdNm sets the "jiyuk_cd_nm" field.
 func (puo *PermsUpdateOne) SetJiyukCdNm(s string) *PermsUpdateOne {
 	puo.mutation.SetJiyukCdNm(s)
 	return puo
 }
 
-// SetNillableJiyukCdNm sets the "jiyukCdNm" field if the given value is not nil.
+// SetNillableJiyukCdNm sets the "jiyuk_cd_nm" field if the given value is not nil.
 func (puo *PermsUpdateOne) SetNillableJiyukCdNm(s *string) *PermsUpdateOne {
 	if s != nil {
 		puo.SetJiyukCdNm(*s)
@@ -1425,19 +1426,19 @@ func (puo *PermsUpdateOne) SetNillableJiyukCdNm(s *string) *PermsUpdateOne {
 	return puo
 }
 
-// ClearJiyukCdNm clears the value of the "jiyukCdNm" field.
+// ClearJiyukCdNm clears the value of the "jiyuk_cd_nm" field.
 func (puo *PermsUpdateOne) ClearJiyukCdNm() *PermsUpdateOne {
 	puo.mutation.ClearJiyukCdNm()
 	return puo
 }
 
-// SetJiguCd sets the "jiguCd" field.
+// SetJiguCd sets the "jigu_cd" field.
 func (puo *PermsUpdateOne) SetJiguCd(s string) *PermsUpdateOne {
 	puo.mutation.SetJiguCd(s)
 	return puo
 }
 
-// SetNillableJiguCd sets the "jiguCd" field if the given value is not nil.
+// SetNillableJiguCd sets the "jigu_cd" field if the given value is not nil.
 func (puo *PermsUpdateOne) SetNillableJiguCd(s *string) *PermsUpdateOne {
 	if s != nil {
 		puo.SetJiguCd(*s)
@@ -1445,19 +1446,19 @@ func (puo *PermsUpdateOne) SetNillableJiguCd(s *string) *PermsUpdateOne {
 	return puo
 }
 
-// ClearJiguCd clears the value of the "jiguCd" field.
+// ClearJiguCd clears the value of the "jigu_cd" field.
 func (puo *PermsUpdateOne) ClearJiguCd() *PermsUpdateOne {
 	puo.mutation.ClearJiguCd()
 	return puo
 }
 
-// SetJiguCdNm sets the "jiguCdNm" field.
+// SetJiguCdNm sets the "jigu_cd_nm" field.
 func (puo *PermsUpdateOne) SetJiguCdNm(s string) *PermsUpdateOne {
 	puo.mutation.SetJiguCdNm(s)
 	return puo
 }
 
-// SetNillableJiguCdNm sets the "jiguCdNm" field if the given value is not nil.
+// SetNillableJiguCdNm sets the "jigu_cd_nm" field if the given value is not nil.
 func (puo *PermsUpdateOne) SetNillableJiguCdNm(s *string) *PermsUpdateOne {
 	if s != nil {
 		puo.SetJiguCdNm(*s)
@@ -1465,7 +1466,7 @@ func (puo *PermsUpdateOne) SetNillableJiguCdNm(s *string) *PermsUpdateOne {
 	return puo
 }
 
-// ClearJiguCdNm clears the value of the "jiguCdNm" field.
+// ClearJiguCdNm clears the value of the "jigu_cd_nm" field.
 func (puo *PermsUpdateOne) ClearJiguCdNm() *PermsUpdateOne {
 	puo.mutation.ClearJiguCdNm()
 	return puo
@@ -1975,13 +1976,13 @@ func (puo *PermsUpdateOne) ClearUseAprDay() *PermsUpdateOne {
 	return puo
 }
 
-// SetPlatPlc sets the "platPlc" field.
+// SetPlatPlc sets the "plat_plc" field.
 func (puo *PermsUpdateOne) SetPlatPlc(s string) *PermsUpdateOne {
 	puo.mutation.SetPlatPlc(s)
 	return puo
 }
 
-// SetNillablePlatPlc sets the "platPlc" field if the given value is not nil.
+// SetNillablePlatPlc sets the "plat_plc" field if the given value is not nil.
 func (puo *PermsUpdateOne) SetNillablePlatPlc(s *string) *PermsUpdateOne {
 	if s != nil {
 		puo.SetPlatPlc(*s)
@@ -1989,19 +1990,19 @@ func (puo *PermsUpdateOne) SetNillablePlatPlc(s *string) *PermsUpdateOne {
 	return puo
 }
 
-// ClearPlatPlc clears the value of the "platPlc" field.
+// ClearPlatPlc clears the value of the "plat_plc" field.
 func (puo *PermsUpdateOne) ClearPlatPlc() *PermsUpdateOne {
 	puo.mutation.ClearPlatPlc()
 	return puo
 }
 
-// SetSigunguCd sets the "sigunguCd" field.
+// SetSigunguCd sets the "sigungu_cd" field.
 func (puo *PermsUpdateOne) SetSigunguCd(s string) *PermsUpdateOne {
 	puo.mutation.SetSigunguCd(s)
 	return puo
 }
 
-// SetNillableSigunguCd sets the "sigunguCd" field if the given value is not nil.
+// SetNillableSigunguCd sets the "sigungu_cd" field if the given value is not nil.
 func (puo *PermsUpdateOne) SetNillableSigunguCd(s *string) *PermsUpdateOne {
 	if s != nil {
 		puo.SetSigunguCd(*s)
@@ -2009,19 +2010,19 @@ func (puo *PermsUpdateOne) SetNillableSigunguCd(s *string) *PermsUpdateOne {
 	return puo
 }
 
-// ClearSigunguCd clears the value of the "sigunguCd" field.
+// ClearSigunguCd clears the value of the "sigungu_cd" field.
 func (puo *PermsUpdateOne) ClearSigunguCd() *PermsUpdateOne {
 	puo.mutation.ClearSigunguCd()
 	return puo
 }
 
-// SetBjdongCd sets the "bjdongCd" field.
+// SetBjdongCd sets the "bjdong_cd" field.
 func (puo *PermsUpdateOne) SetBjdongCd(s string) *PermsUpdateOne {
 	puo.mutation.SetBjdongCd(s)
 	return puo
 }
 
-// SetNillableBjdongCd sets the "bjdongCd" field if the given value is not nil.
+// SetNillableBjdongCd sets the "bjdong_cd" field if the given value is not nil.
 func (puo *PermsUpdateOne) SetNillableBjdongCd(s *string) *PermsUpdateOne {
 	if s != nil {
 		puo.SetBjdongCd(*s)
@@ -2029,29 +2030,29 @@ func (puo *PermsUpdateOne) SetNillableBjdongCd(s *string) *PermsUpdateOne {
 	return puo
 }
 
-// ClearBjdongCd clears the value of the "bjdongCd" field.
+// ClearBjdongCd clears the value of the "bjdong_cd" field.
 func (puo *PermsUpdateOne) ClearBjdongCd() *PermsUpdateOne {
 	puo.mutation.ClearBjdongCd()
 	return puo
 }
 
-// SetPlatGbCd sets the "platGbCd" field.
-func (puo *PermsUpdateOne) SetPlatGbCd(s string) *PermsUpdateOne {
-	puo.mutation.SetPlatGbCd(s)
+// SetPlatGBCd sets the "plat_gb_cd" field.
+func (puo *PermsUpdateOne) SetPlatGBCd(s string) *PermsUpdateOne {
+	puo.mutation.SetPlatGBCd(s)
 	return puo
 }
 
-// SetNillablePlatGbCd sets the "platGbCd" field if the given value is not nil.
-func (puo *PermsUpdateOne) SetNillablePlatGbCd(s *string) *PermsUpdateOne {
+// SetNillablePlatGBCd sets the "plat_gb_cd" field if the given value is not nil.
+func (puo *PermsUpdateOne) SetNillablePlatGBCd(s *string) *PermsUpdateOne {
 	if s != nil {
-		puo.SetPlatGbCd(*s)
+		puo.SetPlatGBCd(*s)
 	}
 	return puo
 }
 
-// ClearPlatGbCd clears the value of the "platGbCd" field.
-func (puo *PermsUpdateOne) ClearPlatGbCd() *PermsUpdateOne {
-	puo.mutation.ClearPlatGbCd()
+// ClearPlatGBCd clears the value of the "plat_gb_cd" field.
+func (puo *PermsUpdateOne) ClearPlatGBCd() *PermsUpdateOne {
+	puo.mutation.ClearPlatGBCd()
 	return puo
 }
 
@@ -2101,13 +2102,13 @@ func (puo *PermsUpdateOne) SetMgmPmsrgstPk(s string) *PermsUpdateOne {
 	return puo
 }
 
-// SetSplotNm sets the "splotNm" field.
+// SetSplotNm sets the "splot_nm" field.
 func (puo *PermsUpdateOne) SetSplotNm(s string) *PermsUpdateOne {
 	puo.mutation.SetSplotNm(s)
 	return puo
 }
 
-// SetNillableSplotNm sets the "splotNm" field if the given value is not nil.
+// SetNillableSplotNm sets the "splot_nm" field if the given value is not nil.
 func (puo *PermsUpdateOne) SetNillableSplotNm(s *string) *PermsUpdateOne {
 	if s != nil {
 		puo.SetSplotNm(*s)
@@ -2115,7 +2116,7 @@ func (puo *PermsUpdateOne) SetNillableSplotNm(s *string) *PermsUpdateOne {
 	return puo
 }
 
-// ClearSplotNm clears the value of the "splotNm" field.
+// ClearSplotNm clears the value of the "splot_nm" field.
 func (puo *PermsUpdateOne) ClearSplotNm() *PermsUpdateOne {
 	puo.mutation.ClearSplotNm()
 	return puo
@@ -2234,14 +2235,6 @@ func (puo *PermsUpdateOne) SetUpdatedAt(t time.Time) *PermsUpdateOne {
 	return puo
 }
 
-// SetNillableUpdatedAt sets the "updated_at" field if the given value is not nil.
-func (puo *PermsUpdateOne) SetNillableUpdatedAt(t *time.Time) *PermsUpdateOne {
-	if t != nil {
-		puo.SetUpdatedAt(*t)
-	}
-	return puo
-}
-
 // Mutation returns the PermsMutation object of the builder.
 func (puo *PermsUpdateOne) Mutation() *PermsMutation {
 	return puo.mutation
@@ -2262,6 +2255,7 @@ func (puo *PermsUpdateOne) Select(field string, fields ...string) *PermsUpdateOn
 
 // Save executes the query and returns the updated Perms entity.
 func (puo *PermsUpdateOne) Save(ctx context.Context) (*Perms, error) {
+	puo.defaults()
 	return withHooks[*Perms, PermsMutation](ctx, puo.sqlSave, puo.mutation, puo.hooks)
 }
 
@@ -2284,6 +2278,14 @@ func (puo *PermsUpdateOne) Exec(ctx context.Context) error {
 func (puo *PermsUpdateOne) ExecX(ctx context.Context) {
 	if err := puo.Exec(ctx); err != nil {
 		panic(err)
+	}
+}
+
+// defaults sets the default values of the builder before save.
+func (puo *PermsUpdateOne) defaults() {
+	if _, ok := puo.mutation.UpdatedAt(); !ok {
+		v := perms.UpdateDefaultUpdatedAt()
+		puo.mutation.SetUpdatedAt(v)
 	}
 }
 
@@ -2541,11 +2543,11 @@ func (puo *PermsUpdateOne) sqlSave(ctx context.Context) (_node *Perms, err error
 	if puo.mutation.BjdongCdCleared() {
 		_spec.ClearField(perms.FieldBjdongCd, field.TypeString)
 	}
-	if value, ok := puo.mutation.PlatGbCd(); ok {
-		_spec.SetField(perms.FieldPlatGbCd, field.TypeString, value)
+	if value, ok := puo.mutation.PlatGBCd(); ok {
+		_spec.SetField(perms.FieldPlatGBCd, field.TypeString, value)
 	}
-	if puo.mutation.PlatGbCdCleared() {
-		_spec.ClearField(perms.FieldPlatGbCd, field.TypeString)
+	if puo.mutation.PlatGBCdCleared() {
+		_spec.ClearField(perms.FieldPlatGBCd, field.TypeString)
 	}
 	if value, ok := puo.mutation.Bun(); ok {
 		_spec.SetField(perms.FieldBun, field.TypeString, value)
