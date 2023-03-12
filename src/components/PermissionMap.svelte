@@ -315,21 +315,21 @@
           </div>
 
           <!-- 검색창 영역 -->
-          <div class="flex my-5">
-            <select bind:value={sidoSelected} type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-2">
+          <div class="flex flex-wrap my-5">
+            <select bind:value={sidoSelected} type="text" class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-2">
               <option value="" selected>전국</option>
               <option value="11" selected>서울</option>
               <option value="41">경기도</option>
             </select>
 
-            <select bind:value={permTypeSelected} type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-2">
+            <select bind:value={permTypeSelected} type="text" class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-2">
               <option value="" selected>허가</option>
               <option value="신축" selected>신축</option>
               <option value="증축">증축</option>
               <option value="용도변경">용도변경</option>
             </select>
 
-            <select bind:value={totAreaSelected} type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-2">
+            <select bind:value={totAreaSelected} type="text" class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-2">
               <option value="" selected>면적</option>
               <option value="100000" selected>10만m2</option>
               <option value="50000" selected>5만m2</option>
@@ -337,13 +337,13 @@
               <option value="10000" selected>1만m2</option>
             </select>
 
-            <select bind:value={useSelected} type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-2">
+            <select bind:value={useSelected} type="text" class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-2">
               <option value="" selected>주용도(적용예정)</option>
               <option value="오피스" selected>오피스</option>
             </select>
 
             <!-- 조회 버튼은 이벤트를 넘기지 않고 인허가 정보를 조회합니다. -->
-            <button on:click={() => getPermsHandler()} type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 mx-2">조회</button>
+            <button on:click={() => getPermsHandler()} type="button" class="mb-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 mx-2">조회</button>
           </div>
 
           {#await perms}
