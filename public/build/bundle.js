@@ -7852,22 +7852,22 @@ var app = (function () {
 
     function get_each_context$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[8] = list[i];
+    	child_ctx[9] = list[i];
     	return child_ctx;
     }
 
-    // (49:4) {#each pages as pageNo}
+    // (59:4) {#each pages as pageNo}
     function create_each_block$1(ctx) {
     	let li;
     	let button;
-    	let t_value = /*pageNo*/ ctx[8] + "";
+    	let t_value = /*pageNo*/ ctx[9] + "";
     	let t;
     	let button_class_value;
     	let mounted;
     	let dispose;
 
-    	function click_handler() {
-    		return /*click_handler*/ ctx[5](/*pageNo*/ ctx[8]);
+    	function click_handler_1() {
+    		return /*click_handler_1*/ ctx[6](/*pageNo*/ ctx[9]);
     	}
 
     	const block = {
@@ -7876,12 +7876,12 @@ var app = (function () {
     			button = element("button");
     			t = text(t_value);
 
-    			attr_dev(button, "class", button_class_value = "px-3 py-2 leading-tight " + (/*currentPage*/ ctx[0] == /*pageNo*/ ctx[8]
+    			attr_dev(button, "class", button_class_value = "px-3 py-2 leading-tight " + (/*currentPage*/ ctx[0] == /*pageNo*/ ctx[9]
     			? 'text-blue-500 underline'
     			: 'text-gray-500 hover:text-gray-700'));
 
-    			add_location(button, file$1, 50, 8, 1481);
-    			add_location(li, file$1, 49, 6, 1468);
+    			add_location(button, file$1, 60, 8, 1665);
+    			add_location(li, file$1, 59, 6, 1652);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -7889,15 +7889,15 @@ var app = (function () {
     			append_dev(button, t);
 
     			if (!mounted) {
-    				dispose = listen_dev(button, "click", click_handler, false, false, false);
+    				dispose = listen_dev(button, "click", click_handler_1, false, false, false);
     				mounted = true;
     			}
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty & /*pages*/ 4 && t_value !== (t_value = /*pageNo*/ ctx[8] + "")) set_data_dev(t, t_value);
+    			if (dirty & /*pages*/ 4 && t_value !== (t_value = /*pageNo*/ ctx[9] + "")) set_data_dev(t, t_value);
 
-    			if (dirty & /*currentPage, pages*/ 5 && button_class_value !== (button_class_value = "px-3 py-2 leading-tight " + (/*currentPage*/ ctx[0] == /*pageNo*/ ctx[8]
+    			if (dirty & /*currentPage, pages*/ 5 && button_class_value !== (button_class_value = "px-3 py-2 leading-tight " + (/*currentPage*/ ctx[0] == /*pageNo*/ ctx[9]
     			? 'text-blue-500 underline'
     			: 'text-gray-500 hover:text-gray-700'))) {
     				attr_dev(button, "class", button_class_value);
@@ -7914,7 +7914,7 @@ var app = (function () {
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(49:4) {#each pages as pageNo}",
+    		source: "(59:4) {#each pages as pageNo}",
     		ctx
     	});
 
@@ -7974,37 +7974,37 @@ var app = (function () {
     			svg1 = svg_element("svg");
     			path1 = svg_element("path");
     			attr_dev(span0, "class", "sr-only");
-    			add_location(span0, file$1, 41, 8, 1053);
+    			add_location(span0, file$1, 51, 8, 1237);
     			attr_dev(path0, "fill-rule", "evenodd");
     			attr_dev(path0, "d", "M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z");
     			attr_dev(path0, "clip-rule", "evenodd");
-    			add_location(path0, file$1, 43, 11, 1225);
+    			add_location(path0, file$1, 53, 11, 1409);
     			attr_dev(svg0, "aria-hidden", "true");
     			attr_dev(svg0, "class", "w-5 h-5");
     			attr_dev(svg0, "fill", "currentColor");
     			attr_dev(svg0, "viewBox", "0 0 20 20");
     			attr_dev(svg0, "xmlns", "http://www.w3.org/2000/svg");
-    			add_location(svg0, file$1, 42, 8, 1099);
+    			add_location(svg0, file$1, 52, 8, 1283);
     			attr_dev(button0, "href", "#");
     			attr_dev(button0, "class", "block px-3 py-2 ml-0 leading-tight text-gray-500 hover:text-gray-700");
     			add_location(button0, file$1, 40, 6, 950);
     			add_location(li0, file$1, 39, 4, 939);
     			attr_dev(span1, "class", "sr-only");
-    			add_location(span1, file$1, 74, 8, 2169);
+    			add_location(span1, file$1, 84, 8, 2353);
     			attr_dev(path1, "fill-rule", "evenodd");
     			attr_dev(path1, "d", "M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z");
     			attr_dev(path1, "clip-rule", "evenodd");
-    			add_location(path1, file$1, 76, 11, 2337);
+    			add_location(path1, file$1, 86, 11, 2521);
     			attr_dev(svg1, "aria-hidden", "true");
     			attr_dev(svg1, "class", "w-5 h-5");
     			attr_dev(svg1, "fill", "currentColor");
     			attr_dev(svg1, "viewBox", "0 0 20 20");
     			attr_dev(svg1, "xmlns", "http://www.w3.org/2000/svg");
-    			add_location(svg1, file$1, 75, 8, 2211);
+    			add_location(svg1, file$1, 85, 8, 2395);
     			attr_dev(button1, "href", "#");
     			attr_dev(button1, "class", "block px-3 py-2 ml-0 leading-tight text-gray-500 hover:text-gray-700");
-    			add_location(button1, file$1, 63, 6, 1844);
-    			add_location(li1, file$1, 62, 4, 1833);
+    			add_location(button1, file$1, 73, 6, 2028);
+    			add_location(li1, file$1, 72, 4, 2017);
     			attr_dev(ul, "class", "inline-flex items-center -space-x-px");
     			add_location(ul, file$1, 38, 2, 885);
     			attr_dev(nav, "aria-label", "Page navigation");
@@ -8038,7 +8038,11 @@ var app = (function () {
     			append_dev(svg1, path1);
 
     			if (!mounted) {
-    				dispose = listen_dev(button1, "click", /*click_handler_1*/ ctx[6], false, false, false);
+    				dispose = [
+    					listen_dev(button0, "click", /*click_handler*/ ctx[5], false, false, false),
+    					listen_dev(button1, "click", /*click_handler_2*/ ctx[7], false, false, false)
+    				];
+
     				mounted = true;
     			}
     		},
@@ -8073,7 +8077,7 @@ var app = (function () {
     			if (detaching) detach_dev(nav);
     			destroy_each(each_blocks, detaching);
     			mounted = false;
-    			dispose();
+    			run_all(dispose);
     		}
     	};
 
@@ -8133,14 +8137,23 @@ var app = (function () {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console_1$1.warn(`<Pagination> was created with unknown prop '${key}'`);
     	});
 
-    	const click_handler = pageNo => {
+    	const click_handler = () => {
+    		if (pages[0] != 1) {
+    			$$invalidate(0, currentPage = pages[0] - 1);
+    		}
+
+    		pageArr();
+    		moveTo();
+    	};
+
+    	const click_handler_1 = pageNo => {
     		if (currentPage != pageNo) {
     			$$invalidate(0, currentPage = pageNo);
     			moveTo();
     		}
     	};
 
-    	const click_handler_1 = () => {
+    	const click_handler_2 = () => {
     		if (pages[pages.length - 1] < lastPageNo) {
     			$$invalidate(0, currentPage = pages[pages.length - 1] + 1);
     		}
@@ -8183,7 +8196,8 @@ var app = (function () {
     		pageArr,
     		moveTo,
     		click_handler,
-    		click_handler_1
+    		click_handler_1,
+    		click_handler_2
     	];
     }
 
