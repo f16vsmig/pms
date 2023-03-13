@@ -1,10 +1,14 @@
 <script>
+  import { onMount } from "svelte";
+
   let rightSideModal;
   let rightSideModalScrollTop;
 
   function moveTop() {
     rightSideModal.scrollTop = 0;
   }
+
+  onMount(() => moveTop());
 </script>
 
 <div

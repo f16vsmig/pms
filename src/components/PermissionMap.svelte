@@ -298,10 +298,10 @@
   {/if}
 
   {#if modalToggle}
-    <SideModal>
-      <div bind:this={sideModal} slot="content" class="flex flex-col relative px-2 pb-10">
-        <!-- 리스트뷰 영역 -->
-        {#if siteListModalToggle}
+    {#if siteListModalToggle}
+      <SideModal>
+        <div bind:this={sideModal} slot="content" class="flex flex-col relative px-2 pb-10">
+          <!-- 리스트뷰 영역 -->
           <div class="flex justify-between my-3">
             <h1 class="text-lg font-bold">건축인허가정보 <span class="italic font-light">Beta</span></h1>
             <button
@@ -407,10 +407,14 @@
             <!-- 하단 페이지 영역 -->
             <Pagination on:moveTo={getPermsHandler} {lastPageNo} {currentPage} />
           {/await}
-        {/if}
+        </div>
+      </SideModal>
+    {/if}
 
-        <!-- 상세보기 영역 -->
-        {#if siteDetailToggle && siteDetailInfo}
+    {#if siteDetailToggle && siteDetailInfo}
+      <SideModal>
+        <div bind:this={sideModal} slot="content" class="flex flex-col relative px-2 pb-10">
+          <!-- 상세보기 영역 -->
           <div class="flex justify-between my-3">
             <button on:click={moveToSiteListView}>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -516,9 +520,9 @@
               </tbody>
             </table>
           </div>
-        {/if}
-      </div>
-    </SideModal>
+        </div>
+      </SideModal>
+    {/if}
   {/if}
 </div>
 
