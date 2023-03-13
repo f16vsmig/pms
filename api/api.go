@@ -255,7 +255,7 @@ func GetPermsDataAPI(c *fiber.Ctx) error {
 		return c.JSON(fiber.NewError(fiber.StatusInternalServerError, "전체 인허가 정보수를 쿼라하던 중 에러가 발생했습니다. "+err.Error()))
 	}
 
-	totalPage := math.Round((float64(totalCnt / cnt)))
+	totalPage := math.Ceil(float64(totalCnt) / float64(cnt))
 
 	perms, err := instance.Offset((page - 1) * cnt).Limit(cnt).All(ctx)
 
