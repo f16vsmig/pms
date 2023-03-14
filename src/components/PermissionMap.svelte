@@ -245,10 +245,7 @@
    * map/MapTypeBtn.svelte에서 발생한 이벤트를 받아 지도 타입을 변경합니다.
    * @param event
    */
-  function setMapType(event) {
-    let mapType = event.detail.value;
-    console.log(mapType);
-
+  function setMapType(mapType) {
     if (mapType == "mapView") {
       return map.setMapTypeId(kakao.maps.MapTypeId.ROADMAP);
     } else if (mapType == "skyView") {
@@ -443,55 +440,55 @@
               <tbody>
                 <tr class="border-b border-gray-200">
                   <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">주소</th>
-                  <td class="px-6 py-4 flex"
-                    >{siteDetailInfo.plat_plc}
-                    {#if $roadViewUrl}
-                      <a href={$roadViewUrl} target="_blank" rel="noreferrer" class="text-indigo-600 hover:text-indigo-500 ml-2" title="로드맵 보기"
-                        ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 pointer-events-none">
-                          <path
-                            stroke-linecap="round"
-                            d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z"
-                          />
-                        </svg>
-                      </a>
-                    {/if}</td
-                  >
+                  <td class="px-6 py-4">{siteDetailInfo.plat_plc}</td>
                 </tr>
                 <tr class="border-b border-gray-200">
                   <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">주용도</th>
                   <td class="px-6 py-4">{siteDetailInfo.main_purps_cd_nm}</td>
                 </tr>
                 <tr class="border-b border-gray-200">
-                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">연면적</th>
-                  <td class="px-6 py-4">{siteDetailInfo.tot_area}</td>
-                </tr>
-                <tr class="border-b border-gray-200">
-                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">건물명</th>
-                  <td class="px-6 py-4">{siteDetailInfo.bld_nm}</td>
-                </tr>
-                <tr class="border-b border-gray-200">
-                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">사용승인일</th>
-                  <td class="px-6 py-4">{siteDetailInfo.use_apr_day}</td>
-                </tr>
-                <tr class="border-b border-gray-200">
-                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">건축허가일</th>
-                  <td class="px-6 py-4">{siteDetailInfo.arch_pms_day}</td>
-                </tr>
-                <tr class="border-b border-gray-200">
-                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">구역명</th>
-                  <td class="px-6 py-4">{siteDetailInfo.guyuk_cd_nm}</td>
-                </tr>
-                <tr class="border-b border-gray-200">
                   <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">건축면적(㎡)</th>
-                  <td class="px-6 py-4">{siteDetailInfo.arch_area}</td>
+                  <td class="px-6 py-4">{addComma(siteDetailInfo.arch_area, 0)}</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">연면적</th>
+                  <td class="px-6 py-4">{addComma(siteDetailInfo.tot_area, 0)}</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">용적률(%)</th>
+                  <td class="px-6 py-4">{siteDetailInfo.vl_rat_estm_tot_area}</td>
                 </tr>
                 <tr class="border-b border-gray-200">
                   <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">건폐율(%)</th>
                   <td class="px-6 py-4">{siteDetailInfo.bc_rat}</td>
                 </tr>
                 <tr class="border-b border-gray-200">
-                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">용적률(%)</th>
-                  <td class="px-6 py-4">{siteDetailInfo.vl_rat_estm_tot_area}</td>
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">건물명</th>
+                  <td class="px-6 py-4">{siteDetailInfo.bld_nm}</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">건축허가일</th>
+                  <td class="px-6 py-4">{siteDetailInfo.arch_pms_day}</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">사용승인일</th>
+                  <td class="px-6 py-4">{siteDetailInfo.use_apr_day}</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">시군구코드</th>
+                  <td class="px-6 py-4">{siteDetailInfo.sigungu_cd}</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">법정동코드</th>
+                  <td class="px-6 py-4">{siteDetailInfo.bjdong_cd}</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">구역명</th>
+                  <td class="px-6 py-4">{siteDetailInfo.guyuk_cd_nm}</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">지번</th>
+                  <td class="px-6 py-4 flex"><input class="w-9 mr-2" type="text" value={siteDetailInfo.ji} /> - <input class="w-9 ml-2" type="text" value={siteDetailInfo.bun} /></td>
                 </tr>
                 <tr class="border-b border-gray-200">
                   <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">착공예정일</th>
@@ -524,6 +521,52 @@
       </SideModal>
     {/if}
   {/if}
+
+  <!-- 지도 타입 변경 -->
+  <div class="absolute z-10 left-[calc(30%)] bottom-10 flex">
+    <div class="inline-flex rounded-md shadow-sm mr-3" role="group">
+      <button
+        type="button"
+        on:click={() => setMapType("mapView")}
+        checked
+        class="py-2 px-4 text-sm font-medium text-gray-900 bg-white rounded-l-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white"
+        ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z"
+          />
+        </svg>
+      </button>
+      <button
+        type="button"
+        on:click={() => setMapType("skyView")}
+        class="py-2 px-4 text-sm font-medium text-gray-900 bg-white rounded-r-md border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12.75 3.03v.568c0 .334.148.65.405.864l1.068.89c.442.369.535 1.01.216 1.49l-.51.766a2.25 2.25 0 01-1.161.886l-.143.048a1.107 1.107 0 00-.57 1.664c.369.555.169 1.307-.427 1.605L9 13.125l.423 1.059a.956.956 0 01-1.652.928l-.679-.906a1.125 1.125 0 00-1.906.172L4.5 15.75l-.612.153M12.75 3.031a9 9 0 00-8.862 12.872M12.75 3.031a9 9 0 016.69 14.036m0 0l-.177-.529A2.25 2.25 0 0017.128 15H16.5l-.324-.324a1.453 1.453 0 00-2.328.377l-.036.073a1.586 1.586 0 01-.982.816l-.99.282c-.55.157-.894.702-.8 1.267l.073.438c.08.474.49.821.97.821.846 0 1.598.542 1.865 1.345l.215.643m5.276-3.67a9.012 9.012 0 01-5.276 3.67m0 0a9 9 0 01-10.275-4.835M15.75 9c0 .896-.393 1.7-1.016 2.25"
+          />
+        </svg>
+      </button>
+    </div>
+
+    {#if $roadViewUrl}
+      <a
+        class="py-2 px-3.5 justify-center items-center text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm"
+        href={$roadViewUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        title="로드뷰 보기"
+        ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+        </svg>
+      </a>
+    {/if}
+  </div>
 </div>
 
 <style>

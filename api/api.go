@@ -276,3 +276,24 @@ func GetPermsDataAPI(c *fiber.Ctx) error {
 		})
 
 }
+
+// 지번을 변경하는 api 입니다.
+func updateJibunApi(c *fiber.Ctx) error {
+	mgmPmsrgstPk := c.Query("mgm_pmsrgst_pk", "")
+	ji := c.Query("ji", "")
+	bun := c.Query("bun", "")
+
+	instance, err := db.Client.Perms.Query().Where(perms.MgmPmsrgstPkEQ(mgmPmsrgstPk)).Only(ctx)
+	if err != nil {
+		fmt.Println("관리허가대장PK로 인허가 정보를 불러오는 중 오류가 발생했습니다. " + err.Error())
+		return c.JSON(fiber.NewError(fiber.StatusBadRequest, "관리허가대장PK로 인허가 정보를 불러오는 중 오류가 발생했습니다. "+err.Error()))
+	}
+
+	instance.Update().SetJi(ji).SetBun(bun).Save(ctx)
+	return c.JSON(
+		fiber.Map{
+			"status": fiber.StatusOK,
+			"msg":    "지번 정보를 수정했습니다..",
+		})
+
+}
