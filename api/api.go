@@ -9,6 +9,7 @@ import (
 	"gopms/db"
 	"gopms/ent"
 	"gopms/ent/perms"
+	"gopms/ent/predicate"
 	"io/ioutil"
 	"math"
 	"os"
@@ -218,34 +219,31 @@ func GetPermsDataFromCSV(startDate, endDate string) error {
 
 // DB에서 인허가정보를 조회하여 클라이언트에 보내줍니다.
 func GetPermsDataAPI(c *fiber.Ctx) error {
+	page := c.QueryInt("page", 1)
+	cnt := 10
+
 	sido := c.Query("sido", "")
 	permsType := c.Query("permsType", "")
 	totAreaGt := c.QueryInt("totAreaGt", 0)
 
-	page := c.QueryInt("page", 1)
-	cnt := 10
+	var predicates []predicate.Perms
 
-	instance := db.Client.Perms.Query()
-	if sido != "" && permsType == "" { // sido(지역)에 대한 조건이 있으면 where절을 추가합니다.
-		instance = instance.Where(
-			perms.And(
-				perms.SigunguCdHasPrefix(sido),
-				perms.TotAreaGTE(uint32(totAreaGt)),
-			),
-		)
-	} else if sido != "" && permsType != "" {
-		instance = instance.Where(
-			perms.And(
-				perms.SigunguCdHasPrefix(sido),
-				perms.ArchGBCdNmEQ(permsType),
-				perms.TotAreaGTE(uint32(totAreaGt)),
-			),
-		)
-	} else if sido == "" && totAreaGt > 0 {
-		instance = instance.Where(perms.TotAreaGTE(uint32(totAreaGt)))
-	} else if sido == "" && permsType != "" {
-		instance = instance.Where(perms.ArchGBCdNmEQ(permsType))
+	if sido != "" {
+		predicates = append(predicates, perms.SigunguCdHasPrefix(sido))
 	}
+
+	if permsType != "" {
+		predicates = append(predicates, perms.ArchGBCdNmEQ(permsType))
+	}
+
+	if totAreaGt != 0 {
+		predicates = append(predicates, perms.TotAreaGTE(uint32(totAreaGt)))
+	}
+
+	instance := db.Client.Perms.Query().
+		Where(
+			perms.And(predicates...),
+		)
 
 	instance = instance.Order(ent.Desc(perms.FieldMgmPmsrgstPk))
 

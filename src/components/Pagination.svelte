@@ -3,11 +3,19 @@
 
   export let lastPageNo;
   export let currentPage = 1;
-  const pageCnt = 8;
 
+  let pageCnt = 8;
   let pages = [];
 
   const pageArr = () => {
+    if (currentPage < 100) {
+      pageCnt = 8;
+    } else if (currentPage >= 100 && currentPage < 1000) {
+      pageCnt = 7;
+    } else if (currentPage >= 1000) {
+      pageCnt = 6;
+    }
+
     const pageStep = Math.ceil(currentPage / pageCnt);
     const nextStartPage = pageStep * pageCnt - pageCnt + 1;
     const lastPage = Math.min(nextStartPage - 1, lastPageNo);

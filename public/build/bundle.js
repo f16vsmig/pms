@@ -8137,22 +8137,22 @@ var app = (function () {
 
     function get_each_context$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[9] = list[i];
+    	child_ctx[10] = list[i];
     	return child_ctx;
     }
 
-    // (59:4) {#each pages as pageNo}
+    // (67:4) {#each pages as pageNo}
     function create_each_block$1(ctx) {
     	let li;
     	let button;
-    	let t_value = /*pageNo*/ ctx[9] + "";
+    	let t_value = /*pageNo*/ ctx[10] + "";
     	let t;
     	let button_class_value;
     	let mounted;
     	let dispose;
 
     	function click_handler_1() {
-    		return /*click_handler_1*/ ctx[6](/*pageNo*/ ctx[9]);
+    		return /*click_handler_1*/ ctx[6](/*pageNo*/ ctx[10]);
     	}
 
     	const block = {
@@ -8161,12 +8161,12 @@ var app = (function () {
     			button = element("button");
     			t = text(t_value);
 
-    			attr_dev(button, "class", button_class_value = "px-3 py-2 leading-tight " + (/*currentPage*/ ctx[0] == /*pageNo*/ ctx[9]
+    			attr_dev(button, "class", button_class_value = "px-3 py-2 leading-tight " + (/*currentPage*/ ctx[0] == /*pageNo*/ ctx[10]
     			? 'text-blue-500 underline'
     			: 'text-gray-500 hover:text-gray-700'));
 
-    			add_location(button, file$1, 60, 8, 1665);
-    			add_location(li, file$1, 59, 6, 1652);
+    			add_location(button, file$1, 68, 8, 1853);
+    			add_location(li, file$1, 67, 6, 1840);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -8180,9 +8180,9 @@ var app = (function () {
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty & /*pages*/ 4 && t_value !== (t_value = /*pageNo*/ ctx[9] + "")) set_data_dev(t, t_value);
+    			if (dirty & /*pages*/ 4 && t_value !== (t_value = /*pageNo*/ ctx[10] + "")) set_data_dev(t, t_value);
 
-    			if (dirty & /*currentPage, pages*/ 5 && button_class_value !== (button_class_value = "px-3 py-2 leading-tight " + (/*currentPage*/ ctx[0] == /*pageNo*/ ctx[9]
+    			if (dirty & /*currentPage, pages*/ 5 && button_class_value !== (button_class_value = "px-3 py-2 leading-tight " + (/*currentPage*/ ctx[0] == /*pageNo*/ ctx[10]
     			? 'text-blue-500 underline'
     			: 'text-gray-500 hover:text-gray-700'))) {
     				attr_dev(button, "class", button_class_value);
@@ -8199,7 +8199,7 @@ var app = (function () {
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(59:4) {#each pages as pageNo}",
+    		source: "(67:4) {#each pages as pageNo}",
     		ctx
     	});
 
@@ -8259,42 +8259,42 @@ var app = (function () {
     			svg1 = svg_element("svg");
     			path1 = svg_element("path");
     			attr_dev(span0, "class", "sr-only");
-    			add_location(span0, file$1, 51, 8, 1237);
+    			add_location(span0, file$1, 59, 8, 1425);
     			attr_dev(path0, "fill-rule", "evenodd");
     			attr_dev(path0, "d", "M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z");
     			attr_dev(path0, "clip-rule", "evenodd");
-    			add_location(path0, file$1, 53, 11, 1409);
+    			add_location(path0, file$1, 61, 11, 1597);
     			attr_dev(svg0, "aria-hidden", "true");
     			attr_dev(svg0, "class", "w-5 h-5");
     			attr_dev(svg0, "fill", "currentColor");
     			attr_dev(svg0, "viewBox", "0 0 20 20");
     			attr_dev(svg0, "xmlns", "http://www.w3.org/2000/svg");
-    			add_location(svg0, file$1, 52, 8, 1283);
+    			add_location(svg0, file$1, 60, 8, 1471);
     			attr_dev(button0, "href", "#");
     			attr_dev(button0, "class", "block px-3 py-2 ml-0 leading-tight text-gray-500 hover:text-gray-700");
-    			add_location(button0, file$1, 40, 6, 950);
-    			add_location(li0, file$1, 39, 4, 939);
+    			add_location(button0, file$1, 48, 6, 1138);
+    			add_location(li0, file$1, 47, 4, 1127);
     			attr_dev(span1, "class", "sr-only");
-    			add_location(span1, file$1, 84, 8, 2353);
+    			add_location(span1, file$1, 92, 8, 2541);
     			attr_dev(path1, "fill-rule", "evenodd");
     			attr_dev(path1, "d", "M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z");
     			attr_dev(path1, "clip-rule", "evenodd");
-    			add_location(path1, file$1, 86, 11, 2521);
+    			add_location(path1, file$1, 94, 11, 2709);
     			attr_dev(svg1, "aria-hidden", "true");
     			attr_dev(svg1, "class", "w-5 h-5");
     			attr_dev(svg1, "fill", "currentColor");
     			attr_dev(svg1, "viewBox", "0 0 20 20");
     			attr_dev(svg1, "xmlns", "http://www.w3.org/2000/svg");
-    			add_location(svg1, file$1, 85, 8, 2395);
+    			add_location(svg1, file$1, 93, 8, 2583);
     			attr_dev(button1, "href", "#");
     			attr_dev(button1, "class", "block px-3 py-2 ml-0 leading-tight text-gray-500 hover:text-gray-700");
-    			add_location(button1, file$1, 73, 6, 2028);
-    			add_location(li1, file$1, 72, 4, 2017);
+    			add_location(button1, file$1, 81, 6, 2216);
+    			add_location(li1, file$1, 80, 4, 2205);
     			attr_dev(ul, "class", "inline-flex items-center -space-x-px");
-    			add_location(ul, file$1, 38, 2, 885);
+    			add_location(ul, file$1, 46, 2, 1073);
     			attr_dev(nav, "aria-label", "Page navigation");
     			attr_dev(nav, "class", "flex justify-between");
-    			add_location(nav, file$1, 37, 0, 819);
+    			add_location(nav, file$1, 45, 0, 1007);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -8377,16 +8377,23 @@ var app = (function () {
     	return block;
     }
 
-    const pageCnt = 8;
-
     function instance$3($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('Pagination', slots, []);
     	let { lastPageNo } = $$props;
     	let { currentPage = 1 } = $$props;
+    	let pageCnt = 8;
     	let pages = [];
 
     	const pageArr = () => {
+    		if (currentPage < 100) {
+    			pageCnt = 8;
+    		} else if (currentPage >= 100 && currentPage < 1000) {
+    			pageCnt = 7;
+    		} else if (currentPage >= 1000) {
+    			pageCnt = 6;
+    		}
+
     		const pageStep = Math.ceil(currentPage / pageCnt);
     		console.log("ggg", lastPageNo);
     		$$invalidate(2, pages = []); // 페이지 초기화
@@ -8467,6 +8474,7 @@ var app = (function () {
     	$$self.$inject_state = $$props => {
     		if ('lastPageNo' in $$props) $$invalidate(1, lastPageNo = $$props.lastPageNo);
     		if ('currentPage' in $$props) $$invalidate(0, currentPage = $$props.currentPage);
+    		if ('pageCnt' in $$props) pageCnt = $$props.pageCnt;
     		if ('pages' in $$props) $$invalidate(2, pages = $$props.pages);
     	};
 
