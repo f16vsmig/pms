@@ -225,6 +225,7 @@ func GetPermsDataAPI(c *fiber.Ctx) error {
 	sido := c.Query("sido", "")
 	permsType := c.Query("permsType", "")
 	totAreaGt := c.QueryInt("totAreaGt", 0)
+	mainPurpsCdNm := c.Query("mainPurps", "")
 
 	var predicates []predicate.Perms
 
@@ -240,6 +241,10 @@ func GetPermsDataAPI(c *fiber.Ctx) error {
 		predicates = append(predicates, perms.TotAreaGTE(uint32(totAreaGt)))
 	}
 
+	if mainPurpsCdNm != "" {
+		predicates = append(predicates, perms.MainPurpsCdNmEQ(mainPurpsCdNm))
+	}
+
 	instance := db.Client.Perms.Query().
 		Where(
 			perms.And(predicates...),
@@ -253,7 +258,10 @@ func GetPermsDataAPI(c *fiber.Ctx) error {
 		return c.JSON(fiber.NewError(fiber.StatusInternalServerError, "전체 인허가 정보수를 쿼라하던 중 에러가 발생했습니다. "+err.Error()))
 	}
 
-	totalPage := math.Ceil(float64(totalCnt) / float64(cnt))
+	if totalCnt == 0 {
+		fmt.Println("조회된 인허가정보가 없습니다.")
+		return fiber.NewError(fiber.StatusBadRequest, "조회된 정보가 없습니다.")
+	}
 
 	perms, err := instance.Offset((page - 1) * cnt).Limit(cnt).All(ctx)
 
@@ -262,16 +270,19 @@ func GetPermsDataAPI(c *fiber.Ctx) error {
 		return c.JSON(fiber.NewError(fiber.StatusBadRequest, "인허가정보 쿼리중 에러가 발생했습니다. "+err.Error()))
 	}
 
-	return c.JSON(
-		fiber.Map{
-			"status":     fiber.StatusOK,
-			"msg":        "인허가 정보를 성공적으로 불러왔습니다.",
-			"total_page": totalPage,
-			"total_cnt":  totalCnt,
-			"page":       page,
-			"cnt":        cnt,
-			"result":     perms,
-		})
+	totalPage := math.Ceil(float64(totalCnt) / float64(cnt))
+
+	return c.Status(fiber.StatusOK).
+		JSON(
+			fiber.Map{
+				"status":     fiber.StatusOK,
+				"msg":        "인허가 정보를 성공적으로 불러왔습니다.",
+				"total_page": totalPage,
+				"total_cnt":  totalCnt,
+				"page":       page,
+				"cnt":        cnt,
+				"result":     perms,
+			})
 
 }
 

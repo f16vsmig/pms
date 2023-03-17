@@ -163,16 +163,23 @@
     console.log(url);
 
     return fetch(url)
-      .then(async (resp) => (permsResult = await resp.json()))
+      .then(async (resp) => {
+        if (resp.ok) {
+          return (permsResult = await resp.json());
+        } else {
+          throw new Error(await resp.text());
+        }
+      })
       .then((json) => {
         totalPermsCnt = json.total_cnt;
         lastPageNo = json.total_page;
         console.log(json);
-        console.log(json.total_page);
-      })
-      .catch((error) => {
-        throw new Error(error);
       });
+    // .catch((error) => {
+    //   console.log(error);
+    //   console.log("이거 거치나?");
+    //   throw new Error(error);
+    // });
   }
 
   // 첫 페이지의 인허가 정보를 불러옵니다.
@@ -403,6 +410,8 @@
 
             <!-- 하단 페이지 영역 -->
             <Pagination on:moveTo={getPermsHandler} {lastPageNo} {currentPage} />
+          {:catch error}
+            {error}
           {/await}
         </div>
       </SideModal>
