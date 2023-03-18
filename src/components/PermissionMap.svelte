@@ -37,6 +37,7 @@
   let permTypeSelected = "";
   let totAreaSelected = "";
   let useSelected = "";
+  let statusSelected = "";
 
   let currentNum = 0;
   let totalNum = 0;
@@ -160,26 +161,25 @@
     url = permTypeSelected ? url + "&permsType=" + permTypeSelected : url;
     url = totAreaSelected ? url + "&totAreaGt=" + totAreaSelected : url;
     url = useSelected ? url + "&mainPurps=" + useSelected : url;
+    url = statusSelected ? url + "&status=" + statusSelected : url;
     console.log(url);
 
     return fetch(url)
       .then(async (resp) => {
-        if (resp.ok) {
-          return (permsResult = await resp.json());
-        } else {
-          throw new Error(await resp.text());
+        if (!resp.ok) {
+          permsResult = {};
+          throw await resp.text(); // response가 200이 아닌 경우 서버에서 보낸 에러메시지를 던집니다.
         }
+        return (permsResult = await resp.json());
       })
       .then((json) => {
         totalPermsCnt = json.total_cnt;
         lastPageNo = json.total_page;
         console.log(json);
+      })
+      .catch((error) => {
+        throw error; // 화면에 표시할 에러메시지를 던집니다.
       });
-    // .catch((error) => {
-    //   console.log(error);
-    //   console.log("이거 거치나?");
-    //   throw new Error(error);
-    // });
   }
 
   // 첫 페이지의 인허가 정보를 불러옵니다.
@@ -307,7 +307,7 @@
         <div bind:this={sideModal} slot="content" class="flex flex-col relative px-2 pb-10">
           <!-- 리스트뷰 영역 -->
           <div class="flex justify-between my-3">
-            <h1 class="text-lg font-bold">건축인허가정보 <span class="italic font-light">Beta</span></h1>
+            <h1 class="font-bold pl-2">건축인허가정보 <span class="italic font-light">Beta</span></h1>
             <button
               on:click={() => {
                 modalToggle = false;
@@ -321,20 +321,20 @@
 
           <!-- 검색창 영역 -->
           <div class="flex flex-wrap my-5 px-1">
-            <select bind:value={sidoSelected} type="text" class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-3">
+            <select bind:value={sidoSelected} type="text" class="mb-3 h-10 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-3">
               <option value="" selected>전국</option>
               <option value="11" selected>서울</option>
               <option value="41">경기도</option>
             </select>
 
-            <select bind:value={permTypeSelected} type="text" class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-3">
+            <select bind:value={permTypeSelected} type="text" class="mb-3 h-10 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-3">
               <option value="" selected>허가전체</option>
               <option value="신축" selected>신축</option>
               <option value="증축">증축</option>
               <option value="용도변경">용도변경</option>
             </select>
 
-            <select bind:value={totAreaSelected} type="text" class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-3">
+            <select bind:value={totAreaSelected} type="text" class="mb-3 h-10 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-3">
               <option value="" selected>면적전체</option>
               <option value="100000" selected>10만m2이상</option>
               <option value="50000" selected>5만m2이상</option>
@@ -342,13 +342,20 @@
               <option value="10000" selected>1만m2이상</option>
             </select>
 
-            <select bind:value={useSelected} type="text" class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-3">
-              <option value="" selected>용도전체(적용예정)</option>
-              <option value="오피스" selected>오피스</option>
+            <select bind:value={useSelected} type="text" class="mb-3 h-10 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-3">
+              <option value="" selected>용도전체</option>
+              <option value="업무시설" selected>업무시설</option>
+            </select>
+
+            <select bind:value={statusSelected} type="text" class="mb-3 h-10 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-3">
+              <option value="" selected>단계전체</option>
+              <option value="per" selected>건축허가</option>
+              <option value="con" selected>착공신고</option>
+              <option value="use" selected>사용허가</option>
             </select>
 
             <!-- 조회 버튼은 이벤트를 넘기지 않고 인허가 정보를 조회합니다. -->
-            <button on:click={() => getPermsHandler()} type="button" class="mb-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-1.5 mr-3">조회</button>
+            <button on:click={() => getPermsHandler()} type="button" class="mb-3 h-10 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-1.5 mr-3">조회</button>
           </div>
 
           {#await perms}
@@ -375,34 +382,78 @@
                   }}
                   class="w-full p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 my-4 text-start"
                 >
+                  <dl class="flex justify-end text-gray-400 gap-4">
+                    <button class="w-5">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                      </svg>
+                    </button>
+                  </dl>
                   <dl class="flex-col mx-auto text-gray-900 gap-4">
-                    <div class="flex-col">
+                    <div class="flex-col mb-3">
+                      <dt class="mb-2 font-bold">
+                        {#if site.arch_gb_cd_nm != " "}
+                          <span class="bg-purple-100 text-purple-800 font-medium mr-2 px-2.5 py-0.5 rounded-full">{site.arch_gb_cd_nm}</span>
+                        {/if}
+
+                        {#if site.main_purps_cd_nm != " "}
+                          <span class="bg-yellow-100 text-yellow-800 font-medium mr-2 px-2.5 py-0.5 rounded-full">{site.main_purps_cd_nm}</span>
+                        {/if}
+
+                        {#if site.arch_pms_day != " " && site.real_stcns_day == " " && site.use_apr_day == " "}
+                          <span class="bg-blue-100 text-blue-800 font-medium mr-2 px-2.5 py-0.5 rounded-full">건축허가 {site.arch_pms_day}</span>
+                        {:else if site.arch_pms_day != " " && site.real_stcns_day != " " && site.use_apr_day == " "}
+                          <span class="bg-blue-100 text-blue-800 font-medium mr-2 px-2.5 py-0.5 rounded-full">착공 {site.real_stcns_day}</span>
+                        {:else if site.use_apr_day != " "}
+                          <span class="bg-blue-100 text-blue-800 font-medium mr-2 px-2.5 py-0.5 rounded-full">사용승인 {site.use_apr_day}</span>
+                        {/if}
+                      </dt>
+                    </div>
+
+                    <!-- <div class="flex-col">
                       <dt class="mb-2 truncate">건축허가일 {site.arch_pms_day}</dt>
                     </div>
 
                     <div class="flex-col">
+                      <dt class="mb-2 truncate">공사착공일 {site.real_stcns_day}</dt>
+                    </div>
+
+                    <div class="flex-col">
                       <dt class="mb-2 truncate">사용승인일 {site.use_apr_day}</dt>
-                    </div>
+                    </div> -->
 
-                    <div class="flex-col">
+                    <!-- <div class="flex-col">
                       <dt class="mb-2 text-xl font-bold truncate">{site.arch_gb_cd_nm}</dt>
+                    </div> -->
+
+                    <div class="flex-col">
+                      <dt class="mb-2 text-xl font-semibold">
+                        {#if site.bld_nm != " "}
+                          {site.bld_nm}
+                        {:else}
+                          이름없음
+                        {/if}
+                      </dt>
                     </div>
 
                     <div class="flex-col">
-                      <dt class="mb-2 text-xl font-bold truncate">{site.plat_plc}</dt>
+                      <dt class="mb-2 text-lg truncate">
+                        {#if site.tot_area}
+                          {addComma(site.tot_area)} ㎡ <span class="text-slate-300 font-light">| </span>
+                        {/if}
+                        {site.plat_plc}
+                      </dt>
                     </div>
 
-                    <div class="flex-col">
-                      <dt class="mb-2 text-xl font-bold truncate">{site.bld_nm}</dt>
-                    </div>
-
-                    <div class="flex-col">
+                    <!-- <div class="flex-col">
                       <dt class="mb-2 text-xl font-bold">{site.main_purps_cd_nm}</dt>
-                    </div>
+                    </div> -->
 
-                    <div class="flex-col">
-                      <dt class="mb-2 text-xl font-bold">{addComma(site.tot_area)} ㎡</dt>
-                    </div>
+                    <!-- {#if site.tot_area}
+                      <div class="flex-col">
+                        <dt class="mb-2 text-xl font-bold">{addComma(site.tot_area)} ㎡</dt>
+                      </div>
+                    {/if} -->
                   </dl>
                 </button>
               {/each}
@@ -448,8 +499,17 @@
               </thead> -->
               <tbody>
                 <tr class="border-b border-gray-200">
-                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">주소</th>
-                  <td class="px-6 py-4">{siteDetailInfo.plat_plc}</td>
+                  <th scope="row" class="flex items-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50"
+                    >주소 {#if $roadViewUrl != ""}
+                      <a href={$roadViewUrl} target="_blank" rel="noopener noreferrer" title="로드뷰 보기"
+                        ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.0" stroke="currentColor" class="w-4 h-4">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                        </svg>
+                      </a>
+                    {/if}</th
+                  >
+                  <td class="px-6 py-4">{siteDetailInfo.plat_plc} </td>
                 </tr>
                 <tr class="border-b border-gray-200">
                   <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">주용도</th>

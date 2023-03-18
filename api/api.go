@@ -226,6 +226,7 @@ func GetPermsDataAPI(c *fiber.Ctx) error {
 	permsType := c.Query("permsType", "")
 	totAreaGt := c.QueryInt("totAreaGt", 0)
 	mainPurpsCdNm := c.Query("mainPurps", "")
+	status := c.Query("status", "")
 
 	var predicates []predicate.Perms
 
@@ -245,17 +246,25 @@ func GetPermsDataAPI(c *fiber.Ctx) error {
 		predicates = append(predicates, perms.MainPurpsCdNmEQ(mainPurpsCdNm))
 	}
 
+	if status == "per" {
+		predicates = append(predicates, perms.RealStcnsDayEQ(" "), perms.UseAprDayEQ(" "))
+	} else if status == "con" {
+		predicates = append(predicates, perms.RealStcnsDayNEQ(" "), perms.UseAprDayEQ(" "))
+	} else if status == "use" {
+		predicates = append(predicates, perms.UseAprDayNEQ(" "))
+	}
+
 	instance := db.Client.Perms.Query().
 		Where(
 			perms.And(predicates...),
 		)
 
-	instance = instance.Order(ent.Desc(perms.FieldMgmPmsrgstPk))
+	instance = instance.Order(ent.Desc(perms.FieldArchPmsDay))
 
 	totalCnt, err := instance.Count(ctx)
 	if err != nil {
 		fmt.Println("전체 인허가 정보수 쿼리중 에러가 발생했습니다. " + err.Error())
-		return c.JSON(fiber.NewError(fiber.StatusInternalServerError, "전체 인허가 정보수를 쿼라하던 중 에러가 발생했습니다. "+err.Error()))
+		return fiber.NewError(fiber.StatusBadRequest, "전체 인허가 정보수 쿼리중 에러가 발생했습니다.")
 	}
 
 	if totalCnt == 0 {
@@ -267,7 +276,7 @@ func GetPermsDataAPI(c *fiber.Ctx) error {
 
 	if err != nil {
 		fmt.Println("인허가정보 쿼리중 에러가 발생했습니다. " + err.Error())
-		return c.JSON(fiber.NewError(fiber.StatusBadRequest, "인허가정보 쿼리중 에러가 발생했습니다. "+err.Error()))
+		return fiber.NewError(fiber.StatusBadRequest, "인허가정보 쿼리중 에러가 발생했습니다.")
 	}
 
 	totalPage := math.Ceil(float64(totalCnt) / float64(cnt))

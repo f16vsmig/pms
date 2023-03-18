@@ -1219,7 +1219,7 @@ var app = (function () {
     const { Error: Error_1$2, Object: Object_1$1, console: console_1$6 } = globals;
 
     // (267:0) {:else}
-    function create_else_block$5(ctx) {
+    function create_else_block$6(ctx) {
     	let switch_instance;
     	let switch_instance_anchor;
     	let current;
@@ -1301,7 +1301,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_else_block$5.name,
+    		id: create_else_block$6.name,
     		type: "else",
     		source: "(267:0) {:else}",
     		ctx
@@ -1410,7 +1410,7 @@ var app = (function () {
     	let if_block;
     	let if_block_anchor;
     	let current;
-    	const if_block_creators = [create_if_block$8, create_else_block$5];
+    	const if_block_creators = [create_if_block$8, create_else_block$6];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -2644,7 +2644,7 @@ var app = (function () {
     }
 
     // (287:8) {:else}
-    function create_else_block$4(ctx) {
+    function create_else_block$5(ctx) {
     	let div;
     	let button;
     	let svg;
@@ -2694,7 +2694,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_else_block$4.name,
+    		id: create_else_block$5.name,
     		type: "else",
     		source: "(287:8) {:else}",
     		ctx
@@ -2791,7 +2791,7 @@ var app = (function () {
 
     	function select_block_type_1(ctx, dirty) {
     		if (!/*searchToggle*/ ctx[1]) return create_if_block$7;
-    		return create_else_block$4;
+    		return create_else_block$5;
     	}
 
     	let current_block_type_1 = select_block_type_1(ctx);
@@ -4013,7 +4013,7 @@ var app = (function () {
     const file$4 = "src/components/ArchitectureBasis.svelte";
 
     // (51:10) {#if $roadViewUrl}
-    function create_if_block_5(ctx) {
+    function create_if_block_5$1(ctx) {
     	let a;
     	let svg;
     	let path;
@@ -4057,7 +4057,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_5.name,
+    		id: create_if_block_5$1.name,
     		type: "if",
     		source: "(51:10) {#if $roadViewUrl}",
     		ctx
@@ -5107,7 +5107,7 @@ var app = (function () {
     }
 
     // (239:2) {:else}
-    function create_else_block$3(ctx) {
+    function create_else_block$4(ctx) {
     	let button;
     	let t;
     	let svg;
@@ -5156,7 +5156,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_else_block$3.name,
+    		id: create_else_block$4.name,
     		type: "else",
     		source: "(239:2) {:else}",
     		ctx
@@ -5327,7 +5327,7 @@ var app = (function () {
     	let t53;
     	let t54;
     	let div1;
-    	let if_block0 = /*$roadViewUrl*/ ctx[2] && create_if_block_5(ctx);
+    	let if_block0 = /*$roadViewUrl*/ ctx[2] && create_if_block_5$1(ctx);
 
     	function select_block_type(ctx, dirty) {
     		if (/*data*/ ctx[0].platGbCd == 0) return create_if_block_2$2;
@@ -5341,7 +5341,7 @@ var app = (function () {
 
     	function select_block_type_1(ctx, dirty) {
     		if (/*visable*/ ctx[1]) return create_if_block$5;
-    		return create_else_block$3;
+    		return create_else_block$4;
     	}
 
     	let current_block_type_1 = select_block_type_1(ctx);
@@ -5661,7 +5661,7 @@ var app = (function () {
     				if (if_block0) {
     					if_block0.p(ctx, dirty);
     				} else {
-    					if_block0 = create_if_block_5(ctx);
+    					if_block0 = create_if_block_5$1(ctx);
     					if_block0.c();
     					if_block0.m(td5, null);
     				}
@@ -5831,7 +5831,7 @@ var app = (function () {
     }
 
     // (14:0) {:else}
-    function create_else_block$2(ctx) {
+    function create_else_block$3(ctx) {
     	let architecturebasis;
     	let current;
 
@@ -5869,7 +5869,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_else_block$2.name,
+    		id: create_else_block$3.name,
     		type: "else",
     		source: "(14:0) {:else}",
     		ctx
@@ -6094,7 +6094,7 @@ var app = (function () {
     	let if_block;
     	let if_block_anchor;
     	let current;
-    	const if_block_creators = [create_if_block$4, create_else_block$2];
+    	const if_block_creators = [create_if_block$4, create_else_block$3];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -6374,7 +6374,7 @@ var app = (function () {
 
     	function select_block_type(ctx, dirty) {
     		if (/*openFloor*/ ctx[3] == /*fl*/ ctx[6].flrNoNm) return create_if_block_3$1;
-    		return create_else_block$1;
+    		return create_else_block$2;
     	}
 
     	let current_block_type = select_block_type(ctx);
@@ -6512,7 +6512,7 @@ var app = (function () {
     }
 
     // (61:14) {:else}
-    function create_else_block$1(ctx) {
+    function create_else_block$2(ctx) {
     	let svg;
     	let path;
 
@@ -6543,7 +6543,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_else_block$1.name,
+    		id: create_else_block$2.name,
     		type: "else",
     		source: "(61:14) {:else}",
     		ctx
@@ -8531,12 +8531,12 @@ var app = (function () {
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[51] = list[i];
+    	child_ctx[53] = list[i];
     	return child_ctx;
     }
 
     // (292:2) {#if !modalToggle}
-    function create_if_block_4(ctx) {
+    function create_if_block_12(ctx) {
     	let button;
     	let svg;
     	let path;
@@ -8551,17 +8551,17 @@ var app = (function () {
     			attr_dev(path, "stroke-linecap", "round");
     			attr_dev(path, "stroke-linejoin", "round");
     			attr_dev(path, "d", "M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z");
-    			add_location(path, file, 294, 8, 8615);
+    			add_location(path, file, 294, 8, 8701);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "fill", "none");
     			attr_dev(svg, "viewBox", "0 0 24 24");
     			attr_dev(svg, "stroke-width", "1.5");
     			attr_dev(svg, "stroke", "currentColor");
     			attr_dev(svg, "class", "w-6 h-6");
-    			add_location(svg, file, 293, 7, 8477);
+    			add_location(svg, file, 293, 7, 8563);
     			attr_dev(button, "type", "button");
     			attr_dev(button, "class", "openModal rounded-md absolute p-1.5 z-10 max-sm:bottom-5 md:top-5 right-5 svelte-2i2pv4");
-    			add_location(button, file, 292, 4, 8336);
+    			add_location(button, file, 292, 4, 8422);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -8569,7 +8569,7 @@ var app = (function () {
     			append_dev(svg, path);
 
     			if (!mounted) {
-    				dispose = listen_dev(button, "click", /*moveToSiteListView*/ ctx[18], false, false, false);
+    				dispose = listen_dev(button, "click", /*moveToSiteListView*/ ctx[19], false, false, false);
     				mounted = true;
     			}
     		},
@@ -8583,7 +8583,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_4.name,
+    		id: create_if_block_12.name,
     		type: "if",
     		source: "(292:2) {#if !modalToggle}",
     		ctx
@@ -8597,7 +8597,7 @@ var app = (function () {
     	let t;
     	let if_block1_anchor;
     	let current;
-    	let if_block0 = /*siteListModalToggle*/ ctx[2] && create_if_block_3(ctx);
+    	let if_block0 = /*siteListModalToggle*/ ctx[2] && create_if_block_4(ctx);
     	let if_block1 = /*siteDetailToggle*/ ctx[3] && /*siteDetailInfo*/ ctx[5] && create_if_block_2(ctx);
 
     	const block = {
@@ -8623,7 +8623,7 @@ var app = (function () {
     						transition_in(if_block0, 1);
     					}
     				} else {
-    					if_block0 = create_if_block_3(ctx);
+    					if_block0 = create_if_block_4(ctx);
     					if_block0.c();
     					transition_in(if_block0, 1);
     					if_block0.m(t.parentNode, t);
@@ -8692,7 +8692,7 @@ var app = (function () {
     }
 
     // (305:4) {#if siteListModalToggle}
-    function create_if_block_3(ctx) {
+    function create_if_block_4(ctx) {
     	let sidemodal;
     	let current;
 
@@ -8715,7 +8715,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const sidemodal_changes = {};
 
-    			if (dirty[0] & /*sideModal, perms, lastPageNo, currentPage, totalPermsCnt, permsResult, siteDetailInfo, useSelected, totAreaSelected, permTypeSelected, sidoSelected, modalToggle*/ 32754 | dirty[1] & /*$$scope*/ 16777216) {
+    			if (dirty[0] & /*sideModal, perms, lastPageNo, currentPage, totalPermsCnt, permsResult, siteDetailInfo, statusSelected, useSelected, totAreaSelected, permTypeSelected, sidoSelected, modalToggle*/ 65522 | dirty[1] & /*$$scope*/ 67108864) {
     				sidemodal_changes.$$scope = { dirty, ctx };
     			}
 
@@ -8737,7 +8737,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_3.name,
+    		id: create_if_block_4.name,
     		type: "if",
     		source: "(305:4) {#if siteListModalToggle}",
     		ctx
@@ -8746,9 +8746,9 @@ var app = (function () {
     	return block;
     }
 
-    // (413:10) {:catch error}
+    // (464:10) {:catch error}
     function create_catch_block(ctx) {
-    	let t_value = /*error*/ ctx[54] + "";
+    	let t_value = /*error*/ ctx[56] + "";
     	let t;
 
     	const block = {
@@ -8759,7 +8759,7 @@ var app = (function () {
     			insert_dev(target, t, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty[0] & /*perms*/ 16384 && t_value !== (t_value = /*error*/ ctx[54] + "")) set_data_dev(t, t_value);
+    			if (dirty[0] & /*perms*/ 32768 && t_value !== (t_value = /*error*/ ctx[56] + "")) set_data_dev(t, t_value);
     		},
     		i: noop,
     		o: noop,
@@ -8772,19 +8772,19 @@ var app = (function () {
     		block,
     		id: create_catch_block.name,
     		type: "catch",
-    		source: "(413:10) {:catch error}",
+    		source: "(464:10) {:catch error}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (361:10) {:then}
+    // (368:10) {:then}
     function create_then_block(ctx) {
     	let p;
     	let t0;
     	let span;
-    	let t1_value = addComma(/*totalPermsCnt*/ ctx[11], 0) + "";
+    	let t1_value = addComma(/*totalPermsCnt*/ ctx[12], 0) + "";
     	let t1;
     	let t2;
     	let t3;
@@ -8797,14 +8797,14 @@ var app = (function () {
 
     	pagination0 = new Pagination({
     			props: {
-    				lastPageNo: /*lastPageNo*/ ctx[12],
-    				currentPage: /*currentPage*/ ctx[13]
+    				lastPageNo: /*lastPageNo*/ ctx[13],
+    				currentPage: /*currentPage*/ ctx[14]
     			},
     			$$inline: true
     		});
 
-    	pagination0.$on("moveTo", /*getPermsHandler*/ ctx[17]);
-    	let each_value = /*permsResult*/ ctx[10].result;
+    	pagination0.$on("moveTo", /*getPermsHandler*/ ctx[18]);
+    	let each_value = /*permsResult*/ ctx[11].result;
     	validate_each_argument(each_value);
     	let each_blocks = [];
 
@@ -8814,13 +8814,13 @@ var app = (function () {
 
     	pagination1 = new Pagination({
     			props: {
-    				lastPageNo: /*lastPageNo*/ ctx[12],
-    				currentPage: /*currentPage*/ ctx[13]
+    				lastPageNo: /*lastPageNo*/ ctx[13],
+    				currentPage: /*currentPage*/ ctx[14]
     			},
     			$$inline: true
     		});
 
-    	pagination1.$on("moveTo", /*getPermsHandler*/ ctx[17]);
+    	pagination1.$on("moveTo", /*getPermsHandler*/ ctx[18]);
 
     	const block = {
     		c: function create() {
@@ -8841,11 +8841,11 @@ var app = (function () {
     			t5 = space();
     			create_component(pagination1.$$.fragment);
     			attr_dev(span, "class", "text-blue-700");
-    			add_location(span, file, 361, 36, 12147);
+    			add_location(span, file, 368, 36, 12704);
     			attr_dev(p, "class", "my-5");
-    			add_location(p, file, 361, 12, 12123);
+    			add_location(p, file, 368, 12, 12680);
     			attr_dev(div, "class", "flex-col");
-    			add_location(div, file, 366, 12, 12349);
+    			add_location(div, file, 373, 12, 12906);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -8867,14 +8867,14 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if ((!current || dirty[0] & /*totalPermsCnt*/ 2048) && t1_value !== (t1_value = addComma(/*totalPermsCnt*/ ctx[11], 0) + "")) set_data_dev(t1, t1_value);
+    			if ((!current || dirty[0] & /*totalPermsCnt*/ 4096) && t1_value !== (t1_value = addComma(/*totalPermsCnt*/ ctx[12], 0) + "")) set_data_dev(t1, t1_value);
     			const pagination0_changes = {};
-    			if (dirty[0] & /*lastPageNo*/ 4096) pagination0_changes.lastPageNo = /*lastPageNo*/ ctx[12];
-    			if (dirty[0] & /*currentPage*/ 8192) pagination0_changes.currentPage = /*currentPage*/ ctx[13];
+    			if (dirty[0] & /*lastPageNo*/ 8192) pagination0_changes.lastPageNo = /*lastPageNo*/ ctx[13];
+    			if (dirty[0] & /*currentPage*/ 16384) pagination0_changes.currentPage = /*currentPage*/ ctx[14];
     			pagination0.$set(pagination0_changes);
 
-    			if (dirty[0] & /*siteDetailInfo, permsResult, siteDetailView, pin*/ 590880) {
-    				each_value = /*permsResult*/ ctx[10].result;
+    			if (dirty[0] & /*siteDetailInfo, permsResult, siteDetailView, pin*/ 1181728) {
+    				each_value = /*permsResult*/ ctx[11].result;
     				validate_each_argument(each_value);
     				let i;
 
@@ -8898,8 +8898,8 @@ var app = (function () {
     			}
 
     			const pagination1_changes = {};
-    			if (dirty[0] & /*lastPageNo*/ 4096) pagination1_changes.lastPageNo = /*lastPageNo*/ ctx[12];
-    			if (dirty[0] & /*currentPage*/ 8192) pagination1_changes.currentPage = /*currentPage*/ ctx[13];
+    			if (dirty[0] & /*lastPageNo*/ 8192) pagination1_changes.lastPageNo = /*lastPageNo*/ ctx[13];
+    			if (dirty[0] & /*currentPage*/ 16384) pagination1_changes.currentPage = /*currentPage*/ ctx[14];
     			pagination1.$set(pagination1_changes);
     		},
     		i: function intro(local) {
@@ -8929,182 +8929,523 @@ var app = (function () {
     		block,
     		id: create_then_block.name,
     		type: "then",
-    		source: "(361:10) {:then}",
+    		source: "(368:10) {:then}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (368:14) {#each permsResult.result as site}
+    // (395:24) {#if site.arch_gb_cd_nm != " "}
+    function create_if_block_11(ctx) {
+    	let span;
+    	let t_value = /*site*/ ctx[53].arch_gb_cd_nm + "";
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			span = element("span");
+    			t = text(t_value);
+    			attr_dev(span, "class", "bg-purple-100 text-purple-800 font-medium mr-2 px-2.5 py-0.5 rounded-full");
+    			add_location(span, file, 395, 26, 14154);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, span, anchor);
+    			append_dev(span, t);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*permsResult*/ 2048 && t_value !== (t_value = /*site*/ ctx[53].arch_gb_cd_nm + "")) set_data_dev(t, t_value);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(span);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_11.name,
+    		type: "if",
+    		source: "(395:24) {#if site.arch_gb_cd_nm != \\\" \\\"}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (399:24) {#if site.main_purps_cd_nm != " "}
+    function create_if_block_10(ctx) {
+    	let span;
+    	let t_value = /*site*/ ctx[53].main_purps_cd_nm + "";
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			span = element("span");
+    			t = text(t_value);
+    			attr_dev(span, "class", "bg-yellow-100 text-yellow-800 font-medium mr-2 px-2.5 py-0.5 rounded-full");
+    			add_location(span, file, 399, 26, 14386);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, span, anchor);
+    			append_dev(span, t);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*permsResult*/ 2048 && t_value !== (t_value = /*site*/ ctx[53].main_purps_cd_nm + "")) set_data_dev(t, t_value);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(span);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_10.name,
+    		type: "if",
+    		source: "(399:24) {#if site.main_purps_cd_nm != \\\" \\\"}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (407:58) 
+    function create_if_block_9(ctx) {
+    	let span;
+    	let t0;
+    	let t1_value = /*site*/ ctx[53].use_apr_day + "";
+    	let t1;
+
+    	const block = {
+    		c: function create() {
+    			span = element("span");
+    			t0 = text("사용승인 ");
+    			t1 = text(t1_value);
+    			attr_dev(span, "class", "bg-blue-100 text-blue-800 font-medium mr-2 px-2.5 py-0.5 rounded-full");
+    			add_location(span, file, 407, 26, 15134);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, span, anchor);
+    			append_dev(span, t0);
+    			append_dev(span, t1);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*permsResult*/ 2048 && t1_value !== (t1_value = /*site*/ ctx[53].use_apr_day + "")) set_data_dev(t1, t1_value);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(span);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_9.name,
+    		type: "if",
+    		source: "(407:58) ",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (405:116) 
+    function create_if_block_8(ctx) {
+    	let span;
+    	let t0;
+    	let t1_value = /*site*/ ctx[53].real_stcns_day + "";
+    	let t1;
+
+    	const block = {
+    		c: function create() {
+    			span = element("span");
+    			t0 = text("착공 ");
+    			t1 = text(t1_value);
+    			attr_dev(span, "class", "bg-blue-100 text-blue-800 font-medium mr-2 px-2.5 py-0.5 rounded-full");
+    			add_location(span, file, 405, 26, 14933);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, span, anchor);
+    			append_dev(span, t0);
+    			append_dev(span, t1);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*permsResult*/ 2048 && t1_value !== (t1_value = /*site*/ ctx[53].real_stcns_day + "")) set_data_dev(t1, t1_value);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(span);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_8.name,
+    		type: "if",
+    		source: "(405:116) ",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (403:24) {#if site.arch_pms_day != " " && site.real_stcns_day == " " && site.use_apr_day == " "}
+    function create_if_block_7(ctx) {
+    	let span;
+    	let t0;
+    	let t1_value = /*site*/ ctx[53].arch_pms_day + "";
+    	let t1;
+
+    	const block = {
+    		c: function create() {
+    			span = element("span");
+    			t0 = text("건축허가 ");
+    			t1 = text(t1_value);
+    			attr_dev(span, "class", "bg-blue-100 text-blue-800 font-medium mr-2 px-2.5 py-0.5 rounded-full");
+    			add_location(span, file, 403, 26, 14674);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, span, anchor);
+    			append_dev(span, t0);
+    			append_dev(span, t1);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*permsResult*/ 2048 && t1_value !== (t1_value = /*site*/ ctx[53].arch_pms_day + "")) set_data_dev(t1, t1_value);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(span);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_7.name,
+    		type: "if",
+    		source: "(403:24) {#if site.arch_pms_day != \\\" \\\" && site.real_stcns_day == \\\" \\\" && site.use_apr_day == \\\" \\\"}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (433:24) {:else}
+    function create_else_block$1(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("이름없음");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		p: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_else_block$1.name,
+    		type: "else",
+    		source: "(433:24) {:else}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (431:24) {#if site.bld_nm != " "}
+    function create_if_block_6(ctx) {
+    	let t_value = /*site*/ ctx[53].bld_nm + "";
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text(t_value);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*permsResult*/ 2048 && t_value !== (t_value = /*site*/ ctx[53].bld_nm + "")) set_data_dev(t, t_value);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_6.name,
+    		type: "if",
+    		source: "(431:24) {#if site.bld_nm != \\\" \\\"}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (441:24) {#if site.tot_area}
+    function create_if_block_5(ctx) {
+    	let t0_value = addComma(/*site*/ ctx[53].tot_area) + "";
+    	let t0;
+    	let t1;
+    	let span;
+
+    	const block = {
+    		c: function create() {
+    			t0 = text(t0_value);
+    			t1 = text(" ㎡ ");
+    			span = element("span");
+    			span.textContent = "|";
+    			attr_dev(span, "class", "text-slate-300 font-light");
+    			add_location(span, file, 441, 54, 16508);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t0, anchor);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, span, anchor);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*permsResult*/ 2048 && t0_value !== (t0_value = addComma(/*site*/ ctx[53].tot_area) + "")) set_data_dev(t0, t0_value);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t0);
+    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(span);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_5.name,
+    		type: "if",
+    		source: "(441:24) {#if site.tot_area}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (375:14) {#each permsResult.result as site}
     function create_each_block(ctx) {
-    	let button;
-    	let dl;
+    	let button1;
+    	let dl0;
+    	let button0;
+    	let svg;
+    	let path;
+    	let t0;
+    	let dl1;
     	let div0;
     	let dt0;
-    	let t0;
-    	let t1_value = /*site*/ ctx[51].arch_pms_day + "";
     	let t1;
     	let t2;
+    	let t3;
     	let div1;
     	let dt1;
-    	let t3;
-    	let t4_value = /*site*/ ctx[51].use_apr_day + "";
     	let t4;
-    	let t5;
     	let div2;
     	let dt2;
-    	let t6_value = /*site*/ ctx[51].arch_gb_cd_nm + "";
+    	let t5;
+    	let t6_value = /*site*/ ctx[53].plat_plc + "";
     	let t6;
     	let t7;
-    	let div3;
-    	let dt3;
-    	let t8_value = /*site*/ ctx[51].plat_plc + "";
-    	let t8;
-    	let t9;
-    	let div4;
-    	let dt4;
-    	let t10_value = /*site*/ ctx[51].bld_nm + "";
-    	let t10;
-    	let t11;
-    	let div5;
-    	let dt5;
-    	let t12_value = /*site*/ ctx[51].main_purps_cd_nm + "";
-    	let t12;
-    	let t13;
-    	let div6;
-    	let dt6;
-    	let t14_value = addComma(/*site*/ ctx[51].tot_area) + "";
-    	let t14;
-    	let t15;
-    	let t16;
     	let mounted;
     	let dispose;
+    	let if_block0 = /*site*/ ctx[53].arch_gb_cd_nm != " " && create_if_block_11(ctx);
+    	let if_block1 = /*site*/ ctx[53].main_purps_cd_nm != " " && create_if_block_10(ctx);
+
+    	function select_block_type(ctx, dirty) {
+    		if (/*site*/ ctx[53].arch_pms_day != " " && /*site*/ ctx[53].real_stcns_day == " " && /*site*/ ctx[53].use_apr_day == " ") return create_if_block_7;
+    		if (/*site*/ ctx[53].arch_pms_day != " " && /*site*/ ctx[53].real_stcns_day != " " && /*site*/ ctx[53].use_apr_day == " ") return create_if_block_8;
+    		if (/*site*/ ctx[53].use_apr_day != " ") return create_if_block_9;
+    	}
+
+    	let current_block_type = select_block_type(ctx);
+    	let if_block2 = current_block_type && current_block_type(ctx);
+
+    	function select_block_type_1(ctx, dirty) {
+    		if (/*site*/ ctx[53].bld_nm != " ") return create_if_block_6;
+    		return create_else_block$1;
+    	}
+
+    	let current_block_type_1 = select_block_type_1(ctx);
+    	let if_block3 = current_block_type_1(ctx);
+    	let if_block4 = /*site*/ ctx[53].tot_area && create_if_block_5(ctx);
 
     	function click_handler_2() {
-    		return /*click_handler_2*/ ctx[27](/*site*/ ctx[51]);
+    		return /*click_handler_2*/ ctx[29](/*site*/ ctx[53]);
     	}
 
     	const block = {
     		c: function create() {
-    			button = element("button");
-    			dl = element("dl");
+    			button1 = element("button");
+    			dl0 = element("dl");
+    			button0 = element("button");
+    			svg = svg_element("svg");
+    			path = svg_element("path");
+    			t0 = space();
+    			dl1 = element("dl");
     			div0 = element("div");
     			dt0 = element("dt");
-    			t0 = text("건축허가일 ");
-    			t1 = text(t1_value);
+    			if (if_block0) if_block0.c();
+    			t1 = space();
+    			if (if_block1) if_block1.c();
     			t2 = space();
+    			if (if_block2) if_block2.c();
+    			t3 = space();
     			div1 = element("div");
     			dt1 = element("dt");
-    			t3 = text("사용승인일 ");
-    			t4 = text(t4_value);
-    			t5 = space();
+    			if_block3.c();
+    			t4 = space();
     			div2 = element("div");
     			dt2 = element("dt");
+    			if (if_block4) if_block4.c();
+    			t5 = space();
     			t6 = text(t6_value);
     			t7 = space();
-    			div3 = element("div");
-    			dt3 = element("dt");
-    			t8 = text(t8_value);
-    			t9 = space();
-    			div4 = element("div");
-    			dt4 = element("dt");
-    			t10 = text(t10_value);
-    			t11 = space();
-    			div5 = element("div");
-    			dt5 = element("dt");
-    			t12 = text(t12_value);
-    			t13 = space();
-    			div6 = element("div");
-    			dt6 = element("dt");
-    			t14 = text(t14_value);
-    			t15 = text(" ㎡");
-    			t16 = space();
-    			attr_dev(dt0, "class", "mb-2 truncate");
-    			add_location(dt0, file, 379, 22, 12925);
-    			attr_dev(div0, "class", "flex-col");
-    			add_location(div0, file, 378, 20, 12880);
-    			attr_dev(dt1, "class", "mb-2 truncate");
-    			add_location(dt1, file, 383, 22, 13075);
+    			attr_dev(path, "stroke-linecap", "round");
+    			attr_dev(path, "stroke-linejoin", "round");
+    			attr_dev(path, "d", "M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z");
+    			add_location(path, file, 387, 24, 13634);
+    			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
+    			attr_dev(svg, "fill", "none");
+    			attr_dev(svg, "viewBox", "0 0 24 24");
+    			attr_dev(svg, "stroke-width", "1.5");
+    			attr_dev(svg, "stroke", "currentColor");
+    			attr_dev(svg, "class", "w-5 h-5");
+    			add_location(svg, file, 386, 22, 13480);
+    			attr_dev(button0, "class", "w-5");
+    			add_location(button0, file, 385, 20, 13437);
+    			attr_dev(dl0, "class", "flex justify-end text-gray-400 gap-4");
+    			add_location(dl0, file, 384, 18, 13367);
+    			attr_dev(dt0, "class", "mb-2 font-bold");
+    			add_location(dt0, file, 393, 22, 14044);
+    			attr_dev(div0, "class", "flex-col mb-3");
+    			add_location(div0, file, 392, 20, 13994);
+    			attr_dev(dt1, "class", "mb-2 text-xl font-semibold");
+    			add_location(dt1, file, 429, 22, 16032);
     			attr_dev(div1, "class", "flex-col");
-    			add_location(div1, file, 382, 20, 13030);
-    			attr_dev(dt2, "class", "mb-2 text-xl font-bold truncate");
-    			add_location(dt2, file, 387, 22, 13224);
+    			add_location(div1, file, 428, 20, 15987);
+    			attr_dev(dt2, "class", "mb-2 text-lg truncate");
+    			add_location(dt2, file, 439, 22, 16375);
     			attr_dev(div2, "class", "flex-col");
-    			add_location(div2, file, 386, 20, 13179);
-    			attr_dev(dt3, "class", "mb-2 text-xl font-bold truncate");
-    			add_location(dt3, file, 391, 22, 13387);
-    			attr_dev(div3, "class", "flex-col");
-    			add_location(div3, file, 390, 20, 13342);
-    			attr_dev(dt4, "class", "mb-2 text-xl font-bold truncate");
-    			add_location(dt4, file, 395, 22, 13545);
-    			attr_dev(div4, "class", "flex-col");
-    			add_location(div4, file, 394, 20, 13500);
-    			attr_dev(dt5, "class", "mb-2 text-xl font-bold");
-    			add_location(dt5, file, 399, 22, 13701);
-    			attr_dev(div5, "class", "flex-col");
-    			add_location(div5, file, 398, 20, 13656);
-    			attr_dev(dt6, "class", "mb-2 text-xl font-bold");
-    			add_location(dt6, file, 403, 22, 13858);
-    			attr_dev(div6, "class", "flex-col");
-    			add_location(div6, file, 402, 20, 13813);
-    			attr_dev(dl, "class", "flex-col mx-auto text-gray-900 gap-4");
-    			add_location(dl, file, 377, 18, 12810);
-    			attr_dev(button, "class", "w-full p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 my-4 text-start");
-    			add_location(button, file, 368, 16, 12437);
+    			add_location(div2, file, 438, 20, 16330);
+    			attr_dev(dl1, "class", "flex-col mx-auto text-gray-900 gap-4");
+    			add_location(dl1, file, 391, 18, 13924);
+    			attr_dev(button1, "class", "w-full p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 my-4 text-start");
+    			add_location(button1, file, 375, 16, 12994);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, button, anchor);
-    			append_dev(button, dl);
-    			append_dev(dl, div0);
+    			insert_dev(target, button1, anchor);
+    			append_dev(button1, dl0);
+    			append_dev(dl0, button0);
+    			append_dev(button0, svg);
+    			append_dev(svg, path);
+    			append_dev(button1, t0);
+    			append_dev(button1, dl1);
+    			append_dev(dl1, div0);
     			append_dev(div0, dt0);
-    			append_dev(dt0, t0);
+    			if (if_block0) if_block0.m(dt0, null);
     			append_dev(dt0, t1);
-    			append_dev(div0, t2);
-    			append_dev(dl, div1);
+    			if (if_block1) if_block1.m(dt0, null);
+    			append_dev(dt0, t2);
+    			if (if_block2) if_block2.m(dt0, null);
+    			append_dev(div0, t3);
+    			append_dev(dl1, div1);
     			append_dev(div1, dt1);
-    			append_dev(dt1, t3);
-    			append_dev(dt1, t4);
-    			append_dev(div1, t5);
-    			append_dev(dl, div2);
+    			if_block3.m(dt1, null);
+    			append_dev(div1, t4);
+    			append_dev(dl1, div2);
     			append_dev(div2, dt2);
+    			if (if_block4) if_block4.m(dt2, null);
+    			append_dev(dt2, t5);
     			append_dev(dt2, t6);
-    			append_dev(div2, t7);
-    			append_dev(dl, div3);
-    			append_dev(div3, dt3);
-    			append_dev(dt3, t8);
-    			append_dev(div3, t9);
-    			append_dev(dl, div4);
-    			append_dev(div4, dt4);
-    			append_dev(dt4, t10);
-    			append_dev(div4, t11);
-    			append_dev(dl, div5);
-    			append_dev(div5, dt5);
-    			append_dev(dt5, t12);
-    			append_dev(div5, t13);
-    			append_dev(dl, div6);
-    			append_dev(div6, dt6);
-    			append_dev(dt6, t14);
-    			append_dev(dt6, t15);
-    			append_dev(button, t16);
+    			append_dev(button1, t7);
 
     			if (!mounted) {
-    				dispose = listen_dev(button, "click", click_handler_2, false, false, false);
+    				dispose = listen_dev(button1, "click", click_handler_2, false, false, false);
     				mounted = true;
     			}
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty[0] & /*permsResult*/ 1024 && t1_value !== (t1_value = /*site*/ ctx[51].arch_pms_day + "")) set_data_dev(t1, t1_value);
-    			if (dirty[0] & /*permsResult*/ 1024 && t4_value !== (t4_value = /*site*/ ctx[51].use_apr_day + "")) set_data_dev(t4, t4_value);
-    			if (dirty[0] & /*permsResult*/ 1024 && t6_value !== (t6_value = /*site*/ ctx[51].arch_gb_cd_nm + "")) set_data_dev(t6, t6_value);
-    			if (dirty[0] & /*permsResult*/ 1024 && t8_value !== (t8_value = /*site*/ ctx[51].plat_plc + "")) set_data_dev(t8, t8_value);
-    			if (dirty[0] & /*permsResult*/ 1024 && t10_value !== (t10_value = /*site*/ ctx[51].bld_nm + "")) set_data_dev(t10, t10_value);
-    			if (dirty[0] & /*permsResult*/ 1024 && t12_value !== (t12_value = /*site*/ ctx[51].main_purps_cd_nm + "")) set_data_dev(t12, t12_value);
-    			if (dirty[0] & /*permsResult*/ 1024 && t14_value !== (t14_value = addComma(/*site*/ ctx[51].tot_area) + "")) set_data_dev(t14, t14_value);
+
+    			if (/*site*/ ctx[53].arch_gb_cd_nm != " ") {
+    				if (if_block0) {
+    					if_block0.p(ctx, dirty);
+    				} else {
+    					if_block0 = create_if_block_11(ctx);
+    					if_block0.c();
+    					if_block0.m(dt0, t1);
+    				}
+    			} else if (if_block0) {
+    				if_block0.d(1);
+    				if_block0 = null;
+    			}
+
+    			if (/*site*/ ctx[53].main_purps_cd_nm != " ") {
+    				if (if_block1) {
+    					if_block1.p(ctx, dirty);
+    				} else {
+    					if_block1 = create_if_block_10(ctx);
+    					if_block1.c();
+    					if_block1.m(dt0, t2);
+    				}
+    			} else if (if_block1) {
+    				if_block1.d(1);
+    				if_block1 = null;
+    			}
+
+    			if (current_block_type === (current_block_type = select_block_type(ctx)) && if_block2) {
+    				if_block2.p(ctx, dirty);
+    			} else {
+    				if (if_block2) if_block2.d(1);
+    				if_block2 = current_block_type && current_block_type(ctx);
+
+    				if (if_block2) {
+    					if_block2.c();
+    					if_block2.m(dt0, null);
+    				}
+    			}
+
+    			if (current_block_type_1 === (current_block_type_1 = select_block_type_1(ctx)) && if_block3) {
+    				if_block3.p(ctx, dirty);
+    			} else {
+    				if_block3.d(1);
+    				if_block3 = current_block_type_1(ctx);
+
+    				if (if_block3) {
+    					if_block3.c();
+    					if_block3.m(dt1, null);
+    				}
+    			}
+
+    			if (/*site*/ ctx[53].tot_area) {
+    				if (if_block4) {
+    					if_block4.p(ctx, dirty);
+    				} else {
+    					if_block4 = create_if_block_5(ctx);
+    					if_block4.c();
+    					if_block4.m(dt2, t5);
+    				}
+    			} else if (if_block4) {
+    				if_block4.d(1);
+    				if_block4 = null;
+    			}
+
+    			if (dirty[0] & /*permsResult*/ 2048 && t6_value !== (t6_value = /*site*/ ctx[53].plat_plc + "")) set_data_dev(t6, t6_value);
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(button);
+    			if (detaching) detach_dev(button1);
+    			if (if_block0) if_block0.d();
+    			if (if_block1) if_block1.d();
+
+    			if (if_block2) {
+    				if_block2.d();
+    			}
+
+    			if_block3.d();
+    			if (if_block4) if_block4.d();
     			mounted = false;
     			dispose();
     		}
@@ -9114,19 +9455,19 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(368:14) {#each permsResult.result as site}",
+    		source: "(375:14) {#each permsResult.result as site}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (354:24)              <p class="my-5">등록된 정보가 <span class="text-blue-700">{addComma(totalPermsCnt, 0)}
+    // (361:24)              <p class="my-5">등록된 정보가 <span class="text-blue-700">{addComma(totalPermsCnt, 0)}
     function create_pending_block(ctx) {
     	let p;
     	let t0;
     	let span;
-    	let t1_value = addComma(/*totalPermsCnt*/ ctx[11], 0) + "";
+    	let t1_value = addComma(/*totalPermsCnt*/ ctx[12], 0) + "";
     	let t1;
     	let t2;
     	let t3;
@@ -9137,13 +9478,13 @@ var app = (function () {
 
     	pagination = new Pagination({
     			props: {
-    				lastPageNo: /*lastPageNo*/ ctx[12],
-    				currentPage: /*currentPage*/ ctx[13]
+    				lastPageNo: /*lastPageNo*/ ctx[13],
+    				currentPage: /*currentPage*/ ctx[14]
     			},
     			$$inline: true
     		});
 
-    	pagination.$on("moveTo", /*getPermsHandler*/ ctx[17]);
+    	pagination.$on("moveTo", /*getPermsHandler*/ ctx[18]);
     	loading = new Loading({ $$inline: true });
 
     	const block = {
@@ -9158,9 +9499,9 @@ var app = (function () {
     			t4 = space();
     			create_component(loading.$$.fragment);
     			attr_dev(span, "class", "text-blue-700");
-    			add_location(span, file, 354, 36, 11882);
+    			add_location(span, file, 361, 36, 12439);
     			attr_dev(p, "class", "my-5");
-    			add_location(p, file, 354, 12, 11858);
+    			add_location(p, file, 361, 12, 12415);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -9175,10 +9516,10 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if ((!current || dirty[0] & /*totalPermsCnt*/ 2048) && t1_value !== (t1_value = addComma(/*totalPermsCnt*/ ctx[11], 0) + "")) set_data_dev(t1, t1_value);
+    			if ((!current || dirty[0] & /*totalPermsCnt*/ 4096) && t1_value !== (t1_value = addComma(/*totalPermsCnt*/ ctx[12], 0) + "")) set_data_dev(t1, t1_value);
     			const pagination_changes = {};
-    			if (dirty[0] & /*lastPageNo*/ 4096) pagination_changes.lastPageNo = /*lastPageNo*/ ctx[12];
-    			if (dirty[0] & /*currentPage*/ 8192) pagination_changes.currentPage = /*currentPage*/ ctx[13];
+    			if (dirty[0] & /*lastPageNo*/ 8192) pagination_changes.lastPageNo = /*lastPageNo*/ ctx[13];
+    			if (dirty[0] & /*currentPage*/ 16384) pagination_changes.currentPage = /*currentPage*/ ctx[14];
     			pagination.$set(pagination_changes);
     		},
     		i: function intro(local) {
@@ -9205,7 +9546,7 @@ var app = (function () {
     		block,
     		id: create_pending_block.name,
     		type: "pending",
-    		source: "(354:24)              <p class=\\\"my-5\\\">등록된 정보가 <span class=\\\"text-blue-700\\\">{addComma(totalPermsCnt, 0)}",
+    		source: "(361:24)              <p class=\\\"my-5\\\">등록된 정보가 <span class=\\\"text-blue-700\\\">{addComma(totalPermsCnt, 0)}",
     		ctx
     	});
 
@@ -9247,8 +9588,14 @@ var app = (function () {
     	let option12;
     	let option13;
     	let t21;
+    	let select4;
+    	let option14;
+    	let option15;
+    	let option16;
+    	let option17;
+    	let t26;
     	let button1;
-    	let t23;
+    	let t28;
     	let promise;
     	let current;
     	let mounted;
@@ -9262,11 +9609,11 @@ var app = (function () {
     		pending: create_pending_block,
     		then: create_then_block,
     		catch: create_catch_block,
-    		error: 54,
+    		error: 56,
     		blocks: [,,,]
     	};
 
-    	handle_promise(promise = /*perms*/ ctx[14], info);
+    	handle_promise(promise = /*perms*/ ctx[15], info);
 
     	const block = {
     		c: function create() {
@@ -9314,109 +9661,139 @@ var app = (function () {
     			t18 = space();
     			select3 = element("select");
     			option12 = element("option");
-    			option12.textContent = "용도전체(적용예정)";
+    			option12.textContent = "용도전체";
     			option13 = element("option");
-    			option13.textContent = "오피스";
+    			option13.textContent = "업무시설";
     			t21 = space();
+    			select4 = element("select");
+    			option14 = element("option");
+    			option14.textContent = "단계전체";
+    			option15 = element("option");
+    			option15.textContent = "건축허가";
+    			option16 = element("option");
+    			option16.textContent = "착공신고";
+    			option17 = element("option");
+    			option17.textContent = "사용허가";
+    			t26 = space();
     			button1 = element("button");
     			button1.textContent = "조회";
-    			t23 = space();
+    			t28 = space();
     			info.block.c();
     			attr_dev(span, "class", "italic font-light");
-    			add_location(span, file, 309, 50, 9306);
-    			attr_dev(h1, "class", "text-lg font-bold");
-    			add_location(h1, file, 309, 12, 9268);
+    			add_location(span, file, 309, 47, 9389);
+    			attr_dev(h1, "class", "font-bold pl-2");
+    			add_location(h1, file, 309, 12, 9354);
     			attr_dev(path, "stroke-linecap", "round");
     			attr_dev(path, "stroke-linejoin", "round");
     			attr_dev(path, "d", "M6 18L18 6M6 6l12 12");
-    			add_location(path, file, 316, 16, 9655);
+    			add_location(path, file, 316, 16, 9738);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "fill", "none");
     			attr_dev(svg, "viewBox", "0 0 24 24");
     			attr_dev(svg, "stroke-width", "1.5");
     			attr_dev(svg, "stroke", "currentColor");
     			attr_dev(svg, "class", "w-5 h-5 pointer-events-none");
-    			add_location(svg, file, 315, 14, 9489);
-    			add_location(button0, file, 310, 12, 9367);
+    			add_location(svg, file, 315, 14, 9572);
+    			add_location(button0, file, 310, 12, 9450);
     			attr_dev(div0, "class", "flex justify-between my-3");
-    			add_location(div0, file, 308, 10, 9216);
+    			add_location(div0, file, 308, 10, 9302);
     			option0.__value = "";
     			option0.value = option0.__value;
     			option0.selected = true;
-    			add_location(option0, file, 324, 14, 10084);
+    			add_location(option0, file, 324, 14, 10172);
     			option1.__value = "11";
     			option1.value = option1.__value;
     			option1.selected = true;
-    			add_location(option1, file, 325, 14, 10136);
+    			add_location(option1, file, 325, 14, 10224);
     			option2.__value = "41";
     			option2.value = option2.__value;
-    			add_location(option2, file, 326, 14, 10190);
+    			add_location(option2, file, 326, 14, 10278);
     			attr_dev(select0, "type", "text");
-    			attr_dev(select0, "class", "mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-3");
-    			if (/*sidoSelected*/ ctx[6] === void 0) add_render_callback(() => /*select0_change_handler*/ ctx[22].call(select0));
-    			add_location(select0, file, 323, 12, 9884);
+    			attr_dev(select0, "class", "mb-3 h-10 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-3");
+    			if (/*sidoSelected*/ ctx[6] === void 0) add_render_callback(() => /*select0_change_handler*/ ctx[23].call(select0));
+    			add_location(select0, file, 323, 12, 9967);
     			option3.__value = "";
     			option3.value = option3.__value;
     			option3.selected = true;
-    			add_location(option3, file, 330, 14, 10461);
+    			add_location(option3, file, 330, 14, 10554);
     			option4.__value = "신축";
     			option4.value = option4.__value;
     			option4.selected = true;
-    			add_location(option4, file, 331, 14, 10515);
+    			add_location(option4, file, 331, 14, 10608);
     			option5.__value = "증축";
     			option5.value = option5.__value;
-    			add_location(option5, file, 332, 14, 10569);
+    			add_location(option5, file, 332, 14, 10662);
     			option6.__value = "용도변경";
     			option6.value = option6.__value;
-    			add_location(option6, file, 333, 14, 10614);
+    			add_location(option6, file, 333, 14, 10707);
     			attr_dev(select1, "type", "text");
-    			attr_dev(select1, "class", "mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-3");
-    			if (/*permTypeSelected*/ ctx[7] === void 0) add_render_callback(() => /*select1_change_handler*/ ctx[23].call(select1));
-    			add_location(select1, file, 329, 12, 10257);
+    			attr_dev(select1, "class", "mb-3 h-10 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-3");
+    			if (/*permTypeSelected*/ ctx[7] === void 0) add_render_callback(() => /*select1_change_handler*/ ctx[24].call(select1));
+    			add_location(select1, file, 329, 12, 10345);
     			option7.__value = "";
     			option7.value = option7.__value;
     			option7.selected = true;
-    			add_location(option7, file, 337, 14, 10887);
+    			add_location(option7, file, 337, 14, 10985);
     			option8.__value = "100000";
     			option8.value = option8.__value;
     			option8.selected = true;
-    			add_location(option8, file, 338, 14, 10941);
+    			add_location(option8, file, 338, 14, 11039);
     			option9.__value = "50000";
     			option9.value = option9.__value;
     			option9.selected = true;
-    			add_location(option9, file, 339, 14, 11004);
+    			add_location(option9, file, 339, 14, 11102);
     			option10.__value = "30000";
     			option10.value = option10.__value;
     			option10.selected = true;
-    			add_location(option10, file, 340, 14, 11065);
+    			add_location(option10, file, 340, 14, 11163);
     			option11.__value = "10000";
     			option11.value = option11.__value;
     			option11.selected = true;
-    			add_location(option11, file, 341, 14, 11126);
+    			add_location(option11, file, 341, 14, 11224);
     			attr_dev(select2, "type", "text");
-    			attr_dev(select2, "class", "mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-3");
-    			if (/*totAreaSelected*/ ctx[8] === void 0) add_render_callback(() => /*select2_change_handler*/ ctx[24].call(select2));
-    			add_location(select2, file, 336, 12, 10684);
+    			attr_dev(select2, "class", "mb-3 h-10 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-3");
+    			if (/*totAreaSelected*/ ctx[8] === void 0) add_render_callback(() => /*select2_change_handler*/ ctx[25].call(select2));
+    			add_location(select2, file, 336, 12, 10777);
     			option12.__value = "";
     			option12.value = option12.__value;
     			option12.selected = true;
-    			add_location(option12, file, 345, 14, 11407);
-    			option13.__value = "오피스";
+    			add_location(option12, file, 345, 14, 11510);
+    			option13.__value = "업무시설";
     			option13.value = option13.__value;
     			option13.selected = true;
-    			add_location(option13, file, 346, 14, 11467);
+    			add_location(option13, file, 346, 14, 11564);
     			attr_dev(select3, "type", "text");
-    			attr_dev(select3, "class", "mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-3");
-    			if (/*useSelected*/ ctx[9] === void 0) add_render_callback(() => /*select3_change_handler*/ ctx[25].call(select3));
-    			add_location(select3, file, 344, 12, 11208);
+    			attr_dev(select3, "class", "mb-3 h-10 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-3");
+    			if (/*useSelected*/ ctx[9] === void 0) add_render_callback(() => /*select3_change_handler*/ ctx[26].call(select3));
+    			add_location(select3, file, 344, 12, 11306);
+    			option14.__value = "";
+    			option14.value = option14.__value;
+    			option14.selected = true;
+    			add_location(option14, file, 350, 14, 11850);
+    			option15.__value = "per";
+    			option15.value = option15.__value;
+    			option15.selected = true;
+    			add_location(option15, file, 351, 14, 11904);
+    			option16.__value = "con";
+    			option16.value = option16.__value;
+    			option16.selected = true;
+    			add_location(option16, file, 352, 14, 11961);
+    			option17.__value = "use";
+    			option17.value = option17.__value;
+    			option17.selected = true;
+    			add_location(option17, file, 353, 14, 12018);
+    			attr_dev(select4, "type", "text");
+    			attr_dev(select4, "class", "mb-3 h-10 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-3");
+    			if (/*statusSelected*/ ctx[10] === void 0) add_render_callback(() => /*select4_change_handler*/ ctx[27].call(select4));
+    			add_location(select4, file, 349, 12, 11643);
     			attr_dev(button1, "type", "button");
-    			attr_dev(button1, "class", "mb-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-1.5 mr-3");
-    			add_location(button1, file, 350, 12, 11599);
+    			attr_dev(button1, "class", "mb-3 h-10 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-1.5 mr-3");
+    			add_location(button1, file, 357, 12, 12151);
     			attr_dev(div1, "class", "flex flex-wrap my-5 px-1");
-    			add_location(div1, file, 322, 10, 9833);
+    			add_location(div1, file, 322, 10, 9916);
     			attr_dev(div2, "slot", "content");
     			attr_dev(div2, "class", "flex flex-col relative px-2 pb-10");
-    			add_location(div2, file, 306, 8, 9094);
+    			add_location(div2, file, 306, 8, 9180);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -9456,22 +9833,30 @@ var app = (function () {
     			append_dev(select3, option13);
     			select_option(select3, /*useSelected*/ ctx[9]);
     			append_dev(div1, t21);
+    			append_dev(div1, select4);
+    			append_dev(select4, option14);
+    			append_dev(select4, option15);
+    			append_dev(select4, option16);
+    			append_dev(select4, option17);
+    			select_option(select4, /*statusSelected*/ ctx[10]);
+    			append_dev(div1, t26);
     			append_dev(div1, button1);
-    			append_dev(div2, t23);
+    			append_dev(div2, t28);
     			info.block.m(div2, info.anchor = null);
     			info.mount = () => div2;
     			info.anchor = null;
-    			/*div2_binding*/ ctx[28](div2);
+    			/*div2_binding*/ ctx[30](div2);
     			current = true;
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(button0, "click", /*click_handler*/ ctx[21], false, false, false),
-    					listen_dev(select0, "change", /*select0_change_handler*/ ctx[22]),
-    					listen_dev(select1, "change", /*select1_change_handler*/ ctx[23]),
-    					listen_dev(select2, "change", /*select2_change_handler*/ ctx[24]),
-    					listen_dev(select3, "change", /*select3_change_handler*/ ctx[25]),
-    					listen_dev(button1, "click", /*click_handler_1*/ ctx[26], false, false, false)
+    					listen_dev(button0, "click", /*click_handler*/ ctx[22], false, false, false),
+    					listen_dev(select0, "change", /*select0_change_handler*/ ctx[23]),
+    					listen_dev(select1, "change", /*select1_change_handler*/ ctx[24]),
+    					listen_dev(select2, "change", /*select2_change_handler*/ ctx[25]),
+    					listen_dev(select3, "change", /*select3_change_handler*/ ctx[26]),
+    					listen_dev(select4, "change", /*select4_change_handler*/ ctx[27]),
+    					listen_dev(button1, "click", /*click_handler_1*/ ctx[28], false, false, false)
     				];
 
     				mounted = true;
@@ -9496,9 +9881,13 @@ var app = (function () {
     				select_option(select3, /*useSelected*/ ctx[9]);
     			}
 
+    			if (dirty[0] & /*statusSelected*/ 1024) {
+    				select_option(select4, /*statusSelected*/ ctx[10]);
+    			}
+
     			info.ctx = ctx;
 
-    			if (dirty[0] & /*perms*/ 16384 && promise !== (promise = /*perms*/ ctx[14]) && handle_promise(promise, info)) ; else {
+    			if (dirty[0] & /*perms*/ 32768 && promise !== (promise = /*perms*/ ctx[15]) && handle_promise(promise, info)) ; else {
     				update_await_block_branch(info, ctx, dirty);
     			}
     		},
@@ -9520,7 +9909,7 @@ var app = (function () {
     			info.block.d();
     			info.token = null;
     			info = null;
-    			/*div2_binding*/ ctx[28](null);
+    			/*div2_binding*/ ctx[30](null);
     			mounted = false;
     			run_all(dispose);
     		}
@@ -9537,7 +9926,7 @@ var app = (function () {
     	return block;
     }
 
-    // (420:4) {#if siteDetailToggle && siteDetailInfo}
+    // (471:4) {#if siteDetailToggle && siteDetailInfo}
     function create_if_block_2(ctx) {
     	let sidemodal;
     	let current;
@@ -9561,7 +9950,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const sidemodal_changes = {};
 
-    			if (dirty[0] & /*sideModal, siteDetailInfo, modalToggle*/ 50 | dirty[1] & /*$$scope*/ 16777216) {
+    			if (dirty[0] & /*sideModal, siteDetailInfo, $roadViewUrl, modalToggle*/ 65586 | dirty[1] & /*$$scope*/ 67108864) {
     				sidemodal_changes.$$scope = { dirty, ctx };
     			}
 
@@ -9585,14 +9974,75 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(420:4) {#if siteDetailToggle && siteDetailInfo}",
+    		source: "(471:4) {#if siteDetailToggle && siteDetailInfo}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (422:8) 
+    // (503:24) {#if $roadViewUrl != ""}
+    function create_if_block_3(ctx) {
+    	let a;
+    	let svg;
+    	let path0;
+    	let path1;
+
+    	const block = {
+    		c: function create() {
+    			a = element("a");
+    			svg = svg_element("svg");
+    			path0 = svg_element("path");
+    			path1 = svg_element("path");
+    			attr_dev(path0, "stroke-linecap", "round");
+    			attr_dev(path0, "stroke-linejoin", "round");
+    			attr_dev(path0, "d", "M15 10.5a3 3 0 11-6 0 3 3 0 016 0z");
+    			add_location(path0, file, 505, 26, 19353);
+    			attr_dev(path1, "stroke-linecap", "round");
+    			attr_dev(path1, "stroke-linejoin", "round");
+    			attr_dev(path1, "d", "M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z");
+    			add_location(path1, file, 506, 26, 19474);
+    			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
+    			attr_dev(svg, "fill", "none");
+    			attr_dev(svg, "viewBox", "0 0 24 24");
+    			attr_dev(svg, "stroke-width", "1.0");
+    			attr_dev(svg, "stroke", "currentColor");
+    			attr_dev(svg, "class", "w-4 h-4");
+    			add_location(svg, file, 504, 25, 19197);
+    			attr_dev(a, "href", /*$roadViewUrl*/ ctx[16]);
+    			attr_dev(a, "target", "_blank");
+    			attr_dev(a, "rel", "noopener noreferrer");
+    			attr_dev(a, "title", "로드뷰 보기");
+    			add_location(a, file, 503, 22, 19092);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, a, anchor);
+    			append_dev(a, svg);
+    			append_dev(svg, path0);
+    			append_dev(svg, path1);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*$roadViewUrl*/ 65536) {
+    				attr_dev(a, "href", /*$roadViewUrl*/ ctx[16]);
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(a);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_3.name,
+    		type: "if",
+    		source: "(503:24) {#if $roadViewUrl != \\\"\\\"}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (473:8) 
     function create_content_slot(ctx) {
     	let div2;
     	let div0;
@@ -9611,6 +10061,7 @@ var app = (function () {
     	let tbody;
     	let tr0;
     	let th0;
+    	let t4;
     	let t5;
     	let td0;
     	let t6_value = /*siteDetailInfo*/ ctx[5].plat_plc + "";
@@ -9746,6 +10197,7 @@ var app = (function () {
     	let t78;
     	let mounted;
     	let dispose;
+    	let if_block = /*$roadViewUrl*/ ctx[16] != "" && create_if_block_3(ctx);
 
     	const block = {
     		c: function create() {
@@ -9767,7 +10219,8 @@ var app = (function () {
     			tbody = element("tbody");
     			tr0 = element("tr");
     			th0 = element("th");
-    			th0.textContent = "주소";
+    			t4 = text("주소 ");
+    			if (if_block) if_block.c();
     			t5 = space();
     			td0 = element("td");
     			t6 = text(t6_value);
@@ -9902,179 +10355,179 @@ var app = (function () {
     			attr_dev(path0, "stroke-linecap", "round");
     			attr_dev(path0, "stroke-linejoin", "round");
     			attr_dev(path0, "d", "M15.75 19.5L8.25 12l7.5-7.5");
-    			add_location(path0, file, 426, 16, 14711);
+    			add_location(path0, file, 477, 16, 17849);
     			attr_dev(svg0, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg0, "fill", "none");
     			attr_dev(svg0, "viewBox", "0 0 24 24");
     			attr_dev(svg0, "stroke-width", "1.5");
     			attr_dev(svg0, "stroke", "currentColor");
     			attr_dev(svg0, "class", "w-6 h-6");
-    			add_location(svg0, file, 425, 14, 14565);
-    			add_location(button0, file, 424, 12, 14512);
-    			add_location(h1, file, 429, 12, 14854);
+    			add_location(svg0, file, 476, 14, 17703);
+    			add_location(button0, file, 475, 12, 17650);
+    			add_location(h1, file, 480, 12, 17992);
     			attr_dev(path1, "stroke-linecap", "round");
     			attr_dev(path1, "stroke-linejoin", "round");
     			attr_dev(path1, "d", "M6 18L18 6M6 6l12 12");
-    			add_location(path1, file, 436, 16, 15168);
+    			add_location(path1, file, 487, 16, 18306);
     			attr_dev(svg1, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg1, "fill", "none");
     			attr_dev(svg1, "viewBox", "0 0 24 24");
     			attr_dev(svg1, "stroke-width", "1.5");
     			attr_dev(svg1, "stroke", "currentColor");
     			attr_dev(svg1, "class", "w-5 h-5 pointer-events-none");
-    			add_location(svg1, file, 435, 14, 15002);
-    			add_location(button1, file, 430, 12, 14880);
+    			add_location(svg1, file, 486, 14, 18140);
+    			add_location(button1, file, 481, 12, 18018);
     			attr_dev(div0, "class", "flex justify-between my-3");
-    			add_location(div0, file, 423, 10, 14460);
+    			add_location(div0, file, 474, 10, 17598);
     			attr_dev(th0, "scope", "row");
-    			attr_dev(th0, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th0, file, 450, 18, 15776);
+    			attr_dev(th0, "class", "flex items-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
+    			add_location(th0, file, 501, 18, 18914);
     			attr_dev(td0, "class", "px-6 py-4");
-    			add_location(td0, file, 451, 18, 15891);
+    			add_location(td0, file, 511, 18, 19737);
     			attr_dev(tr0, "class", "border-b border-gray-200");
-    			add_location(tr0, file, 449, 16, 15720);
+    			add_location(tr0, file, 500, 16, 18858);
     			attr_dev(th1, "scope", "row");
     			attr_dev(th1, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th1, file, 454, 18, 16038);
+    			add_location(th1, file, 514, 18, 19885);
     			attr_dev(td1, "class", "px-6 py-4");
-    			add_location(td1, file, 455, 18, 16154);
+    			add_location(td1, file, 515, 18, 20001);
     			attr_dev(tr1, "class", "border-b border-gray-200");
-    			add_location(tr1, file, 453, 16, 15982);
+    			add_location(tr1, file, 513, 16, 19829);
     			attr_dev(th2, "scope", "row");
     			attr_dev(th2, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th2, file, 458, 18, 16309);
+    			add_location(th2, file, 518, 18, 20156);
     			attr_dev(td2, "class", "px-6 py-4");
-    			add_location(td2, file, 459, 18, 16429);
+    			add_location(td2, file, 519, 18, 20276);
     			attr_dev(tr2, "class", "border-b border-gray-200");
-    			add_location(tr2, file, 457, 16, 16253);
+    			add_location(tr2, file, 517, 16, 20100);
     			attr_dev(th3, "scope", "row");
     			attr_dev(th3, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th3, file, 462, 18, 16590);
+    			add_location(th3, file, 522, 18, 20437);
     			attr_dev(td3, "class", "px-6 py-4");
-    			add_location(td3, file, 463, 18, 16706);
+    			add_location(td3, file, 523, 18, 20553);
     			attr_dev(tr3, "class", "border-b border-gray-200");
-    			add_location(tr3, file, 461, 16, 16534);
+    			add_location(tr3, file, 521, 16, 20381);
     			attr_dev(th4, "scope", "row");
     			attr_dev(th4, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th4, file, 466, 18, 16866);
+    			add_location(th4, file, 526, 18, 20713);
     			attr_dev(td4, "class", "px-6 py-4");
-    			add_location(td4, file, 467, 18, 16985);
+    			add_location(td4, file, 527, 18, 20832);
     			attr_dev(tr4, "class", "border-b border-gray-200");
-    			add_location(tr4, file, 465, 16, 16810);
+    			add_location(tr4, file, 525, 16, 20657);
     			attr_dev(th5, "scope", "row");
     			attr_dev(th5, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th5, file, 470, 18, 17144);
+    			add_location(th5, file, 530, 18, 20991);
     			attr_dev(td5, "class", "px-6 py-4");
-    			add_location(td5, file, 471, 18, 17263);
+    			add_location(td5, file, 531, 18, 21110);
     			attr_dev(tr5, "class", "border-b border-gray-200");
-    			add_location(tr5, file, 469, 16, 17088);
+    			add_location(tr5, file, 529, 16, 20935);
     			attr_dev(th6, "scope", "row");
     			attr_dev(th6, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th6, file, 474, 18, 17408);
+    			add_location(th6, file, 534, 18, 21255);
     			attr_dev(td6, "class", "px-6 py-4");
-    			add_location(td6, file, 475, 18, 17524);
+    			add_location(td6, file, 535, 18, 21371);
     			attr_dev(tr6, "class", "border-b border-gray-200");
-    			add_location(tr6, file, 473, 16, 17352);
+    			add_location(tr6, file, 533, 16, 21199);
     			attr_dev(th7, "scope", "row");
     			attr_dev(th7, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th7, file, 478, 18, 17669);
+    			add_location(th7, file, 538, 18, 21516);
     			attr_dev(td7, "class", "px-6 py-4");
-    			add_location(td7, file, 479, 18, 17787);
+    			add_location(td7, file, 539, 18, 21634);
     			attr_dev(tr7, "class", "border-b border-gray-200");
-    			add_location(tr7, file, 477, 16, 17613);
+    			add_location(tr7, file, 537, 16, 21460);
     			attr_dev(th8, "scope", "row");
     			attr_dev(th8, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th8, file, 482, 18, 17938);
+    			add_location(th8, file, 542, 18, 21785);
     			attr_dev(td8, "class", "px-6 py-4");
-    			add_location(td8, file, 483, 18, 18056);
+    			add_location(td8, file, 543, 18, 21903);
     			attr_dev(tr8, "class", "border-b border-gray-200");
-    			add_location(tr8, file, 481, 16, 17882);
+    			add_location(tr8, file, 541, 16, 21729);
     			attr_dev(th9, "scope", "row");
     			attr_dev(th9, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th9, file, 486, 18, 18206);
+    			add_location(th9, file, 546, 18, 22053);
     			attr_dev(td9, "class", "px-6 py-4");
-    			add_location(td9, file, 487, 18, 18324);
+    			add_location(td9, file, 547, 18, 22171);
     			attr_dev(tr9, "class", "border-b border-gray-200");
-    			add_location(tr9, file, 485, 16, 18150);
+    			add_location(tr9, file, 545, 16, 21997);
     			attr_dev(th10, "scope", "row");
     			attr_dev(th10, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th10, file, 490, 18, 18473);
+    			add_location(th10, file, 550, 18, 22320);
     			attr_dev(td10, "class", "px-6 py-4");
-    			add_location(td10, file, 491, 18, 18591);
+    			add_location(td10, file, 551, 18, 22438);
     			attr_dev(tr10, "class", "border-b border-gray-200");
-    			add_location(tr10, file, 489, 16, 18417);
+    			add_location(tr10, file, 549, 16, 22264);
     			attr_dev(th11, "scope", "row");
     			attr_dev(th11, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th11, file, 494, 18, 18739);
+    			add_location(th11, file, 554, 18, 22586);
     			attr_dev(td11, "class", "px-6 py-4");
-    			add_location(td11, file, 495, 18, 18855);
+    			add_location(td11, file, 555, 18, 22702);
     			attr_dev(tr11, "class", "border-b border-gray-200");
-    			add_location(tr11, file, 493, 16, 18683);
+    			add_location(tr11, file, 553, 16, 22530);
     			attr_dev(th12, "scope", "row");
     			attr_dev(th12, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th12, file, 498, 18, 19005);
+    			add_location(th12, file, 558, 18, 22852);
     			attr_dev(input0, "class", "w-9 mr-2");
     			attr_dev(input0, "type", "text");
     			input0.value = input0_value_value = /*siteDetailInfo*/ ctx[5].ji;
-    			add_location(input0, file, 499, 45, 19147);
+    			add_location(input0, file, 559, 45, 22994);
     			attr_dev(input1, "class", "w-9 ml-2");
     			attr_dev(input1, "type", "text");
     			input1.value = input1_value_value = /*siteDetailInfo*/ ctx[5].bun;
-    			add_location(input1, file, 499, 112, 19214);
+    			add_location(input1, file, 559, 112, 23061);
     			attr_dev(td12, "class", "px-6 py-4 flex");
-    			add_location(td12, file, 499, 18, 19120);
+    			add_location(td12, file, 559, 18, 22967);
     			attr_dev(tr12, "class", "border-b border-gray-200");
-    			add_location(tr12, file, 497, 16, 18949);
+    			add_location(tr12, file, 557, 16, 22796);
     			attr_dev(th13, "scope", "row");
     			attr_dev(th13, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th13, file, 502, 18, 19379);
+    			add_location(th13, file, 562, 18, 23226);
     			attr_dev(td13, "class", "px-6 py-4");
-    			add_location(td13, file, 503, 18, 19497);
+    			add_location(td13, file, 563, 18, 23344);
     			attr_dev(tr13, "class", "border-b border-gray-200");
-    			add_location(tr13, file, 501, 16, 19323);
+    			add_location(tr13, file, 561, 16, 23170);
     			attr_dev(th14, "scope", "row");
     			attr_dev(th14, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th14, file, 506, 18, 19651);
+    			add_location(th14, file, 566, 18, 23498);
     			attr_dev(td14, "class", "px-6 py-4");
-    			add_location(td14, file, 507, 18, 19769);
+    			add_location(td14, file, 567, 18, 23616);
     			attr_dev(tr14, "class", "border-b border-gray-200");
-    			add_location(tr14, file, 505, 16, 19595);
+    			add_location(tr14, file, 565, 16, 23442);
     			attr_dev(th15, "scope", "row");
     			attr_dev(th15, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th15, file, 510, 18, 19923);
+    			add_location(th15, file, 570, 18, 23770);
     			attr_dev(td15, "class", "px-6 py-4");
-    			add_location(td15, file, 511, 18, 20041);
+    			add_location(td15, file, 571, 18, 23888);
     			attr_dev(tr15, "class", "border-b border-gray-200");
-    			add_location(tr15, file, 509, 16, 19867);
+    			add_location(tr15, file, 569, 16, 23714);
     			attr_dev(th16, "scope", "row");
     			attr_dev(th16, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th16, file, 514, 18, 20195);
+    			add_location(th16, file, 574, 18, 24042);
     			attr_dev(td16, "class", "px-6 py-4");
-    			add_location(td16, file, 515, 18, 20313);
+    			add_location(td16, file, 575, 18, 24160);
     			attr_dev(tr16, "class", "border-b border-gray-200");
-    			add_location(tr16, file, 513, 16, 20139);
+    			add_location(tr16, file, 573, 16, 23986);
     			attr_dev(th17, "scope", "row");
     			attr_dev(th17, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th17, file, 518, 18, 20466);
+    			add_location(th17, file, 578, 18, 24313);
     			attr_dev(td17, "class", "px-6 py-4");
-    			add_location(td17, file, 519, 18, 20581);
+    			add_location(td17, file, 579, 18, 24428);
     			attr_dev(tr17, "class", "border-b border-gray-200");
-    			add_location(tr17, file, 517, 16, 20410);
+    			add_location(tr17, file, 577, 16, 24257);
     			attr_dev(th18, "scope", "row");
     			attr_dev(th18, "class", "px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50");
-    			add_location(th18, file, 522, 18, 20731);
+    			add_location(th18, file, 582, 18, 24578);
     			attr_dev(td18, "class", "px-6 py-4");
-    			add_location(td18, file, 523, 18, 20846);
+    			add_location(td18, file, 583, 18, 24693);
     			attr_dev(tr18, "class", "border-b border-gray-200");
-    			add_location(tr18, file, 521, 16, 20675);
-    			add_location(tbody, file, 448, 14, 15696);
+    			add_location(tr18, file, 581, 16, 24522);
+    			add_location(tbody, file, 499, 14, 18834);
     			attr_dev(table, "class", "w-full text-sm text-left text-gray-500");
-    			add_location(table, file, 442, 12, 15381);
+    			add_location(table, file, 493, 12, 18519);
     			attr_dev(div1, "class", "relative overflow-x-auto shadow-md");
-    			add_location(div1, file, 441, 10, 15320);
+    			add_location(div1, file, 492, 10, 18458);
     			attr_dev(div2, "slot", "content");
     			attr_dev(div2, "class", "flex flex-col relative px-2 pb-10");
-    			add_location(div2, file, 421, 8, 14338);
+    			add_location(div2, file, 472, 8, 17476);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -10094,6 +10547,8 @@ var app = (function () {
     			append_dev(table, tbody);
     			append_dev(tbody, tr0);
     			append_dev(tr0, th0);
+    			append_dev(th0, t4);
+    			if (if_block) if_block.m(th0, null);
     			append_dev(tr0, t5);
     			append_dev(tr0, td0);
     			append_dev(td0, t6);
@@ -10207,18 +10662,31 @@ var app = (function () {
     			append_dev(tr18, t77);
     			append_dev(tr18, td18);
     			append_dev(td18, t78);
-    			/*div2_binding_1*/ ctx[30](div2);
+    			/*div2_binding_1*/ ctx[32](div2);
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(button0, "click", /*moveToSiteListView*/ ctx[18], false, false, false),
-    					listen_dev(button1, "click", /*click_handler_3*/ ctx[29], false, false, false)
+    					listen_dev(button0, "click", /*moveToSiteListView*/ ctx[19], false, false, false),
+    					listen_dev(button1, "click", /*click_handler_3*/ ctx[31], false, false, false)
     				];
 
     				mounted = true;
     			}
     		},
     		p: function update(ctx, dirty) {
+    			if (/*$roadViewUrl*/ ctx[16] != "") {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+    				} else {
+    					if_block = create_if_block_3(ctx);
+    					if_block.c();
+    					if_block.m(th0, null);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
+
     			if (dirty[0] & /*siteDetailInfo*/ 32 && t6_value !== (t6_value = /*siteDetailInfo*/ ctx[5].plat_plc + "")) set_data_dev(t6, t6_value);
     			if (dirty[0] & /*siteDetailInfo*/ 32 && t10_value !== (t10_value = /*siteDetailInfo*/ ctx[5].main_purps_cd_nm + "")) set_data_dev(t10, t10_value);
     			if (dirty[0] & /*siteDetailInfo*/ 32 && t14_value !== (t14_value = addComma(/*siteDetailInfo*/ ctx[5].arch_area, 0) + "")) set_data_dev(t14, t14_value);
@@ -10249,7 +10717,8 @@ var app = (function () {
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div2);
-    			/*div2_binding_1*/ ctx[30](null);
+    			if (if_block) if_block.d();
+    			/*div2_binding_1*/ ctx[32](null);
     			mounted = false;
     			run_all(dispose);
     		}
@@ -10259,14 +10728,14 @@ var app = (function () {
     		block,
     		id: create_content_slot.name,
     		type: "slot",
-    		source: "(422:8) ",
+    		source: "(473:8) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (565:4) {#if $roadViewUrl}
+    // (625:4) {#if $roadViewUrl}
     function create_if_block$1(ctx) {
     	let a;
     	let svg;
@@ -10282,24 +10751,24 @@ var app = (function () {
     			attr_dev(path0, "stroke-linecap", "round");
     			attr_dev(path0, "stroke-linejoin", "round");
     			attr_dev(path0, "d", "M15 10.5a3 3 0 11-6 0 3 3 0 016 0z");
-    			add_location(path0, file, 572, 10, 24151);
+    			add_location(path0, file, 632, 10, 27998);
     			attr_dev(path1, "stroke-linecap", "round");
     			attr_dev(path1, "stroke-linejoin", "round");
     			attr_dev(path1, "d", "M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z");
-    			add_location(path1, file, 573, 10, 24256);
+    			add_location(path1, file, 633, 10, 28103);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "fill", "none");
     			attr_dev(svg, "viewBox", "0 0 24 24");
     			attr_dev(svg, "stroke-width", "1.5");
     			attr_dev(svg, "stroke", "currentColor");
     			attr_dev(svg, "class", "w-6 h-6");
-    			add_location(svg, file, 571, 9, 24011);
+    			add_location(svg, file, 631, 9, 27858);
     			attr_dev(a, "class", "py-2 px-3.5 justify-center items-center text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm");
-    			attr_dev(a, "href", /*$roadViewUrl*/ ctx[15]);
+    			attr_dev(a, "href", /*$roadViewUrl*/ ctx[16]);
     			attr_dev(a, "target", "_blank");
     			attr_dev(a, "rel", "noopener noreferrer");
     			attr_dev(a, "title", "로드뷰 보기");
-    			add_location(a, file, 565, 6, 23687);
+    			add_location(a, file, 625, 6, 27534);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, a, anchor);
@@ -10308,8 +10777,8 @@ var app = (function () {
     			append_dev(svg, path1);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty[0] & /*$roadViewUrl*/ 32768) {
-    				attr_dev(a, "href", /*$roadViewUrl*/ ctx[15]);
+    			if (dirty[0] & /*$roadViewUrl*/ 65536) {
+    				attr_dev(a, "href", /*$roadViewUrl*/ ctx[16]);
     			}
     		},
     		d: function destroy(detaching) {
@@ -10321,7 +10790,7 @@ var app = (function () {
     		block,
     		id: create_if_block$1.name,
     		type: "if",
-    		source: "(565:4) {#if $roadViewUrl}",
+    		source: "(625:4) {#if $roadViewUrl}",
     		ctx
     	});
 
@@ -10345,9 +10814,9 @@ var app = (function () {
     	let current;
     	let mounted;
     	let dispose;
-    	let if_block0 = !/*modalToggle*/ ctx[1] && create_if_block_4(ctx);
+    	let if_block0 = !/*modalToggle*/ ctx[1] && create_if_block_12(ctx);
     	let if_block1 = /*modalToggle*/ ctx[1] && create_if_block_1(ctx);
-    	let if_block2 = /*$roadViewUrl*/ ctx[15] && create_if_block$1(ctx);
+    	let if_block2 = /*$roadViewUrl*/ ctx[16] && create_if_block$1(ctx);
 
     	const block = {
     		c: function create() {
@@ -10370,40 +10839,40 @@ var app = (function () {
     			attr_dev(path0, "stroke-linecap", "round");
     			attr_dev(path0, "stroke-linejoin", "round");
     			attr_dev(path0, "d", "M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z");
-    			add_location(path0, file, 542, 10, 21790);
+    			add_location(path0, file, 602, 10, 25637);
     			attr_dev(svg0, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg0, "fill", "none");
     			attr_dev(svg0, "viewBox", "0 0 24 24");
     			attr_dev(svg0, "stroke-width", "1.5");
     			attr_dev(svg0, "stroke", "currentColor");
     			attr_dev(svg0, "class", "w-6 h-6");
-    			add_location(svg0, file, 541, 9, 21650);
+    			add_location(svg0, file, 601, 9, 25497);
     			attr_dev(button0, "type", "button");
     			attr_dev(button0, "checked", "");
     			attr_dev(button0, "class", "py-2 px-4 text-sm font-medium text-gray-900 bg-white rounded-l-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white");
-    			add_location(button0, file, 536, 6, 21195);
+    			add_location(button0, file, 596, 6, 25042);
     			attr_dev(path1, "stroke-linecap", "round");
     			attr_dev(path1, "stroke-linejoin", "round");
     			attr_dev(path1, "d", "M12.75 3.03v.568c0 .334.148.65.405.864l1.068.89c.442.369.535 1.01.216 1.49l-.51.766a2.25 2.25 0 01-1.161.886l-.143.048a1.107 1.107 0 00-.57 1.664c.369.555.169 1.307-.427 1.605L9 13.125l.423 1.059a.956.956 0 01-1.652.928l-.679-.906a1.125 1.125 0 00-1.906.172L4.5 15.75l-.612.153M12.75 3.031a9 9 0 00-8.862 12.872M12.75 3.031a9 9 0 016.69 14.036m0 0l-.177-.529A2.25 2.25 0 0017.128 15H16.5l-.324-.324a1.453 1.453 0 00-2.328.377l-.036.073a1.586 1.586 0 01-.982.816l-.99.282c-.55.157-.894.702-.8 1.267l.073.438c.08.474.49.821.97.821.846 0 1.598.542 1.865 1.345l.215.643m5.276-3.67a9.012 9.012 0 01-5.276 3.67m0 0a9 9 0 01-10.275-4.835M15.75 9c0 .896-.393 1.7-1.016 2.25");
-    			add_location(path1, file, 555, 10, 22843);
+    			add_location(path1, file, 615, 10, 26690);
     			attr_dev(svg1, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg1, "fill", "none");
     			attr_dev(svg1, "viewBox", "0 0 24 24");
     			attr_dev(svg1, "stroke-width", "1.5");
     			attr_dev(svg1, "stroke", "currentColor");
     			attr_dev(svg1, "class", "w-6 h-6");
-    			add_location(svg1, file, 554, 8, 22703);
+    			add_location(svg1, file, 614, 8, 26550);
     			attr_dev(button1, "type", "button");
     			attr_dev(button1, "class", "py-2 px-4 text-sm font-medium text-gray-900 bg-white rounded-r-md border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white");
-    			add_location(button1, file, 549, 6, 22257);
+    			add_location(button1, file, 609, 6, 26104);
     			attr_dev(div0, "class", "inline-flex rounded-md shadow-sm mr-3");
     			attr_dev(div0, "role", "group");
-    			add_location(div0, file, 535, 4, 21124);
+    			add_location(div0, file, 595, 4, 24971);
     			attr_dev(div1, "class", "absolute z-10 left-[calc(30%)] bottom-10 flex");
-    			add_location(div1, file, 534, 2, 21060);
+    			add_location(div1, file, 594, 2, 24907);
     			attr_dev(div2, "class", "h-full relative");
     			attr_dev(div2, "draggable", "false");
-    			add_location(div2, file, 287, 0, 8199);
+    			add_location(div2, file, 287, 0, 8285);
     		},
     		l: function claim(nodes) {
     			throw new Error_1("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -10425,13 +10894,13 @@ var app = (function () {
     			append_dev(svg1, path1);
     			append_dev(div1, t3);
     			if (if_block2) if_block2.m(div1, null);
-    			/*div2_binding_2*/ ctx[33](div2);
+    			/*div2_binding_2*/ ctx[35](div2);
     			current = true;
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(button0, "click", /*click_handler_4*/ ctx[31], false, false, false),
-    					listen_dev(button1, "click", /*click_handler_5*/ ctx[32], false, false, false)
+    					listen_dev(button0, "click", /*click_handler_4*/ ctx[33], false, false, false),
+    					listen_dev(button1, "click", /*click_handler_5*/ ctx[34], false, false, false)
     				];
 
     				mounted = true;
@@ -10442,7 +10911,7 @@ var app = (function () {
     				if (if_block0) {
     					if_block0.p(ctx, dirty);
     				} else {
-    					if_block0 = create_if_block_4(ctx);
+    					if_block0 = create_if_block_12(ctx);
     					if_block0.c();
     					if_block0.m(div2, t0);
     				}
@@ -10474,7 +10943,7 @@ var app = (function () {
     				check_outros();
     			}
 
-    			if (/*$roadViewUrl*/ ctx[15]) {
+    			if (/*$roadViewUrl*/ ctx[16]) {
     				if (if_block2) {
     					if_block2.p(ctx, dirty);
     				} else {
@@ -10501,7 +10970,7 @@ var app = (function () {
     			if (if_block0) if_block0.d();
     			if (if_block1) if_block1.d();
     			if (if_block2) if_block2.d();
-    			/*div2_binding_2*/ ctx[33](null);
+    			/*div2_binding_2*/ ctx[35](null);
     			mounted = false;
     			run_all(dispose);
     		}
@@ -10540,7 +11009,7 @@ var app = (function () {
     function instance$2($$self, $$props, $$invalidate) {
     	let $roadViewUrl;
     	validate_store(roadViewUrl, 'roadViewUrl');
-    	component_subscribe($$self, roadViewUrl, $$value => $$invalidate(15, $roadViewUrl = $$value));
+    	component_subscribe($$self, roadViewUrl, $$value => $$invalidate(16, $roadViewUrl = $$value));
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('PermissionMap', slots, []);
     	let map; // 카카오지도 객체를 담을 변수입니다.
@@ -10570,6 +11039,7 @@ var app = (function () {
     	let permTypeSelected = "";
     	let totAreaSelected = "";
     	let useSelected = "";
+    	let statusSelected = "";
     	let currentNum = 0;
     	let totalNum = 0;
 
@@ -10663,8 +11133,8 @@ var app = (function () {
 
     	// 인허가정보 불러오는 api
     	async function getPerms(event) {
-    		$$invalidate(13, currentPage = event
-    		? $$invalidate(13, currentPage = event.detail.currentPage)
+    		$$invalidate(14, currentPage = event
+    		? $$invalidate(14, currentPage = event.detail.currentPage)
     		: 1);
 
     		let url = "/api/getPerms";
@@ -10680,25 +11150,25 @@ var app = (function () {
     		: url;
 
     		url = useSelected ? url + "&mainPurps=" + useSelected : url;
+    		url = statusSelected ? url + "&status=" + statusSelected : url;
     		console.log(url);
 
     		return fetch(url).then(async resp => {
-    			if (resp.ok) {
-    				return $$invalidate(10, permsResult = await resp.json());
-    			} else {
-    				throw new Error(await resp.text());
+    			if (!resp.ok) {
+    				$$invalidate(11, permsResult = {});
+    				throw await resp.text(); // response가 200이 아닌 경우 서버에서 보낸 에러메시지를 던집니다.
     			}
-    		}).then(json => {
-    			$$invalidate(11, totalPermsCnt = json.total_cnt);
-    			$$invalidate(12, lastPageNo = json.total_page);
-    			console.log(json);
-    		});
-    	} // .catch((error) => {
-    	//   console.log(error);
 
-    	//   console.log("이거 거치나?");
-    	//   throw new Error(error);
-    	// });
+    			return $$invalidate(11, permsResult = await resp.json());
+    		}).then(json => {
+    			$$invalidate(12, totalPermsCnt = json.total_cnt);
+    			$$invalidate(13, lastPageNo = json.total_page);
+    			console.log(json);
+    		}).catch(error => {
+    			throw error; // 화면에 표시할 에러메시지를 던집니다.
+    		});
+    	}
+
     	// 첫 페이지의 인허가 정보를 불러옵니다.
     	let perms = getPerms();
 
@@ -10708,12 +11178,12 @@ var app = (function () {
 
     		if (event == null) {
     			// 조회 버튼을 눌러서 조회하면 currentPage와 lastPageNo를 초기화 시킵니다.
-    			$$invalidate(13, currentPage = 1);
+    			$$invalidate(14, currentPage = 1);
 
-    			$$invalidate(12, lastPageNo = 1);
+    			$$invalidate(13, lastPageNo = 1);
     		}
 
-    		$$invalidate(14, perms = getPerms(event));
+    		$$invalidate(15, perms = getPerms(event));
     	}
 
     	// 법정동코드(10자리)로 인허가정보를 반환합니다.
@@ -10828,6 +11298,11 @@ var app = (function () {
     		$$invalidate(9, useSelected);
     	}
 
+    	function select4_change_handler() {
+    		statusSelected = select_value(this);
+    		$$invalidate(10, statusSelected);
+    	}
+
     	const click_handler_1 = () => getPermsHandler();
 
     	const click_handler_2 = site => {
@@ -10898,6 +11373,7 @@ var app = (function () {
     		permTypeSelected,
     		totAreaSelected,
     		useSelected,
+    		statusSelected,
     		currentNum,
     		totalNum,
     		apiKey,
@@ -10941,14 +11417,15 @@ var app = (function () {
     		if ('permTypeSelected' in $$props) $$invalidate(7, permTypeSelected = $$props.permTypeSelected);
     		if ('totAreaSelected' in $$props) $$invalidate(8, totAreaSelected = $$props.totAreaSelected);
     		if ('useSelected' in $$props) $$invalidate(9, useSelected = $$props.useSelected);
+    		if ('statusSelected' in $$props) $$invalidate(10, statusSelected = $$props.statusSelected);
     		if ('currentNum' in $$props) currentNum = $$props.currentNum;
     		if ('totalNum' in $$props) totalNum = $$props.totalNum;
     		if ('codeList' in $$props) codeList = $$props.codeList;
-    		if ('permsResult' in $$props) $$invalidate(10, permsResult = $$props.permsResult);
-    		if ('totalPermsCnt' in $$props) $$invalidate(11, totalPermsCnt = $$props.totalPermsCnt);
-    		if ('lastPageNo' in $$props) $$invalidate(12, lastPageNo = $$props.lastPageNo);
-    		if ('currentPage' in $$props) $$invalidate(13, currentPage = $$props.currentPage);
-    		if ('perms' in $$props) $$invalidate(14, perms = $$props.perms);
+    		if ('permsResult' in $$props) $$invalidate(11, permsResult = $$props.permsResult);
+    		if ('totalPermsCnt' in $$props) $$invalidate(12, totalPermsCnt = $$props.totalPermsCnt);
+    		if ('lastPageNo' in $$props) $$invalidate(13, lastPageNo = $$props.lastPageNo);
+    		if ('currentPage' in $$props) $$invalidate(14, currentPage = $$props.currentPage);
+    		if ('perms' in $$props) $$invalidate(15, perms = $$props.perms);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -10966,6 +11443,7 @@ var app = (function () {
     		permTypeSelected,
     		totAreaSelected,
     		useSelected,
+    		statusSelected,
     		permsResult,
     		totalPermsCnt,
     		lastPageNo,
@@ -10982,6 +11460,7 @@ var app = (function () {
     		select1_change_handler,
     		select2_change_handler,
     		select3_change_handler,
+    		select4_change_handler,
     		click_handler_1,
     		click_handler_2,
     		div2_binding,
