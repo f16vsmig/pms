@@ -16,6 +16,9 @@
   let mapContainer; // 카카오지도를 담을 영역 태그 컨테이너 입니다.
   let markers = []; // 마커를 담을 배열입니다.
 
+  let roadviewContainer; // 로드뷰를 담을 영역 태그 컨테이너 입니다.
+  let roadviewMap;
+
   // 모달 관련 변수
   let modalToggle = true;
   let siteListModalToggle = true;
@@ -68,6 +71,7 @@
 
         rc.getNearestPanoId(coords, 50, function (panoId) {
           if (panoId != null) {
+            elem.panoId = panoId;
             roadViewUrl.set("https://map.kakao.com/?panoid=" + panoId); //Kakao 지도 로드뷰로 보내는 링크
           } else {
             roadViewUrl.set(""); // panoId를 못찾은 경우에는 공백으로 둔다.
@@ -260,12 +264,59 @@
     }
   }
 
+  let roadview = false;
+  function setMapRoadview(elem) {
+    roadview = !roadview;
+
+    console.log(elem);
+
+    if (roadview) {
+      // let roadviewmap = new kakao.maps.Roadview(roadviewContainer); //로드뷰 객체
+      var rc = new kakao.maps.RoadviewClient(); // 좌표를 통한 로드뷰의 panoid를 추출하기 위한 로드뷰 help객체 생성
+      let position = new kakao.maps.LatLng(elem.coord.y, elem.coord.x);
+      rc.getNearestPanoId(position, 50, function (panoId) {
+        if (panoId != null) {
+          elem.panoId = panoId;
+          roadViewUrl.set("https://map.kakao.com/?panoid=" + panoId); //Kakao 지도 로드뷰로 보내는 링크
+        } else {
+          roadViewUrl.set(""); // panoId를 못찾은 경우에는 공백으로 둔다.
+        }
+        roadviewMap.setPanoId(elem.panoId, position); //panoId와 중심좌표를 통해 로드뷰 실행
+
+        let rMarker = new kakao.maps.Marker({
+          position: position,
+          map: roadviewMap, //map 대신 rv(로드뷰 객체)로 설정하면 로드뷰에 올라갑니다.
+        });
+
+        // 로드뷰 마커가 중앙에 오도록 로드뷰의 viewpoint 조정 합니다.
+        var projection = roadviewMap.getProjection(); // viewpoint(화면좌표)값을 추출할 수 있는 projection 객체를 가져옵니다.
+        var viewpoint = projection.viewpointFromCoords(rMarker.getPosition(), rMarker.getAltitude());
+        roadviewMap.setViewpoint(viewpoint); //로드뷰에 뷰포인트를 설정합니다.
+      });
+
+      //   var rLabel = new kakao.maps.InfoWindow({
+      //     position: position,
+      //     content: "스페이스 닷원",
+      //   });
+      //   rLabel.open(roadviewmap, rMarker);
+
+      //   // 로드뷰 마커가 중앙에 오도록 로드뷰의 viewpoint 조정 합니다.
+      //   var projection = roadviewmap.getProjection(); // viewpoint(화면좌표)값을 추출할 수 있는 projection 객체를 가져옵니다.
+
+      //   // 마커의 position과 altitude값을 통해 viewpoint값(화면좌표)를 추출합니다.
+      //   var viewpoint = projection.viewpointFromCoords(rMarker.getPosition(), rMarker.getAltitude());
+      //   roadviewmap.setViewpoint(viewpoint); //로드뷰에 뷰포인트를 설정합니다.
+    }
+  }
+
   onMount(async () => {
     let mapOption = {
       center: new kakao.maps.LatLng(37.5042135, 127.0016985),
       level: 8,
     };
     map = new kakao.maps.Map(mapContainer, mapOption);
+
+    roadviewMap = new kakao.maps.Roadview(roadviewContainer); //로드뷰 객체
 
     // await fetch("/public/seoul_dong_code.csv")
     //   .then((response) => response.text())
@@ -345,6 +396,8 @@
             <select bind:value={useSelected} type="text" class="mb-3 h-10 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-3">
               <option value="" selected>용도전체</option>
               <option value="업무시설" selected>업무시설</option>
+              <option value="공동주택" selected>공동주택</option>
+              <option value="근린생활시설" selected>근린생활시설</option>
             </select>
 
             <select bind:value={statusSelected} type="text" class="mb-3 h-10 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-3">
@@ -380,34 +433,32 @@
                     siteDetailView();
                     pin(site);
                   }}
-                  class="w-full p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 my-4 text-start"
+                  class="w-full p-6 pt-3 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 my-4 text-start"
                 >
                   <dl class="flex justify-end text-gray-400 gap-4">
-                    <button class="w-5">
+                    <button class="w-5 hover:text-gray-700">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
                       </svg>
                     </button>
                   </dl>
                   <dl class="flex-col mx-auto text-gray-900 gap-4">
-                    <div class="flex-col mb-3">
-                      <dt class="mb-2 font-bold">
-                        {#if site.arch_gb_cd_nm != " "}
-                          <span class="bg-purple-100 text-purple-800 font-medium mr-2 px-2.5 py-0.5 rounded-full">{site.arch_gb_cd_nm}</span>
-                        {/if}
+                    <div class="flex flex-wrap mb-3 gap-2">
+                      {#if site.arch_gb_cd_nm != " "}
+                        <span class="bg-purple-100 text-purple-800 font-medium mr-2 px-2.5 py-0.5 rounded-full">{site.arch_gb_cd_nm}</span>
+                      {/if}
 
-                        {#if site.main_purps_cd_nm != " "}
-                          <span class="bg-yellow-100 text-yellow-800 font-medium mr-2 px-2.5 py-0.5 rounded-full">{site.main_purps_cd_nm}</span>
-                        {/if}
+                      {#if site.main_purps_cd_nm != " "}
+                        <span class="bg-yellow-100 text-yellow-800 font-medium mr-2 px-2.5 py-0.5 rounded-full">{site.main_purps_cd_nm}</span>
+                      {/if}
 
-                        {#if site.arch_pms_day != " " && site.real_stcns_day == " " && site.use_apr_day == " "}
-                          <span class="bg-blue-100 text-blue-800 font-medium mr-2 px-2.5 py-0.5 rounded-full">건축허가 {site.arch_pms_day}</span>
-                        {:else if site.arch_pms_day != " " && site.real_stcns_day != " " && site.use_apr_day == " "}
-                          <span class="bg-blue-100 text-blue-800 font-medium mr-2 px-2.5 py-0.5 rounded-full">착공 {site.real_stcns_day}</span>
-                        {:else if site.use_apr_day != " "}
-                          <span class="bg-blue-100 text-blue-800 font-medium mr-2 px-2.5 py-0.5 rounded-full">사용승인 {site.use_apr_day}</span>
-                        {/if}
-                      </dt>
+                      {#if site.arch_pms_day != " " && site.real_stcns_day == " " && site.use_apr_day == " "}
+                        <span class="bg-blue-100 text-blue-800 font-medium mr-2 px-2.5 py-0.5 rounded-full">건축허가 {site.arch_pms_day}</span>
+                      {:else if site.arch_pms_day != " " && site.real_stcns_day != " " && site.use_apr_day == " "}
+                        <span class="bg-blue-100 text-blue-800 font-medium mr-2 px-2.5 py-0.5 rounded-full">착공 {site.real_stcns_day}</span>
+                      {:else if site.use_apr_day != " "}
+                        <span class="bg-blue-100 text-blue-800 font-medium mr-2 px-2.5 py-0.5 rounded-full">사용승인 {site.use_apr_day}</span>
+                      {/if}
                     </div>
 
                     <!-- <div class="flex-col">
@@ -426,24 +477,20 @@
                       <dt class="mb-2 text-xl font-bold truncate">{site.arch_gb_cd_nm}</dt>
                     </div> -->
 
-                    <div class="flex-col">
-                      <dt class="mb-2 text-xl font-semibold">
-                        {#if site.bld_nm != " "}
-                          {site.bld_nm}
-                        {:else}
-                          이름없음
-                        {/if}
-                      </dt>
-                    </div>
+                    <dt class="mb-2 text-xl font-semibold">
+                      {#if site.bld_nm != " "}
+                        {site.bld_nm}
+                      {:else}
+                        이름 없음
+                      {/if}
+                    </dt>
 
-                    <div class="flex-col">
-                      <dt class="mb-2 text-lg truncate">
-                        {#if site.tot_area}
-                          {addComma(site.tot_area)} ㎡ <span class="text-slate-300 font-light">| </span>
-                        {/if}
-                        {site.plat_plc}
-                      </dt>
-                    </div>
+                    <dt class="mb-2 text-lg truncate">
+                      {#if site.tot_area}
+                        {addComma(site.tot_area)} ㎡ <span class="text-slate-300 font-light">| </span>
+                      {/if}
+                      {site.plat_plc}
+                    </dt>
 
                     <!-- <div class="flex-col">
                       <dt class="mb-2 text-xl font-bold">{site.main_purps_cd_nm}</dt>
@@ -472,7 +519,7 @@
       <SideModal>
         <div bind:this={sideModal} slot="content" class="flex flex-col relative px-2 pb-10">
           <!-- 상세보기 영역 -->
-          <div class="flex justify-between my-3">
+          <div class="flex justify-between mt-3 mb-10">
             <button on:click={moveToSiteListView}>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
@@ -499,17 +546,24 @@
               </thead> -->
               <tbody>
                 <tr class="border-b border-gray-200">
-                  <th scope="row" class="flex items-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50"
-                    >주소 {#if $roadViewUrl != ""}
-                      <a href={$roadViewUrl} target="_blank" rel="noopener noreferrer" title="로드뷰 보기"
-                        ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.0" stroke="currentColor" class="w-4 h-4">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                        </svg>
-                      </a>
-                    {/if}</th
-                  >
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">건축허가구분</th>
+                  <td class="px-6 py-4">{siteDetailInfo.arch_gb_cd_nm}</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">대장번호</th>
+                  <td class="px-6 py-4">{siteDetailInfo.mgm_pmsrgst_pk}</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">건물명</th>
+                  <td class="px-6 py-4">{siteDetailInfo.bld_nm}</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <th scope="row" class="flex items-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">주소</th>
                   <td class="px-6 py-4">{siteDetailInfo.plat_plc} </td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">지번</th>
+                  <td class="px-6 py-4 flex"><input class="w-9 mr-2" type="text" value={siteDetailInfo.bun} /> - <input class="w-9 ml-2" type="text" value={siteDetailInfo.ji} /></td>
                 </tr>
                 <tr class="border-b border-gray-200">
                   <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">주용도</th>
@@ -524,40 +578,20 @@
                   <td class="px-6 py-4">{addComma(siteDetailInfo.tot_area, 0)}</td>
                 </tr>
                 <tr class="border-b border-gray-200">
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">용적률산정연면적</th>
+                  <td class="px-6 py-4">{addComma(siteDetailInfo.vl_rat_estm_tot_area, 0)}</td>
+                </tr>
+                <tr class="border-b border-gray-200">
                   <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">용적률(%)</th>
-                  <td class="px-6 py-4">{siteDetailInfo.vl_rat_estm_tot_area}</td>
+                  <td class="px-6 py-4">{siteDetailInfo.vl_rat_estm_tot_area || ""}</td>
                 </tr>
                 <tr class="border-b border-gray-200">
                   <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">건폐율(%)</th>
-                  <td class="px-6 py-4">{siteDetailInfo.bc_rat}</td>
-                </tr>
-                <tr class="border-b border-gray-200">
-                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">건물명</th>
-                  <td class="px-6 py-4">{siteDetailInfo.bld_nm}</td>
+                  <td class="px-6 py-4">{siteDetailInfo.bc_rat || ""}</td>
                 </tr>
                 <tr class="border-b border-gray-200">
                   <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">건축허가일</th>
                   <td class="px-6 py-4">{siteDetailInfo.arch_pms_day}</td>
-                </tr>
-                <tr class="border-b border-gray-200">
-                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">사용승인일</th>
-                  <td class="px-6 py-4">{siteDetailInfo.use_apr_day}</td>
-                </tr>
-                <tr class="border-b border-gray-200">
-                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">시군구코드</th>
-                  <td class="px-6 py-4">{siteDetailInfo.sigungu_cd}</td>
-                </tr>
-                <tr class="border-b border-gray-200">
-                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">법정동코드</th>
-                  <td class="px-6 py-4">{siteDetailInfo.bjdong_cd}</td>
-                </tr>
-                <tr class="border-b border-gray-200">
-                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">구역명</th>
-                  <td class="px-6 py-4">{siteDetailInfo.guyuk_cd_nm}</td>
-                </tr>
-                <tr class="border-b border-gray-200">
-                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">지번</th>
-                  <td class="px-6 py-4 flex"><input class="w-9 mr-2" type="text" value={siteDetailInfo.ji} /> - <input class="w-9 ml-2" type="text" value={siteDetailInfo.bun} /></td>
                 </tr>
                 <tr class="border-b border-gray-200">
                   <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">착공예정일</th>
@@ -568,12 +602,48 @@
                   <td class="px-6 py-4">{siteDetailInfo.stcns_delay_day}</td>
                 </tr>
                 <tr class="border-b border-gray-200">
-                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">착공예정일</th>
-                  <td class="px-6 py-4">{siteDetailInfo.stcns_sched_day}</td>
-                </tr>
-                <tr class="border-b border-gray-200">
                   <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">실제착공일</th>
                   <td class="px-6 py-4">{siteDetailInfo.real_stcns_day}</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">사용승인일</th>
+                  <td class="px-6 py-4">{siteDetailInfo.use_apr_day}</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">주건축물수</th>
+                  <td class="px-6 py-4">{siteDetailInfo.main_bld_cnt || ""}</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">부속건축물수</th>
+                  <td class="px-6 py-4">{siteDetailInfo.atch_bld_dong_cnt || ""}</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">세대수</th>
+                  <td class="px-6 py-4">{siteDetailInfo.hhld_cnt || ""}</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">호수</th>
+                  <td class="px-6 py-4">{siteDetailInfo.ho_cnt || ""}</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">가구수</th>
+                  <td class="px-6 py-4">{siteDetailInfo.fmly_cnt || ""}</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">총주차대수</th>
+                  <td class="px-6 py-4">{siteDetailInfo.tot_pkng_cnt || ""}</td>
+                </tr>
+                <!-- <tr class="border-b border-gray-200">
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">시군구코드</th>
+                  <td class="px-6 py-4">{siteDetailInfo.sigungu_cd}</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">법정동코드</th>
+                  <td class="px-6 py-4">{siteDetailInfo.bjdong_cd}</td>
+                </tr> -->
+                <tr class="border-b border-gray-200">
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">구역명</th>
+                  <td class="px-6 py-4">{siteDetailInfo.guyuk_cd_nm}</td>
                 </tr>
                 <tr class="border-b border-gray-200">
                   <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">지목</th>
@@ -592,7 +662,7 @@
   {/if}
 
   <!-- 지도 타입 변경 -->
-  <div class="absolute z-10 left-[calc(30%)] bottom-10 flex">
+  <div class="absolute z-50 max-sm:left-[calc(50%-21px)] md:left-[calc(40%)] bottom-10 flex">
     <div class="inline-flex rounded-md shadow-sm mr-3" role="group">
       <button
         type="button"
@@ -623,6 +693,17 @@
     </div>
 
     {#if $roadViewUrl}
+      <button
+        type="button"
+        on:click={setMapRoadview(siteDetailInfo)}
+        class="py-2 px-3.5 justify-center items-center {roadview ? 'text-red-500' : 'text-gray-900'} bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
+        </svg>
+      </button>
+
+      <!-- {#if $roadViewUrl}
       <a
         class="py-2 px-3.5 justify-center items-center text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm"
         href={$roadViewUrl}
@@ -633,9 +714,12 @@
           <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
           <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
         </svg>
-      </a>
+      </a> -->
     {/if}
   </div>
+
+  <div class="{roadview ? 'block' : 'hidden'} z-20 absolute w-2/3 h-full left-0 top-0 bg-white" id="roadview" bind:this={roadviewContainer} />
+  <!-- 로드뷰를 표시할 div 입니다 -->
 </div>
 
 <style>
