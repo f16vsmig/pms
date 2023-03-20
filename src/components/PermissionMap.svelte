@@ -57,6 +57,7 @@
     let rc = new kakao.maps.RoadviewClient(); // 좌표를 통한 로드뷰의 panoid를 추출하기 위한 로드뷰 help객체 생성
     console.log(elem);
     return geocoder.addressSearch(elem.plat_plc, function (coord, status) {
+      roadViewUrl.set(""); // 로드뷰 주소를 초기화합니다.
       if (status == kakao.maps.services.Status.OK) {
         elem.coord = coord[0]; // coord(위경도) 속성을 추가합니다.
         let coords = new kakao.maps.LatLng(elem.coord.y, elem.coord.x);
@@ -73,8 +74,10 @@
           if (panoId != null) {
             elem.panoId = panoId;
             roadViewUrl.set("https://map.kakao.com/?panoid=" + panoId); //Kakao 지도 로드뷰로 보내는 링크
+          } else if (elem.coord.y) {
+            roadViewUrl.set("https://map.kakao.com/link/roadview/" + elem.coord.y + "," + elem.coord.x); // panoId를 못찾은 경우에는 좌표로 지정한다.
           } else {
-            roadViewUrl.set(""); // panoId를 못찾은 경우에는 공백으로 둔다.
+            roadViewUrl.set(""); // 모두 못찾은 경우에는 공백으로 둔다.
           }
         });
       }
@@ -571,15 +574,15 @@
                 </tr>
                 <tr class="border-b border-gray-200">
                   <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">건축면적(㎡)</th>
-                  <td class="px-6 py-4">{addComma(siteDetailInfo.arch_area, 0)}</td>
+                  <td class="px-6 py-4">{addComma(siteDetailInfo.arch_area, 0) || ""}</td>
                 </tr>
                 <tr class="border-b border-gray-200">
                   <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">연면적</th>
-                  <td class="px-6 py-4">{addComma(siteDetailInfo.tot_area, 0)}</td>
+                  <td class="px-6 py-4">{addComma(siteDetailInfo.tot_area, 0) || ""}</td>
                 </tr>
                 <tr class="border-b border-gray-200">
                   <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">용적률산정연면적</th>
-                  <td class="px-6 py-4">{addComma(siteDetailInfo.vl_rat_estm_tot_area, 0)}</td>
+                  <td class="px-6 py-4">{addComma(siteDetailInfo.vl_rat_estm_tot_area, 0) || ""}</td>
                 </tr>
                 <tr class="border-b border-gray-200">
                   <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">용적률(%)</th>
@@ -692,8 +695,8 @@
       </button>
     </div>
 
-    {#if $roadViewUrl}
-      <button
+    <!-- {#if $roadViewUrl} -->
+    <!-- <button
         type="button"
         on:click={setMapRoadview(siteDetailInfo)}
         class="py-2 px-3.5 justify-center items-center {roadview ? 'text-red-500' : 'text-gray-900'} bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm"
@@ -701,9 +704,9 @@
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
           <path stroke-linecap="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
         </svg>
-      </button>
+      </button> -->
 
-      <!-- {#if $roadViewUrl}
+    {#if $roadViewUrl}
       <a
         class="py-2 px-3.5 justify-center items-center text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm"
         href={$roadViewUrl}
@@ -714,11 +717,11 @@
           <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
           <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
         </svg>
-      </a> -->
+      </a>
     {/if}
   </div>
 
-  <div class="{roadview ? 'block' : 'hidden'} z-20 absolute w-2/3 h-full left-0 top-0 bg-white" id="roadview" bind:this={roadviewContainer} />
+  <!-- <div class="{roadview ? 'block' : 'hidden'} z-20 absolute w-2/3 h-full left-0 top-0 bg-white" id="roadview" bind:this={roadviewContainer} /> -->
   <!-- 로드뷰를 표시할 div 입니다 -->
 </div>
 
