@@ -3,13 +3,17 @@
 
   const dispatch = createEventDispatcher();
 
+  let view = "mapView";
+
   function setMapView() {
+    view = "mapView";
     dispatch("dispatch", {
       value: "mapView",
     });
   }
 
   function setSkyView() {
+    view = "skyView";
     dispatch("dispatch", {
       value: "skyView",
     });
@@ -20,8 +24,7 @@
   <button
     type="button"
     on:click={setMapView}
-    checked
-    class="py-2 px-4 text-sm font-medium text-gray-900 bg-white rounded-l-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white"
+    class="{view == 'mapView' ? 'text-blue-700' : 'text-gray-900'} py-2 px-4 text-sm font-medium bg-white rounded-l-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700"
     ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
       <path
         stroke-linecap="round"
@@ -33,7 +36,7 @@
   <button
     type="button"
     on:click={setSkyView}
-    class="py-2 px-4 text-sm font-medium text-gray-900 bg-white rounded-r-md border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white"
+    class="{view == 'skyView' ? 'text-blue-700' : 'text-gray-900'} py-2 px-4 text-sm font-medium bg-white rounded-r-md border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700"
   >
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
       <path

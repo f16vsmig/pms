@@ -19,6 +19,8 @@
   let roadviewContainer; // 로드뷰를 담을 영역 태그 컨테이너 입니다.
   let roadviewMap;
 
+  let viewType = "mapView"; // 맵뷰가 초기값 입니다.
+
   // 모달 관련 변수
   let modalToggle = true;
   let siteListModalToggle = true;
@@ -41,6 +43,10 @@
   let totAreaSelected = "";
   let useSelected = "";
   let statusSelected = "";
+  let startdaySelected = "";
+  let enddaySelected = "";
+  const currentTime = new Date();
+  const cuurentday = String(currentTime.getFullYear()) + "-" + String(currentTime.getMonth() + 1).padStart(2, "0") + "-" + String(currentTime.getDate()).padStart(2, "0");
 
   let currentNum = 0;
   let totalNum = 0;
@@ -85,7 +91,7 @@
   }
 
   function focus(elem) {
-    map.setLevel(4);
+    map.setLevel(2);
     map.setCenter(new kakao.maps.LatLng(elem.coord.y, elem.coord.x));
   }
 
@@ -101,9 +107,10 @@
 
     markers = [...markers, marker];
 
-    markers = [...markers, marker];
+    // markers = [...markers, marker];
+
     kakao.maps.event.addListener(marker, "click", function () {
-      map.setLevel(4);
+      // map.setLevel(4);
       map.setCenter(new kakao.maps.LatLng(coord[0].y, coord[0].x));
       siteDetailInfo = elem;
       siteDetailView();
@@ -169,6 +176,8 @@
     url = totAreaSelected ? url + "&totAreaGt=" + totAreaSelected : url;
     url = useSelected ? url + "&mainPurps=" + useSelected : url;
     url = statusSelected ? url + "&status=" + statusSelected : url;
+    url = startdaySelected ? url + "&startday=" + startdaySelected.replaceAll("-", "") : url;
+    url = enddaySelected ? url + "&endday=" + enddaySelected.replaceAll("-", "") : url;
     console.log(url);
 
     return fetch(url)
@@ -260,6 +269,7 @@
    * @param event
    */
   function setMapType(mapType) {
+    viewType = mapType;
     if (mapType == "mapView") {
       return map.setMapTypeId(kakao.maps.MapTypeId.ROADMAP);
     } else if (mapType == "skyView") {
@@ -344,7 +354,7 @@
 
   <!-- 모달 오픈 버튼 -->
   {#if !modalToggle}
-    <button type="button" class="openModal rounded-md absolute p-1.5 z-10 max-sm:bottom-5 md:top-5 right-5" on:click={moveToSiteListView}
+    <button type="button" class="openModal rounded-md absolute py-2 px-3 z-40 max-sm:bottom-10 md:top-5 right-5" on:click={moveToSiteListView}
       ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
         <path
           stroke-linecap="round"
@@ -409,6 +419,10 @@
               <option value="con" selected>착공신고</option>
               <option value="use" selected>사용허가</option>
             </select>
+
+            <input bind:value={startdaySelected} type="date" max={enddaySelected} class="mb-3 h-10 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-3" />
+
+            <input bind:value={enddaySelected} type="date" min={startdaySelected} max={cuurentday} class="mb-3 h-10 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-3" />
 
             <!-- 조회 버튼은 이벤트를 넘기지 않고 인허가 정보를 조회합니다. -->
             <button on:click={() => getPermsHandler()} type="button" class="mb-3 h-10 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-1.5 mr-3">조회</button>
@@ -665,13 +679,15 @@
   {/if}
 
   <!-- 지도 타입 변경 -->
-  <div class="absolute z-50 max-sm:left-[calc(50%-21px)] md:left-[calc(40%)] bottom-10 flex">
+  <div class="absolute z-30 max-sm:w-[90vw] max-sm:left-[calc(50%-45vw)] md:left-[calc(40%)] bottom-10 flex justify-center">
     <div class="inline-flex rounded-md shadow-sm mr-3" role="group">
       <button
         type="button"
         on:click={() => setMapType("mapView")}
         checked
-        class="py-2 px-4 text-sm font-medium text-gray-900 bg-white rounded-l-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white"
+        class="py-2 px-4 text-sm font-medium {viewType == 'mapView'
+          ? 'text-blue-700'
+          : 'text-gray-900'} bg-white rounded-l-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700"
         ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
           <path
             stroke-linecap="round"
@@ -683,7 +699,9 @@
       <button
         type="button"
         on:click={() => setMapType("skyView")}
-        class="py-2 px-4 text-sm font-medium text-gray-900 bg-white rounded-r-md border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white"
+        class="py-2 px-4 text-sm font-medium {viewType == 'skyView'
+          ? 'text-blue-700'
+          : 'text-gray-900'} bg-white rounded-r-md border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700"
       >
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
           <path
@@ -708,7 +726,7 @@
 
     {#if $roadViewUrl}
       <a
-        class="py-2 px-3.5 justify-center items-center text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm"
+        class="py-2 px-3 justify-center items-center text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm"
         href={$roadViewUrl}
         target="_blank"
         rel="noopener noreferrer"

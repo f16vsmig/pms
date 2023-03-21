@@ -227,6 +227,8 @@ func GetPermsDataAPI(c *fiber.Ctx) error {
 	totAreaGt := c.QueryInt("totAreaGt", 0)
 	mainPurpsCdNm := c.Query("mainPurps", "")
 	status := c.Query("status", "")
+	startDay := c.Query("startday", "")
+	endDay := c.Query("endday", "")
 
 	var predicates []predicate.Perms
 
@@ -252,6 +254,14 @@ func GetPermsDataAPI(c *fiber.Ctx) error {
 		predicates = append(predicates, perms.RealStcnsDayNEQ(" "), perms.UseAprDayEQ(" "))
 	} else if status == "use" {
 		predicates = append(predicates, perms.UseAprDayNEQ(" "))
+	}
+
+	if startDay != "" && endDay != "" {
+		predicates = append(predicates, perms.ArchPmsDayGTE(startDay), perms.ArchPmsDayLTE(endDay))
+	} else if startDay != "" {
+		predicates = append(predicates, perms.ArchPmsDayGTE(startDay))
+	} else if endDay != "" {
+		predicates = append(predicates, perms.ArchPmsDayLTE(endDay))
 	}
 
 	instance := db.Client.Perms.Query().
