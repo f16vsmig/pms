@@ -384,7 +384,7 @@
           </div>
 
           <!-- 검색창 영역 -->
-          <div class="flex flex-wrap my-5 px-1">
+          <div class="flex flex-wrap my-2 px-1">
             <select bind:value={sidoSelected} type="text" class="mb-3 h-10 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-3">
               <option value="" selected>전국</option>
               <option value="11" selected>서울</option>
@@ -419,10 +419,24 @@
               <option value="con" selected>착공신고</option>
               <option value="use" selected>사용허가</option>
             </select>
+          </div>
+          <div class="flex flex-wrap mb-5 px-1">
+            <input
+              bind:value={startdaySelected}
+              type="date"
+              placeholder="시작일"
+              max={enddaySelected}
+              class="mb-3 h-10 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-3 w-36"
+            />
 
-            <input bind:value={startdaySelected} type="date" max={enddaySelected} class="mb-3 h-10 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-3" />
-
-            <input bind:value={enddaySelected} type="date" min={startdaySelected} max={cuurentday} class="mb-3 h-10 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-3" />
+            <input
+              bind:value={enddaySelected}
+              type="date"
+              placeholder="종료일"
+              min={startdaySelected}
+              max={cuurentday}
+              class="mb-3 h-10 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-3 w-36"
+            />
 
             <!-- 조회 버튼은 이벤트를 넘기지 않고 인허가 정보를 조회합니다. -->
             <button on:click={() => getPermsHandler()} type="button" class="mb-3 h-10 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-1.5 mr-3">조회</button>
@@ -441,6 +455,7 @@
             <!-- 상단 페이지 영역 -->
             <Pagination on:moveTo={getPermsHandler} {lastPageNo} {currentPage} />
 
+            <!-- 인허가 카드 영역 -->
             <div class="flex-col">
               {#each permsResult.result as site}
                 <button
@@ -452,29 +467,29 @@
                   }}
                   class="w-full p-6 pt-3 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 my-4 text-start"
                 >
-                  <dl class="flex justify-end text-gray-400 gap-4">
+                  <dl class="flex justify-end text-gray-400 gap-2">
                     <button class="w-5 hover:text-gray-700">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
                       </svg>
                     </button>
                   </dl>
-                  <dl class="flex-col mx-auto text-gray-900 gap-4">
+                  <dl class="flex-col mx-auto text-gray-900 gap-2">
                     <div class="flex flex-wrap mb-3 gap-2">
                       {#if site.arch_gb_cd_nm != " "}
-                        <span class="bg-purple-100 text-purple-800 font-medium mr-2 px-2.5 py-0.5 rounded-full">{site.arch_gb_cd_nm}</span>
+                        <span class="bg-purple-100 text-purple-800 font-medium px-2.5 py-0.5 rounded-full">{site.arch_gb_cd_nm}</span>
                       {/if}
 
                       {#if site.main_purps_cd_nm != " "}
-                        <span class="bg-yellow-100 text-yellow-800 font-medium mr-2 px-2.5 py-0.5 rounded-full">{site.main_purps_cd_nm}</span>
+                        <span class="bg-yellow-100 text-yellow-800 font-medium px-2.5 py-0.5 rounded-full">{site.main_purps_cd_nm}</span>
                       {/if}
 
                       {#if site.arch_pms_day != " " && site.real_stcns_day == " " && site.use_apr_day == " "}
-                        <span class="bg-blue-100 text-blue-800 font-medium mr-2 px-2.5 py-0.5 rounded-full">건축허가 {site.arch_pms_day}</span>
+                        <span class="bg-blue-100 text-blue-800 font-medium px-2.5 py-0.5 rounded-full">건축허가 {site.arch_pms_day}</span>
                       {:else if site.arch_pms_day != " " && site.real_stcns_day != " " && site.use_apr_day == " "}
-                        <span class="bg-blue-100 text-blue-800 font-medium mr-2 px-2.5 py-0.5 rounded-full">착공 {site.real_stcns_day}</span>
+                        <span class="bg-blue-100 text-blue-800 font-medium px-2.5 py-0.5 rounded-full">착공 {site.real_stcns_day}</span>
                       {:else if site.use_apr_day != " "}
-                        <span class="bg-blue-100 text-blue-800 font-medium mr-2 px-2.5 py-0.5 rounded-full">사용승인 {site.use_apr_day}</span>
+                        <span class="bg-blue-100 text-blue-800 font-medium px-2.5 py-0.5 rounded-full">사용승인 {site.use_apr_day}</span>
                       {/if}
                     </div>
 
