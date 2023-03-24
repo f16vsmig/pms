@@ -45,8 +45,8 @@
   let statusSelected = "";
   let startdaySelected = "";
   let enddaySelected = "";
-  const currentTime = new Date();
-  const cuurentday = String(currentTime.getFullYear()) + "-" + String(currentTime.getMonth() + 1).padStart(2, "0") + "-" + String(currentTime.getDate()).padStart(2, "0");
+  let currentTime = new Date();
+  let cuurentday = String(currentTime.getFullYear()) + "-" + String(currentTime.getMonth() + 1).padStart(2, "0") + "-" + String(currentTime.getDate()).padStart(2, "0");
 
   let currentNum = 0;
   let totalNum = 0;
@@ -162,7 +162,7 @@
 
   let permsResult; // 인허가정보를 담을 변수입니다.
   let totalPermsCnt = 0; // 인허가정보 건수를 담을 변수입니다.
-  let lastPageNo = 1;
+  let lastPageNo = 0;
   let currentPage = 1;
 
   // 인허가정보 불러오는 api
@@ -207,7 +207,8 @@
     if (event == null) {
       // 조회 버튼을 눌러서 조회하면 currentPage와 lastPageNo를 초기화 시킵니다.
       currentPage = 1;
-      lastPageNo = 1;
+      lastPageNo = 0;
+      totalPermsCnt = 0;
     }
 
     perms = getPerms(event);
@@ -385,12 +386,15 @@
 
           <!-- 검색창 영역 -->
           <div class="flex flex-wrap my-2 px-1">
+            <label for="" class="block w-full mb-1 text-sm font-medium text-gray-900">지역</label>
             <select bind:value={sidoSelected} type="text" class="mb-3 h-10 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-3">
               <option value="" selected>전국</option>
               <option value="11" selected>서울</option>
               <option value="41">경기도</option>
             </select>
-
+          </div>
+          <div class="flex flex-wrap my-2 px-1">
+            <label for="" class="block w-full mb-1 text-sm font-medium text-gray-900">허가조건</label>
             <select bind:value={permTypeSelected} type="text" class="mb-3 h-10 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-3">
               <option value="" selected>허가전체</option>
               <option value="신축" selected>신축</option>
@@ -421,32 +425,23 @@
             </select>
           </div>
           <div class="flex flex-wrap mb-5 px-1">
-            <input
-              bind:value={startdaySelected}
-              type="date"
-              placeholder="시작일"
-              max={enddaySelected}
-              class="mb-3 h-10 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-3 w-36"
-            />
-
-            <input
-              bind:value={enddaySelected}
-              type="date"
-              placeholder="종료일"
-              min={startdaySelected}
-              max={cuurentday}
-              class="mb-3 h-10 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-3 w-36"
-            />
+            <label for="" class="block w-full mb-1 text-sm font-medium text-gray-900">허가기간</label>
+            <input bind:value={startdaySelected} type="date" max={enddaySelected} class="mb-3 h-10 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block px-2 mr-3 w-32" />
+            <input bind:value={enddaySelected} type="date" min={startdaySelected} class="mb-3 h-10 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block px-2 mr-3 w-32" />
 
             <!-- 조회 버튼은 이벤트를 넘기지 않고 인허가 정보를 조회합니다. -->
             <button on:click={() => getPermsHandler()} type="button" class="mb-3 h-10 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-1.5 mr-3">조회</button>
           </div>
 
           {#await perms}
-            <p class="my-5">등록된 정보가 <span class="text-blue-700">{addComma(totalPermsCnt, 0)}</span>건 있습니다.</p>
+            {#if totalPermsCnt > 0}
+              <p class="my-5">등록된 정보가 <span class="text-blue-700">{addComma(totalPermsCnt, 0)}</span>건 있습니다.</p>
+            {/if}
 
             <!-- 페이지 영역 -->
-            <Pagination on:moveTo={getPermsHandler} {lastPageNo} {currentPage} />
+            {#if lastPageNo > 0}
+              <Pagination on:moveTo={getPermsHandler} {lastPageNo} {currentPage} />
+            {/if}
 
             <Loading />
           {:then}

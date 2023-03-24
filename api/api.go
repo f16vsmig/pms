@@ -256,11 +256,11 @@ func GetPermsDataAPI(c *fiber.Ctx) error {
 		predicates = append(predicates, perms.UseAprDayNEQ(" "))
 	}
 
-	if startDay != "" && endDay != "" {
-		predicates = append(predicates, perms.ArchPmsDayGTE(startDay), perms.ArchPmsDayLTE(endDay))
-	} else if startDay != "" {
+	if startDay != "" {
 		predicates = append(predicates, perms.ArchPmsDayGTE(startDay))
-	} else if endDay != "" {
+	}
+
+	if endDay != "" {
 		predicates = append(predicates, perms.ArchPmsDayLTE(endDay))
 	}
 
