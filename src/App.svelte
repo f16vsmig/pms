@@ -26,8 +26,4 @@
 
   @tailwind components;
   @tailwind utilities;
-
-  :global(input::-webkit-input-placeholder) {
-    line-height: normal !important;
-  }
 </style>
