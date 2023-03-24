@@ -386,7 +386,7 @@
 
           <!-- 검색창 영역 -->
           <div class="flex flex-wrap my-2 px-1">
-            <label for="" class="block w-full mb-1 text-sm font-medium text-gray-900">지역</label>
+            <label for="" class="block w-full mb-1 pl-1 text-sm font-medium text-gray-900">지역</label>
             <select bind:value={sidoSelected} type="text" class="mb-3 h-10 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-3">
               <option value="" selected>전국</option>
               <option value="11" selected>서울</option>
@@ -394,7 +394,7 @@
             </select>
           </div>
           <div class="flex flex-wrap my-2 px-1">
-            <label for="" class="block w-full mb-1 text-sm font-medium text-gray-900">허가조건</label>
+            <label for="" class="block w-full mb-1 pl-1 text-sm font-medium text-gray-900">허가조건</label>
             <select bind:value={permTypeSelected} type="text" class="mb-3 h-10 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-1.5 mr-3">
               <option value="" selected>허가전체</option>
               <option value="신축" selected>신축</option>
@@ -425,7 +425,7 @@
             </select>
           </div>
           <div class="flex flex-wrap mb-5 px-1">
-            <label for="" class="block w-full mb-1 text-sm font-medium text-gray-900">허가기간</label>
+            <label for="" class="block w-full mb-1 pl-1 text-sm font-medium text-gray-900">허가일자</label>
             <input bind:value={startdaySelected} type="date" max={enddaySelected} class="h-10 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 mr-3 w-32" />
             <input bind:value={enddaySelected} type="date" min={startdaySelected} class="h-10 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 mr-3 w-32" />
 
