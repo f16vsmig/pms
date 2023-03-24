@@ -426,8 +426,8 @@
           </div>
           <div class="flex flex-wrap mb-5 px-1">
             <label for="" class="block w-full mb-1 text-sm font-medium text-gray-900">허가기간</label>
-            <input bind:value={startdaySelected} type="date" max={enddaySelected} class="" />
-            <input bind:value={enddaySelected} type="date" min={startdaySelected} class="" />
+            <input bind:value={startdaySelected} type="date" max={enddaySelected} class="mb-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-3 mr-3 w-32" />
+            <input bind:value={enddaySelected} type="date" min={startdaySelected} class="mb-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-3 mr-3 w-32" />
 
             <!-- 조회 버튼은 이벤트를 넘기지 않고 인허가 정보를 조회합니다. -->
             <button on:click={() => getPermsHandler()} type="button" class="mb-3 h-10 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-1.5 mr-3">조회</button>
